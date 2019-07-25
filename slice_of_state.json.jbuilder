@@ -64,15 +64,16 @@ photos / posts
                 toUser: "stinkyonthebeatsoitsnotnice",
                 body: "🐸",
             }
-        },
+        }
+    },
         ui: {
             loading: true/false
         },
         errors: {
             login: ["Incorrect username/password combination"],
-            postForm: ["Chirp body cannot be blank"],
+            postForm: ["photoPost cannot be empty"],
         },
         session: { currentUserId: 45 }
-}
+    }
 
        
