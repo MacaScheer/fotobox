@@ -1,11 +1,11 @@
 import * as ApiUtil from '../util/session_api_util';
 
-export const LOGIN_USER = "LOGIN_USER";
 export const LOGOUT_USER = "LOGOUT_USER";
 export const RECEIVE_ERRORS = "RECEIVE_ERRORS";
+export const RECEIVE_CURRENT_USER = "RECEIVE_CURRENT_USER";
 
 const receiveCurrentUser = currentUser => ({
-    type: LOGIN_USER,
+    type: RECEIVE_CURRENT_USER,
     currentUser: currentUser
 });
 const logoutCurrentUser = () => ({

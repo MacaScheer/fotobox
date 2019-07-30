@@ -10,7 +10,6 @@ const receivePosts = (posts) => {
         posts
     }
 }
-
 const receivePost = (post) => {
     return {
         type: RECEIVE_POST,
@@ -37,5 +36,11 @@ export const fetchPost = (id) => dispatch => {
 export const deletePost = (postId) => dispatch => {
     return ApiPost.deletePost(postId).then(
         post => dispatch(removePost(postId))
+    )
+}
+
+export const createPost = (post) => dispatch => {
+    return ApiPost.createPost(post).then(
+        post => dispatch(receivePost(post))
     )
 }
