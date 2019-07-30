@@ -4,7 +4,7 @@ photos / posts
 
 {
     entities: {
-        photoPosts: {
+        posts: {
             1: {
                 id: 3,
                 photoUrl: "https://instagram.fsan1-2.fna.fbcdn.net/vp/cb2ad05a882e57d90bb232f0fb57a580/",
@@ -16,16 +16,14 @@ photos / posts
                 photoUrl: "https://instagram.fsan1-2.fna.fbcdn.net/vp/90934944j343848d1a88323456433c/",
                 title: "Just my kinda thing",
                 authorId: 12,
-                comments: "!",
             },
             3: {
                 id: 6,
                 photoUrl: "https://instagram.fsan1-2.fna.fbcdn.net/vp/012938098109812309182039f0298a",
                 title: "I don't know",
                 authorId: 34,
-                comments: "?",
             }
-        }
+        },
         users: {
             1: {
                 id: 9,
@@ -44,7 +42,7 @@ photos / posts
                 followingIds: [45, 57, 7]
             }
         },
-        photoLikes: {
+        likes: {
             11: {
                 likerId: 34,
                 postId: 12,

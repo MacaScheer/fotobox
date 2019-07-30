@@ -1,6 +1,6 @@
 import {
     RECEIVE_ERRORS,
-    LOGIN_USER
+    RECEIVE_CURRENT_USER
 } from '../actions/session_actions';
 
 const sessionErrorsReducer = (oldState = {}, action) => {
@@ -9,7 +9,7 @@ const sessionErrorsReducer = (oldState = {}, action) => {
     switch (action.type) {
         case RECEIVE_ERRORS:
             return action.errors;
-        case LOGIN_USER:
+        case RECEIVE_CURRENT_USER:
             return [];
         default:
             return oldState;

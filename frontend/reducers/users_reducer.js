@@ -1,5 +1,5 @@
 import {
-    LOGIN_USER,
+    RECEIVE_CURRENT_USER,
     LOGOUT_USER
 } from '../actions/session_actions';
 import merge from 'lodash/merge';
@@ -8,7 +8,7 @@ import merge from 'lodash/merge';
 const usersReducer = (oldState = {}, action) => {
     Object.freeze(oldState);
     switch (action.type) {
-        case LOGIN_USER:
+        case RECEIVE_CURRENT_USER:
             return merge({}, oldState, { [action.currentUser.id]: action.currentUser })
         case LOGOUT_USER:
             let newState = merge({}, oldState)
