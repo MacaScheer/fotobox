@@ -1,5 +1,5 @@
 {
-  "name": "photogram",
+  "name": "foto-box",
   "private": true,
   "dependencies": {
     "@babel/core": "^7.5.5",
@@ -7,9 +7,11 @@
     "@babel/preset-react": "^7.0.0",
     "babel-loader": "^8.0.6",
     "react": "^16.8.6",
+    "react-router-dom": "^5.0.1",
     "react-dom": "^16.8.6",
     "react-redux": "^7.1.0",
     "redux": "^4.0.4",
+    "redux-thunk": "^2.3.0",
     "redux-logger": "^3.0.6",
     "webpack": "^4.38.0",
     "webpack-cli": "^3.3.6"
@@ -21,8 +23,13 @@
     "lib": "lib",
     "test": "test"
   },
+  "devDependencies": {
+    "redux-logger": "^3.0.6"
+  },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "postinstall": "webpack",
+    "webpack": "webpack --watch --mode=development"
   },
   "keywords": [],
   "author": "",
