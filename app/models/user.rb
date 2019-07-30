@@ -5,6 +5,13 @@ class User < ApplicationRecord
     attr_reader :password
     after_initialize :ensure_session_token
 
+    has_many :posts
+
+
+    has_many :comments,
+    through: :posts,
+    source: :comment
+
     def self.find_by_credentials(username, password)
         @user = User.find_by(username: username)
         @user.is_password?(password) ? @user : nil
