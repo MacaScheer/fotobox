@@ -1,5 +1,9 @@
 {
+<<<<<<< HEAD
   "name": "foto-box",
+=======
+  "name": "fotobox",
+>>>>>>> 2d886b2713f8b9960306635b40b65849ec84b356
   "private": true,
   "dependencies": {
     "@babel/core": "^7.5.5",
@@ -19,17 +23,22 @@
   "description": "This README would normally document whatever steps are necessary to get the application up and running.",
   "version": "1.0.0",
   "main": "index.js",
-  "directories": {
-    "lib": "lib",
-    "test": "test"
+  "engines": {
+    "node": "10.13.0",
+    "npm": "6.4.1"
   },
   "devDependencies": {
     "redux-logger": "^3.0.6"
   },
   "scripts": {
+<<<<<<< HEAD
     "test": "echo \"Error: no test specified\" && exit 1",
     "postinstall": "webpack",
     "webpack": "webpack --watch --mode=development"
+=======
+    "postinstall": "webpack --mode=production",
+    "test": "echo \"Error: no test specified\" && exit 1"
+>>>>>>> 2d886b2713f8b9960306635b40b65849ec84b356
   },
   "keywords": [],
   "author": "",
