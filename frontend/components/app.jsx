@@ -9,7 +9,6 @@ import PostIndexContainer from './post_index_container'
 const App = () => (
     <div>
         <header>
-            <h1>welcome to foto-box</h1>
             <SplashContainer />
         </header>
 

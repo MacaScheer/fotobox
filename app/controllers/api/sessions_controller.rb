@@ -7,7 +7,7 @@ class Api::SessionsController < ApplicationController
         )
 
         if @user
-            sign_in(@user)
+            signin(@user)
             render "/api/users/show"
         else
             render json: ["invalid credentials"], status: :unprocessable_entity
@@ -16,7 +16,7 @@ class Api::SessionsController < ApplicationController
 
     def destroy
        if logged_in?
-            sign_out
+            signout
             output = {}
             render json: output
        else

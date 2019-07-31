@@ -13,7 +13,7 @@ class User < ApplicationRecord
     source: :comment
 
     def self.find_by_credentials(username, password)
-        @user = User.find_by(username: username)
+        @user = User.find_by(username: username) || User.find_by(email: username)
         @user.is_password?(password) ? @user : nil
     end
 
