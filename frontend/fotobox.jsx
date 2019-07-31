@@ -8,25 +8,29 @@ import { fetchPosts } from './actions/post_actions';
 document.addEventListener('DOMContentLoaded', () => {
     let store;
     if (window.currentUser) {
+        const { currentUser } = window;
+        const { id } = currentUser;
         const preloadedState = {
             entities: {
-                users: { [window.currentUser.id]: window.currentUser }
+                users: { [id]: currentUser }
             },
-            session: { id: window.currentUser.id }
+            session: { id }
         };
-        store = configureStore();  //preloadedState
+        store = configureStore(preloadedState);
         delete window.currentUser;
+        //TESTING//
         window.fetchPosts = fetchPosts;
         window.getState = store.getState;
-
+        //TESTING^^//
     } else {
         store = configureStore();
+
+        //TESTING//
         window.fetchPosts = fetchPosts;
         window.getState = store.getState;
-
+        //TESTING//
 
     }
-    console.log("store:", store);
     const root = document.getElementById("root");
     ReactDOM.render(<Root store={store} />, root);
 

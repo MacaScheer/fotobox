@@ -6,7 +6,7 @@ class PostIndexItem extends React.Component {
     }
 
     render() {
-        return <li key={this.props.id}>{this.props.title}, {this.props.location}, {this.props.img_url}</li>
+        return <li key={this.props.id}>{this.props.title}, {this.props.location}</li>
     }
 }
 
