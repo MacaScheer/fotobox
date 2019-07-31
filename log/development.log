@@ -1310,3 +1310,42 @@ Processing by StaticPagesController#root as HTML
 Completed 200 OK in 91ms (Views: 91.2ms | ActiveRecord: 0.0ms)
 
 
+Started GET "/" for ::1 at 2019-07-31 13:51:08 -0700
+  [1m[35m (7.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/michaelscheer/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (23.1ms)
+Started GET "/" for ::1 at 2019-07-31 13:51:15 -0700
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (4.0ms)
+Completed 200 OK in 7454ms (Views: 7450.2ms | ActiveRecord: 0.0ms)
+
+
+Completed 200 OK in 4674ms (Views: 4673.2ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/api/users" for ::1 at 2019-07-31 13:51:34 -0700
+Processing by Api::UsersController#create as JSON
+  Parameters: {"user"=>{"defaultUsername"=>"Phone number, username, or email", "defaultPassword"=>"[FILTERED]", "username"=>"Phone number, username, or emails", "password"=>"[FILTERED]"}}
+Unpermitted parameters: :defaultUsername, :defaultPassword
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/users_controller.rb:9
+  [1m[36mUser Exists (2.0ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "Phone number, username, or emails"], ["LIMIT", 1]]
+  ↳ app/controllers/api/users_controller.rb:9
+  [1m[36mUser Exists (0.6ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "x_sm_8rWYaSFzG0RsL_ulw"], ["LIMIT", 1]]
+  ↳ app/controllers/api/users_controller.rb:9
+  [1m[36mUser Create (71.6ms)[0m  [1m[32mINSERT INTO "users" ("username", "password_digest", "session_token", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["username", "Phone number, username, or emails"], ["password_digest", "$2a$12$7FuxLcv51z2gsRiiS7saluSJZg1ThLjMR.ZVaSFVZMhoFB8tq1Ul2"], ["session_token", "x_sm_8rWYaSFzG0RsL_ulw"], ["created_at", "2019-07-31 20:51:34.504742"], ["updated_at", "2019-07-31 20:51:34.504742"]]
+  ↳ app/controllers/api/users_controller.rb:9
+  [1m[35m (2.4ms)[0m  [1m[31mROLLBACK[0m
+  ↳ app/controllers/api/users_controller.rb:9
+Completed 500 Internal Server Error in 531ms (ActiveRecord: 99.6ms)
+
+
+  
+ActiveRecord::NotNullViolation (PG::NotNullViolation: ERROR:  null value in column "email" violates not-null constraint
+DETAIL:  Failing row contains (5, Phone number, username, or emails, null, null, $2a$12$7FuxLcv51z2gsRiiS7saluSJZg1ThLjMR.ZVaSFVZMhoFB8tq1Ul2, x_sm_8rWYaSFzG0RsL_ulw, 2019-07-31 20:51:34.504742, 2019-07-31 20:51:34.504742).
+: INSERT INTO "users" ("username", "password_digest", "session_token", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"):
+  
+app/controllers/api/users_controller.rb:9:in `create'
