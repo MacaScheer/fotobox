@@ -2,13 +2,10 @@ import Splash from './splash';
 import { logout } from '../../actions/session_actions';
 import { connect } from 'react-redux';
 
-const mapStateToProps = (state) => {
-    // debugger
-    if (!state.session.id) {
-        return {};
-    } else {
-        return { currentUser: state.entities.users[state.session.id] }
-    }
+const mapStateToProps = ({ session, entities: { users } }) => {
+
+    return { currentUser: users[session.id] }
+
 }
 
 const mapDispatchToProps = (dispatch) => (

@@ -29,5 +29,5 @@ const mapStateToProps = state => {
 
 export const ProtectedRoute = withRouter(connect(mapStateToProps)(Protected));
 
-export const AuthRoute = withRouter(connect(mapStateToProps, null)(Auth));
+export const AuthRoute = withRouter(connect(mapStateToProps)(Auth));
 
