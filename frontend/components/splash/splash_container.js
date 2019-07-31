@@ -4,7 +4,11 @@ import { connect } from 'react-redux';
 
 const mapStateToProps = (state) => {
     // debugger
-    return { currentUser: state.entites.users[state.session.id] }
+    if (!state.session.id) {
+        return {};
+    } else {
+        return { currentUser: state.entities.users[state.session.id] }
+    }
 }
 
 const mapDispatchToProps = (dispatch) => (

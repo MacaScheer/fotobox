@@ -3,7 +3,7 @@ import ReactDOM from 'react-dom';
 // import { signup, login, logout } from './actions/session_actions';
 import configureStore from './store/store.js';
 import Root from './components/root';
-
+import { fetchPosts } from './actions/post_actions';
 
 document.addEventListener('DOMContentLoaded', () => {
     let store;
@@ -14,19 +14,20 @@ document.addEventListener('DOMContentLoaded', () => {
             },
             session: { id: window.currentUser.id }
         };
-        store = configureStore(preloadedState);
+        store = configureStore();  //preloadedState
         delete window.currentUser;
-        // window.fetchPosts = fetchPosts
-        // window.dispatch = store.dispatch;
-        // window.getState = store.dispatch;
+        window.fetchPosts = fetchPosts;
+        window.getState = store.getState;
+
     } else {
         store = configureStore();
-        // window.fetchPosts = fetchPosts
-        // window.dispatch = store.dispatch;
-        // window.getState = store.dispatch;
-    }
+        window.fetchPosts = fetchPosts;
+        window.getState = store.getState;
 
-    const root = document.getElementById('root');
+
+    }
+    console.log("store:", store);
+    const root = document.getElementById("root");
     ReactDOM.render(<Root store={store} />, root);
 
 });
