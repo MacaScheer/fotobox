@@ -31,7 +31,7 @@ class SessionForm extends React.Component {
         }
     }
     clearDefaultFields() {
-        debugger
+
         if (this.value === this.state.defaultUsername) {
             return this.state.defaultUsername = "";
         } else if (this.value === this.state.defaultPassword) {
