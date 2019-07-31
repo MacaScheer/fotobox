@@ -5,12 +5,12 @@ class SessionForm extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-            defaultUsername: "Phone number, username, or email",
-            defaultPassword: "Password"
+            username: "",
+            password: "",
+            email: ""
         };
         this.handleInput = this.handleInput.bind(this);
         this.handleSubmit = this.handleSubmit.bind(this);
-        this.clearDefaultFields = this.clearDefaultFields.bind(this);
     }
 
     handleSubmit(e) {
@@ -30,15 +30,7 @@ class SessionForm extends React.Component {
             </ul>)
         }
     }
-    clearDefaultFields() {
 
-        if (this.value === this.state.defaultUsername) {
-            return this.state.defaultUsername = "";
-        } else if (this.value === this.state.defaultPassword) {
-
-            return this.state.defaultPassword = "";
-        }
-    }
     render() {
         let path = "/login"
         let title = "signup"
@@ -54,32 +46,32 @@ class SessionForm extends React.Component {
         return (
             <div className="login-form-container">
                 <form onSubmit={this.handleSubmit} className="login-form-box">
-                    <h1 className="instagram-greet">Instagram</h1>
+                    <h1 className="instagram-greet">fotobox</h1>
                     {this.errors()}
                     <br />
                     <h2>{title}</h2>
 
-                    <label>Username
-                        <input type="text"
-                            className="login-input"
-                            onChange={this.handleInput('username')}
-                            value={this.state.defaultUsername}
-                            // value={this.state.username}
-                            onFocus={this.clearDefaultFields}
-                        />
-                    </label>
 
-                    <label>Password
-                        <input type="text"
-                            className="login-input"
-                            onChange={this.handleInput('password')}
-                            value={this.state.defaultPassword}
-                            // value={this.state.password}
-                            onFocus={this.clearDefaultFields}
-                        />
-                    </label>
+                    <input type="text"
+                        className="login-input"
+                        onChange={this.handleInput('username')}
+                        placeholder="Username"
+                        value={this.state.username}
+                    />
+                    <input type="text"
+                        className="login-input"
+                        onChange={this.handleInput('password')}
+                        placeholder="Password"
+                        value={this.state.password}
+                    />
+
+                    <input type="text"
+                        className="login-input"
+                        onChange={this.handleInput('email')}
+                        value={this.state.email}
+                        placeholder="Email"
+                    />
                     <input className="session-submit" type="submit" value={this.props.formType} />
-                    {/* <button onClick={this.handleSubmit}>Submit</button> */}
                     <br />
                     <div className="alt-box">
                         <h3>{instruc}</h3>
