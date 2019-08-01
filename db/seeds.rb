@@ -5,33 +5,60 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
-Post.destroy_all
+demo_user = {
+username: "demo_user",
+password: "123456",
+email: "demo@demo.com"
+}
 
+user1 = {
+        username: "dangatangg",
+        password: "sanrafae1",
+        email: "mac@mac.com"
+}
 
-Post.create!(id: 3,
-            title: "Me n Beans on Mt. Baldy",
-            imag_url: "https://instagram.fsan1-2.fna.fbcdn.net/vp/cb2ad05a882e57d90bb232f0fb57a580/", 
-            location: "Mt. Baldy",
-            authorId: 23
-        )
+ActiveRecord::Base.transaction do
+        User.destroy_all
+        User.create!(demo_user)
 
-Post.create!( id: 4,
-              title: "Just my kinda thing",
-              imag_url: "https://instagram.fsan1-2.fna.fbcdn.net/vp/90934944j343848d1a88323456433c/",
-              location: "Logan Heights",
-              authorId: 12
-        )
-Post.create!(id: 6,
-             title: "I don't know",
-             imag_url: "https://instagram.fsan1-2.fna.fbcdn.net/vp/012938098109812309182039f0298a",
-             location: "Frog Town, Los Angeles",
-             authorId: 34
-            )
+end
+# Post.destroy_all
+# Post.create!(
+#             title: "Me n Beans on Mt. Baldy",
+#             img_url: "https://instagram.fsan1-2.fna.fbcdn.net/vp/cb2ad05a882e57d90bb232f0fb57a580/", 
+#             location: "Mt. Baldy",
+#             author_id: 
+#         )
 
-# User.create!(id: 23,
-# username: "fotoboxbuddy",
-# email: "mac@mac.com",
-# bio: "I love to travel with friends, and hangout with my dog",
+# Post.create!( 
+#               title: "Just my kinda thing",
+#               img_url: "https://instagram.fsan1-2.fna.fbcdn.net/vp/90934944j343848d1a88323456433c/",
+#               location: "Logan Heights",
+#               author_id: 12
+#         )
+# Post.create!(
+#              title: "I don't know",
+#              img_url: "https://instagram.fsan1-2.fna.fbcdn.net/vp/012938098109812309182039f0298a",
+#              location: "Frog Town, Los Angeles",
+#              author_id: 34
+#             )
+# end
+
+# ActiveRecord::Base.transaction do
+#   Pokemon.destroy_all
+
+#   pokemon = {
+#     '1' => {
+#       'name' => 'Bulbasaur',
+#       'attack' => 49,
+#       'defense' => 49,
+#       'poke_type' => 'grass',
+#       'moves' => [
+#          'tackle',
+#          'vine whip'
+#       ],
+#     },
+
 # ?
 #HOW DO I CREATE A DEMO-ACCOUNT?#
             

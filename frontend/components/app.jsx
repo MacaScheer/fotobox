@@ -5,7 +5,7 @@ import { Router, Route } from 'react-router-dom';
 import Splash from './splash/splash';
 import SplashContainer from './splash/splash_container';
 import { AuthRoute, ProtectedRoute } from '../util/route_util';
-import PostIndexContainer from './post_index_container'
+import PostIndexContainer from './posts/post_index_container'
 const App = () => (
     <div>
         <header>

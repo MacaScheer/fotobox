@@ -22,7 +22,12 @@ document.addEventListener('DOMContentLoaded', () => {
         window.fetchPosts = fetchPosts;
         window.getState = store.getState;
         //TESTING^^//
-    } else {
+    }
+    // else if (window.currentUser.username === 'demo_user') {
+
+    // }
+
+    else {
         store = configureStore();
 
         //TESTING//
