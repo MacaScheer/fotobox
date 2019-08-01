@@ -14,14 +14,13 @@
  *= require_self
  */
 @import url(https://fonts.googleapis.com/css?family=Lobster|Roboto|Satisfy|Source+Sans+Pro|Yellowtail&display=swap);
-
+.page {
+margin-top: 30px;
+}
 .fotobox-logo {
     font-family: 'Satisfy', cursive;
     font-weight: 80;
     margin-bottom: 20px;
-}
-.page {
-margin-top: 30px;
 }
 div {
     display: block;
@@ -108,11 +107,18 @@ ul {
 .login-left-image-inner {
     z-index: 1;
     position: absolute;
-    right: 64px;
-    width: 250px;
-    top: 99px;
-    height: 430px;
+    right: 62px;
+    width: 255px;
+    top: 97px;
+    height: 435px;
 } 
+/* .inner-image-logo {
+    font-family: 'Satisfy', cursive;
+    width:100px;
+    height:60px;
+    
+} */
+
 
 .login-form-container {
     display: flex;
@@ -143,15 +149,14 @@ ul {
 }
  .login-signup-link {
     display: flex;
-    justify-content: center;
+    justify-content: space-around;
     border: 1px solid #e6e6e6;
     background: white;
+    font-size: 14px;
     width: 100%;
     border-radius: 2px;
+    font-family: 'Helvetica Neue';
     padding-top: 20px;
     padding-bottom: 20px;
  }
 
- .center {
-     margin-inline: 12px;
- }

@@ -23,7 +23,8 @@ class PostIndex extends React.Component {
                             location={location}
                             img_url={img_url}
                             id={post.id}
-                        />))}
+                        />
+                    ))}
                 </ul>
             </div>
         )
