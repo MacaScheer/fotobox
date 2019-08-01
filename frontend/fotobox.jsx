@@ -33,6 +33,6 @@ document.addEventListener('DOMContentLoaded', () => {
     }
     const root = document.getElementById("root");
     ReactDOM.render(<Root store={store} />, root);
-    window.store = store;
-    window.logout = logout;
+    // window.store = store;
+    // window.logout = logout;
 });
