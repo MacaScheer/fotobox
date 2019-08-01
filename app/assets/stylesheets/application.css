@@ -15,16 +15,11 @@
  */
 @import url(https://fonts.googleapis.com/css?family=Lobster|Roboto|Satisfy|Source+Sans+Pro|Yellowtail&display=swap);
 
-h1 {
+.fotobox-logo {
     font-family: 'Satisfy', cursive;
     font-weight: 80;
     margin-bottom: 20px;
 }
-/* .fotobox-logo {
-    font-family: 'Satisfy', cursive;
-    font-weight: 80;
-    margin-bottom: 20px;
-} */
 .page {
 margin-top: 30px;
 }
@@ -34,7 +29,9 @@ div {
 .long-errors {
     color: red;
 }
-
+.main {
+    display: block;
+}
 ul {    
     display: block;
     list-style-type: disc;
@@ -64,17 +61,17 @@ ul {
     background-color: #3897f0;
     border-radius: 4px;
     outline: none;
-    border: 1px solid #fafafa 
+    border: 1px solid #fafafa; 
 }
 
-/* h1 {
+ h1 {
     display: block;
     font-size: 2em;
     margin-block-start: 0.67em;
     margin-block-end: 0.67em;
     margin-inline-start: 0px;
     margin-inline-end: 0px;
-} */
+} 
 
 
 .login-page-container {
@@ -90,7 +87,7 @@ ul {
      flex-direction: column;
      margin-top: 50px;
      margin-right: 500px;
-     font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif'
+     font-family: 'Helvetica Neue', sans-serif'
     }
 .login-page-left {  
     width: 425;
@@ -131,4 +128,32 @@ ul {
     padding: 10px 0;
     text-align: center;
 }
+.login-input {
+    text-align: left;
+    width: 250px;
+    height: 40px;
+    background-color: #fafafa;
+    padding-left: 5px;
+    text-overflow: ellipsis;
+    font-size: 14px;
+    margin: 3px;
+    border-radius: 3px;
+    border: 1px solid #efefef;
+    box-sizing: border-box;
+}
 
+.alt-box {
+    display: flex;
+    justify-content: center;
+    border: 1px solid #e6e6e6;
+    background: white;
+    width: 100%;
+    border-radius: 2px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+ .login-signup-link {
+     text-decoration: none;
+     font-weight: bolder;
+     color: #3897f0;
+ }

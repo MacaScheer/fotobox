@@ -52,8 +52,13 @@ class SessionForm extends React.Component {
 
                 <header className="headerBar"></header>
 
-                <div className="login-page-container">
-
+            <div className="login-page-container">
+                <div className="login-page-left">
+                    <div className="login-left-image-container">
+                        <img className="login-left-image" src="https://www.instagram.com/static/images/homepage/home-phones@2x.png/9364675fb26a.png" />
+                        <img className="login-left-image-inner" src="https://www.instagram.com/static/images/homepage/screenshot1.jpg/d6bf0c928b5a.jpg" />
+                    </div>
+                </div>
                     <div className="login-page-right">
                         <ul className="login-errors">{this.errors()}</ul>
                         <div className="login-form-container">
@@ -61,7 +66,7 @@ class SessionForm extends React.Component {
                             <form onSubmit={this.handleSubmit} className="login-form-box">
                                 <h1 className="fotobox-logo">fotobox</h1>
                                 <div className="login-form">
-                                    <br />
+                                    {/* <br /> */}
                                     <label>
                                         <input type="text"
                                             className="login-input"
@@ -82,32 +87,26 @@ class SessionForm extends React.Component {
                                     <br />
                                     <input className="session-submit login" type="submit" value={this.props.formType} />
                                     <br />
-                                    "&nbsp;Or&nbsp;"
-                            <br />
+                                    &nbsp;Or&nbsp;
+                                    <br />
                                     <button className="session-submit demo">Demo Login
                                     </button>
                                 </div>
                             </form>
                         </div>
-
+                        <div className="alt-box">
+                            <h3>{instruc}</h3>
+                            <div className="login-signup-link">
+                                <Link to={path}>{altTitle}</Link>
+                                {/* <a href={path}>{altTitle}</a> */}
+                            </div>
+                        </div>
                     </div>
                 </div>
 
-
-
-                <div className="login-page-left">
-                    <div className="login-left-image-container">
-                        <img className="login-left-image" src="https://www.instagram.com/static/images/homepage/home-phones@2x.png/9364675fb26a.png" />
-                        <img className="login-left-image-inner" src="https://www.instagram.com/static/images/homepage/screenshot1.jpg/d6bf0c928b5a.jpg" />
-                    </div>
-                </div>
-
-
-                <div className="alt-box">
-                    <h3>{instruc}</h3>
-                    <Link to={path}>{altTitle}</Link>
-                </div>
             </div>
+
+
         )
     }
 }
