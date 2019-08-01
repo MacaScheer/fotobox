@@ -28,4 +28,10 @@ Post.create!(id: 6,
              authorId: 34
             )
 
+# User.create!(id: 23,
+# username: "fotoboxbuddy",
+# email: "mac@mac.com",
+# bio: "I love to travel with friends, and hangout with my dog",
+# ?
+#HOW DO I CREATE A DEMO-ACCOUNT?#
             
