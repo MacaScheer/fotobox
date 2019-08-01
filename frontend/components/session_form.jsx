@@ -32,33 +32,31 @@ class SessionForm extends React.Component {
     }
 
     render() {
-        let path = "/login"
-        let title = "signup"
-        let altTitle = "Log in"
-        let instruc = "Already have an account?"
-        let headerGreet = "Sign up to see photos and videos from your friends."
+        let path = "/login";
+        let title = "signup";
+        let altTitle = "Log in";
+        let instruc = "Already have an account?";
+        let headerGreet = "Sign up to see photos and videos from your friends.";
         if (this.props.formType === 'login') {
             title = "login";
-            path = "/signup"
-            altTitle = "Sign up"
-            instruc = "Don't have an account?"
-            headerGreet = ""
-
+            path = "/signup";
+            altTitle = "Sign up";
+            instruc = "Don't have an account?";
+            headerGreet = "";
         };
+
 
         return (
             <div className="page">
-
-
                 <header className="headerBar"></header>
 
-            <div className="login-page-container">
-                <div className="login-page-left">
-                    <div className="login-left-image-container">
-                        <img className="login-left-image" src="https://www.instagram.com/static/images/homepage/home-phones@2x.png/9364675fb26a.png" />
-                        <img className="login-left-image-inner" src="https://www.instagram.com/static/images/homepage/screenshot1.jpg/d6bf0c928b5a.jpg" />
+                <div className="login-page-container">
+                    <div className="login-page-left">
+                        <div className="login-left-image-container">
+                            <img className="login-left-image" src="https://www.instagram.com/static/images/homepage/home-phones@2x.png/9364675fb26a.png" />
+                            <img className="login-left-image-inner" src="https://www.instagram.com/static/images/homepage/screenshot1.jpg/d6bf0c928b5a.jpg" />
+                        </div>
                     </div>
-                </div>
                     <div className="login-page-right">
                         <ul className="login-errors">{this.errors()}</ul>
                         <div className="login-form-container">
@@ -66,7 +64,7 @@ class SessionForm extends React.Component {
                             <form onSubmit={this.handleSubmit} className="login-form-box">
                                 <h1 className="fotobox-logo">fotobox</h1>
                                 <div className="login-form">
-                                    {/* <br /> */}
+                                    <span className="greeting">{headerGreet}</span>
                                     <label>
                                         <input type="text"
                                             className="login-input"
@@ -94,13 +92,14 @@ class SessionForm extends React.Component {
                                 </div>
                             </form>
                         </div>
-                        <div className="alt-box">
-                            <h3>{instruc}</h3>
-                            <div className="login-signup-link">
+
+                        <div className="login-signup-link">
+                            <div className="center">{instruc}
                                 <Link to={path}>{altTitle}</Link>
                                 {/* <a href={path}>{altTitle}</a> */}
                             </div>
                         </div>
+
                     </div>
                 </div>
 

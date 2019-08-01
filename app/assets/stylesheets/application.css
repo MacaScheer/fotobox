@@ -141,8 +141,7 @@ ul {
     border: 1px solid #efefef;
     box-sizing: border-box;
 }
-
-.alt-box {
+ .login-signup-link {
     display: flex;
     justify-content: center;
     border: 1px solid #e6e6e6;
@@ -151,9 +150,8 @@ ul {
     border-radius: 2px;
     padding-top: 20px;
     padding-bottom: 20px;
-}
- .login-signup-link {
-     text-decoration: none;
-     font-weight: bolder;
-     color: #3897f0;
+ }
+
+ .center {
+     margin-inline: 12px;
  }
