@@ -13,8 +13,9 @@ class User < ApplicationRecord
     source: :comment
 
     def self.find_by_credentials(username, password)
-        @user = User.find_by(username: username) || User.find_by(email: username)
-        @user.is_password?(password) ? @user : nil
+        user = User.find_by(username: username) || User.find_by(email: username)
+        return nil unless user && user.is_password?(password)
+        user
     end
 
     def is_password?(password)

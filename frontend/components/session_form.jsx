@@ -58,19 +58,20 @@ class SessionForm extends React.Component {
                         placeholder="Username"
                         value={this.state.username}
                     />
-                    <input type="text"
+                    <input type="password"
                         className="login-input"
                         onChange={this.handleInput('password')}
                         placeholder="Password"
                         value={this.state.password}
                     />
-
-                    <input type="text"
+                    {/* <input type="text"
                         className="login-input"
-                        onChange={this.handleInput('email')}
+                        onChange={this.handleInput('username')}
                         value={this.state.email}
                         placeholder="Email"
-                    />
+                    /> */}
+
+
                     <input className="session-submit" type="submit" value={this.props.formType} />
                     <br />
                     <div className="alt-box">

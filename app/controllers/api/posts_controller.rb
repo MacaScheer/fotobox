@@ -8,6 +8,7 @@ class PostsController < ApplicationController
     def show
         @post = Post.find_by(params[:id])
     end
+
     def new
         @post = Post.new
     end
@@ -35,11 +36,8 @@ class PostsController < ApplicationController
         end
     end
 
-
-
     private
     def post_params
         params.require(:post).permit(:title, :img_url, :location)
     end
-
 end
