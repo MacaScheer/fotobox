@@ -86,7 +86,7 @@ ul {
      flex-direction: column;
      margin-top: 50px;
      margin-right: 500px;
-     font-family: 'Helvetica Neue', sans-serif'
+     font-family: 'Helvetica Neue';
     }
 .login-page-left {  
     width: 425;
@@ -112,12 +112,6 @@ ul {
     top: 97px;
     height: 435px;
 } 
-/* .inner-image-logo {
-    font-family: 'Satisfy', cursive;
-    width:100px;
-    height:60px;
-    
-} */
 
 
 .login-form-container {
