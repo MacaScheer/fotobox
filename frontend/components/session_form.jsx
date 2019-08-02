@@ -29,7 +29,7 @@ class SessionForm extends React.Component {
             username: "demo_user",
             password: "123456",
         }
-        this.props.processForm(demoUser)
+        this.props.processForm1(demoUser)
     }
     errors() {
         if (this.props.errors.responseJSON) {
@@ -81,6 +81,7 @@ class SessionForm extends React.Component {
                                 <h1 className="fotobox-logo">fotobox</h1>
                                 <div className="login-form">
                                     <span className="greeting">{headerGreet}</span>
+                                    <br />
                                     <label>{emailInput}</label>
                                     <br />
                                     <label>

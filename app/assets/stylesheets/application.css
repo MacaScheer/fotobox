@@ -71,7 +71,9 @@ ul {
     margin-inline-start: 0px;
     margin-inline-end: 0px;
 } 
-
+.greeting {
+    flex-wrap: wrap;
+}
 
 .login-page-container {
     display: flex;
