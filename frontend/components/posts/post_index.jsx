@@ -21,7 +21,6 @@ class PostIndex extends React.Component {
                         <PostIndexItem
                             title={title}
                             location={location}
-                            img_url={img_url}
                             id={post.id}
                         />
                     ))}

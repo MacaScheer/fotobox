@@ -7,7 +7,10 @@ const mapStateToProps = (state) => {
 }
 
 const mapDispatchToProps = (dispatch) => {
-    return { fetchPosts: () => dispatch(fetchPosts()) }
+    return {
+        fetchPosts: () => dispatch(fetchPosts()),
+        logout: () => dispatch(logout())
+    }
 }
 
 
