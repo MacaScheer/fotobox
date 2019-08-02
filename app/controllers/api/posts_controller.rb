@@ -27,14 +27,14 @@ class PostsController < ApplicationController
         @post = Post.find(params[:id]) 
     end
 
-    def update
-        @post = current_user.posts.find(params[:id])
-        if @post.update_attributes(post_params)
-            render :show
-        else
-            render json: @post.errors.full_messages, status: :unprocessable_entity
-        end
-    end
+    # def update
+    #     @post = current_user.posts.find(params[:id])
+    #     if @post.update_attributes(post_params)
+    #         render :show
+    #     else
+    #         render json: @post.errors.full_messages, status: :unprocessable_entity
+    #     end
+    # end
 
     private
     def post_params
