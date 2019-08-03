@@ -7,7 +7,6 @@ class PostIndexItem extends React.Component {
 
 
     render() {
-        debugger
         return (<li>
             {this.props.title},
             {/* {this.props.location}, */}

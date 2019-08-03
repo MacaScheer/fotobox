@@ -9,14 +9,9 @@ class PostIndex extends React.Component {
 
     componentDidMount() {
         this.props.fetchPosts();
-        debugger
     }
     render() {
         let posts = this.props.posts;
-        // if (!posts.title) {
-        //     return null;
-        // }
-        debugger
         posts = posts.map((post) => (
             <PostIndexItem
                 title={post.title}
