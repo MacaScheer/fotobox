@@ -24,7 +24,8 @@ def signout
 end
 
 def require_signed_in!
-    redirect_to new_session_url unless logged_in?
+    # redirect_to new_session_url unless logged_in?
+    render json: {errors: ["working on it"]} unless current_user
 end
 end
 

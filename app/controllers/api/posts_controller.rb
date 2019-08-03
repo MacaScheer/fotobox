@@ -1,8 +1,10 @@
-class PostsController < ApplicationController
+class Api::PostsController < ApplicationController
+    
     before_action :require_signed_in!
 
     def index
         @posts = Post.all
+        render :index
     end
     
     def show
@@ -17,7 +19,7 @@ class PostsController < ApplicationController
         @post = Post.new(post_params)
         @post.author_id = current_user.id
         if @post.save
-            render :show
+            render json: @post
         else
             render json: @post.errors.full_messages, status: :unprocessable_entity
         end
@@ -26,15 +28,6 @@ class PostsController < ApplicationController
     def edit
         @post = Post.find(params[:id]) 
     end
-
-    # def update
-    #     @post = current_user.posts.find(params[:id])
-    #     if @post.update_attributes(post_params)
-    #         render :show
-    #     else
-    #         render json: @post.errors.full_messages, status: :unprocessable_entity
-    #     end
-    # end
 
     private
     def post_params

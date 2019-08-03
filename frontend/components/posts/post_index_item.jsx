@@ -1,5 +1,5 @@
 import React from 'react';
-
+import { withRouter } from 'react-router';
 class PostIndexItem extends React.Component {
     constructor(props) {
         super(props);
@@ -7,13 +7,15 @@ class PostIndexItem extends React.Component {
 
 
     render() {
-        return (<li key={this.props.id}>
+        debugger
+        return (<li>
             {this.props.title},
-            {this.props.location},
-            <img src={this.props.img_url} />
+            {/* {this.props.location}, */}
+            <img src={this.props.photo_url} />
+            {/* {this.props.photo_url} */}
         </li>
         )
     }
 }
 
-export default PostIndexItem;
+export default withRouter(PostIndexItem);
