@@ -6,14 +6,16 @@ import {
 import merge from 'lodash/merge';
 
 const postsReducer = (oldState = {}, action) => {
+    let newState = {};
     Object.freeze(oldState);
     switch (action.type) {
         case RECEIVE_POST:
-            return newState = merge({}, oldState, { [action.post.id]: action.post });
+            newState = merge({}, oldState, { [action.post.id]: action.post });
+            return newState;
         case RECEIVE_POSTS:
             return newState = merge({}, oldState, action.posts)
         case REMOVE_POST:
-            let newState = merge({}, oldState);
+            newState = merge({}, oldState);
             delete newState[action.postId];
             return newState;
         default:

@@ -38,6 +38,9 @@ class SessionForm extends React.Component {
             </ul>)
         }
     }
+    componentDidMount() {
+        this.props.clearErrors();
+    }
 
     render() {
         let path = "/login";

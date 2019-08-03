@@ -1,33 +1,39 @@
 import React from 'react';
 import PostIndexItem from './post_index_item';
+import { withRouter } from 'react-router';
 
 class PostIndex extends React.Component {
     constructor(props) {
         super(props)
-        // debugger
-    }
+    };
+
     componentDidMount() {
-        // this.props.fetchPosts();
+        this.props.fetchPosts();
+        debugger
     }
     render() {
-        // debugger
-        let posts = Object.values(this.props.state.entities.posts)
-
+        let posts = this.props.posts;
+        // if (!posts.title) {
+        //     return null;
+        // }
+        debugger
+        posts = posts.map((post) => (
+            <PostIndexItem
+                title={post.title}
+                location={post.location}
+                photo_url={post.photo_url}
+                key={post.id}
+            />
+        ))
         return (
             <div>
                 <h3> Post Feed: </h3>
                 <ul>
-                    {posts.map((post, i) => (
-                        <PostIndexItem
-                            title={title}
-                            location={location}
-                            id={post.id}
-                        />
-                    ))}
+                    {posts}
                 </ul>
             </div>
         )
     }
 }
 
-export default PostIndex;
+export default withRouter(PostIndex);
