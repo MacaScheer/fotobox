@@ -157,7 +157,7 @@ ul {
  }
 
 .nav-bar-container{
-        background-color: white;
+    background-color: white;
     display: flex;
     width: 100%;
     height: 80px;
@@ -197,8 +197,8 @@ ul {
 }
 
 .make-post-icon {
-        content: "\f030";
-            -webkit-font-smoothing: antialiased;
+    content: "\f030";
+    -webkit-font-smoothing: antialiased;
     display: inline-block;
     font-style: normal;
     font-variant: normal;
@@ -209,4 +209,111 @@ ul {
     font-family: 'Satisfy', cursive;
     font-size: 28px;
     margin-left: 20px;
+}
+.fotobox-icon {
+    -webkit-font-smoothing: antialiased;
+    display: inline-block;
+    font-style: normal;
+    font-variant: normal;
+    text-rendering: auto;
+    line-height: 1;
+}
+
+.nav-link-logo {
+    font-family: 'Satisfy', cursive;
+    font-size: 28px;
+    margin-left: 20px;
+}
+
+.nav-middle {
+    width: 50%;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+}
+
+
+.nav-right {
+    width: 25%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.nav-right-index {
+    padding-right: 20px;
+}
+
+.feed-container {
+    display: flex;
+    justify-content: center;
+    align-content: center;
+}
+.feed-left {
+    width: 20%;
+}
+.feed-right {
+    width: 20%;
+}
+
+.feed-mid {
+    width: 60%;
+    display: flex;
+    justify-content: center;
+    align-content: center
+}
+
+.feed-images {
+    list-style: none;
+    text-decoration: none;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-content: center;
+    padding-left: 0px;
+}
+ul {
+    display: block;
+    list-style-type: disc;
+    margin-block-start: 1em;
+    margin-block-end: 1em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+    padding-inline-start: 40px;
+}
+
+.feed-image-box {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-content: center;
+    border: 1px solid lightgrey;
+    margin-bottom: 35px;
+    border-radius: 3px;
+}
+
+.feed-image-header {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-content: center;
+    width: 450px;
+    background-color: white;
+}
+
+.feed-image-header-wrap {
+    height: 40px;
+    display: flex;
+    align-items: center;
+}
+.feed-image {
+    width: 450px;
+    height: 450px;
+}
+.feed-profile-pic {
+    width: 30px;
+    height: 30px;
+    padding-left: 5px;
+    padding-right: 7px;
+    border-radius: 50%;
 }
