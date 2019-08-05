@@ -7,12 +7,11 @@ class PostIndexItem extends React.Component {
 
 
     render() {
-        return (<li>
-            {this.props.title},
-            {/* {this.props.location}, */}
-            <img src={this.props.photo_url} />
-            {/* {this.props.photo_url} */}
-        </li>
+        return (
+            <li>
+                <span>{this.props.title}</span>
+                <img className="feed-image" src={this.props.photo_url} />
+            </li>
         )
     }
 }
