@@ -5,41 +5,24 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
-demo_user = {
-username: "demo_user",
-password: "123456",
-email: "demo@demo.com"
-}
+# demo_user = {
+# username: "demo_user",
+# password: "123456",
+# email: "demo@demo.com"
+# }
 
-user1 = {
-        username: "dangatangg",
-        password: "sanrafae1",
-        email: "mac@mac.com"
-}
 
-ActiveRecord::Base.transaction do
-        User.destroy_all
-        User.create!(demo_user)
 
-end
-# Post.destroy_all
+require 'open-uri'
+
+demo_user = User.create(username: "flygod", email: "westside_gunn@mac.com", password: 123456)
+
+file = open('/Users/michaelscheer/Desktop/photos_for_fotobox/hitlerwearshermes.jpg')
+
+demo_user.profile_picture.attach(io: file, filename: 'hitlerwearshermes.jpg')
+
 # Post.create!(
-#             title: "Me n Beans on Mt. Baldy",
-#             img_url: "", 
-#             location: "Mt. Baldy",
-#             author_id: demo_user.id
+#             title: "Hitler wears Hermes",
+#             location: "Los Angeles",
+#             user_id: 29
 #         )
-
-# Post.create!( 
-#               title: "Just my kinda thing",
-#               img_url: "",
-#               location: "Logan Heights",
-#               author_id: demo_user.id
-#         )
-# Post.create!(
-#              title: "I don't know",
-#              img_url: "",
-#              location: "Frog Town, Los Angeles",
-#              author_id: demo_user.id
-#             )
-# end

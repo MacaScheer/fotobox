@@ -22,13 +22,34 @@ class PostIndex extends React.Component {
         ))
         return (
             <div>
-                <h3> Post Feed: </h3>
-                <ul>
-                    {posts}
-                </ul>
+                <div className="page">
+                    <header className="headerBar"></header>
+                    <div>
+                        <section className="nav-bar-container">
+                            <div className="nav-left">
+                                <div className="nav-left-index">
+                                    <a className="nav-icon" href="#/posts">
+                                        <i className="make-post-icon"></i>
+                                    </a>
+                                    <div className="nav-link-logo">Fotobox</div>
+                                    <div className="nav-middle">
+                                        <input className="user-search" type="text" placeholder="Search Other Box Lovers" />
+                                        <div className="nav-right">
+                                            <ul>
+                                                {posts}
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </section>
+                    </div>
+                </div>
             </div>
+
         )
     }
 }
+
 
 export default withRouter(PostIndex);
