@@ -12,6 +12,7 @@ class PostIndex extends React.Component {
     }
     render() {
         let posts = this.props.posts;
+        // debugger
         posts = posts.map((post) => (
             <PostIndexItem
                 title={post.title}

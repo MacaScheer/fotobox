@@ -26,7 +26,7 @@ class SessionForm extends React.Component {
     }
     demo_user_handler() {
         const demoUser = {
-            username: "demo_user",
+            username: "demo_user1",
             password: "123456",
         }
         this.props.processForm1(demoUser)
