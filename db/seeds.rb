@@ -1,10 +1,7 @@
 require 'open-uri'
 
-photos = [
-        "10.JPG", 
-        "11.JPG", 
+photos = [ 
         "12.png", 
-        "2.JPG", 
         "3.JPG", 
         "4.PNG", 
         "5.PNG", 

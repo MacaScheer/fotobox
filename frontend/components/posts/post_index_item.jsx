@@ -9,8 +9,8 @@ class PostIndexItem extends React.Component {
     render() {
         return (
             <li>
-                <span>{this.props.title}</span>
                 <img className="feed-image" src={this.props.photo_url} />
+                <span>{this.props.title}</span>
             </li>
         )
     }
