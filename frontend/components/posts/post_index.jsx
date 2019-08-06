@@ -41,7 +41,7 @@ class PostIndex extends React.Component {
                                 <div className="nav-left-index">
                                     <a className="nav-icon" href="#/posts">
                                         <i className="make-post-icon">
-                                            <img src="/Users/michaelscheer/Desktop/FULLSTACK_PROJECT/app/assets/images/lightmeter.png" />
+                                            {/* <img src="/Users/michaelscheer/Desktop/FULLSTACK_PROJECT/app/assets/images/lightmeter.png" /> */}
                                         </i>
                                     </a>
                                     <div className="nav-link-logo">Fotobox</div>

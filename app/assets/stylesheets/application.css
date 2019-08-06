@@ -17,6 +17,9 @@
 .page {
 margin-top: 30px;
 }
+.logout-button {
+    bottom: 20px;
+}
 .fotobox-logo {
     font-family: 'Satisfy', cursive;
     font-weight: 80;
@@ -283,6 +286,7 @@ ul {
 }
 
 .feed-image-box {
+    
     display: flex;
     flex-direction: column;
     justify-content: center;
