@@ -23,9 +23,6 @@ document.addEventListener('DOMContentLoaded', () => {
         window.getState = store.getState;
         //TESTING^^//
     }
-    // else if (window.currentUser.username === 'demo_user') {
-
-    // }
 
     else {
         store = configureStore();
@@ -33,11 +30,8 @@ document.addEventListener('DOMContentLoaded', () => {
         //TESTING//
         window.fetchPosts = fetchPosts;
         window.getState = store.getState;
-        //TESTING//
 
     }
     const root = document.getElementById("root");
     ReactDOM.render(<Root store={store} />, root);
-    // window.store = store;
-    // window.logout = logout;
 });

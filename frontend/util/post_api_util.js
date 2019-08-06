@@ -26,3 +26,9 @@ export const deletePost = (id) => {
         method: 'DELETE'
     })
 }
+
+// $.ajax({
+//     method: 'GET',
+//     url: `api/search/users${}`,
+//     data: 
+// })
