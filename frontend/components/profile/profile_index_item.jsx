@@ -4,17 +4,18 @@ class ProfileIndexItem extends React.Component {
     constructor(props) {
         super(props);
     }
-
+    // componentDidMount() {
+    //     this.props.fetchPost(this.props.post.id)
+    // }
 
     render() {
-
         return (
-            <div class="image-container">
+            <div className="image-container">
                 <a href="#/posts/1">
-                    <img class="user-page-photos" src=""></img>
-                    <div class="image-overlay">
-                        <p class="image-overlay-text">
-                            <span class="overlay-heart">♥</span>
+                    <img className="user-page-photos" src={this.props.photo_url}></img>
+                    <div className="image-overlay">
+                        <p className="image-overlay-text">
+                            {/* <span className="overlay-heart">♥</span> */}
                         </p>
                     </div>
                 </a>
