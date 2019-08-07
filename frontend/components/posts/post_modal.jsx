@@ -18,7 +18,6 @@ class PostModal extends React.Component {
     }
 
     render() {
-        // debugger;
         if (!this.props.post) {
             return <span>No post(yet)!</span>
         }
