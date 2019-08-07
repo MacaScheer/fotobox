@@ -12,7 +12,7 @@ class PostIndexItem extends React.Component {
             <li className="feed-image-box">
                 <div className="feed-image-header">
                     <div className="feed-image-header-wrap">
-                        <a href="#/users/30">
+                        <a href="#/users/3">
                             <img className="feed-profile-pic" src="https://fotobox-seeds.s3-us-west-1.amazonaws.com/carozzi.jpg" />
                         </a>
                         <a className="profile-link" href='#/users/3'>dangatangg demo</a>

@@ -5,7 +5,8 @@ import ProfileIndexItem from './profile_index_item';
 class Profile extends React.Component {
     constructor(props) {
         super(props);
-        this.handleClick = this.handleClick.bind(this)
+        this.userPosts = this.props.userPosts
+        // this.handleClick = this.handleClick.bind(this)
     }
     //how do we have the specific user' slice of state??
     //fetch only the user's posts
@@ -14,8 +15,7 @@ class Profile extends React.Component {
         this.props.fetchUser(this.props.match.params.userId)
     }
     render() {
-        let posts = this.props.posts;
-        posts = posts.map((post, i) => (
+        let userPosts = this.userPosts.map((post, i) => (
             <li>
                 <ProfileIndexItem
                     title={post.title}
@@ -52,7 +52,7 @@ class Profile extends React.Component {
                         </div>
                     </div>
                     <div className="profile-photo-index-container">
-                        <ul className="profile-photo-index">{posts}</ul>
+                        <ul className="profile-photo-index">{userPosts}</ul>
                     </div>
                 </div>
                 <div className="profile-right"></div>
