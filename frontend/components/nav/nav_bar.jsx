@@ -1,12 +1,16 @@
 import React from 'react';
 import { withRouter } from 'react-router';
-
+import { logout } from '../../actions/session_actions';
+import { Link } from 'react-router-dom';
 class NavBar extends React.Component {
     constructor(props) {
         super(props)
+        this.handleClick = this.handleClick.bind(this);
     };
-    componentDidMount() {
 
+    handleClick(e) {
+        e.preventDefault();
+        this.props.logout();
     }
     render() {
         return (
@@ -26,6 +30,7 @@ class NavBar extends React.Component {
                     <div className="nav-right">
                         <img className="box-icon" src="/assets/fotobox_icon.png" />
                         <img className="post-form-icon" src="/assets/rolleiflex.jpg" />
+                        <button className="logout" onClick={this.handleClick}>logout</button>
                     </div>
                 </section>
             </div>

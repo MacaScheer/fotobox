@@ -1,6 +1,7 @@
 import { connect } from 'react-redux';
 import { withRouter } from 'react-router';
 import NavBar from './nav_bar';
+import { logout } from '../../actions/session_actions';
 
 const mapStateToProps = (state) => {
     return {}
@@ -8,7 +9,8 @@ const mapStateToProps = (state) => {
 
 const mapDispatchToProps = (dispatch) => {
     return {
-        createPost: (post) => dispatch(createPost(post))
+        createPost: (post) => dispatch(createPost(post)),
+        logout: () => dispatch(logout())
 
     }
 }

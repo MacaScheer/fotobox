@@ -24,7 +24,8 @@ class SessionForm extends React.Component {
             this.setState({ [type]: e.currentTarget.value })
         };
     }
-    demo_user_handler() {
+    demo_user_handler(e) {
+        e.preventDefault();
         const demoUser = {
             username: "demo_user1",
             password: "123456",

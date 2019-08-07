@@ -1,4 +1,5 @@
 import * as ApiPost from '../util/post_api_util';
+import { RECEIVE_CURRENT_USER } from './session_actions';
 
 export const RECEIVE_POSTS = "RECEIVE_POSTS"
 export const RECEIVE_POST = "RECEIVE_POST"
@@ -20,6 +21,7 @@ const removePost = (postId) => ({
     type: REMOVE_POST,
     postId
 })
+
 
 export const fetchPosts = () => dispatch => {
     return ApiPost.fetchPosts().then(
@@ -44,3 +46,4 @@ export const createPost = (post) => dispatch => {
         post => dispatch(receivePost(post))
     )
 }
+
