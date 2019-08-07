@@ -6,7 +6,6 @@ import { withRouter } from 'react-router';
 const mapStateToProps = function (state, ownProps) {
     const postId = ownProps.match.params.postId;
     let post = state.posts[postId]
-    // debugger;
     if (post) {
         post = Object.assign(
             {},

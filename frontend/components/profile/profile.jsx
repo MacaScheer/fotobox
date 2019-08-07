@@ -5,7 +5,6 @@ import ProfileIndexItem from './profile_index_item';
 class Profile extends React.Component {
     constructor(props) {
         super(props);
-        debugger
         this.handleClick = this.handleClick.bind(this)
     }
     //how do we have the specific user' slice of state??
