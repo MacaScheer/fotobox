@@ -1,4 +1,4 @@
-import { signup, receiveResetErrors } from '../../actions/session_actions';
+import { login, signup, receiveResetErrors } from '../../actions/session_actions';
 import { connect } from 'react-redux';
 import React from 'react';
 

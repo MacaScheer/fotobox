@@ -3,12 +3,13 @@ class Api::PostsController < ApplicationController
     before_action :require_signed_in!
 
     def index
-        @posts = Post.all
+        @posts = Post.with_attached_photo
         render :index
     end
     
     def show
         @post = Post.find_by(params[:id])
+        render :show
     end
 
     def new

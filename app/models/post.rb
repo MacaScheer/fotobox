@@ -8,4 +8,8 @@ class Post < ApplicationRecord
     # has_many :comments
     # belongs_to :user
  
+    # def self.find_user_posts(user_id)
+    #     posts = Post.where(user_id: user_id)
+    #     posts
+    # end
 end
