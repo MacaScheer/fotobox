@@ -1,17 +1,12 @@
 import React from 'react';
 import { withRouter } from 'react-router';
-import { logout } from '../../actions/session_actions';
 import { Link } from 'react-router-dom';
 class NavBar extends React.Component {
     constructor(props) {
         super(props)
-        this.handleClick = this.handleClick.bind(this);
+        this.currentUser = this.props.currentUser;
     };
 
-    handleClick(e) {
-        e.preventDefault();
-        this.props.logout();
-    }
     render() {
         return (
             <div className="page">
@@ -28,9 +23,10 @@ class NavBar extends React.Component {
                     </div>
 
                     <div className="nav-right">
-                        <img className="box-icon" src="/assets/fotobox_icon.png" />
+                        <Link className="nav-icon" to={`/users/${this.currentUser.id}`}>
+                            <img className="box-icon" src="/assets/fotobox_icon.png" />
+                        </Link>
                         <img className="post-form-icon" src="/assets/rolleiflex.jpg" />
-                        <button className="logout" onClick={this.handleClick}>logout</button>
                     </div>
                 </section>
             </div>

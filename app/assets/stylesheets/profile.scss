@@ -24,12 +24,17 @@
             align-items: center;
             margin-bottom: 50px;
         
-            .profile-display-pic {
-                border: 1px solid #dbdbdb;
-                background-color: darkgrey;
-                border-radius: 70px;
-                width: 125px;
-                height: 125px;
+            .profile-display-pic-holder {
+                
+                
+                .profile-display-pic {
+                    object-fit: cover;
+                    border: 1px solid #dbdbdb;
+                    background-color: darkgrey;
+                    border-radius: 90px;
+                    width: 155px;
+                    height: 155px;
+                }
             }
 
             .profile-top-right {
@@ -92,6 +97,13 @@
                 }
                 .image-container {
                     position: relative;
+                    .user-page-photos {
+                        object-fit: cover;
+                        z-index: 1;
+                        width: 250px;
+                        height: 250px;
+                        margin: 20px;
+                    }
                 }
             }
         }

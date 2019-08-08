@@ -90,17 +90,16 @@ titles = [
         "Disco and Atomic War (Disko ja tuumasõda)",
         "Devil Inside, The"
 ]
-
+Post.destroy_all
 User.destroy_all
-demo_user = User.create(username: "demo_user1", email: "demo@demouser.com", password: "123456")
-# flygod = User.find_by(username: 'flygod')
+demo_user = User.create!(username: "demo_user", email: "demo@demouser.com", password: "123456")
 i = 1
 until photos.empty?
         photo = photos.shift
         post = Post.create!(title: titles.shift, location: locc.shift, user_id: demo_user.id)
         file = open("https://fotobox-seeds.s3-us-west-1.amazonaws.com/#{photo}")
         post.photo.attach(io: file, filename: photo)
-        i+=1
+        i += 1
 end
 
 

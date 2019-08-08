@@ -7,6 +7,7 @@ class PostIndex extends React.Component {
         super(props)
     };
     componentDidMount() {
+        // debugger
         this.props.fetchPosts();
     }
     render() {
@@ -17,6 +18,7 @@ class PostIndex extends React.Component {
                 location={post.location}
                 photo_url={post.photo_url}
                 key={i}
+                user_id={post.user_id}
             />
 
         ))
