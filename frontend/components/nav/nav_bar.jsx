@@ -4,6 +4,8 @@ import { Link } from 'react-router-dom';
 class NavBar extends React.Component {
     constructor(props) {
         super(props)
+        debugger
+        this.currentUser = this.props.currentUser;
     };
 
     render() {
@@ -22,7 +24,7 @@ class NavBar extends React.Component {
                     </div>
 
                     <div className="nav-right">
-                        <Link className="nav-icon" to={`/users/${this.props.currentUser.id}`}>
+                        <Link className="nav-icon" to={`/users/${this.currentUser.id}`}>
                             <img className="box-icon" src="/assets/fotobox_icon.png" />
                         </Link>
                         <img className="post-form-icon" src="/assets/rolleiflex.jpg" />
