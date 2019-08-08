@@ -1,5 +1,5 @@
-
-import PostIndex from './post_index';
+import CreatePost from './create_post';
+// import PostIndex from './post_index';
 // import store from '..store/store';
 import { connect } from 'react-redux';
 

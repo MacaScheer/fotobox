@@ -14,9 +14,9 @@ class PostIndexItem extends React.Component {
                 <div className="feed-image-header">
                     <div className="feed-image-header-wrap">
                         {/* <Link to={`/users/${post.user_id}`}> */}
-                            <img className="feed-profile-pic" src="https://fotobox-seeds.s3-us-west-1.amazonaws.com/carozzi.jpg" />
+                        <img className="feed-profile-pic" src="https://fotobox-seeds.s3-us-west-1.amazonaws.com/carozzi.jpg" />
                         {/* </Link> */}
-                        <a className="profile-link" href={`/users/${this.props.user_id}`}>dangatangg demo</a>
+                        <Link className="profile-link" to={`/users/${this.props.user_id}`}>dangatangg demo</Link>
                     </div>
                     <div>
                         {/* <Link to={`/posts/${post.id}`}> */}
