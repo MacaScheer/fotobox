@@ -1,21 +1,27 @@
 import React from 'react';
 import { withRouter } from 'react-router';
 import ProfileIndexItem from './profile_index_item';
+import { logout } from '../../actions/session_actions';
+
 
 class Profile extends React.Component {
     constructor(props) {
         super(props);
-        this.userPosts = this.props.userPosts
+
+        // this.userPosts = this.props.userPosts
         // this.handleClick = this.handleClick.bind(this)
     }
-    //how do we have the specific user' slice of state??
-    //fetch only the user's posts
     componentDidMount() {
         this.props.fetchPosts();
         this.props.fetchUser(this.props.match.params.userId)
     }
+
+    handleClick(e) {
+        e.preventDefault();
+        logout();
+    }
     render() {
-        let userPosts = this.userPosts.map((post, i) => (
+        let userPosts = this.props.userPosts.map((post, i) => (
             <li>
                 <ProfileIndexItem
                     title={post.title}
@@ -32,13 +38,13 @@ class Profile extends React.Component {
                 <div className="profile-container">
                     <div className="profile-top">
                         <div className="profile-display-pic">
-                            {/* <img src=""/> */}
+                            <img src={this.props.profileUser.profile_picture} />
                         </div>
                         <div className="profile-top-right">
                             <div className="profile-top-up">
                                 <h1 className="username-header">{this.props.username}</h1>
                                 <div className="profile-top-buttons">
-                                    <button className="profile-button">Log Out</button>
+                                    <button className="profile-button" onClick={this.handleClick}>Log Out</button>
                                     <button className="profile-button">Edit Profile</button>
                                     <button className="profile-button">Add Photo</button>
                                 </div>
