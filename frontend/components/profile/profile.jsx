@@ -9,7 +9,7 @@ class Profile extends React.Component {
         super(props);
 
         // this.userPosts = this.props.userPosts
-        // this.handleClick = this.handleClick.bind(this)
+        this.handleClick = this.handleClick.bind(this)
     }
     componentDidMount() {
         this.props.fetchPosts();
@@ -18,7 +18,7 @@ class Profile extends React.Component {
 
     handleClick(e) {
         e.preventDefault();
-        logout();
+        this.props.logout();
     }
     render() {
         let userPosts = this.props.userPosts.map((post, i) => (
@@ -37,8 +37,8 @@ class Profile extends React.Component {
                 <div className="profile-left"></div>
                 <div className="profile-container">
                     <div className="profile-top">
-                        <div className="profile-display-pic">
-                            <img src={this.props.profileUser.profile_picture} />
+                        <div className="profile-display-pic-holder">
+                            <img className="profile-display-pic" src={this.props.profile_picture} />
                         </div>
                         <div className="profile-top-right">
                             <div className="profile-top-up">

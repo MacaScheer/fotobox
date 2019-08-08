@@ -11,7 +11,7 @@ class ProfileIndexItem extends React.Component {
     render() {
         return (
             <div className="image-container">
-                <a href="#/posts/1">
+                <a href={'FIX ME'}>
                     <img className="user-page-photos" src={this.props.photo_url}></img>
                     <div className="image-overlay">
                         <p className="image-overlay-text">
