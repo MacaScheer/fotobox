@@ -8,7 +8,7 @@ class Api::PostsController < ApplicationController
     end
     
     def show
-        @post = Post.find_by(params[:id])
+        @post = Post.find(params[:id])
         render :show
     end
 
@@ -32,6 +32,6 @@ class Api::PostsController < ApplicationController
 
     private
     def post_params
-        params.require(:post).permit(:title, :location)
+        params.require(:post).permit(:title, :location, :photo_url)
     end
 end

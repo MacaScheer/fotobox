@@ -1,21 +1,27 @@
 import React from 'react';
 import { withRouter } from 'react-router';
 import ProfileIndexItem from './profile_index_item';
+import { logout } from '../../actions/session_actions';
+
 
 class Profile extends React.Component {
     constructor(props) {
         super(props);
+
+        // this.userPosts = this.props.userPosts
         this.handleClick = this.handleClick.bind(this)
     }
-    //how do we have the specific user' slice of state??
-    //fetch only the user's posts
     componentDidMount() {
         this.props.fetchPosts();
         this.props.fetchUser(this.props.match.params.userId)
     }
+
+    handleClick(e) {
+        e.preventDefault();
+        this.props.logout();
+    }
     render() {
-        let posts = this.props.posts;
-        posts = posts.map((post, i) => (
+        let userPosts = this.props.userPosts.map((post, i) => (
             <li>
                 <ProfileIndexItem
                     title={post.title}
@@ -31,14 +37,14 @@ class Profile extends React.Component {
                 <div className="profile-left"></div>
                 <div className="profile-container">
                     <div className="profile-top">
-                        <div className="profile-display-pic">
-                            {/* <img src=""/> */}
+                        <div className="profile-display-pic-holder">
+                            <img className="profile-display-pic" src={this.props.profile_picture} />
                         </div>
                         <div className="profile-top-right">
                             <div className="profile-top-up">
                                 <h1 className="username-header">{this.props.username}</h1>
                                 <div className="profile-top-buttons">
-                                    <button className="profile-button">Log Out</button>
+                                    <button className="profile-button" onClick={this.handleClick}>Log Out</button>
                                     <button className="profile-button">Edit Profile</button>
                                     <button className="profile-button">Add Photo</button>
                                 </div>
@@ -52,7 +58,7 @@ class Profile extends React.Component {
                         </div>
                     </div>
                     <div className="profile-photo-index-container">
-                        <ul className="profile-photo-index">{posts}</ul>
+                        <ul className="profile-photo-index">{userPosts}</ul>
                     </div>
                 </div>
                 <div className="profile-right"></div>

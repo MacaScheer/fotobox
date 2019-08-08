@@ -1,11 +1,14 @@
-
-import PostIndex from './post_index';
+import CreatePost from './create_post';
+// import PostIndex from './post_index';
 // import store from '..store/store';
 import { connect } from 'react-redux';
 
 
 const mapStateToProps = (state) => {
-    return { posts: state.posts }
+    return {
+        currentUser : state.entities.users[state.session.id],
+        photo: "", title: "", location: ""
+    }
 }
 
 const mapDispatchToProps = (dispatch) => {
