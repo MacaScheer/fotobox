@@ -17,8 +17,11 @@ class Api::PostsController < ApplicationController
     end
 
     def create
+        # debugger
         @post = Post.new(post_params)
         @post.user_id = current_user.id
+        @post.photo_url = post_params.photo_url
+        @post.title = post_params.title
         if @post.save
             render json: @post
         else
@@ -28,6 +31,12 @@ class Api::PostsController < ApplicationController
 
     def edit
         @post = Post.find(params[:id]) 
+    end
+
+    def destroy
+        post = Post.find(params[:id])
+        post.destroy
+        render :index
     end
 
     private
