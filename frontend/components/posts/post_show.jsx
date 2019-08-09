@@ -30,7 +30,7 @@ class PostShow extends React.Component {
                     <div className="post-show-container">
                         <div className="post-box">
                             <div className="post-show-image">
-                                <img src={post.photo_url} />
+                                <img className="post-show-image" src={post.photo_url} />
                             </div>
                             <div className="post-show-detail-box">
                                 <div className="post-author">
