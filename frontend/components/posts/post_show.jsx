@@ -6,7 +6,7 @@ class PostShow extends React.Component {
     constructor(props) {
         super(props)
         // debugger
-        // this.deletePost = this.deletePost.bind(this)
+        this.handleDelete = this.handleDelete.bind(this)
     };
     componentDidMount() {
         // debugger
@@ -56,7 +56,7 @@ class PostShow extends React.Component {
                                                 </div>
                                             </div>
                                         </div>
-                                        <div className="show-like-count">12 likes</div>
+                                        <div className="show-like-count">18 likes</div>
                                     </div>
                                     <div className="show-comment-container">
                                         <form className="show-comment-form">

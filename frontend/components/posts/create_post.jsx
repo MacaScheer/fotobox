@@ -8,7 +8,8 @@ class CreatePost extends React.Component {
             title: this.props.title,
             photo: this.props.photo,
             location: this.props.location,
-            photoFile: false
+            photoFile: false,
+            photoUrl: "https://fotobox-seeds.s3-us-west-1.amazonaws.com/image_assets/lightbox_favicon.svg"
         }
         this.handleFile = this.handleFile.bind(this)
         this.handleSubmit = this.handleSubmit.bind(this)
@@ -33,7 +34,7 @@ class CreatePost extends React.Component {
         formData.append('post[title]', this.state.title);
         if (this.state.photoFile) {
 
-            formData.append('post[photo]', this.state.photoFile);
+            formData.append('post[photo_url]', this.state.photoFile);
             formData.append('post[title]', this.state.title);
             formData.append('post[location]', this.state.location);
         }
@@ -46,7 +47,7 @@ class CreatePost extends React.Component {
         });
     }
 
-    handleUpdate([field]) {
+    handleUpdate(field) {
         return e => {
             this.setState({ [field]: e.target.value })
         }
@@ -58,7 +59,7 @@ class CreatePost extends React.Component {
                 <div className="upload-form-div">
                     <div className="preview-div">
                         <div className="preview-outline">
-                            <img className="scanner-icon" src="https://fotobox-seeds.s3-us-west-1.amazonaws.com/image_assets/lightbox_favicon.svg" />
+                            <img className="scanner-icon" src={this.state.photoUrl} />
                         </div>
                     </div>
                 </div>
