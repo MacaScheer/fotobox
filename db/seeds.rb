@@ -102,6 +102,9 @@ until photos.empty?
         i += 1
 end
 
+prof = open("https://fotobox-seeds.s3-us-west-1.amazonaws.com/Ed_and_Cat.JPG")
+demo_user.profile_picture.attach(io: prof, filename: "Ed_and_Cat.JPG")
+
 
 
 
