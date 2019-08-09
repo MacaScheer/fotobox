@@ -73,8 +73,8 @@ class SessionForm extends React.Component {
                 <div className="login-page-container">
                     <div className="login-page-left">
                         <div className="login-left-image-container">
-                            <img className="login-left-image" src="https://www.instagram.com/static/images/homepage/home-phones@2x.png/9364675fb26a.png" />
-                            <img className="login-left-image-inner" src="https://www.instagram.com/static/images/homepage/screenshot1.jpg/d6bf0c928b5a.jpg" />
+                            <img className="login-left-image" src="https://fotobox-seeds.s3-us-west-1.amazonaws.com/image_assets/login-form-phones.png" />
+                            <img className="login-left-image-inner" src="https://fotobox-seeds.s3-us-west-1.amazonaws.com/image_assets/d6bf0c928b5a.jpg" />
                         </div>
                     </div>
                     <div className="login-page-right">

@@ -13,7 +13,7 @@ class NavBar extends React.Component {
                 <section className="nav-bar-container">
                     <div className="nav-left">
                         <a className="nav-icon" href="#/">
-                            <img className="lightmeter" src="/assets/lightmeter.png" />
+                            <img className="lightmeter" src="https://fotobox-seeds.s3-us-west-1.amazonaws.com/image_assets/lightmeter.png" />
                             <div className="nav-link-logo">Fotobox</div>
                         </a>
                     </div>
@@ -24,9 +24,11 @@ class NavBar extends React.Component {
 
                     <div className="nav-right">
                         <Link className="nav-icon" to={`/users/${this.currentUser.id}`}>
-                            <img className="box-icon" src="/assets/fotobox_icon.png" />
+                            <img className="box-icon" src="https://fotobox-seeds.s3-us-west-1.amazonaws.com/image_assets/fotobox_icon.png" />
                         </Link>
-                        <img className="post-form-icon" src="/assets/rolleiflex.jpg" />
+                        <Link className="nav-icon" to={'/posts'}>
+                            <img className="post-form-icon" src="https://fotobox-seeds.s3-us-west-1.amazonaws.com/image_assets/rolleiflex.jpg" />
+                        </Link>
                     </div>
                 </section>
             </div>
@@ -36,29 +38,3 @@ class NavBar extends React.Component {
 
 
 export default withRouter(NavBar);
-
-
-
-// import React from "react";
-// import GreetingContainer from "../sessions/greeting/GreetingContainer";
-// import SearchBarContainer from "../search/SearchBarContainer";
-
-// const navbar = () => (
-//     <div className="toolbar">
-//         <nav className="toolbar__navigation">
-//             <div />
-//             <div className="toolbar__logo">
-//                 <a href="/">
-//                     <img src={window.logo} className="logo" />
-//                 </a>
-//             </div>
-//             <SearchBarContainer />
-//             <div className="spacer" />
-//             <div className="toolbar-navigation-items">
-//                 <GreetingContainer />
-//             </div>
-//         </nav>
-//     </div>
-// );
-
-// export default navbar;

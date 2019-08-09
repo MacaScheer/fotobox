@@ -1,6 +1,7 @@
 import React from 'react';
 import { withRouter } from 'react-router';
 import { Link } from 'react-router-dom'
+
 class PostIndexItem extends React.Component {
     constructor(props) {
         super(props);
@@ -19,10 +20,10 @@ class PostIndexItem extends React.Component {
                         <Link className="profile-link" to={`/users/${this.props.user_id}`}>dangatangg demo</Link>
                     </div>
                     <div>
-                        {/* <Link to={`/posts/${post.id}`}> */}
-                        <img className="feed-image" src={this.props.photo_url} />
+                        <Link to={`/posts/${this.props.id}`} >
+                            <img className="feed-image" src={this.props.photo_url} />
+                        </Link>
                         <span>{this.props.title}</span>
-                        {/* </Link> */}
                     </div>
                 </div>
             </li >
