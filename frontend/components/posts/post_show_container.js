@@ -4,7 +4,6 @@ import { fetchPost, deletePost } from '../../actions/post_actions';
 import { withRouter } from 'react-router';
 
 const mapStateToProps = function (state, ownProps) {
-    // debugger
     const postId = ownProps.match.params.postId;
     const userId = ownProps.match.params.user_id;
     let post = state.entities.posts[postId]

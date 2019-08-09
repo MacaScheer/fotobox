@@ -47,7 +47,7 @@ class Profile extends React.Component {
                                 <div className="profile-top-buttons">
                                     <button className="profile-button" onClick={this.handleClick}>Log Out</button>
                                     <button className="profile-button">Edit Profile</button>
-                                    <Link to={'/posts'}>
+                                    <Link to={`/newpost/${this.props.currentUser.id}`}>
                                         <button className="profile-button">Add Photo</button>
                                     </Link>
                                 </div>
