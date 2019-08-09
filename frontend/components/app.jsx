@@ -11,7 +11,7 @@ import CreatePostContainer from './posts/create_post_container';
 const App = () => (
     <div>
         <ProtectedRoute path="/posts/:postId" component={PostShowContainer} />
-        <ProtectedRoute exact path="/posts" component={CreatePostContainer} />
+        <ProtectedRoute exact path="/newpost/:userId" component={CreatePostContainer} />
         <ProtectedRoute path="/users/:userId" component={ProfileContainer} />
         <ProtectedRoute path="/" component={NavBarContainer} />
         <AuthRoute path="/login" component={LoginFormContainer} />

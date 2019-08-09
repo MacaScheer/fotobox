@@ -17,13 +17,12 @@ class Api::PostsController < ApplicationController
     end
 
     def create
-        # debugger
         @post = Post.new(post_params)
         @post.user_id = current_user.id
-        @post.photo_url = post_params.photo_url
-        @post.title = post_params.title
+        # @post.photo_url = post_params.photo_url
+        # @post.title = post_params.title
         if @post.save
-            render json: @post
+            render :show
         else
             render json: @post.errors.full_messages, status: :unprocessable_entity
         end
@@ -41,6 +40,6 @@ class Api::PostsController < ApplicationController
 
     private
     def post_params
-        params.require(:post).permit(:title, :location, :photo_url)
+        params.require(:post).permit(:title, :location, :photo)
     end
 end

@@ -1,10 +1,11 @@
 import CreatePost from './create_post';
 import { connect } from 'react-redux';
-import { receiveResetErrors } from '../../actions/session_actions';
+import { fetchUser } from '../../actions/user_actions';
+// import { receiveResetErrors } from '../../actions/session_actions';
 
 const mapStateToProps = (state) => {
     return {
-        errors: state.errors.session,
+        // errors: state.errors.session,
         currentUser: state.entities.users[state.session.id],
         photo: "", title: "", location: ""
     }
@@ -13,7 +14,8 @@ const mapStateToProps = (state) => {
 const mapDispatchToProps = (dispatch) => {
     return {
         createPost: (post) => dispatch(createPost(post)),
-        clearErrors: () => dispatch(receiveResetErrors())
+        fetchUser: (id) => dispatch(fetchUser(id))
+        // clearErrors: () => dispatch(receiveResetErrors())
     }
 }
 

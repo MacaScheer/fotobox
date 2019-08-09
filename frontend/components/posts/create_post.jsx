@@ -3,17 +3,17 @@ import { withRouter } from 'react-router';
 class CreatePost extends React.Component {
     constructor(props) {
         super(props);
-        // debugger
         this.state = {
-            title: this.props.title,
-            photo: this.props.photo,
-            location: this.props.location,
+            title: "",
+            photo: "",
+            location: "",
             photoFile: false,
             photoUrl: "https://fotobox-seeds.s3-us-west-1.amazonaws.com/image_assets/lightbox_favicon.svg"
         }
         this.handleFile = this.handleFile.bind(this)
         this.handleSubmit = this.handleSubmit.bind(this)
         this.handleUpdate = this.handleUpdate.bind(this)
+        this.handleCancel = this.handleCancel.bind(this)
 
     }
     handleFile(e) {
@@ -34,7 +34,7 @@ class CreatePost extends React.Component {
         formData.append('post[title]', this.state.title);
         if (this.state.photoFile) {
 
-            formData.append('post[photo_url]', this.state.photoFile);
+            formData.append('post[photo]', this.state.photoFile);
             formData.append('post[title]', this.state.title);
             formData.append('post[location]', this.state.location);
         }
@@ -44,13 +44,22 @@ class CreatePost extends React.Component {
             data: formData,
             contentType: false,
             processData: false
+        }).then(() => {
+            this.props.history.push(`/users/${this.props.currentUser.id}`)
         });
+    }
+    handleCancel(e) {
+        e.preventDefault();
+        this.props.history.push(`/users/${this.props.currentUser.id}`);
     }
 
     handleUpdate(field) {
         return e => {
             this.setState({ [field]: e.target.value })
         }
+    }
+    componentDidMount() {
+        this.props.fetchUser(this.props.match.params.userId)
     }
 
     render() {
@@ -79,12 +88,12 @@ class CreatePost extends React.Component {
                             </textarea>
                         </label>
                         <label>Location
-                                <input className="location-input-field" onChange={this.handleUpdate('location')} type="text" value={this.state.location} />
+                                <input className="location-input-field" onChange={this.handleUpdate('location')} type="text" placeholder="Add a location" value={this.state.location} />
                         </label>
                     </div>
                     <div className="post-right-bottom">
                         <div className="post-form-buttons">
-                            <button className="post-button-cancel">Cancel</button>
+                            <button className="post-button-cancel" onClick={this.handleCancel}>Cancel</button>
                             <input className="post-button-upload" type="submit" value="Upload Post" />
                         </div>
                     </div>
