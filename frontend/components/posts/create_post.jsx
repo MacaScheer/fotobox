@@ -51,16 +51,6 @@ class CreatePost extends React.Component {
             this.setState({ [field]: e.target.value })
         }
     }
-    // errors() {
-    //     if (this.props.errors.responseJSON) {
-    //         return (<ul>
-    //             {this.props.errors.responseJSON.map((error, i) => (<li key={i}>{error}</li>))}
-    //         </ul>)
-    //     }
-    // }
-    // componentDidMount() {
-    //     this.props.clearErrors();
-    // }
 
     render() {
         return (
