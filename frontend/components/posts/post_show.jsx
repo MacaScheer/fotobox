@@ -25,8 +25,8 @@ class PostShow extends React.Component {
         let { post } = this.props;
 
         return (
-            <div className="post-show-container">
-                <div className="post-show-page">
+            <div className="post-show-wrapper">
+                <section className="post-show-page">
                     <div className="post-show-container">
                         <div className="post-box">
                             <div className="post-show-image">
@@ -42,12 +42,33 @@ class PostShow extends React.Component {
 
                                     </div>
                                 </div>
-                                <div className="post-comments"></div>
-                                <div className="post-likes"></div>
+                                <div className="post-show-comments">
+
+                                </div>
+                                <div className="post-show-likes">
+                                    <div className="likes-div">
+                                        <div className="show-buttons">
+                                            <div className="like-button-div">
+                                                <div className="like-button">
+                                                    <div className="like-button-liked">
+                                                        <span>♥</span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div className="show-like-count">12 likes</div>
+                                    </div>
+                                    <div className="show-comment-container">
+                                        <form className="show-comment-form">
+                                            <textarea className="show-textarea" placeholder="Add a Comment:"></textarea>
+                                            <button className="submit-comment-button">Post</button>
+                                        </form>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>
-                </div>
+                </section>
             </div>
         )
     }

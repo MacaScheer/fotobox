@@ -1,5 +1,6 @@
 import React from 'react';
 import { withRouter } from 'react-router';
+import { Link } from 'react-router-dom';
 class ProfileIndexItem extends React.Component {
     constructor(props) {
         super(props);
@@ -11,15 +12,15 @@ class ProfileIndexItem extends React.Component {
     render() {
         return (
             <div className="image-container">
-                <a href={'FIX ME'}>
+                <Link to={`/posts/${this.props.id}`}>
                     <img className="user-page-photos" src={this.props.photo_url}></img>
                     <div className="image-overlay">
                         <p className="image-overlay-text">
                             {/* <span className="overlay-heart">♥</span> */}
                         </p>
                     </div>
-                </a>
-            </div>
+                </Link>
+            </div >
         )
     }
 }

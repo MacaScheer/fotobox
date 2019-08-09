@@ -15,6 +15,7 @@ class PostIndex extends React.Component {
         posts = posts.map((post, i) => (
             <PostIndexItem
                 title={post.title}
+                id={post.id}
                 location={post.location}
                 photo_url={post.photo_url}
                 key={i}

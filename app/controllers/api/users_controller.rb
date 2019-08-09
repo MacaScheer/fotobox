@@ -6,6 +6,8 @@ class Api::UsersController < ApplicationController
 
     def create
         @user = User.new(user_params)
+        @user.photo.attach(io: open("https://fotobox-seeds.s3-us-west-1.amazonaws.com/image_assets/lightbox_favicon.svg"), filename: "lightbox_favicon.svg" )
+        @user.bio = ""
         if @user.save
             signin(@user)
             render :show

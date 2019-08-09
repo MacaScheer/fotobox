@@ -53,58 +53,40 @@ class CreatePost extends React.Component {
 
     render() {
         return (
-            <form onSubmit={this.handleSubmit}>
-                <input className="photo-input-field" id="file-selector" type="file" onChange={this.handleFile} />
-                <input onChange={this.handleUpdate("title")} type="text" value={this.state.title} />
-                <input onChange={this.handleUpdate("location")} type="text" value={this.state.location} />
+            <form className="new-post-form" onSubmit={this.handleSubmit}>
+                <div className="upload-form-div">
+                    <div className="preview-div">
+                        <div className="preview-outline">
+                            <img className="scanner-icon" src="https://fotobox-seeds.s3-us-west-1.amazonaws.com/image_assets/lightbox_favicon.svg" />
+                        </div>
+                    </div>
+                </div>
+                <div className="post-form-right">
+                    <div className="post-right-top">
+                        <div className="post-form-user">{this.props.currentUser.username}</div>
+                    </div>
+                    <div className="post-right-mid">
+                        <label className="upload-photo">
+                            <div>
+                                <input className="photo-input-field" id="file-selector" type="file" onChange={this.handleFile} />
+                            </div>
+                        </label>
+                        <label className="upload-content">
+                            <textarea className="post-form-title" onChange={this.handleUpdate("title")} type="text" placeholder="Give your post a title or caption" value={this.state.title}>
+                            </textarea>
+                        </label>
+                        {/* <label>Location
+                                <input className="location-input-field" onChange={this.handleUpdate("location")} type="text" value={this.state.location} />
+                        </label> */}
+                    </div>
+                    <div className="post-right-bottom">
+                        <div className="post-form-buttons">
+                            <button className="post-button-cancel">Cancel</button>
+                            <input className="post-button-upload" type="submit" value="Upload Post" />
+                        </div>
+                    </div>
+                </div>
             </form>
-
-            // <div className="new-post-container">
-            //     <div className="new-post-form">
-            //         <h3 className="new-post-title">Create A Post</h3>
-
-            //         <form onSubmit={this.handleSubmit}>
-            //             <label className="post-field">Description</label>
-            //             <input
-            //                 type="text"
-            //                 value={description}
-            //                 onChange={this.update('description')}
-            //                 className="post-field"
-            //             />
-
-            //             <label className="post-field">Title</label>
-            //             <input
-            //                 value={title}
-            //                 onChange={this.update('title')}
-            //                 className="post-field"
-            //             />
-
-            //             <label className="post-field">Location</label>
-            //             <input
-            //                 type="text"
-            //                 disabled
-            //                 value={location}
-            //                 className="post-field"
-            //             />
-
-            //             <div className="button-holder">
-            //                 <h3>Image preview </h3>
-            //                 {preview}
-            //                 <h3 className="button-holder">Add a Picture</h3>
-            //                 <input type="file" className="new-post-button"
-            //                     onChange={this.handleFile.bind(this)} />
-            //             </div>
-            //             <hr />
-            //             <div className="button-holder">
-            //                 <input
-            //                     type="submit"
-            //                     value="Create Post"
-            //                     className="new-post-button"
-            //                 />
-            //             </div>
-            //         </form>
-            //     </div>
-            // </div>
         )
     }
 }

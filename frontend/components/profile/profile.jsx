@@ -1,7 +1,7 @@
 import React from 'react';
 import { withRouter } from 'react-router';
 import ProfileIndexItem from './profile_index_item';
-import { logout } from '../../actions/session_actions';
+import { Link } from 'react-router-dom';
 
 
 class Profile extends React.Component {
@@ -25,6 +25,7 @@ class Profile extends React.Component {
             <li>
                 <ProfileIndexItem
                     title={post.title}
+                    id={post.id}
                     location={post.location}
                     photo_url={post.photo_url}
                     key={i}
@@ -46,7 +47,9 @@ class Profile extends React.Component {
                                 <div className="profile-top-buttons">
                                     <button className="profile-button" onClick={this.handleClick}>Log Out</button>
                                     <button className="profile-button">Edit Profile</button>
-                                    <button className="profile-button">Add Photo</button>
+                                    <Link to={'/posts'}>
+                                        <button className="profile-button">Add Photo</button>
+                                    </Link>
                                 </div>
                             </div>
                             <div className="profile-top-down">
