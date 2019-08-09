@@ -1,8 +1,8 @@
 import { login, receiveResetErrors } from '../../actions/session_actions';
 import { connect } from 'react-redux';
+import { Link } from 'react-router-dom';
 import React from 'react';
 
-import { Link } from 'react-router-dom';
 
 import SessionForm from './session_form';
 
@@ -19,7 +19,7 @@ const mapDispatchToProps = (dispatch, ownProps) => (
     {
         processForm1: (user) => dispatch(login(user)),
         processForm: (user) => dispatch(login(user)),
-        clearErrors: () => dispatch(receiveResetErrors())
+        // clearErrors: () => dispatch(receiveResetErrors())
     }
 )
 

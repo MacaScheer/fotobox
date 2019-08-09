@@ -3,6 +3,7 @@ import { withRouter } from 'react-router';
 class CreatePost extends React.Component {
     constructor(props) {
         super(props);
+        // debugger
         this.state = {
             title: this.props.title,
             photo: this.props.photo,
@@ -50,6 +51,16 @@ class CreatePost extends React.Component {
             this.setState({ [field]: e.target.value })
         }
     }
+    // errors() {
+    //     if (this.props.errors.responseJSON) {
+    //         return (<ul>
+    //             {this.props.errors.responseJSON.map((error, i) => (<li key={i}>{error}</li>))}
+    //         </ul>)
+    //     }
+    // }
+    // componentDidMount() {
+    //     this.props.clearErrors();
+    // }
 
     render() {
         return (
@@ -62,8 +73,9 @@ class CreatePost extends React.Component {
                     </div>
                 </div>
                 <div className="post-form-right">
+                    {/* <ul className="login-errors">{this.errors()}</ul> */}
                     <div className="post-right-top">
-                        <div className="post-form-user">{this.props.currentUser.username}</div>
+                        {/* <h2 className="post-form-user">{this.props.currentUser.username}</h2> */}
                     </div>
                     <div className="post-right-mid">
                         <label className="upload-photo">
@@ -72,12 +84,12 @@ class CreatePost extends React.Component {
                             </div>
                         </label>
                         <label className="upload-content">
-                            <textarea className="post-form-title" onChange={this.handleUpdate("title")} type="text" placeholder="Give your post a title or caption" value={this.state.title}>
+                            <textarea className="title-input-field" onChange={this.handleUpdate('title')} type="text" placeholder="Give your post a title or caption" value={this.state.title}>
                             </textarea>
                         </label>
-                        {/* <label>Location
-                                <input className="location-input-field" onChange={this.handleUpdate("location")} type="text" value={this.state.location} />
-                        </label> */}
+                        <label>Location
+                                <input className="location-input-field" onChange={this.handleUpdate('location')} type="text" value={this.state.location} />
+                        </label>
                     </div>
                     <div className="post-right-bottom">
                         <div className="post-form-buttons">
