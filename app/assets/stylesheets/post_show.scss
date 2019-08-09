@@ -21,6 +21,7 @@
             border: 1px solid lightgrey;
 
             .post-show-image {
+                object-fit: contain;
                 width: 500px;
                 height: 500px;
             }
