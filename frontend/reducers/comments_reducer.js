@@ -1,26 +1,25 @@
 import {
-    // RECEIVE_POSTS,
-    // RECEIVE_POST,
-    // REMOVE_POST
-} from "../actions/post_actions";
+  RECEIVE_COMMENT,
+  RECEIVE_POST_COMMENTS,
+  REMOVE_COMMENT
+} from "../actions/comment_actions";
 import merge from "lodash/merge";
 
 const commentsReducer = (oldState = {}, action) => {
-    let newState = {};
-    Object.freeze(oldState);
-    switch (action.type) {
-        // case RECEIVE_POST:
-            newState = merge({}, oldState, { [action.post.id]: action.post });
-            return newState;
-        // case RECEIVE_POSTS:
-            return (newState = merge({}, oldState, action.posts));
-        // case REMOVE_POST:
-            newState = merge({}, oldState);
-            delete newState[action.postId];
-            return newState;
-        default:
-            return oldState;
-    }
+  let newState = {};
+  Object.freeze(oldState);
+  switch (action.type) {
+    case RECEIVE_COMMENT:
+      return merge({}, oldState, { [action.comment.id]: action.comment });
+    case RECEIVE_POST_COMMENTS:
+      return action.comments;
+    case REMOVE_COMMENT:
+      newState = merge({}, oldState);
+      delete newState[action.postId];
+      return newState;
+    default:
+      return oldState;
+  }
 };
 
 export default commentsReducer;
