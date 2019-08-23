@@ -1,5 +1,7 @@
 /.bundle
 
+slice_of_state.json.jbuilder
+/EXTRA_STUFF/
 # Ignore all logfiles and tempfiles.
 /log/*
 /tmp/*
@@ -18,6 +20,5 @@
 node_modules/
 bundle.js
 bundle.js.map
-slice_of_state.json.jbuilder
 # Ignore master key for decrypting credentials and more.
 /config/master.key
