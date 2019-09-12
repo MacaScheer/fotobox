@@ -1,6 +1,6 @@
-Fotobox 
+# Fotobox 
 
-live site: https://foto-box.herokuapp.com
+https://foto-box.herokuapp.com
 
 Fotobox is a photo-sharing social network inspired by Instagram. Fotobox users can post and share photographs uploaded directly from their local files. Users can follow other users to see their posts, updated in their "feed". Users can "like" and comment on other user's posts.
 
