@@ -40,8 +40,3 @@ Posts:
 Posts are stored in the database with a title, a location, a user_id, and timestamps. 
 When a user logs in, a request is made to fetch all of the posts made by the users, that the current user is following. 
 The user's session_token, and posts are stored in the posts' slice of state.
-
-Comments and Likes:
-
-
-Follows:
