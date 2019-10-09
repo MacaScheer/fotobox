@@ -2,10 +2,9 @@
 
 https://foto-box.herokuapp.com
 
-The application has a Ruby on Rails backend, a PostgreSQL database, and React with a Redux framework on the frontend.
-
 Fotobox is a photo-sharing social network inspired by Instagram. Fotobox users can post and share photographs uploaded directly from their local files. Users can follow other users to see their posts, updated in their "feed". Users can "like" and comment on other user's posts.
 
+The application has a Ruby on Rails backend, a PostgreSQL database, and React with a Redux framework on the frontend.
 
 <p align="center">
   <img width="460" height="300" src="https://fotobox-seeds.s3-us-west-1.amazonaws.com/Screen+Shot+2019-08-09+at+11.33.37+AM.png">
@@ -41,3 +40,8 @@ Posts:
 Posts are stored in the database with a title, a location, a user_id, and timestamps. 
 When a user logs in, a request is made to fetch all of the posts made by the users, that the current user is following. 
 The user's session_token, and posts are stored in the posts' slice of state.
+
+Comments and Likes:
+
+
+Follows:
