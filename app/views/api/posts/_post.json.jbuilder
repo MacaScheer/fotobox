@@ -7,4 +7,4 @@ json.photo_url url_for(post.photo)
 #         json.extract! post, :id, :title, :location
 #             json.photo_url url_for(post.photo)
 #     end
-end
+# end

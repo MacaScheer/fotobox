@@ -65,7 +65,9 @@ locc = [
         "Bromma",
         "Minbu",
         "San Jose",
-        "Philadelphia"
+        "Philadelphia",
+        "Montebello",
+        "City Heights",
 ]
 titles = [
         "Xtro 2: The Second Encounter",
@@ -95,7 +97,11 @@ titles = [
         "Something to Sing About",
         "Mother, The",
         "Disco and Atomic War (Disko ja tuumasõda)",
-        "Devil Inside, The"
+        "Devil Inside, The",
+        "La Jeteé, Chris Marker",
+        "Ride the Pink Horse, Robert Montgomery",
+        "Fat City, John Huston",
+        "Beware of a Holy Whore, Rainer Werner Fassbiner"
 ]
 Post.destroy_all
 User.destroy_all
@@ -103,7 +109,6 @@ demo_user = User.create!(username: "demo_user", email: "demo@demouser.com", pass
 until photos.empty?
         photo = photos.shift
         post = Post.create!(title: titles.shift, location: locc.shift, user_id: demo_user.id)
-        debugger
         file = open("https://fotobox-seeds.s3-us-west-1.amazonaws.com/#{photo}")
         post.photo.attach(io: file, filename: photo)
 end

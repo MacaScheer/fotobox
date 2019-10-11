@@ -1,6 +1,3 @@
-
-
-
 /*
  * This is a manifest file that'll be compiled into application.css, which will include all the files
  * listed below.
@@ -19,84 +16,82 @@
 
 /* Navbar  */
 
-.nav-bar-container{
-    /* align-content: center; */
-    background-color: white;
-    display: flex;
-    justify-content: space-around;
-    width: 100%;
-    height: 80px;
-    position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-    border-bottom: 1px solid lightgrey;
-    min-width: 815px;
-    z-index: 100;
+.nav-bar-container {
+  /* align-content: center; */
+  background-color: white;
+  display: flex;
+  justify-content: space-around;
+  width: 100%;
+  height: 80px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  border-bottom: 1px solid lightgrey;
+  min-width: 815px;
+  z-index: 100;
 }
 
 .fotobox-icon {
-    font-size: 32px;
-    align-content: center;
+  font-size: 32px;
+  align-content: center;
 }
 .lightmeter {
-    width: 50px;
-    height: 50px;
+  width: 50px;
+  height: 50px;
 }
 .post-form-icon {
-    margin-left: 30px;
-    width: 60px;
-    height: 70px;
+  margin-left: 30px;
+  width: 60px;
+  height: 70px;
 }
 .box-icon {
-    width: 50px;
-    height: 50px;
-    
+  width: 50px;
+  height: 50px;
 }
 .nav-link-logo {
-    position: relative;
-    justify-content: center;
-    font-family: 'Satisfy', cursive;
-    font-size: 28px;
-    margin-left: 20px;
-    margin-top: 5px;
+  position: relative;
+  justify-content: center;
+  font-family: "Satisfy", cursive;
+  font-size: 28px;
+  margin-left: 20px;
+  margin-top: 5px;
 }
-
 
 .nav-left {
-    width: 25%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    
+  width: 25%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 .nav-middle {
-    width: 50%;
-    display: flex;
-    justify-content: center;
-    flex-direction: column;
-    align-items: center;
+  width: 50%;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
 }
 .nav-icon {
-    display: flex;
+  display: flex;
+  color: black;
 }
 .nav-right {
-    width: 25%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+  width: 25%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 .user-search {
-    margin-top: 30px;
-    width: 40%;
-    min-width: 150px;
-    height: 30px;
-    /* display: flex; */
-    align-items: center;
-    text-align: center;
-    font-family: 'Roboto', sans-serif;
-    font-size: 14px;
-    border-radius: 3px;
-    background-color: #fafafa;
-    outline: none;
+  margin-top: 30px;
+  width: 40%;
+  min-width: 150px;
+  height: 30px;
+  /* display: flex; */
+  align-items: center;
+  text-align: center;
+  font-family: "Roboto", sans-serif;
+  font-size: 14px;
+  border-radius: 3px;
+  background-color: #fafafa;
+  outline: none;
 }

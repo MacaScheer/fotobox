@@ -5,9 +5,8 @@ class Api::PostsController < ApplicationController
     def index
         # debugger
         @posts = Post.with_attached_photo
-        debugger
-        # render :index
-        render json:@posts
+        render :index
+        # render json:@posts
     end
     
     def show
