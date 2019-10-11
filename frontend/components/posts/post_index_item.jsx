@@ -11,7 +11,7 @@ class PostIndexItem extends React.Component {
   }
 
   render() {
-    debugger;
+    // debugger;
     return (
       <li className="feed-image-box">
         <div className="feed-image-header">
