@@ -1,31 +1,38 @@
 require 'open-uri'
 
 photos = [ 
-        "12.png", 
-        "3.JPG", 
-        "4.PNG", 
-        "5.PNG", 
-        "7.jpg", 
-        "8.jpg", 
+        "westside_gunn.jpg",
+        "tj2.jpg",
+        "tj.jpg", 
         "Ed_and_Cat.JPG", 
-        "box1.jpg", 
-        "box_in_snow.jpg", 
-        "carlos-.jpg", 
-        "carozz.jpg", 
-        "carozzi.jpg", 
-        "coffin_with_corpse.jpg", 
-        "coldbox.jpg", 
-        "felipe.jpg", 
-        "hitlerwearshermes.jpg", 
-        "jacky-nollie-heel-indy-jpeck.jpg", 
-        "old-box-2.jpg", 
-        "oldassbox.jpeg", 
-        "oldbox.jpg", 
-        "quintero.jpg", 
-        "rf.jpeg", 
-        "shoebox.jpg", 
-        "somalia.png", 
-        "treasurechest.jpg"
+       "2.JPG",
+       "3.JPG",
+       "4.png",
+       "5.PNG",
+       "7.jpg",
+       "8.jpg",
+       "10.JPG",
+       "12.png",
+       "14.jpg",
+       "15.jpg",
+       "16.jpg",
+       "17.jpg",
+       "18.jpg",
+       "19.jpg",
+       "20.jpg",
+       "21.jpg",
+       "22.jpg",
+       "23.png",
+       "24.jpg",
+       "25.jpeg",
+       "26.jpg",
+       "27.jpg",
+       "28.jpg",
+       "29.jpg",
+       "30.jpg",
+       "31.jpeg",
+       "32.png",
+       "33.jpg"
 ]
 
 locc = [
@@ -93,13 +100,12 @@ titles = [
 Post.destroy_all
 User.destroy_all
 demo_user = User.create!(username: "demo_user", email: "demo@demouser.com", password: "123456")
-i = 1
 until photos.empty?
         photo = photos.shift
         post = Post.create!(title: titles.shift, location: locc.shift, user_id: demo_user.id)
+        debugger
         file = open("https://fotobox-seeds.s3-us-west-1.amazonaws.com/#{photo}")
         post.photo.attach(io: file, filename: photo)
-        i += 1
 end
 
 prof = open("https://fotobox-seeds.s3-us-west-1.amazonaws.com/Ed_and_Cat.JPG")
@@ -108,7 +114,7 @@ demo_user.profile_picture.attach(io: prof, filename: "Ed_and_Cat.JPG")
 
 
 
-
+# https://fotobox-seeds.s3-us-west-1.amazonaws.com/Ed_and_Cat.JPG
 
 # Aws.config.update({region:"us-west-1", credentials: Aws::Credentials.new(Rails.application.credentials.aws[:access_key_id], Rails.application.credentials.aws[:secret_access_key])})
 # for bucket policy:
@@ -116,3 +122,7 @@ demo_user.profile_picture.attach(io: prof, filename: "Ed_and_Cat.JPG")
 # userID
 # 663141238029
 
+       
+       
+# "1.HEIC", "9.HEIC","6.HEIC",
+# 
