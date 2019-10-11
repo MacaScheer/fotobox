@@ -39,12 +39,12 @@ export const createComment = comment => dipatch => (
 
 export const fetchPostComments = post_id => dispatch =>
   CommentAPI.fetchPostComments(post_id).then(comments => {
-    debugger;
+    // debugger;
     return dispatch(receivePostComments(comments));
   });
 
 export const deleteComment = id => dispatch =>
   CommentAPI.deleteComment(id).then(comment => {
-    debugger;
+    // debugger;
     return dispatch(removeComment(comment));
   });
