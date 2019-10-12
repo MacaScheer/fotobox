@@ -36,7 +36,8 @@ class CreatePost extends React.Component {
 
             formData.append('post[photo]', this.state.photoFile);
             formData.append('post[title]', this.state.title);
-            formData.append('post[location]', this.state.location);
+            formData.append('post[location]', this.state.location)
+            formData.append('post[user_id]', this.props.currentUser.id);
         }
         $.ajax({
             url: '/api/posts',

@@ -7,12 +7,15 @@ import { connect } from "react-redux";
 import { logout } from "../../actions/session_actions";
 
 const mapStateToProps = state => {
-  return { posts: Object.values(state.entities.posts) };
+    return {
+        posts: Object.values(state.entities.posts),
+        currentUser : state.entities.users[state.session.id]
+    };
 };
 
 const mapDispatchToProps = dispatch => {
   return {
-    fetchUser: id => dispatch(fetchUser(id)),
+    // fetchUser: id => dispatch(fetchUser(id)),
     fetchPosts: () => dispatch(fetchPosts()),
     logout: () => dispatch(logout())
   };

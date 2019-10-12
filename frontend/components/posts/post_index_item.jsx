@@ -6,12 +6,9 @@ class PostIndexItem extends React.Component {
   constructor(props) {
     super(props);
   }
-  componentDidMount() {
-    this.props.fetchUser(this.props.match.params.userId);
-  }
+  componentDidMount() {}
 
   render() {
-    // debugger;
     return (
       <li className="feed-image-box">
         <div className="feed-image-header">
@@ -19,11 +16,11 @@ class PostIndexItem extends React.Component {
             {/* <Link to={`/users/${post.user_id}`}> */}
             <img
               className="feed-profile-pic"
-              src={this.props.user.profile_picture}
+              src={this.props.authorPhotoUrl}
             />
             {/* </Link> */}
             <Link className="profile-link" to={`/users/${this.props.user_id}`}>
-              dangatangg demo
+              {this.props.author}
             </Link>
           </div>
           <div>
