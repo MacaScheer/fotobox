@@ -1,28 +1,37 @@
-import { connect } from 'react-redux';
-import PostShow from './post_show';
-import { fetchPost, deletePost } from '../../actions/post_actions';
-import { withRouter } from 'react-router';
+import { connect } from "react-redux";
+import PostShow from "./post_show";
+import { fetchPost, deletePost } from "../../actions/post_actions";
+import { createLike, deleteLike } from "../../actions/likes_actions";
 
-const mapStateToProps = function (state, ownProps) {
-    const postId = ownProps.match.params.postId;
-    const userId = ownProps.match.params.user_id;
-    let post = state.entities.posts[postId]
-    // if (post) {
-    //     post = Object.assign({}, post, { author: state.users[post.user_id] });
-    // }
+import { withRouter } from "react-router";
 
-    return {
-        postId: postId,
-        userId: userId,
-        post: post
-    };
+const mapStateToProps = function(state, ownProps) {
+  const postId = ownProps.match.params.postId;
+  const userId = ownProps.match.params.user_id;
+  let post = state.entities.posts[postId];
+  // if (post) {
+  //     post = Object.assign({}, post, { author: state.users[post.user_id] });
+  // }
+
+  return {
+    postId: postId,
+    userId: userId,
+    post: post
+  };
 };
 
-const mapDispatchToProps = function (dispatch) {
-    return {
-        deletePost: (postId) => dispatch(deletePost(postId)),
-        fetchPost: (postId) => dispatch(fetchPost(postId))
-    };
+const mapDispatchToProps = function(dispatch) {
+  return {
+    deletePost: postId => dispatch(deletePost(postId)),
+    fetchPost: postId => dispatch(fetchPost(postId)),
+    createLike: postId => dispatch(createLike(postId)),
+    deleteLike: postId => dispatch(deleteLike(postId))
+  };
 };
 
-export default withRouter(connect(mapStateToProps, mapDispatchToProps)(PostShow));
+export default withRouter(
+  connect(
+    mapStateToProps,
+    mapDispatchToProps
+  )(PostShow)
+);

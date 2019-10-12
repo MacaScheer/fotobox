@@ -1,0 +1,35 @@
+class Api::CommentsController < ApplicationController
+
+    before_action :require_signed_in!
+    
+    
+    def show
+        @comment = Comment.find_by(id: params[:id])
+    end
+
+    def index
+        @comments = Comment.all.where(post_id: params[:post_id]  )
+    end
+    def create
+        @comment = Coment.new(comment_params)
+        @comment.user_id = current_user.id
+            if @comment.save
+            render :show
+        else
+            render json: ["Comment cannot be blank"], status: 422
+        end
+    end
+
+    def destroy
+        @comment = Comment.find_by(id: params[:id])
+        if @comment && @comment.user_id == current_user.id
+            @comment.destroy
+            render :show
+        else
+            render json: ["Users can only delete their own comments"], status: 422
+        end
+
+    private
+    def comment_params
+        params.require(:comment).permit(:body, :post_id)
+    end
