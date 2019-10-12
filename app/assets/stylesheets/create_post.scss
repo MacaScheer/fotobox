@@ -1,121 +1,119 @@
 .new-post-form {
-    display: flex;
-    margin-left: 230px;
-    width: 450px;
-    height: 450px;
-    justify-content: space-between;
-    align-content: center;
+  display: flex;
+  margin-left: 230px;
+  width: 450px;
+  height: 450px;
+  justify-content: space-between;
+  align-content: center;
 
-    .upload-form-div {
-        margin-top: 100px;
-        width: 600px;
+  .upload-form-div {
+    margin-top: 100px;
+    width: 600px;
 
-        .preview-div {
-            width: 300px;
-            height: 300px;
-            border: 1px solid lightgrey;
-            border-radius: 15px;
+    .preview-div {
+      width: 400px;
+      height: 300px;
+      border: 1px solid lightgrey;
+      border-radius: 15px;
+      //   padding: 35px;
+      //   padding-left:50px;
+        // padding-bottom:20px;
+        align-content:center;
 
-            .preview-outline {
-                display: flex;
-                justify-content: space-around;
-                align-content: center;
-                // align-items: flex-start;
-                // flex-direction: column;
-                height: 300px;
-                width: 300px;
-                margin: 25px;
-                border-radius: 5px;
-                // background-color: rgba(218,218,218,0.495);
-                font-size: 120px;
-
-                .scanner-icon {
-                   justify-content: center;
-                    margin-bottom: 35px;
-                    width: 80%;
-                    height: auto;
-                }
-            }
-
-        }
-    }
-    .post-form-right {
-        margin-top: 100px;
-        height: 300px;
-        width: 300px;
-        display: flex;
+      .preview-outline {
         justify-content: space-around;
-        flex-direction: column;
-        align-items: center;
-        border: 1px solid lightgray;
-        border-radius: 15px;
+        align-content: center;
+        height: 300px;
+        width: 400px;
+        // margin: 25px;
+        border-radius: 5px;
+        // background-color: rgba(218,218,218,0.495);
+        font-size: 120px;
 
-        .post-right-top {
-            // margin-bottom: 250px;
-            // align-items: baseline;
-            background-color: forestgreen;
-            border-radius: 15px 15px 10px 10px;
-                width: 300px;
-                // height:60px;
-        
+        .scanner-icon {
+          object-fit: contain;
+          justify-content: space-around;
+          margin-left: 70px;
+          margin-top:30px;
+          width: 60%;
+          height: auto;
+          // padding:2px;
         }
-        .post-right-mid {
-            display: flex;
-            justify-content: space-around;
-            flex-direction: column;
-            align-items: center;
-            width: 300px;
-            font-weight: bolder;
-            
-            .title-input-field {
-                height: 75px;
-                max-height: 75px;
-                max-width: 250px;
-                width: 250px;
-                margin: 25px;
-            }
-        }
-        .post-right-bottom {
-            display: flex;
-            justify-content: space-around;
-            flex-direction: column;
-            align-items: center;
-            width: 300px;
-            font-weight: bolder;
-            height: 50px;
-            color: white;
-
-
-            .post-button-cancel {
-                background-color: forestgreen;
-                color: white;
-                font-size: 12px;
-                font-weight: 600;
-                margin-right: 10px;
-                padding: 5px 5px;
-                border-radius: 5px;
-                width: 90px;
-                height: 30px;
-                align-content: center;
-                outline: none;
-                font-weight: bolder;
-
-            }
-            .post-button-upload {
-                background-color: blue($color: #006dcd);
-                // color: white;
-                font-size: 12px;
-                font-weight: 600;
-                margin-right: 10px;
-                padding: 5px 5px;
-                border-radius: 5px;
-                width: 90px;
-                height: 30px;
-                align-content: center;
-                outline: none;
-            }
-        }
-
+      }
     }
+  }
+  .post-form-right {
+    margin-top: 100px;
+    height: 300px;
+    width: 300px;
+    display: flex;
+    justify-content: space-around;
+    flex-direction: column;
+    align-items: center;
+    border: 1px solid lightgray;
+    border-radius: 15px;
 
+    .post-right-top {
+      // margin-bottom: 250px;
+      // align-items: baseline;
+      background-color: forestgreen;
+      border-radius: 15px 15px 10px 10px;
+      width: 300px;
+      // height:60px;
+    }
+    .post-right-mid {
+      display: flex;
+      justify-content: space-around;
+      flex-direction: column;
+      align-items: center;
+      width: 300px;
+      font-weight: bolder;
+
+      .title-input-field {
+        height: 75px;
+        max-height: 75px;
+        max-width: 250px;
+        width: 250px;
+        margin: 25px;
+      }
+    }
+    .post-right-bottom {
+      display: flex;
+      justify-content: space-around;
+      flex-direction: column;
+      align-items: center;
+      width: 300px;
+      font-weight: bolder;
+      height: 50px;
+      color: white;
+
+      .post-button-cancel {
+        background-color: forestgreen;
+        color: white;
+        font-size: 12px;
+        font-weight: 600;
+        margin-right: 10px;
+        padding: 5px 5px;
+        border-radius: 5px;
+        width: 90px;
+        height: 30px;
+        align-content: center;
+        outline: none;
+        font-weight: bolder;
+      }
+      .post-button-upload {
+        background-color: blue($color: #006dcd);
+        // color: white;
+        font-size: 12px;
+        font-weight: 600;
+        margin-right: 10px;
+        padding: 5px 5px;
+        border-radius: 5px;
+        width: 90px;
+        height: 30px;
+        align-content: center;
+        outline: none;
+      }
+    }
+  }
 }
