@@ -21,7 +21,7 @@ class Profile extends React.Component {
         this.props.logout();
     }
     render() {
-        let userPosts = this.props.userPosts.map((post, i) => (
+        let userPosts = this.props.userPosts.reverse().map((post, i) => (
             <li>
                 <ProfileIndexItem
                     title={post.title}

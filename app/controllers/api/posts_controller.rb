@@ -20,9 +20,6 @@ class Api::PostsController < ApplicationController
 
     def create
         @post = Post.new(post_params)
-        @post.user_id = current_user.id
-        # @post.photo_url = post_params.photo_url
-        # @post.title = post_params.title
         if @post.save
             render :show
         else
@@ -42,6 +39,6 @@ class Api::PostsController < ApplicationController
 
     private
     def post_params
-        params.require(:post).permit(:title, :location, :photo)
+        params.require(:post).permit(:title, :location, :photo, :user_id)
     end
 end
