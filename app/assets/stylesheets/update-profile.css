@@ -1,0 +1,79 @@
+.update-profile-text {
+    font-size: 16px;
+    padding-bottom: 5px;
+}
+
+.update-form-right {
+    height: 400px;
+    width: 300px;
+    display: flex;
+    justify-content: space-around;
+    flex-direction: column;
+    align-items: center;
+    border: 1px solid lightgray;
+    border-radius: 15px;
+}
+
+.update-right-top, .update-left-top {
+    border-bottom: 1px solid grey;
+    display: flex;
+    justify-content: space-around;
+    flex-direction: column;
+    align-items: center;
+    height: 10%;
+    width: 100%;
+    color:white;
+    background-color: rgb(114, 113, 113);
+    border-radius: 15px 15px 0px 0px;
+}
+
+.update-right-mid {
+    height: 80%;
+    display: flex;
+    width: 100%;
+    justify-content: space-around;
+    flex-direction: column;
+    align-items: flex-start;
+    padding-left: 10px;
+}
+
+.update-right-bottom {
+    height: 10%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.update-bio-text {
+    height: 75px;
+    max-height: 75px;
+    max-width: 250px;
+    width: 250px;
+    /* margin: 25px; */
+}
+
+.int {
+    margin-left: 20px;
+}
+
+.update-text-input {
+    width: 175px;
+    height: 15px;
+}
+
+.update-submit {
+    width: 100px;
+    margin-left: 40px;
+}
+/* .profile-pic-header {
+    margin-bottom: 10px;
+    left: 100px;
+    height: 10%;
+} */
+.profile-pic-main {
+    height: 90%
+}
+
+.update-preview {
+    height: 450px;
+}
