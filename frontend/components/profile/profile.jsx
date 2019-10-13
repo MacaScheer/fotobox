@@ -42,7 +42,7 @@ class Profile extends React.Component {
         <div className="profile-left"></div>
         <div className="profile-container">
           <div className="profile-top">
-            <div className="profile-display-pic-holder">
+            <div className="profile-display-pic">
               <img
                 className="profile-display-pic"
                 src={this.props.profile_picture}
