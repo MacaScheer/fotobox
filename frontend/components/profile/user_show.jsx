@@ -5,7 +5,7 @@ import { withRouter } from "react-router-dom";
 class UserShow extends React.Component {
   constructor(props) {
     super(props);
-    debugger;
+    // debugger;
     this.userPosts = this.props.userPosts;
     this.currentUser = this.props.currentUser;
     this.logout = this.props.logout;
@@ -13,7 +13,7 @@ class UserShow extends React.Component {
     this.handleEditUser = this.handleEditUser.bind(this);
     this.handleFollow = this.handleFollow.bind(this);
     this.handleUnfollow = this.handleUnfollow.bind(this);
-    this.handleDeleteUser = this.handleDeleteUser.bind(this);
+    // this.handleDeleteUser = this.handleDeleteUser.bind(this);
   }
 
   componentDidMount() {
@@ -47,15 +47,15 @@ class UserShow extends React.Component {
     });
   }
 
-  // myScrollFunc() {
-  //   let scrollY = window.scrollY;
-  //   let profileScroll = document.getElementById("profile-scroll");
-  //   if (scrollY >= 120) {
-  //     profileScroll.className = "profile-animate show";
-  //   } else {
-  //     profileScroll.className = "profile-animate hide-pro";
-  //   }
-  // }
+  myScrollFunc() {
+    let scrollY = window.scrollY;
+    let profileScroll = document.getElementById("profile-scroll");
+    if (scrollY >= 120) {
+      profileScroll.className = "profile-animate show";
+    } else {
+      profileScroll.className = "profile-animate hide-pro";
+    }
+  }
 
   handleNewPostForm(e) {
     e.preventDefault();
@@ -79,13 +79,13 @@ class UserShow extends React.Component {
     }
     const {
       username,
-      photoUrl,
+      photo_url,
       id,
       followerIds,
       followingIds
     } = this.props.profileUser;
-
     let userPhotos = this.props.userPosts.map(post => {
+      // debugger;
       return (
         <li key={post.id}>
           <div className="image-container">
@@ -94,9 +94,11 @@ class UserShow extends React.Component {
               <div className="image-overlay">
                 <p className="image-overlay-text">
                   <span className="overlay-heart">&#9829;</span>
-                  {post.likers.length}
-                  <i className="fas fa-comment"></i>
-                  {post.commentIds.length}
+                  {post.likers ? post.likers.length : 0}
+                  <i className="fas fa-comment" aria-hidden="true">
+                    &#x1f4ac;
+                  </i>
+                  {post.commentIds ? post.commentIds.length : 0}
                 </p>
               </div>
             </div>
@@ -112,7 +114,7 @@ class UserShow extends React.Component {
           <div className="profile-container">
             <div className="profile-top">
               <div className="profile-display-pic">
-                <img className="profile-display-pic" src={photoUrl} />
+                <img className="profile-display-pic" src={photo_url} />
               </div>
               <div className="profile-top-right">
                 <div className="profile-top-up">
@@ -163,10 +165,10 @@ class UserShow extends React.Component {
                   <span className="">{followingIds.length} Following</span>
                 </div>
                 <div className="profile-animate hide-pro" id="profile-scroll">
-                  {username}
+                  {/* {username} */}
                 </div>
-                {this.props.currentUser.username === "BarkstagramAdmin" &&
-                this.props.profileUser.username !== "BarkstagramAdmin" ? (
+                {this.props.currentUser.username === "fotoboxAdmin" &&
+                this.props.profileUser.username !== "fotoboxAdmin" ? (
                   <button
                     className="profile-button remove-user"
                     onClick={this.handleDeleteUser}

@@ -39,7 +39,7 @@ export const createPost = post => dispatch => {
 };
 
 export const fetchProfilePosts = userId => dispatch => {
-  return ApiPost.fetchProfilePosts(userId).then(posts =>
-    dispatch(receivePosts(posts))
-  );
-};
+         return ApiPost.fetchProfilePosts(userId).then(posts =>
+           dispatch(receivePosts(posts))
+         );
+       };
