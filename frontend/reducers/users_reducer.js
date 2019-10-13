@@ -3,16 +3,16 @@ import { RECEIVE_USER } from "../actions/user_actions";
 import { RECEIVE_FOLLOW, REMOVE_FOLLOW } from "../actions/followings_actions";
 import merge from "lodash/merge";
 
-const usersReducer = (oldState = {}, action) => {
-  let newState = merge({}, oldState);
-  Object.freeze(oldState);
+const usersReducer = (state = {}, action) => {
+  let newState = merge({}, state);
+  Object.freeze(state);
   switch (action.type) {
     case RECEIVE_CURRENT_USER:
-      return merge({}, oldState, {
+      return merge({}, state, {
         [action.currentUser.id]: action.currentUser
       });
     case RECEIVE_USER:
-      return merge({}, oldState, { [action.user.id]: action.user });
+      return merge({}, state, { [action.user.id]: action.user });
     case LOGOUT_USER:
       delete newState[action.currentUser];
       return newState;
@@ -38,7 +38,7 @@ const usersReducer = (oldState = {}, action) => {
       return newState;
 
     default:
-      return oldState;
+      return state;
   }
 };
 export default usersReducer;

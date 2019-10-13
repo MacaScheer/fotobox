@@ -3,7 +3,7 @@ import {
   CLEAR_COMMENT_ERRORS
 } from "../actions/comment_actions";
 
-export default (state, action) => {
+export default (state = null, action) => {
   Object.freeze(state);
   let newState = [];
   switch (action.type) {

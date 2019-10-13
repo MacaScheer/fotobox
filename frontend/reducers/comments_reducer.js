@@ -4,21 +4,21 @@ import {
   REMOVE_COMMENT
 } from "../actions/comment_actions";
 import merge from "lodash/merge";
-
-const commentsReducer = (oldState = {}, action) => {
+// let initialState = null;
+const commentsReducer = (state = {}, action) => {
   let newState = {};
-  Object.freeze(oldState);
+  Object.freeze(state);
   switch (action.type) {
     case RECEIVE_COMMENT:
-      return merge({}, oldState, { [action.comment.id]: action.comment });
+      return merge({}, state, { [action.comment.id]: action.comment });
     case RECEIVE_POST_COMMENTS:
       return action.comments;
     case REMOVE_COMMENT:
-      newState = merge({}, oldState);
+      newState = merge({}, state);
       delete newState[action.postId];
       return newState;
     default:
-      return oldState;
+      return state;
   }
 };
 

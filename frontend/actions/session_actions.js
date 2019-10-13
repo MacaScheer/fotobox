@@ -31,13 +31,13 @@ export const receiveResetErrors = () => {
 export const login = user => dispatch =>
   ApiUtil.login(user).then(
     user => dispatch(receiveCurrentUser(user)),
-    error => dispatch(receiveSessionErrors(error))
+    error => dispatch(receiveSessionErrors(error.responseJSON))
   );
 
 export const signup = user => dispatch =>
   ApiUtil.signup(user).then(
     user => dispatch(receiveCurrentUser(user)),
-    error => dispatch(receiveSessionErrors(error))
+    error => dispatch(receiveSessionErrors(error.responseJSON))
   );
 
 export const logout = () => dispatch =>
