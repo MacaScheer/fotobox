@@ -33,11 +33,14 @@ class SessionForm extends React.Component {
     this.props.processForm1(demoUser);
   }
   errors() {
+    // debugger;
     return (
       <ul className="login-errors">
-        {this.props.errors.map((error, i) => (
-          <li key={i}>{error}</li>
-        ))}
+        {Object.values(this.props.errors)[0] ? (
+          this.props.errors.map((error, i) => <li key={i}>{error}</li>)
+        ) : (
+          <div />
+        )}
       </ul>
     );
   }

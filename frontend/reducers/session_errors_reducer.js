@@ -4,9 +4,9 @@ import {
   RECEIVE_RESET_ERRORS
 } from "../actions/session_actions";
 
-const sessionErrorsReducer = (oldState = [], action) => {
+const sessionErrorsReducer = (state = [], action) => {
+  Object.freeze(state);
   let newState = [];
-  Object.freeze(oldState);
   switch (action.type) {
     case RECEIVE_SESSION_ERRORS:
       return action.errors;
@@ -15,7 +15,7 @@ const sessionErrorsReducer = (oldState = [], action) => {
     case RECEIVE_RESET_ERRORS:
       return newState;
     default:
-      return oldState;
+      return state;
   }
 };
 

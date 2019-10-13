@@ -12,7 +12,6 @@ const mapStateToProps = (state, ownProps) => {
   let currentUser = state.entities.users[state.session.id];
   let userPosts = null;
   let profile_picture = profileUser.photo_url;
-  debugger;
   if (profileUser) {
     userPosts = Object.values(state.entities.posts).filter(
       post => post.user_id === profileUser.id
