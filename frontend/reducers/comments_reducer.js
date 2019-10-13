@@ -4,8 +4,8 @@ import {
   REMOVE_COMMENT
 } from "../actions/comment_actions";
 import merge from "lodash/merge";
-
-const commentsReducer = (oldState = {}, action) => {
+// let initialState = null;
+const commentsReducer = (oldState= null, action) => {
   let newState = {};
   Object.freeze(oldState);
   switch (action.type) {
