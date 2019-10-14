@@ -8,7 +8,7 @@ class PostShow extends React.Component {
     this.handleDelete = this.handleDelete.bind(this);
   }
   componentDidMount() {
-    this.props.fetchPost(this.props.match.params.postId);
+    this.props.fetchPost(this.props.data.postId);
   }
 
   handleDelete(e) {
@@ -28,7 +28,7 @@ class PostShow extends React.Component {
           <div className="post-show-container">
             <div className="post-box">
               <div className="post-show-image">
-                <img className="post-show-image" src={post.photo_url} />
+                <img className="post-show-image" src={post.photoUrl} />
               </div>
               <div className="post-show-detail-box">
                 <div className="post-author">

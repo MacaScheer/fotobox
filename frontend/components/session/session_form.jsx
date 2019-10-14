@@ -33,7 +33,6 @@ class SessionForm extends React.Component {
     this.props.processForm1(demoUser);
   }
   errors() {
-    // debugger;
     return (
       <ul className="login-errors">
         {this.props.errors ? (

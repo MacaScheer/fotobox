@@ -35,19 +35,17 @@ class PostIndexItem extends React.Component {
   render() {
     // let { id } = this.props.post;
     let { post } = this.props;
-    debugger;
     return (
       <li className="feed-image-box">
         <div className="feed-image-header">
           <div className="feed-image-header-wrap">
             <img className="feed-profile-pic" src={post.authorPhotoUrl} />
             <Link className="profile-link" to={`/users/${post.user_id}`}>
-              {this.props.post.author}
+              {post.author}
             </Link>
           </div>
           <div onClick={() => this.props.openModal({ postId: post.id })}>
             <img className="feed-image" src={post.photoUrl} />
-
             <span>{post.title}</span>
           </div>
           <div className="feed-image-bottom">
