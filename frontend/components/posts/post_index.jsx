@@ -1,5 +1,7 @@
 import React from "react";
-import PostIndexItem from "./post_index_item";
+// import PostIndexItem from "./post_index_item";
+import PostIndexItemContainer from "./post_index_item_container";
+
 import { withRouter } from "react-router";
 
 class PostIndex extends React.Component {
@@ -9,6 +11,7 @@ class PostIndex extends React.Component {
   }
   componentDidMount() {
     this.props.fetchPosts();
+    this.props.closeModal();
   }
 
   render() {
@@ -19,19 +22,22 @@ class PostIndex extends React.Component {
           <div className="feed-left"></div>
           <div className="feed-mid">
             <ul className="feed-images">
-              {posts.map((post, i) => {
+              {posts.reverse().map((post, i) => {
                 return (
-                  <PostIndexItem
-                    title={post.title}
-                    id={post.id}
-                    location={post.location}
-                    photo_url={post.photoUrl}
-                    key={i}
-                    user_id={post.user_id}
-                    currentUser={this.props.currentUser}
-                    authorPhotoUrl={post.authorPhotoUrl}
-                    author={post.author}
-                  />
+                  <div>
+                    <PostIndexItemContainer key={post.id} post={post} />
+                    {/* <PostIndexItem
+                      title={post.title}
+                      id={post.id}
+                      location={post.location}
+                      photo_url={post.photoUrl}
+                      key={i}
+                      user_id={post.user_id}
+                      currentUser={this.props.currentUser}
+                      authorPhotoUrl={post.authorPhotoUrl}
+                      author={post.author}
+                    /> */}
+                  </div>
                 );
               })}
             </ul>

@@ -8,7 +8,7 @@ import NavBarContainer from "./nav/nav_bar_container";
 import ProfileContainer from "./profile/profile_container";
 import PostShowContainer from "./posts/post_show_container";
 import CreatePostContainer from "./posts/create_post_container";
-import UserUpdateFormContainer from "./profile/user_update_form";
+import UserUpdateFormContainer from "./profile/user_update_form_container";
 import UserShowContainer from "./profile/user_show_container";
 import Modal from "./modal";
 import { Switch } from "react-router-dom";
