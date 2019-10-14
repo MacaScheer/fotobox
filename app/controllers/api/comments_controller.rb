@@ -28,6 +28,7 @@ class Api::CommentsController < ApplicationController
         else
             render json: ["Users can only delete their own comments"], status: 422
         end
+    end
 
     private
     def comment_params
