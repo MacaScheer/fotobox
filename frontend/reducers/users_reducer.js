@@ -1,5 +1,5 @@
 import { RECEIVE_CURRENT_USER, LOGOUT_USER } from "../actions/session_actions";
-import { RECEIVE_USER } from "../actions/user_actions";
+import { RECEIVE_USER, RECEIVE_ALL_USERS } from "../actions/user_actions";
 import { RECEIVE_FOLLOW, REMOVE_FOLLOW } from "../actions/followings_actions";
 import merge from "lodash/merge";
 
@@ -11,6 +11,8 @@ const usersReducer = (state = {}, action) => {
       return merge({}, state, {
         [action.currentUser.id]: action.currentUser
       });
+    case RECEIVE_ALL_USERS:
+      return merge({}, state, action.users);
     case RECEIVE_USER:
       return merge({}, state, { [action.user.id]: action.user });
     case LOGOUT_USER:
