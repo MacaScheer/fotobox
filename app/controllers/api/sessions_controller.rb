@@ -8,7 +8,9 @@ class Api::SessionsController < ApplicationController
 
         if @user
             signin(@user)
-            render "/api/users/show"
+            # render "/api/posts/index"
+            render "api/users/show"
+            # render :index
         else
             render json: ["invalid credentials"], status: :unprocessable_entity
         end

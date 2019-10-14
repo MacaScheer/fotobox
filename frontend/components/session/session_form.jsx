@@ -36,7 +36,7 @@ class SessionForm extends React.Component {
     // debugger;
     return (
       <ul className="login-errors">
-        {Object.values(this.props.errors)[0] ? (
+        {this.props.errors ? (
           this.props.errors.map((error, i) => <li key={i}>{error}</li>)
         ) : (
           <div />

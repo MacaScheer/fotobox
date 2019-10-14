@@ -5,7 +5,6 @@ import { withRouter } from "react-router-dom";
 class UserShow extends React.Component {
   constructor(props) {
     super(props);
-    // debugger;
     this.userPosts = this.props.userPosts;
     this.currentUser = this.props.currentUser;
     this.logout = this.props.logout;
@@ -59,7 +58,7 @@ class UserShow extends React.Component {
 
   handleNewPostForm(e) {
     e.preventDefault();
-    this.props.history.push(`/new-post`);
+    this.props.history.push(`/newpost`);
   }
 
   handleEditUser(e) {
@@ -85,7 +84,6 @@ class UserShow extends React.Component {
       followingIds
     } = this.props.profileUser;
     let userPhotos = this.props.userPosts.map(post => {
-      // debugger;
       return (
         <li key={post.id}>
           <div className="image-container">

@@ -7,7 +7,6 @@ import UserShow from "./user_show";
 import { openModal, closeModal } from "../../actions/modal_actions";
 
 const mapStateToProps = (state, ownProps) => {
-  // debugger;
   const profileId = ownProps.match.params.userId;
   const profileUser = state.entities.users[profileId];
   let userPosts = null;
