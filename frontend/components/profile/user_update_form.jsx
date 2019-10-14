@@ -5,6 +5,7 @@ import NavBarContainer from "../../components/nav/nav_bar_container";
 class UserUpdateForm extends React.Component {
   constructor(props) {
     super(props);
+    debugger;
     let { currentUser } = this.props;
     this.state = {
       bio: currentUser.bio,
@@ -24,7 +25,7 @@ class UserUpdateForm extends React.Component {
     const reader = new FileReader();
     const file = e.currentTarget.files[0];
     reader.onloadend = () =>
-      this.ListeningStateChangedEvent({
+      this.setState({
         profilePic: reader.result,
         photoFile: file
       });
@@ -33,6 +34,7 @@ class UserUpdateForm extends React.Component {
     }
   }
   handleSubmit(e) {
+    debugger;
     e.preventDefault();
     if (this.props.currentUser.username === "demo_user") {
       window.alert(
@@ -48,7 +50,7 @@ class UserUpdateForm extends React.Component {
         formData.append("user[profile_picture]", this.state.photoFile);
       }
       this.props.updateUser(formData, this.props.userId).then(result => {
-        this.props.history.push(`/users/${result.user.id}`);
+        this.props.history.push(`/users/${result.id}`);
       });
     }
   }
@@ -76,15 +78,15 @@ class UserUpdateForm extends React.Component {
       <div>
         <NavBarContainer />
         <div className="post-form-container">
+          <div className="upload-form-div">{postPreview}</div>
           <form className="post-form" onSubmit={this.handleSubmit}>
-            <div className="upload-form-div">{postPreview}</div>
             <div className="update-form-right">
               <div className="upload-right-top">
                 <div>{this.props.currentUser.username}</div>
               </div>
-              <div classname="update-right-mid">
+              <div className="update-right-mid">
                 <div className="update-profile-pic">
-                  <label className="uipload-photo" htmlFor="file-selector">
+                  <label className="upload-photo" htmlFor="file-selector">
                     <div className="update-profile-text">
                       Update Profile Picture:
                     </div>

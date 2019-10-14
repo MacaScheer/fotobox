@@ -1,25 +1,28 @@
-import PostIndex from "./post_index";
+import PostIndexItem from "./post_index_item";
 import { withRouter } from "react-router";
-// import store from '..store/store';
-import { fetchPosts } from "../../actions/post_actions";
-import { fetchUser } from "../../actions/user_actions";
 import { connect } from "react-redux";
-import { logout } from "../../actions/session_actions";
 import { createLike, deleteLike } from "../../actions/likes_actions";
 import { closeModal, openModal } from "../../actions/modal_actions";
 
 const mapStateToProps = state => {
+  let comments;
+  if (state.entities.comments) {
+    comments = Object.values(state.entities.comments);
+  }
   return {
-    posts: Object.values(state.entities.posts),
-    currentUser: state.entities.users[state.session.id]
+    currentUser: state.entities.users[state.session.id],
+    comments
   };
 };
 
 const mapDispatchToProps = dispatch => {
+  // debugger
   return {
-    // fetchUser: id => dispatch(fetchUser(id)),
-    fetchPosts: () => dispatch(fetchPosts()),
-    logout: () => dispatch(logout()),
+    fetchPost: id => dispatch(fetchPost(id)),
+    deletePost: id => dispatch(deletePost(id)),
+    fetchPostComments: postId => dispatch(fetchPostComments(postId)),
+    deleteComment: id => dispatch(deleteComment(id)),
+    createComment: comment => dispatch(createComment(comment)),
     createLike: postId => dispatch(createLike(postId)),
     deleteLike: postId => dispatch(deleteLike(postId)),
     openModal: data => dispatch(openModal("showPhoto", data)),
@@ -31,5 +34,5 @@ export default withRouter(
   connect(
     mapStateToProps,
     mapDispatchToProps
-  )(PostIndex)
+  )(PostIndexItem)
 );

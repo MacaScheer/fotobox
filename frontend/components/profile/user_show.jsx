@@ -1,6 +1,7 @@
 import React from "react";
 import NavBarContainer from "../nav/nav_bar_container";
 import { withRouter } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 class UserShow extends React.Component {
   constructor(props) {
@@ -87,19 +88,22 @@ class UserShow extends React.Component {
       return (
         <li key={post.id}>
           <div className="image-container">
-            <div onClick={() => this.props.openModal({ postId: post.id })}>
-              <img className="user-page-photos" src={post.photoUrl} />
-              <div className="image-overlay">
-                <p className="image-overlay-text">
-                  <span className="overlay-heart">&#9829;</span>
-                  {post.likers ? post.likers.length : 0}
-                  <i className="fas fa-comment" aria-hidden="true">
-                    &#x1f4ac;
-                  </i>
-                  {post.commentIds ? post.commentIds.length : 0}
-                </p>
+            <Link to={`/posts/${post.id}`}>
+              {/* <div className="show-feed-image"> */}
+              <div onClick={() => this.props.openModal({ postId: post.id })}>
+                <img className="user-page-photos" src={post.photoUrl} />
+                <div className="image-overlay">
+                  <p className="image-overlay-text">
+                    <span className="overlay-heart">&#9829;</span>
+                    {post.likers ? post.likers.length : 0}
+                    <i className="fas fa-comment" aria-hidden="true">
+                      &#x1f4ac;
+                    </i>
+                    {post.commentIds ? post.commentIds.length : 0}
+                  </p>
+                </div>
               </div>
-            </div>
+            </Link>
           </div>
         </li>
       );
