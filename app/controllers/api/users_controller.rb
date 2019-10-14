@@ -2,9 +2,9 @@ require 'open-uri'
 
 class Api::UsersController < ApplicationController
     
-    def new
-        @user = User.new(user_params)
-    end
+    # def new
+    #     @user = User.new(user_params)
+    # end
 
     def create
         @user = User.new(user_params)
@@ -19,6 +19,11 @@ class Api::UsersController < ApplicationController
             render json: @user.errors.full_messages, status: :unprocessable_entity
         end
     end
+    def index
+        @user = User.all
+        render 'api/users/index'
+        # render :index
+    end
 
     def update
         @user = current_user
@@ -31,6 +36,7 @@ class Api::UsersController < ApplicationController
 
     def show
         @user = User.find(params[:id])
+        render :show
     end
 
 

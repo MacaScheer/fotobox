@@ -95,3 +95,96 @@
   background-color: #fafafa;
   outline: none;
 }
+
+.search-with-results-wrap {
+    display: flex;
+    position: fixed;
+    flex-direction: column;
+    align-items: center;
+}
+
+.search-result-image {
+    width: 30px;
+    height: 30px;
+    margin: 1px;
+    display: flex;
+    border-radius: 50%;
+}
+
+
+/* #arrow {
+    border: solid 1px #e6e6e6;
+    background-color: white;
+    -webkit-box-shadow: 0 0 5px 1px rgba(0,0,0,.0975);
+    box-shadow: 0 0 100px 1px rgba(0,0,0,.0975);
+    height: 14px;
+    left: 0;
+    right: 0;
+    top: 20px;
+    -webkit-transform: rotate(45deg);
+    transform: rotate(45deg);
+    width: 14px;
+    z-index: 5;
+    content: '';
+    border-bottom: none;
+    border-right: none;
+} */
+
+.search-results-list {
+    background: #fff;
+    border: solid 1px #e6e6e6;
+    border-radius: 3px;
+    -webkit-box-shadow: 0 0 5px rgba(0,0,0,.0975);
+    box-shadow: 0 0 5px rgba(0,0,0,.0975);
+    right: -12px;
+    z-index: 10;
+    list-style: none;
+    padding-left: 0;
+    width: 250px;
+    margin-top: -8.5px;
+    max-height: 300px;
+    overflow-y: scroll;
+    overflow-x: hidden;
+}
+
+.search-results-container {
+    display: flex;
+    top: 45px;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    position: absolute;
+}
+
+.outer-results-wrap {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+}
+
+.search-result-user {
+    width: 100%;
+    display: flex;
+    padding-left: 10px;
+    height: 60px;
+    z-index: 10;
+    align-items: center;
+    border-bottom: 1px solid rgb(233, 232, 232);
+}
+
+.search-result-li:hover {
+    background-color: #fafafa;
+}
+
+.search-result-user, .search-result-user:visited {
+    text-decoration: none;
+    color: black;
+}
+
+.search-result-username {
+    font-family: 'Roboto', sans-serif;
+    padding-left: 10px;
+    font-weight: bold;
+}

@@ -7,12 +7,11 @@ import { connect } from "react-redux";
 import { logout } from "../../actions/session_actions";
 import { createLike, deleteLike } from "../../actions/likes_actions";
 
-
 const mapStateToProps = state => {
-    return {
-        posts: Object.values(state.entities.posts),
-        currentUser : state.entities.users[state.session.id]
-    };
+  return {
+    posts: Object.values(state.entities.posts),
+    currentUser: state.entities.users[state.session.id]
+  };
 };
 
 const mapDispatchToProps = dispatch => {

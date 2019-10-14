@@ -12,34 +12,35 @@ import UserUpdateFormContainer from "./profile/user_update_form";
 import UserShowContainer from "./profile/user_show_container";
 import Modal from "./modal";
 import { Switch } from "react-router-dom";
-const App = () => (
-  <div className="page">
-    <Modal />
-    <header className="headerBar"></header>
-    <Switch>
-      <ProtectedRoute path="/posts/:postId" component={PostShowContainer} />
-      <ProtectedRoute
-        exact
-        path="/newpost/:userId"
-        component={CreatePostContainer}
-      />
-      <ProtectedRoute path="/users/my-profile" component={ProfileContainer} />
-      <ProtectedRoute
-        exact
-        path="/users/:userId"
-        component={UserShowContainer}
-      />
-
+const App = () => {
+  return (
+    <div className="page">
+      <Modal />
       <ProtectedRoute path="/" component={NavBarContainer} />
-      <ProtectedRoute exact path="/" component={PostIndexContainer} />
-      <ProtectedRoute
-        exact
-        path="/edit-profile"
-        component={UserUpdateFormContainer}
-      />
-      <AuthRoute path="/login" component={LoginFormContainer} />
-      <AuthRoute path="/signup" component={SignupFormContainer} />
-    </Switch>
-  </div>
-);
+      <header className="headerBar"></header>
+      <Switch>
+        <AuthRoute path="/login" component={LoginFormContainer} />
+        <AuthRoute path="/signup" component={SignupFormContainer} />
+        <ProtectedRoute path="/posts/:postId" component={PostShowContainer} />
+        <ProtectedRoute
+          exact
+          path="/newpost/:id"
+          component={CreatePostContainer}
+        />
+        <ProtectedRoute path="/users/my-profile" component={ProfileContainer} />
+        <ProtectedRoute
+          exact
+          path="/users/:userId"
+          component={UserShowContainer}
+        />
+        <ProtectedRoute exact path="/" component={PostIndexContainer} />
+        <ProtectedRoute
+          exact
+          path="/edit-profile"
+          component={UserUpdateFormContainer}
+        />
+      </Switch>
+    </div>
+  );
+};
 export default App;
