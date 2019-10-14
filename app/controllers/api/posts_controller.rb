@@ -3,7 +3,6 @@ class Api::PostsController < ApplicationController
     before_action :require_signed_in!
 
     def index
-        # debugger
         @posts = Post.with_attached_photo
         render :index
         # render json:@posts
@@ -12,6 +11,7 @@ class Api::PostsController < ApplicationController
     def show
         @post = Post.find(params[:id])
         render :show
+
     end
 
     def profile_posts

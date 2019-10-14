@@ -1,11 +1,11 @@
 import React from "react";
 import NavBarContainer from "../nav/nav_bar_container";
 import { withRouter } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 class UserShow extends React.Component {
   constructor(props) {
     super(props);
-    // debugger;
     this.userPosts = this.props.userPosts;
     this.currentUser = this.props.currentUser;
     this.logout = this.props.logout;
@@ -59,7 +59,7 @@ class UserShow extends React.Component {
 
   handleNewPostForm(e) {
     e.preventDefault();
-    this.props.history.push(`/new-post`);
+    this.props.history.push(`/newpost`);
   }
 
   handleEditUser(e) {
@@ -85,23 +85,25 @@ class UserShow extends React.Component {
       followingIds
     } = this.props.profileUser;
     let userPhotos = this.props.userPosts.map(post => {
-      // debugger;
       return (
         <li key={post.id}>
           <div className="image-container">
-            <div onClick={() => this.props.openModal({ postId: post.id })}>
-              <img className="user-page-photos" src={post.photoUrl} />
-              <div className="image-overlay">
-                <p className="image-overlay-text">
-                  <span className="overlay-heart">&#9829;</span>
-                  {post.likers ? post.likers.length : 0}
-                  <i className="fas fa-comment" aria-hidden="true">
-                    &#x1f4ac;
-                  </i>
-                  {post.commentIds ? post.commentIds.length : 0}
-                </p>
+            <Link to={`/posts/${post.id}`}>
+              {/* <div className="show-feed-image"> */}
+              <div onClick={() => this.props.openModal({ postId: post.id })}>
+                <img className="user-page-photos" src={post.photoUrl} />
+                <div className="image-overlay">
+                  <p className="image-overlay-text">
+                    <span className="overlay-heart">&#9829;</span>
+                    {post.likers ? post.likers.length : 0}
+                    <i className="fas fa-comment" aria-hidden="true">
+                      &#x1f4ac;
+                    </i>
+                    {post.commentIds ? post.commentIds.length : 0}
+                  </p>
+                </div>
               </div>
-            </div>
+            </Link>
           </div>
         </li>
       );
