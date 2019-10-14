@@ -3,6 +3,12 @@ import { withRouter } from "react-router";
 import { connect } from "react-redux";
 import { createLike, deleteLike } from "../../actions/likes_actions";
 import { closeModal, openModal } from "../../actions/modal_actions";
+import { fetchPost, deletePost } from "../../actions/post_actions";
+import {
+  deleteComment,
+  createComment,
+  fetchPostComments
+} from "../../actions/comment_actions";
 
 const mapStateToProps = state => {
   let comments;
@@ -16,7 +22,6 @@ const mapStateToProps = state => {
 };
 
 const mapDispatchToProps = dispatch => {
-  // debugger
   return {
     fetchPost: id => dispatch(fetchPost(id)),
     deletePost: id => dispatch(deletePost(id)),

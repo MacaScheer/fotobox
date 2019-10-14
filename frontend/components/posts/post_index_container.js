@@ -1,7 +1,7 @@
 import PostIndex from "./post_index";
 import { withRouter } from "react-router";
 // import store from '..store/store';
-import { fetchPosts } from "../../actions/post_actions";
+import { fetchPosts, fetchPost } from "../../actions/post_actions";
 import { fetchUser } from "../../actions/user_actions";
 import { connect } from "react-redux";
 import { logout } from "../../actions/session_actions";
@@ -18,6 +18,7 @@ const mapStateToProps = state => {
 const mapDispatchToProps = dispatch => {
   return {
     // fetchUser: id => dispatch(fetchUser(id)),
+    fetchPost: id => dispatch(fetchPost(id)),
     fetchPosts: () => dispatch(fetchPosts()),
     logout: () => dispatch(logout()),
     createLike: postId => dispatch(createLike(postId)),

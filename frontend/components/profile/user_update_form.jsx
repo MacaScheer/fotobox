@@ -5,7 +5,6 @@ import NavBarContainer from "../../components/nav/nav_bar_container";
 class UserUpdateForm extends React.Component {
   constructor(props) {
     super(props);
-    debugger;
     let { currentUser } = this.props;
     this.state = {
       bio: currentUser.bio,
@@ -34,7 +33,6 @@ class UserUpdateForm extends React.Component {
     }
   }
   handleSubmit(e) {
-    debugger;
     e.preventDefault();
     if (this.props.currentUser.username === "demo_user") {
       window.alert(
