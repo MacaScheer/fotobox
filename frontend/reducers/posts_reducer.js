@@ -8,6 +8,7 @@ import merge from "lodash/merge";
 
 const postsReducer = (oldState = {}, action) => {
   let newState = {};
+  let newObj = {};
   Object.freeze(oldState);
   switch (action.type) {
     case RECEIVE_POST:
@@ -20,12 +21,19 @@ const postsReducer = (oldState = {}, action) => {
       delete newState[action.postId];
       return newState;
     case RECEIVE_LIKE:
-      newState[action.like.postId].likers.push(action.like.user_id);
+      newObj[action.like.post_id] = oldState[action.like.post_id];
+      newObj[action.like.post_id].likers.push(action.like.user_id);
+      newState = merge({}, oldState, newObj);
       return newState;
     case REMOVE_LIKE:
-      return newState[action.like.postId].liker.filter(
-        user_id => user_id !== action.like.user_id
+      let temp = oldState[action.like.post_id];
+      let filtered_likers = temp.likers.filter(
+        id => id !== action.like.user_id
       );
+      temp.likers = filtered_likers;
+      newState = merge({}, oldState, { [action.like.post_id]: temp });
+      // debugger;
+      return newState;
     default:
       return oldState;
   }

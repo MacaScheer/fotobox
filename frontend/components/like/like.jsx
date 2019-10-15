@@ -3,7 +3,6 @@ import React from "react";
 class Like extends React.Component {
   constructor(props) {
     super(props);
-
     this.handleLike = this.handleLike.bind(this);
     this.handleUnlike = this.handleUnlike.bind(this);
   }
