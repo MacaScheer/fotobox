@@ -164,12 +164,12 @@ class PostShow extends React.Component {
               </div>
               <div className="show-comment-container">
                 <form className="show-comment-form">
-                  <textarea
+                  <input
                     className="show-textarea"
                     value={this.state.body}
                     onChange={this.update("body")}
                     placeholder="Add a comment..."
-                  ></textarea>
+                  ></input>
                   <button
                     className="submit-comment-button"
                     onClick={this.handleComment}

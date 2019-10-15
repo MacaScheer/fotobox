@@ -44,7 +44,7 @@
   border: 1px solid lightgrey;
   margin-bottom: 35px;
   border-radius: 3px;
-  filter: drop-shadow(8px 21px 12px rgba(0,0,0,.2));
+  filter: drop-shadow(8px 21px 12px rgba(0, 0, 0, 0.2));
 }
 
 .feed-image-header {
@@ -72,7 +72,7 @@
 .feed-image-bottom {
   margin-left: 5px;
   font-family: "Roboto", sans-serif;
-  max-height: 200px;
+  max-height: 210px;
   display: flex;
   flex-direction: column;
   justify-content: space-around;
@@ -103,16 +103,28 @@ a.feed-profile-link {
   display: flex;
   align-items: center;
 }
+.like-icon {
+  height: 2px;
+}
 
+.likes {
+  padding-right: 20px;
+  padding-left: 6px;
+}
 .feed-image-bottom-likes,
 .feed-image-bottom-bio {
+  display: flex;
+  flex-direction: row;
+  /* padding-right: 10px; */
   padding-left: 8px;
 }
 
 .feed-comment-form {
   display: flex;
   align-items: center;
-  height: 40px;
+  height: 45px;
+  margin-bottom: 8px;
+  align-self: center;
 }
 
 .feed-bio {
