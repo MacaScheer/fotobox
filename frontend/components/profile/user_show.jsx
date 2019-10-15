@@ -17,6 +17,7 @@ class UserShow extends React.Component {
   }
 
   componentDidMount() {
+    // debugger;
     this.props.fetchProfilePosts(this.props.match.params.userId);
     this.props.fetchUser(this.props.match.params.userId);
     window.addEventListener("scroll", this.myScrollFunc);
@@ -88,22 +89,26 @@ class UserShow extends React.Component {
       return (
         <li key={post.id}>
           <div className="image-container">
-            <Link to={`/posts/${post.id}`}>
-              {/* <div className="show-feed-image"> */}
-              <div onClick={() => this.props.openModal({ postId: post.id })}>
-                <img className="user-page-photos" src={post.photoUrl} />
-                <div className="image-overlay">
-                  <p className="image-overlay-text">
-                    <span className="overlay-heart">&#9829;</span>
-                    {post.likers ? post.likers.length : 0}
-                    <i className="fas fa-comment" aria-hidden="true">
-                      &#x1f4ac;
-                    </i>
-                    {post.commentIds ? post.commentIds.length : 0}
-                  </p>
-                </div>
+            {/* <Link to={`/posts/${post.id}`}> */}
+            {/* <div className="show-feed-image"> */}
+            <div
+              onClick={() => {
+                return this.props.openModal({ postId: post.id });
+              }}
+            >
+              <img className="user-page-photos" src={post.photoUrl} />
+              <div className="image-overlay">
+                <p className="image-overlay-text">
+                  <span className="overlay-heart">&#9829;</span>
+                  {post.likers ? post.likers.length : 0}
+                  <i className="fas fa-comment" aria-hidden="true">
+                    &#x1f4ac;
+                  </i>
+                  {post.commentIds ? post.commentIds.length : 0}
+                </p>
               </div>
-            </Link>
+            </div>
+            {/* </Link> */}
           </div>
         </li>
       );
