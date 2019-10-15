@@ -14,7 +14,6 @@ class PostShow extends React.Component {
     };
   }
   // componentWillMount() {
-  //   // debugger;
   //   if (this.props.match.params.postId) {
   //     this.props.fetchPost(this.props.match.params.postId);
   //   }

@@ -17,7 +17,6 @@ class UserShow extends React.Component {
   }
 
   componentDidMount() {
-    // debugger;
     this.props.fetchProfilePosts(this.props.match.params.userId);
     this.props.fetchUser(this.props.match.params.userId);
     window.addEventListener("scroll", this.myScrollFunc);
