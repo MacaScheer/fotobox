@@ -9,6 +9,7 @@ class PostIndexItem extends React.Component {
 
     this.state = {
       body: ""
+      // post_id: ""
     };
     this.handleComment = this.handleComment.bind(this);
   }
@@ -23,9 +24,8 @@ class PostIndexItem extends React.Component {
     e.preventDefault();
     if (this.state.body !== "") {
       const comment = { body: this.state.body, post_id: this.props.post.id };
-      this.props.createComment(comment).then(() => {
-        this.props.fetchPost(this.props.post.id);
-      });
+      this.props.createComment(comment);
+      this.props.fetchPost(this.props.post.id);
       this.setState({ body: "" });
     } else {
       this.props.openErrorModal();
@@ -35,6 +35,22 @@ class PostIndexItem extends React.Component {
   render() {
     // let { id } = this.props.post;
     let { post } = this.props;
+
+    let commentPosts = Object.values(post.comments).map(comment => {
+      return (
+        <div key={comment.id} className="post-show-comment">
+          <Link className="feed-profile-link" to={`/users/${comment.user_id}`}>
+            {comment.author}
+          </Link>
+          <span className="comment-bo">&nbsp;{comment.body}</span>
+        </div>
+      );
+    });
+    let limitPosts = [];
+    while (limitPosts.length < 3) {
+      limitPosts.push(commentPosts.shift());
+    }
+
     return (
       <li className="feed-image-box">
         <div className="feed-image-header">
@@ -50,42 +66,24 @@ class PostIndexItem extends React.Component {
           </div>
           <div className="feed-image-bottom">
             <div className="feed-image-bottom-buttons">
-              <LikeContainer post={post} likers={post.likers} />
               <i
-                className="fas fa-paw show-icon"
+                className="fas fa-heart show-icon"
                 onClick={this.handleComment}
               ></i>
             </div>
             <div className="feed-image-bottom-likes">
+              <LikeContainer post={post} likers={post.likers} />
               {post.likers.length === 1
                 ? `1 like`
                 : `${post.likers.length} likes`}
             </div>
-            <div className="feed-image-bottom-bio">
-              {post.title ? (
-                <div className="feed-bio">
-                  <Link className="profile-link" to={`/users/${post.user_id}`}>
-                    {post.author}
-                  </Link>
-                  &nbsp;{post.title}
-                </div>
-              ) : (
-                <div></div>
-              )}
+            <div className="feed-image-bottom-likes">
+              {commentPosts === 1
+                ? `1 comment`
+                : `${commentPosts.length} comments`}
             </div>
-            <div className="feed-image-bottom-comments">
-              {Object.values(post.comments).map(comment => {
-                <div key={comment.id} className="post-show-comment">
-                  <Link
-                    className="feed-profile-link"
-                    to={`/users/${comment.user_id}`}
-                  >
-                    {comment.author}
-                  </Link>
-                  <span className="comment-bo">&nbsp;{comment.body}</span>
-                </div>;
-              })}
-            </div>
+            <div className="feed-image-bottom-bio"></div>
+            <div className="feed-image-bottom-comments">{limitPosts}</div>
             <div className="feed-image-comment-input">
               <form className="feed-comment-form">
                 <textarea

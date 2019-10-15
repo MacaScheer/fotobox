@@ -16,7 +16,7 @@ const receiveRemoveFollow = follow => ({
 export const createFollow = user_id => dispatch =>
   FollowApiUtil.createFollow(user_id).then(res => dispatch(receiveFollow(res)));
 
-export const removeFollow = user_id => dispatch =>
+export const deleteFollow = user_id => dispatch =>
   FollowApiUtil.deleteFollow(user_id).then(res =>
     dispatch(receiveRemoveFollow(res))
   );

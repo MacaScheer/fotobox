@@ -21,8 +21,6 @@ const removePost = postId => ({
   postId
 });
 
-
-
 export const fetchPosts = () => dispatch => {
   return ApiPost.fetchPosts().then(posts => dispatch(receivePosts(posts)));
 };
