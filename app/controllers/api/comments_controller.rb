@@ -3,7 +3,6 @@ class Api::CommentsController < ApplicationController
     before_action :require_signed_in!
     
     def show
-        debugger
         @comment = Comment.find_by(id: params[:id])
     end
 

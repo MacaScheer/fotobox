@@ -12,15 +12,11 @@ import {
 
 import { withRouter } from "react-router";
 
-const mapStateToProps = function(state, ownProps) {
-  const user = state.entities.users[state.session.id];
-  const postId = ownProps.data
-    ? ownProps.data.postId
-    : ownProps.match.params.postId;
-
-  const userId = state.entities.users[state.session.id].id;
-  const errors = state.errors.comment;
-  // const userId = ownProps.match.params.user_id;
+const mapStateToProps = (state, ownProps) => {
+  let user = state.entities.users[state.session.id];
+  let postId = ownProps.data.postId;
+  let userId = user.id;
+  let errors = state.errors.comment;
   let post = state.entities.posts[postId];
   // state.entities.posts[ownProps.match.params.postId]
   // if (post) {

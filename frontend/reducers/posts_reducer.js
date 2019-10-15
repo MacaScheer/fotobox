@@ -32,7 +32,6 @@ const postsReducer = (oldState = {}, action) => {
       );
       temp.likers = filtered_likers;
       newState = merge({}, oldState, { [action.like.post_id]: temp });
-      // debugger;
       return newState;
     default:
       return oldState;

@@ -1,6 +1,6 @@
 import Profile from "../profile/profile";
 import { withRouter } from "react-router";
-import { fetchPosts } from "../../actions/post_actions";
+import { fetchPosts, fetchProfilePosts } from "../../actions/post_actions";
 import { connect } from "react-redux";
 import { logout } from "../../actions/session_actions";
 import { fetchUser } from "../../actions/user_actions";
@@ -30,6 +30,7 @@ const mapStateToProps = (state, ownProps) => {
 const mapDispatchToProps = dispatch => {
   return {
     fetchPosts: () => dispatch(fetchPosts()),
+    fetchProfilePosts: userId => dispatch(fetchProfilePosts(userId)),
     logout: () => dispatch(logout()),
     fetchUser: user_id => dispatch(fetchUser(user_id)),
     createFollow: user_id => dispatch(createFollow(user_id)),

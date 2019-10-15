@@ -62,7 +62,6 @@ class Profile extends React.Component {
       followerIds,
       followingIds
     } = this.props.profileUser;
-    debugger
     let userPhotos = this.props.userPosts.map(post => {
       return (
         <li key={post.id}>
@@ -90,7 +89,10 @@ class Profile extends React.Component {
           <div className="profile-container">
             <div className="profile-top">
               <div className="profile-display-pic">
-                <img className="profile-display-pic" src={photoUrl} />
+                <img
+                  className="profile-display-pic"
+                  src={this.props.profile_picture}
+                />
               </div>
               <div className="profile-top-right">
                 <div className="profile-top-up">
@@ -120,7 +122,7 @@ class Profile extends React.Component {
                 </div>
               </div>
             </div>
-            <div className="profile-animate hide-pro" id="proile-scroll">
+            <div className="profile-animate hide-pro" id="profile-scroll">
               {username}
             </div>
             <div className="profile-photo-index-container">

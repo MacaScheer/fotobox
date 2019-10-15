@@ -23,8 +23,8 @@ class NavBar extends React.Component {
           </div>
           <SearchBarContainer />
           <div className="nav-right">
-            <Link className="nav-icon" to={`/users/${this.currentUser.id}`}>
-              {/* <Link className="nav-icon" to={`/users/my-profile`}> */}
+            {/* <Link className="nav-icon" to={`/users/${this.currentUser.id}`}> */}
+            <Link className="nav-icon" to={`/users/my-profile`}>
               <img
                 className="box-icon"
                 src="https://fotobox-seeds.s3-us-west-1.amazonaws.com/image_assets/fotobox_icon.png"
