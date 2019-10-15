@@ -1,92 +1,137 @@
 import React from "react";
-import { withRouter } from "react-router";
-import ProfileIndexItem from "./profile_index_item";
-import { Link } from "react-router-dom";
+import NavBarContainer from "../nav/nav_bar_container";
 
 class Profile extends React.Component {
   constructor(props) {
     super(props);
 
-    // this.userPosts = this.props.userPosts
-    this.handleLogout = this.handleLogout.bind(this);
+    this.userPosts = this.props.userPosts;
+    this.currentUser = this.props.currentUser;
+    this.logout = this.props.logout;
+    this.handleNewPostForm = this.handleNewPostForm.bind(this);
     this.handleEditUser = this.handleEditUser.bind(this);
-  }
-  componentDidMount() {
-    this.props.fetchPosts();
-    this.props.fetchUser(this.props.match.params.userId);
+    this.myScrollFunc = this.myScrollFunc.bind(this);
   }
 
-  handleLogout(e) {
-    e.preventDefault();
-    this.props.logout();
+  componentDidMount() {
+    this.props.fetchProfilePosts(this.props.currentUser.id);
+    this.props.fetchUser(this.props.currentUser.id);
+    window.addEventListener("scroll", this.myScrollFunc);
+    this.props.closeModal();
   }
+
+  componentDidUpdate(prevProps) {
+    if (prevProps.location.pathname !== this.props.location.pathname) {
+      this.props.closeModal();
+    }
+  }
+
+  componentWillUnmount() {
+    window.removeEventListener("scroll", this.myScrollFunc);
+  }
+
+  myScrollFunc() {
+    let scrollY = window.scrollY;
+    let profileScroll = document.getElementById("profile-scroll");
+    if (scrollY >= 120) {
+      profileScroll.className = "profile-animate show";
+    } else {
+      profileScroll.className = "profile-animate hide-pro";
+    }
+  }
+
+  handleNewPostForm(e) {
+    e.preventDefault();
+    let path = `/newpost`;
+    this.props.history.push(path);
+  }
+
   handleEditUser(e) {
     e.preventDefault();
     let path = `/edit-profile`;
     this.props.history.push(path);
   }
+
   render() {
-    let userPosts = this.props.userPosts.reverse().map((post, i) => (
-      <li>
-        <ProfileIndexItem
-          title={post.title}
-          id={post.id}
-          location={post.location}
-          photo_url={post.photo_url}
-          key={i}
-        />
-      </li>
-    ));
-    return (
-      <div className="profile-wrap">
-        <div className="profile-left"></div>
-        <div className="profile-container">
-          <div className="profile-top">
-            <div className="profile-display-pic">
-              <img
-                className="profile-display-pic"
-                src={this.props.profile_picture}
-              />
+    if (!this.props.profileUser) {
+      return <h2>Loading...</h2>;
+    }
+    const {
+      username,
+      photoUrl,
+      followerIds,
+      followingIds
+    } = this.props.profileUser;
+    debugger
+    let userPhotos = this.props.userPosts.map(post => {
+      return (
+        <li key={post.id}>
+          <div className="image-container">
+            <div onClick={() => this.props.openModal({ postId: post.id })}>
+              <img className="user-page-photos" src={post.photoUrl} />
+              <div className="image-overlay">
+                <p className="image-overlay-text">
+                  <span className="overlay-heart">&#9829;</span>
+                  {post.likers.length}
+                  <i className="fas fa-comment"></i>
+                  {post.commentIds.length}
+                </p>
+              </div>
             </div>
-            <div className="profile-top-right">
-              <div className="profile-top-up">
-                <h1 className="username-header">{this.props.username}</h1>
-                <div className="profile-top-buttons">
-                  <button
-                    className="profile-button"
-                    onClick={this.handleLogout}
-                  >
-                    Log Out
-                  </button>
-                  <button
-                    className="profile-button"
-                    onClick={this.handleEditUser}
-                  >
-                    Edit Profile
-                  </button>
-                  <Link to={`/newpost/${this.props.currentUser.id}`}>
-                    <button className="profile-button">Add Photo</button>
-                  </Link>
+          </div>
+        </li>
+      );
+    });
+    return (
+      <div>
+        <NavBarContainer />
+        <div className="profile-wrap">
+          <div className="profile-left"></div>
+          <div className="profile-container">
+            <div className="profile-top">
+              <div className="profile-display-pic">
+                <img className="profile-display-pic" src={photoUrl} />
+              </div>
+              <div className="profile-top-right">
+                <div className="profile-top-up">
+                  <h1>{username}</h1>
+                  <div className="profile-top-buttons">
+                    <button className="profile-button" onClick={this.logout}>
+                      Log Out
+                    </button>
+                    <button
+                      className="profile-button"
+                      onClick={this.handleEditUser}
+                    >
+                      Edit Profile
+                    </button>
+                    <button
+                      className="profile-button"
+                      onClick={this.handleNewPostForm}
+                    >
+                      Add Photo
+                    </button>
+                  </div>
+                </div>
+                <div className="profile-top-down">
+                  <span>{this.props.userPosts.length} posts</span>
+                  <span className="">{followerIds.length} Followers</span>
+                  <span className="">{followingIds.length} Following</span>
                 </div>
               </div>
-              <div className="profile-top-down">
-                <span className="num-posts">{this.num_posts}posts</span>
-                <span className="num-followers">
-                  {this.num_followers}followers
-                </span>
-                <span className="num-following">
-                  {this.num_following}following
-                </span>
-              </div>
+            </div>
+            <div className="profile-animate hide-pro" id="proile-scroll">
+              {username}
+            </div>
+            <div className="profile-photo-index-container">
+              <ul className="profile-photo-index">{userPhotos}</ul>
             </div>
           </div>
-          <div className="profile-photo-index-container">
-            <ul className="profile-photo-index">{userPosts}</ul>
-          </div>
+          <div className="profile-right"></div>
         </div>
-        <div className="profile-right"></div>
       </div>
     );
   }
 }
-export default withRouter(Profile);
+
+export default Profile;

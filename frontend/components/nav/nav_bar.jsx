@@ -30,7 +30,7 @@ class NavBar extends React.Component {
                 src="https://fotobox-seeds.s3-us-west-1.amazonaws.com/image_assets/fotobox_icon.png"
               />
             </Link>
-            <Link className="nav-icon" to={`/newpost/${this.currentUser.id}`}>
+            <Link className="nav-icon" to={`/newpost`}>
               <img
                 className="post-form-icon"
                 src="https://fotobox-seeds.s3-us-west-1.amazonaws.com/image_assets/rolleiflex.jpg"

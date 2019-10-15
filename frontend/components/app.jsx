@@ -24,7 +24,7 @@ const App = () => {
         <ProtectedRoute path="/posts/:postId" component={PostShowContainer} />
         <ProtectedRoute
           exact
-          path="/newpost/:id"
+          path="/newpost"
           component={CreatePostContainer}
         />
         <ProtectedRoute path="/users/my-profile" component={ProfileContainer} />

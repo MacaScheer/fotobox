@@ -3,6 +3,7 @@ class Api::CommentsController < ApplicationController
     before_action :require_signed_in!
     
     def show
+        debugger
         @comment = Comment.find_by(id: params[:id])
     end
 
@@ -10,7 +11,7 @@ class Api::CommentsController < ApplicationController
         @comments = Comment.all.where(post_id: params[:post_id])
     end
     def create
-        @comment = Coment.new(comment_params)
+        @comment = Comment.new(comment_params)
         @comment.user_id = current_user.id
         if @comment.save
             render :show
@@ -31,6 +32,6 @@ class Api::CommentsController < ApplicationController
 
     private
     def comment_params
-        params.require(:comment).permit(:body, :post_id)
+        params.require(:comment).permit(:body,:post_id)
     end
 end
