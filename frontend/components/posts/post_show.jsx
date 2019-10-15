@@ -13,10 +13,16 @@ class PostShow extends React.Component {
       body: ""
     };
   }
-  componentDidMount() {
-    this.props.fetchPost(this.props.post.id);
-  }
+  // componentWillMount() {
+  //   // debugger;
+  //   if (this.props.match.params.postId) {
+  //     this.props.fetchPost(this.props.match.params.postId);
+  //   }
+  // }
 
+  componentDidMount() {
+    this.props.fetchPost(this.props.postId);
+  }
   update(field) {
     return e => {
       this.setState({ [field]: e.target.value });

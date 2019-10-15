@@ -14,6 +14,9 @@ import { withRouter } from "react-router";
 
 const mapStateToProps = (state, ownProps) => {
   let user = state.entities.users[state.session.id];
+  // let post = ownProps.match.params.postId
+  //   ? state.entities.posts[ownProps.match.params.postId]
+  //   : null;
   let postId = ownProps.data.postId;
   let userId = user.id;
   let errors = state.errors.comment;
