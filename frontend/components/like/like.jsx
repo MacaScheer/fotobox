@@ -28,7 +28,7 @@ class Like extends React.Component {
           <div className="like-button">
             {this.props.post.likers.includes(this.props.currentUser.id) ? (
               <div className="like-button-liked" onClick={this.handleUnlike}>
-                <span>&#9829;</span>
+                <span className="like-icon">&#9829;</span>
               </div>
             ) : (
               <div className="like-button-unliked" onClick={this.handleLike}>

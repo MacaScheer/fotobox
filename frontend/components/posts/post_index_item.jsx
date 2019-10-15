@@ -62,7 +62,7 @@ class PostIndexItem extends React.Component {
           </div>
           <div onClick={() => this.props.openModal({ postId: post.id })}>
             <img className="feed-image" src={post.photoUrl} />
-            <span>{post.title}</span>
+            <div className="title-span">"{post.title}"</div>
           </div>
           <div className="feed-image-bottom">
             <div className="feed-image-bottom-buttons">
@@ -73,27 +73,29 @@ class PostIndexItem extends React.Component {
             </div>
             <div className="feed-image-bottom-likes">
               <LikeContainer post={post} likers={post.likers} />
-              {post.likers.length === 1
-                ? `1 like`
-                : `${post.likers.length} likes`}
-            </div>
-            <div className="feed-image-bottom-likes">
-              {commentPosts === 1
-                ? `1 comment`
-                : `${commentPosts.length} comments`}
+              <div className="likes">
+                {post.likers.length === 1
+                  ? `1 like`
+                  : `${post.likers.length} likes`}
+              </div>
+              <div className="comments">
+                {commentPosts === 1
+                  ? `1 comment`
+                  : `${commentPosts.length} comments`}
+              </div>
             </div>
             <div className="feed-image-bottom-bio"></div>
             <div className="feed-image-bottom-comments">{limitPosts}</div>
             <div className="feed-image-comment-input">
               <form className="feed-comment-form">
-                <textarea
+                <input
                   className="feed-textarea"
                   value={this.state.body}
                   onChange={this.update("body")}
                   placeholder="Add a comment..."
-                ></textarea>
+                ></input>
                 <button
-                  className="submit-comment-button"
+                  className="submit-comment-button-index"
                   onClick={this.handleComment}
                 >
                   Post
