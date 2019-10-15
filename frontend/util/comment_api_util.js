@@ -6,7 +6,6 @@ export const fetchPostComments = post_id => {
 };
 
 export const fetchComment = id => {
-  debugger;
   return $.ajax({
     method: "GET",
     url: `api/comments/${id}`

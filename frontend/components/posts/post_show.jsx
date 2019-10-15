@@ -14,12 +14,7 @@ class PostShow extends React.Component {
     };
   }
   componentDidMount() {
-    debugger;
-    let pid = this.props.postIdindex
-      ? this.props.postIdindex
-      : this.props.postIdprofile;
-    // this.props.fetchPost(this.props.data.postId);
-    this.props.fetchPost(pid);
+    this.props.fetchPost(this.props.post.id);
   }
 
   update(field) {
