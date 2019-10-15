@@ -62,31 +62,33 @@ class UserUpdateForm extends React.Component {
     let path = `/users/${this.props.currentUser.id}`;
     this.props.history.push(path);
   }
-
   render() {
     let postPreview = (
       <div className="preview-div update-preview">
         <div className="update-left-top">Profile Picture</div>
         <div className="profile-pic-main">
-          <img className="post-pic-preview" src={this.state.profilePic} />
+          <img className="post-pic-preview" src={this.state.photoUrl} />
         </div>
       </div>
     );
+
     return (
       <div>
         <NavBarContainer />
         <div className="post-form-container">
+          <ul className="login-errors">{/* {this.errors()} */}</ul>
           <div className="upload-form-div">{postPreview}</div>
+
           <form className="post-form" onSubmit={this.handleSubmit}>
             <div className="update-form-right">
-              <div className="upload-right-top">
+              <div className="update-right-top">
                 <div>{this.props.currentUser.username}</div>
               </div>
               <div className="update-right-mid">
                 <div className="update-profile-pic">
                   <label className="upload-photo" htmlFor="file-selector">
                     <div className="update-profile-text">
-                      Update Profile Picture:
+                      update profile picture:
                     </div>
                     <input
                       className="photo-input-field int"
@@ -97,29 +99,32 @@ class UserUpdateForm extends React.Component {
                   </label>
                 </div>
                 <label className="update-email">
-                  <div className="update-profile-text">Update Email:</div>
+                  <div className="update-profile-text">update email:</div>
                   <input
                     type="text"
                     className="update-text-input int"
-                    palceholder={this.state.email}
+                    // value={this.state.email}
+                    placeholder={this.state.email}
                     onChange={this.update("email")}
                   />
                 </label>
                 <label className="update-username">
-                  <div className="update-profile-text">Update Username:</div>
+                  <div className="update-profile-text">update username:</div>
                   <input
                     type="text"
                     className="update-text-input int"
                     placeholder={this.state.username}
+                    // placeholder="Write a caption..."
                     onChange={this.update("username")}
                   />
                 </label>
                 <label className="update-bio">
-                  <div className="update-profile-text">Update Bio:</div>
+                  <div className="update-profile-text">update bio:</div>
                   <textarea
                     type="text"
                     className="update-bio-text int"
-                    palceholder={this.state.bio}
+                    // value={this.state.bio}
+                    placeholder={this.state.bio}
                     onChange={this.update("bio")}
                   ></textarea>
                 </label>
@@ -130,13 +135,18 @@ class UserUpdateForm extends React.Component {
                     className="post-button-cancel update-cancel"
                     onClick={this.handleCancel}
                   >
-                    Cancel
+                    cancel
                   </button>
+                  {/* <input
+                                    className="post-button-upload update-submit"
+                                    type="submit"
+                                    value="Update Profile"
+                                /> */}
                   <button
                     className="post-button-upload update-submit"
                     type="submit"
                   >
-                    Update Profile
+                    update
                   </button>
                 </div>
               </div>
@@ -146,6 +156,89 @@ class UserUpdateForm extends React.Component {
       </div>
     );
   }
+  // render() {
+  //   let postPreview = (
+  //     <div className="preview-div update-preview">
+  //       <div className="update-left-top">Profile Picture</div>
+  //       <div className="profile-pic-main">
+  //         <img className="post-pic-preview" src={this.state.profilePic} />
+  //       </div>
+  //     </div>
+  //   );
+  //   return (
+  //     <div>
+  //       <NavBarContainer />
+  //       <div className="post-form-container">
+  //         <div className="upload-form-div">{postPreview}</div>
+  //         <form className="post-form" onSubmit={this.handleSubmit}>
+  //           <div className="update-form-right">
+  //             <div className="upload-right-top">
+  //               <div>{this.props.currentUser.username}</div>
+  //             </div>
+  //             <div className="update-right-mid">
+  //               <div className="update-profile-pic">
+  //                 <label className="upload-photo" htmlFor="file-selector">
+  //                   <div className="update-profile-text">
+  //                     Update Profile Picture:
+  //                   </div>
+  //                   <input
+  //                     className="photo-input-field int"
+  //                     id="file-selector"
+  //                     type="file"
+  //                     onChange={this.handleFile}
+  //                   />
+  //                 </label>
+  //               </div>
+  //               <label className="update-email">
+  //                 <div className="update-profile-text">Update Email:</div>
+  //                 <input
+  //                   type="text"
+  //                   className="update-text-input int"
+  //                   palceholder={this.state.email}
+  //                   onChange={this.update("email")}
+  //                 />
+  //               </label>
+  //               <label className="update-username">
+  //                 <div className="update-profile-text">Update Username:</div>
+  //                 <input
+  //                   type="text"
+  //                   className="update-text-input int"
+  //                   placeholder={this.state.username}
+  //                   onChange={this.update("username")}
+  //                 />
+  //               </label>
+  //               <label className="update-bio">
+  //                 <div className="update-profile-text">Update Bio:</div>
+  //                 <textarea
+  //                   type="text"
+  //                   className="update-bio-text int"
+  //                   palceholder={this.state.bio}
+  //                   onChange={this.update("bio")}
+  //                 ></textarea>
+  //               </label>
+  //             </div>
+  //             <div className="update-right-bottom">
+  //               <div className="post-form-buttons">
+  //                 <button
+  //                   className="post-button-cancel update-cancel"
+  //                   onClick={this.handleCancel}
+  //                 >
+  //                   Cancel
+  //                 </button>
+  //                 <button
+  //                   className="post-button-upload update-submit"
+  //                   type="submit"
+  //                 >
+  //                   Update Profile
+  //                 </button>
+  //               </div>
+  //             </div>
+  //           </div>
+  //         </form>
+  //       </div>
+  //     </div>
+  //   );
+  // }
 }
 
 export default withRouter(UserUpdateForm);
