@@ -2,18 +2,17 @@ class Api::CommentsController < ApplicationController
 
     before_action :require_signed_in!
     
-    
     def show
         @comment = Comment.find_by(id: params[:id])
     end
 
     def index
-        @comments = Comment.all.where(post_id: params[:post_id]  )
+        @comments = Comment.all.where(post_id: params[:post_id])
     end
     def create
         @comment = Coment.new(comment_params)
         @comment.user_id = current_user.id
-            if @comment.save
+        if @comment.save
             render :show
         else
             render json: ["Comment cannot be blank"], status: 422
