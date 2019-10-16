@@ -148,6 +148,17 @@ class SessionForm extends React.Component {
           </div>
         </div>
       </div>
+      // <div className="footer-links">
+      //   {/* <span>
+      //     <ul class="icons alt">
+      //       <li><a href="https://www.linkedin.com/in/macscheer/" className="icon brands fa-linkedin"><span
+      //         className="label">LinkedIn</span></a></li>
+      //       <li><a href="https://macascheer.github.io" className="icon fas fa-network-wired"><span
+      //         className="label">Portfolio</span></a></li>
+      //       <li><a href="https://github.com/MacaScheer" className="icon brands fa-github"><span className="label">GitHub</span></a></li>
+      //     </ul>
+      //   </span> */}
+      // </div>
     );
   }
 }

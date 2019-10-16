@@ -17,6 +17,9 @@
   outline: none;
   border: 1px solid #fafafa;
 }
+.session-submit:hover {
+  cursor: pointer;
+}
 
 .greeting {
   flex-wrap: wrap;
@@ -100,4 +103,15 @@
   font-family: "Helvetica Neue";
   padding-top: 20px;
   padding-bottom: 20px;
+}
+
+.icon {
+}
+.icon:hover {
+  background-color: rgb(238, 238, 238);
+  cursor: pointer;
+}
+.profile-button:hover {
+  background-color: rgb(238, 238, 238);
+  cursor: pointer;
 }

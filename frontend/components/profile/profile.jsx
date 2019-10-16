@@ -71,9 +71,11 @@ class Profile extends React.Component {
               <div className="image-overlay">
                 <p className="image-overlay-text">
                   <span className="overlay-heart">&#9829;</span>
-                  {post.likers.length}
-                  <i className="fas fa-comment"></i>
-                  {post.commentIds.length}
+                  {post.likers ? post.likers.length : 0}
+                  <i className="fas fa-comment" aria-hidden="true">
+                    &#x1f4ac;
+                  </i>
+                  {post.commentIds ? post.commentIds.length : 0}
                 </p>
               </div>
             </div>
@@ -122,9 +124,7 @@ class Profile extends React.Component {
                 </div>
               </div>
             </div>
-            <div className="profile-animate hide-pro" id="profile-scroll">
-              {username}
-            </div>
+
             <div className="profile-photo-index-container">
               <ul className="profile-photo-index">{userPhotos}</ul>
             </div>

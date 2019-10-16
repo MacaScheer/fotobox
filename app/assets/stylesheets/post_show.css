@@ -143,7 +143,13 @@
   outline: none;
   border: 1px solid #fafafa;
 }
+.submit-comment-button-index:hover {
+  cursor: pointer;
+}
 
+.submit-comment-button:hover {
+  cursor: pointer;
+}
 .submit-comment-button {
   margin-left: 20px;
   display: flex;
@@ -212,4 +218,16 @@
 }
 .like-button-liked {
   color: crimson;
+}
+
+.like-button:hover {
+  cursor: pointer;
+}
+
+.image-overlay-text:hover {
+  cursor: pointer;
+}
+
+.profile-photo-index:hover{
+  cursor: pointer;
 }
