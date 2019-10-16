@@ -124,7 +124,6 @@ class Profile extends React.Component {
                 </div>
               </div>
             </div>
-
             <div className="profile-photo-index-container">
               <ul className="profile-photo-index">{userPhotos}</ul>
             </div>
