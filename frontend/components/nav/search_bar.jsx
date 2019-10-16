@@ -28,7 +28,7 @@ class SearchBar extends React.Component {
       let userMatches = this.props.users.filter(user =>
         user.username.toUpperCase().includes(e.target.value.toUpperCase())
       );
-      if (!e.target.value) return;
+      if (!e.target.value) userMatches = [];
       this.setState({
         matches: userMatches,
         searchField: e.target.value
