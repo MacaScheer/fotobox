@@ -6,6 +6,11 @@ class NavBar extends React.Component {
   constructor(props) {
     super(props);
     this.currentUser = this.props.currentUser;
+    this.Logout = this.Logout.bind(this);
+  }
+
+  Logout() {
+    this.props.logout();
   }
 
   render() {
@@ -36,6 +41,9 @@ class NavBar extends React.Component {
                 src="https://fotobox-seeds.s3-us-west-1.amazonaws.com/image_assets/rolleiflex.jpg"
               />
             </Link>
+            <div className="nav-sign-out" onClick={this.Logout}>
+              log out
+            </div>
           </div>
         </section>
       </div>
