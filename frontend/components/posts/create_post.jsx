@@ -59,7 +59,7 @@ class CreatePost extends React.Component {
     };
   }
   componentDidMount() {
-    this.props.fetchUser(this.props.match.params.userId);
+    this.props.fetchUser(this.props.currentUser.id);
   }
 
   render() {
@@ -89,16 +89,15 @@ class CreatePost extends React.Component {
               </div>
             </label>
             <label className="upload-content">
-              <textarea
+              <input
                 className="title-input-field"
                 onChange={this.handleUpdate("title")}
                 type="text"
                 placeholder="Give your post a title or caption"
                 value={this.state.title}
-              ></textarea>
+              ></input>
             </label>
-            <label>
-              Location
+            <label className="location-label">
               <input
                 className="location-input-field"
                 onChange={this.handleUpdate("location")}
