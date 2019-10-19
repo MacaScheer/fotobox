@@ -46,5 +46,6 @@ export const fetchUser = userId => dispatch => {
 };
 
 export const updateUser = user => dispatch => {
-  ApiUtilUser.updateUser(user).then(res => dispatch(receiveUser(res)));
+  return ApiUtilUser.updateUser(user).then(res =>
+    dispatch(receiveUser(res)));
 };

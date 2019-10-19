@@ -4,9 +4,9 @@ import {
 } from '../actions/session_actions';
 
 
-const defaultState = {
+const defaultState = Object.freeze({
     id: null
-}
+})
 
 const sessionReducer = (oldState = defaultState, action) => {
     Object.freeze(oldState);

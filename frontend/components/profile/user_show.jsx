@@ -19,7 +19,6 @@ class UserShow extends React.Component {
   componentDidMount() {
     this.props.fetchProfilePosts(this.props.match.params.userId);
     this.props.fetchUser(this.props.match.params.userId);
-    window.addEventListener("scroll", this.myScrollFunc);
     this.props.closeModal();
   }
   componentDidUpdate(prevProps) {
@@ -45,16 +44,6 @@ class UserShow extends React.Component {
     this.props.deleteFollow(this.props.profileUser.id).then(() => {
       this.props.fetchUser(this.props.profileUser.id);
     });
-  }
-
-  myScrollFunc() {
-    let scrollY = window.scrollY;
-    let profileScroll = document.getElementById("profile-scroll");
-    if (scrollY >= 120) {
-      profileScroll.className = "profile-animate show";
-    } else {
-      profileScroll.className = "profile-animate hide-pro";
-    }
   }
 
   handleNewPostForm(e) {
@@ -84,12 +73,10 @@ class UserShow extends React.Component {
       followerIds,
       followingIds
     } = this.props.profileUser;
-    let userPhotos = this.props.userPosts.map(post => {
+    let userPhotos = this.props.userPosts.reverse().map(post => {
       return (
         <li key={post.id}>
           <div className="image-container">
-            {/* <Link to={`/posts/${post.id}`}> */}
-            {/* <div className="show-feed-image"> */}
             <div
               onClick={() => {
                 return this.props.openModal({ postId: post.id });
@@ -107,7 +94,6 @@ class UserShow extends React.Component {
                 </p>
               </div>
             </div>
-            {/* </Link> */}
           </div>
         </li>
       );
@@ -169,9 +155,6 @@ class UserShow extends React.Component {
                   <span>{this.props.userPosts.length} Posts</span>
                   <span className="">{followerIds.length} Followers</span>
                   <span className="">{followingIds.length} Following</span>
-                </div>
-                <div className="profile-animate hide-pro" id="profile-scroll">
-                  {/* {username} */}
                 </div>
                 {this.props.currentUser.username === "fotoboxAdmin" &&
                 this.props.profileUser.username !== "fotoboxAdmin" ? (
