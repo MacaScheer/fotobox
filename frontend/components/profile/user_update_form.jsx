@@ -47,8 +47,8 @@ class UserUpdateForm extends React.Component {
       if (this.state.photoFile) {
         formData.append("user[profile_picture]", this.state.photoFile);
       }
-      this.props.updateUser(formData, this.props.userId).then(result => {
-        this.props.history.push(`/users/${result.id}`);
+      this.props.updateUser(formData, this.props.userId).then(() => {
+        this.props.history.push(`/users/my-profile`);
       });
     }
   }

@@ -25,17 +25,6 @@ class PostIndex extends React.Component {
                 return (
                   <div key={i}>
                     <PostIndexItemContainer key={post.id} post={post} />
-                    {/* <PostIndexItem
-                      title={post.title}
-                      id={post.id}
-                      location={post.location}
-                      photo_url={post.photoUrl}
-                      key={i}
-                      user_id={post.user_id}
-                      currentUser={this.props.currentUser}
-                      authorPhotoUrl={post.authorPhotoUrl}
-                      author={post.author}
-                    /> */}
                   </div>
                 );
               })}

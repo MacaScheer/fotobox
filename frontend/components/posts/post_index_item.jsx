@@ -62,7 +62,7 @@ class PostIndexItem extends React.Component {
           </div>
           <div onClick={() => this.props.openModal({ postId: post.id })}>
             <img className="feed-image" src={post.photoUrl} />
-            <div className="title-span">"{post.title}"</div>
+            <div className="title-span">{post.title}</div>
           </div>
           <div className="feed-image-bottom">
             <div className="feed-image-bottom-buttons">

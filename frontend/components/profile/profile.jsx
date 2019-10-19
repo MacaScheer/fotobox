@@ -10,7 +10,6 @@ class Profile extends React.Component {
     this.logout = this.props.logout;
     this.handleNewPostForm = this.handleNewPostForm.bind(this);
     this.handleEditUser = this.handleEditUser.bind(this);
-    this.myScrollFunc = this.myScrollFunc.bind(this);
   }
 
   componentDidMount() {
@@ -28,16 +27,6 @@ class Profile extends React.Component {
 
   componentWillUnmount() {
     window.removeEventListener("scroll", this.myScrollFunc);
-  }
-
-  myScrollFunc() {
-    let scrollY = window.scrollY;
-    let profileScroll = document.getElementById("profile-scroll");
-    if (scrollY >= 120) {
-      profileScroll.className = "profile-animate show";
-    } else {
-      profileScroll.className = "profile-animate hide-pro";
-    }
   }
 
   handleNewPostForm(e) {
@@ -62,7 +51,7 @@ class Profile extends React.Component {
       followerIds,
       followingIds
     } = this.props.profileUser;
-    let userPhotos = this.props.userPosts.map(post => {
+    let userPhotos = this.props.userPosts.reverse().map(post => {
       return (
         <li key={post.id}>
           <div className="image-container">

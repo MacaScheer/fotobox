@@ -19,6 +19,7 @@ class Api::UsersController < ApplicationController
             render json: @user.errors.full_messages, status: :unprocessable_entity
         end
     end
+
     def index
         @user = User.all
         render 'api/users/index'
@@ -27,10 +28,11 @@ class Api::UsersController < ApplicationController
 
     def update
         @user = current_user
+        
         if @user.update(user_params)
-        render :show
+            render :show
         else
-        render json: @user.errors.full_messages, status: 422
+            render json: @user.errors.full_messages, status: 422
         end
     end
 
