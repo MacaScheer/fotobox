@@ -35,7 +35,7 @@ class SessionForm extends React.Component {
   errors() {
     return (
       <ul className="login-errors">
-        {this.props.errors ? (
+        {this.props.errors.length > 1 ? (
           this.props.errors.map((error, i) => <li key={i}>{error}</li>)
         ) : (
           <div />
@@ -143,7 +143,7 @@ class SessionForm extends React.Component {
                 {instruc}
                 <Link to={path}>{altTitle}</Link>
                 {/* <a href={path}>{altTitle}</a> */}
-                    {/* <div className="footer-links">
+                {/* <div className="footer-links">
        <span>
        <ul class="icons alt">
              <a href="https://www.linkedin.com/in/macscheer/" className="icon brands fa-linkedin"><span
@@ -159,7 +159,6 @@ class SessionForm extends React.Component {
           </div>
         </div>
       </div>
-
     );
   }
 }
