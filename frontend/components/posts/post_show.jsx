@@ -2,6 +2,7 @@ import React from "react";
 import { withRouter } from "react-router";
 import { Link } from "react-router-dom";
 import LikesContainer from "../like/like_container";
+// import Spinner from "../loading/Spinner";
 
 class PostShow extends React.Component {
   constructor(props) {
@@ -62,7 +63,11 @@ class PostShow extends React.Component {
   }
   render() {
     if (!this.props.post) {
-      return <h2>Loading...</h2>;
+      return (
+        <h2>
+          <Spinner />
+        </h2>
+      );
     }
 
     let postComments = Object.values(this.props.post.comments).map(comment => {
