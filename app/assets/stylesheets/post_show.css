@@ -65,7 +65,8 @@
   margin-bottom: 10px;
 }
 .title-span {
-  margin-left: 5px;
+  margin-left: 20px;
+  margin-bottom: 3px;
   font-weight: 700;
   font-family: "Roboto", sans-serif;
   font-style: italic;
@@ -100,7 +101,7 @@
 }
 
 .feed-textarea {
-  margin-left: 40px;
+  margin-left: 15px;
   margin-bottom: 10px;
   text-align: left;
   width: 250px;
@@ -109,17 +110,29 @@
   padding-left: 5px;
   text-overflow: ellipsis;
   font-size: 14px;
-  margin: 3px;
+  /* margin: 3px; */
   /* padding-bottom: 10px; */
   border-radius: 3px;
   border: 1px solid #efefef;
   box-sizing: border-box;
 }
 .delete-button {
-  font-size: 18px;
-  color: black;
-  border: none;
+  margin-left: 50px;
+  display: flex;
+  width: 80px;
+  height: 30px;
+  justify-content: space-around;
+
+  text-overflow: ellipsis;
+  font-size: 20px;
+  font-weight: 700;
+  color: white;
+  box-sizing: border-box;
+  margin-bottom: 10px;
+  background-color: #c94141;
+  border-radius: 4px;
   outline: none;
+  border: 1px solid #fafafa;
 }
 
 .delete-button:hover {

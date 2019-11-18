@@ -103,7 +103,6 @@ class PostShow extends React.Component {
       authorPhotoUrl,
       user_id
     } = this.props.post;
-
     return (
       <div>
         {this.renderErrors()}
@@ -119,9 +118,9 @@ class PostShow extends React.Component {
               </div>
               <div className="post-author-delete">
                 {user_id === this.props.user.id ||
-                this.props.user.username === "BarkstagramAdmin" ? (
+                this.props.user.username === this.props.post.author ? (
                   <button className="delete-button" onClick={this.handleDelete}>
-                    <i className="fas fa-trash-alt"></i>
+                    <i className="fa fa-trash"></i>
                   </button>
                 ) : (
                   <div></div>
@@ -151,10 +150,6 @@ class PostShow extends React.Component {
               <div className="likes-div">
                 <div className="show-buttons">
                   <LikesContainer post={this.props.post} likers={likers} />
-                  <i
-                    className="fas fa-paw show-icon"
-                    onClick={this.handleComment}
-                  ></i>
                 </div>
                 <div className="show-likecount">
                   {likers.length === 1

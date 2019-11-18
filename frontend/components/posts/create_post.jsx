@@ -1,9 +1,13 @@
 import React from "react";
 import { withRouter } from "react-router";
+// import ReactDOM from "react-dom";
+// import { WhisperSpinner } from "react-spinners-kit";
+
 class CreatePost extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
+      loading: true,
       title: "",
       photo: "",
       location: "",

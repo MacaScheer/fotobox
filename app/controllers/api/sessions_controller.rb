@@ -5,7 +5,6 @@ class Api::SessionsController < ApplicationController
             params[:user][:username],
             params[:user][:password]
         )
-
         if @user
             signin(@user)
             # render "/api/posts/index"
