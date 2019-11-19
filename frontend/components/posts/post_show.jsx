@@ -2,7 +2,7 @@ import React from "react";
 import { withRouter } from "react-router";
 import { Link } from "react-router-dom";
 import LikesContainer from "../like/like_container";
-// import Spinner from "../loading/Spinner";
+import Spinner from "../loading/Spinner";
 
 class PostShow extends React.Component {
   constructor(props) {
@@ -30,15 +30,18 @@ class PostShow extends React.Component {
   }
   handleDelete(e) {
     e.preventDefault();
-    window.confirm("Are you sure you want to delete this post?") &&
-      this.props
-        .deletePost(this.props.post.id)
-        .then(() => {
-          this.props.closeModal();
-        })
-        .then(() => {
-          this.props.history.push(`/my-profile`);
-        });
+    window.confirm(
+      "Are you sure you want to delete this post from your box?"
+    ) &&
+      this.props.deletePost(this.props.post.id).then(res => {
+        return this.props.closeModal();
+      });
+    // .then(() => {
+    //   this.props.fetchProfilePosts(this.props.currentUser.id);
+    // });
+    // .then(() => {
+    //   this.props.history.push(`/my-profile`);
+    // });
   }
 
   handleComment(e) {

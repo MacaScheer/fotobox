@@ -1,6 +1,10 @@
 import { connect } from "react-redux";
 import PostShow from "./post_show";
-import { fetchPost, deletePost } from "../../actions/post_actions";
+import {
+  fetchPost,
+  deletePost,
+  fetchProfilePosts
+} from "../../actions/post_actions";
 import { createLike, deleteLike } from "../../actions/likes_actions";
 import { openModal, closeModal } from "../../actions/modal_actions";
 import {
@@ -21,6 +25,7 @@ const mapStateToProps = (state, ownProps) => {
   let userId = user.id;
   let errors = state.errors.comment;
   let post = state.entities.posts[postId];
+  let currentUser = state.entities.users[state.session.id];
   // state.entities.posts[ownProps.match.params.postId]
   // if (post) {
   //     post = Object.assign({}, post, { author: state.users[post.user_id] });
@@ -31,7 +36,8 @@ const mapStateToProps = (state, ownProps) => {
     postId,
     userId,
     post,
-    errors
+    errors,
+    currentUser
   };
 };
 
@@ -46,13 +52,11 @@ const mapDispatchToProps = function(dispatch) {
     fetchPostComments: postId => dispatch(fetchPostComments(postId)),
     deleteComment: id => dispatch(deleteComment(id)),
     createComment: comment => dispatch(createComment(comment)),
-    clearErrors: () => dispatch(clearErrors())
+    clearErrors: () => dispatch(clearErrors()),
+    fetchProfilePosts: userId => dispatch(fetchProfilePosts(userId))
   };
 };
 
 export default withRouter(
-  connect(
-    mapStateToProps,
-    mapDispatchToProps
-  )(PostShow)
+  connect(mapStateToProps, mapDispatchToProps)(PostShow)
 );

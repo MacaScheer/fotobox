@@ -35,7 +35,6 @@ class PostIndexItem extends React.Component {
   render() {
     // let { id } = this.props.post;
     let { post } = this.props;
-
     let commentPosts = Object.values(post.comments).map(comment => {
       return (
         <div key={comment.id} className="post-show-comment">

@@ -36,12 +36,23 @@ class Api::PostsController < ApplicationController
         @post = Post.find(params[:id]) 
     end
 
-    def destroy
-        post = Post.find(params[:id])
-        debugger
-        post.destroy
-        render :index
-    end
+    # def destroy
+    #     post = Post.find(params[:id])
+    #     post.destroy
+    #     render :index
+
+    # end
+  def destroy 
+    @post = Post.find(params[:id])
+      if @post.user_id = current_user.id 
+        @post.destroy
+        render json: {postId: params[:id]}
+      else 
+        render json: ["Users are only able to delete pictures they have posted"], status: 401
+      end
+
+    #   render :index
+  end
 
     private
     def post_params
