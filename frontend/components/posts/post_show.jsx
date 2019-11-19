@@ -2,6 +2,7 @@ import React from "react";
 import { withRouter } from "react-router";
 import { Link } from "react-router-dom";
 import LikesContainer from "../like/like_container";
+import Spinner from "../loading/Spinner";
 
 class PostShow extends React.Component {
   constructor(props) {
@@ -29,15 +30,18 @@ class PostShow extends React.Component {
   }
   handleDelete(e) {
     e.preventDefault();
-    window.confirm("Are you sure you want to delete this post?") &&
-      this.props
-        .deletePost(this.props.post.id)
-        .then(() => {
-          this.props.closeModal();
-        })
-        .then(() => {
-          this.props.history.push(`/my-profile`);
-        });
+    window.confirm(
+      "Are you sure you want to delete this post from your box?"
+    ) &&
+      this.props.deletePost(this.props.post.id).then(res => {
+        return this.props.closeModal();
+      });
+    // .then(() => {
+    //   this.props.fetchProfilePosts(this.props.currentUser.id);
+    // });
+    // .then(() => {
+    //   this.props.history.push(`/my-profile`);
+    // });
   }
 
   handleComment(e) {
@@ -62,7 +66,11 @@ class PostShow extends React.Component {
   }
   render() {
     if (!this.props.post) {
-      return <h2>Loading...</h2>;
+      return (
+        <h2>
+          <Spinner />
+        </h2>
+      );
     }
 
     let postComments = Object.values(this.props.post.comments).map(comment => {
@@ -70,7 +78,7 @@ class PostShow extends React.Component {
         <div
           key={Math.abs(comment.id - comment.user_id / 3)}
           className="post-show-comment"
-        >
+        > <Spinner />
           <Link className="profile-link" to={`/users/${comment.user_id}`}>
             {comment.author}
           </Link>
@@ -103,7 +111,6 @@ class PostShow extends React.Component {
       authorPhotoUrl,
       user_id
     } = this.props.post;
-
     return (
       <div>
         {this.renderErrors()}
@@ -119,9 +126,9 @@ class PostShow extends React.Component {
               </div>
               <div className="post-author-delete">
                 {user_id === this.props.user.id ||
-                this.props.user.username === "BarkstagramAdmin" ? (
+                this.props.user.username === this.props.post.author ? (
                   <button className="delete-button" onClick={this.handleDelete}>
-                    <i className="fas fa-trash-alt"></i>
+                    <i className="fa fa-trash"></i>
                   </button>
                 ) : (
                   <div></div>
@@ -151,10 +158,6 @@ class PostShow extends React.Component {
               <div className="likes-div">
                 <div className="show-buttons">
                   <LikesContainer post={this.props.post} likers={likers} />
-                  <i
-                    className="fas fa-paw show-icon"
-                    onClick={this.handleComment}
-                  ></i>
                 </div>
                 <div className="show-likecount">
                   {likers.length === 1

@@ -18,7 +18,6 @@ const mapStateToProps = (state, ownProps) => {
       post => post.user_id === profileUser.id
     );
   }
-
   return {
     profile_picture: profile_picture,
     userPosts: userPosts,
@@ -41,8 +40,5 @@ const mapDispatchToProps = dispatch => {
 };
 
 export default withRouter(
-  connect(
-    mapStateToProps,
-    mapDispatchToProps
-  )(Profile)
+  connect(mapStateToProps, mapDispatchToProps)(Profile)
 );

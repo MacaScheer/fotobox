@@ -19,10 +19,10 @@ class Profile extends React.Component {
     this.props.closeModal();
   }
 
-  componentDidUpdate(prevProps) {
-    if (prevProps.location.pathname !== this.props.location.pathname) {
-      this.props.closeModal();
-    }
+  componentDidUpdate(prevProps, nextProps) {
+    // if (prevProps.location.pathname !== this.props.location.pathname) {
+    //   this.props.closeModal();
+    // }
   }
 
   componentWillUnmount() {
@@ -61,7 +61,7 @@ class Profile extends React.Component {
                 <p className="image-overlay-text">
                   <span className="overlay-heart">&#9829;</span>
                   {post.likers ? post.likers.length : 0}
-                  <i className="fas fa-comment" aria-hidden="true">
+                  <i className="comment" aria-hidden="true">
                     &#x1f4ac;
                   </i>
                   {post.commentIds ? post.commentIds.length : 0}

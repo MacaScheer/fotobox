@@ -30,7 +30,9 @@ export const fetchPost = id => dispatch => {
 };
 
 export const deletePost = postId => dispatch => {
-  return ApiPost.deletePost(postId).then(post => dispatch(removePost(postId)));
+  return ApiPost.deletePost(postId).then(postId =>
+    dispatch(removePost(postId))
+  );
 };
 
 export const createPost = post => dispatch => {

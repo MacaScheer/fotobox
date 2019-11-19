@@ -1,9 +1,13 @@
 import React from "react";
 import { withRouter } from "react-router";
+// import ReactDOM from "react-dom";
+// import { WhisperSpinner } from "react-spinners-kit";
+
 class CreatePost extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
+      loading: true,
       title: "",
       photo: "",
       location: "",
@@ -45,7 +49,8 @@ class CreatePost extends React.Component {
       contentType: false,
       processData: false
     }).then(() => {
-      this.props.history.push(`/users/${this.props.currentUser.id}`);
+      // this.props.history.push(`/users/${this.props.currentUser.id}`);
+      this.props.history.push("/users/my-profile");
     });
   }
   handleCancel(e) {

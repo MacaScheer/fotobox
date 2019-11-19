@@ -1,7 +1,7 @@
 import React from "react";
 // import PostIndexItem from "./post_index_item";
 import PostIndexItemContainer from "./post_index_item_container";
-
+// import Spinner from "../loading/Spinner";
 import { withRouter } from "react-router";
 
 class PostIndex extends React.Component {

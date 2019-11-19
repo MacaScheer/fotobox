@@ -35,7 +35,6 @@ class PostIndexItem extends React.Component {
   render() {
     // let { id } = this.props.post;
     let { post } = this.props;
-
     let commentPosts = Object.values(post.comments).map(comment => {
       return (
         <div key={comment.id} className="post-show-comment">
@@ -65,12 +64,7 @@ class PostIndexItem extends React.Component {
             <div className="title-span">{post.title}</div>
           </div>
           <div className="feed-image-bottom">
-            <div className="feed-image-bottom-buttons">
-              <i
-                className="fas fa-heart show-icon"
-                onClick={this.handleComment}
-              ></i>
-            </div>
+            <div className="feed-image-bottom-buttons"></div>
             <div className="feed-image-bottom-likes">
               <LikeContainer post={post} likers={post.likers} />
               <div className="likes">

@@ -18,7 +18,7 @@ const postsReducer = (oldState = {}, action) => {
       return (newState = merge({}, oldState, action.posts));
     case REMOVE_POST:
       newState = merge({}, oldState);
-      delete newState[action.postId];
+      delete newState[action.postId.postId];
       return newState;
     case RECEIVE_LIKE:
       newObj[action.like.post_id] = oldState[action.like.post_id];
