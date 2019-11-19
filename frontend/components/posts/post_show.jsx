@@ -78,7 +78,7 @@ class PostShow extends React.Component {
         <div
           key={Math.abs(comment.id - comment.user_id / 3)}
           className="post-show-comment"
-        >
+        > <Spinner />
           <Link className="profile-link" to={`/users/${comment.user_id}`}>
             {comment.author}
           </Link>
