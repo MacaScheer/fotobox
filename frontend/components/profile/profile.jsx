@@ -19,11 +19,11 @@ class Profile extends React.Component {
     this.props.closeModal();
   }
 
-  componentDidUpdate(prevProps, nextProps) {
-    // if (prevProps.location.pathname !== this.props.location.pathname) {
-    //   this.props.closeModal();
-    // }
-  }
+  // componentDidUpdate(prevProps, nextProps) {
+  //   // if (prevProps.location.pathname !== this.props.location.pathname) {
+  //   //   this.props.closeModal();
+  //   // }
+  // }
 
   componentWillUnmount() {
     window.removeEventListener("scroll", this.myScrollFunc);

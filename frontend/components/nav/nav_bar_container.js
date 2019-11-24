@@ -6,7 +6,8 @@ import { createPost } from "../../actions/post_actions";
 
 const mapStateToProps = (state, ownProps) => {
   let currentUser = state.entities.users[state.session.id];
-  return { currentUser: currentUser };
+  let userProfilePic = currentUser.photo_url;
+  return { currentUser: currentUser, userProfilePic };
 };
 
 const mapDispatchToProps = dispatch => {
@@ -16,9 +17,4 @@ const mapDispatchToProps = dispatch => {
   };
 };
 
-export default withRouter(
-  connect(
-    mapStateToProps,
-    mapDispatchToProps
-  )(NavBar)
-);
+export default withRouter(connect(mapStateToProps, mapDispatchToProps)(NavBar));

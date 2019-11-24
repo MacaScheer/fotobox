@@ -19,7 +19,7 @@ const mapDispatchToProps = dispatch => {
   return {
     // fetchUser: id => dispatch(fetchUser(id)),
     fetchPost: id => dispatch(fetchPost(id)),
-    fetchPosts: () => dispatch(fetchPosts()),
+    fetchPosts: page => dispatch(fetchPosts(page)),
     logout: () => dispatch(logout()),
     createLike: postId => dispatch(createLike(postId)),
     deleteLike: postId => dispatch(deleteLike(postId)),
@@ -29,8 +29,5 @@ const mapDispatchToProps = dispatch => {
 };
 
 export default withRouter(
-  connect(
-    mapStateToProps,
-    mapDispatchToProps
-  )(PostIndex)
+  connect(mapStateToProps, mapDispatchToProps)(PostIndex)
 );

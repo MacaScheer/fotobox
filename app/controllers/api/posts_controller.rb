@@ -3,7 +3,7 @@ class Api::PostsController < ApplicationController
     before_action :require_signed_in!
 
     def index
-        @posts = Post.with_attached_photo
+        @posts = Post.with_attached_photo.page(params[:page]).per(5)
         render :index
         # render json:@posts
     end
