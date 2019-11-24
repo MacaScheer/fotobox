@@ -103,11 +103,42 @@
   font-family: "Helvetica Neue";
   padding-top: 20px;
   padding-bottom: 20px;
-  //
 }
 
-.icon {
+@keyframes cf3FadeInOut {
+  0% {
+    opacity: 1;
+  }
+  20% {
+    opacity: 1;
+  }
+  40% {
+    opacity: 0;
+  }
+  92% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 0;
+  }
 }
+
+.first-image .second-image {
+  animation-name: cf3FadeInOut;
+  animation-timing-function: ease-in-out;
+  animation-iteration-count: infinite;
+  animation-duration: 10s;
+  animation-direction: alternate;
+  z-index: 3;
+}
+
+.first-image {
+  animation-delay: 2s;
+}
+.second-image {
+  animation-delay: 4s;
+}
+
 .icon:hover {
   background-color: rgb(238, 238, 238);
   cursor: pointer;
