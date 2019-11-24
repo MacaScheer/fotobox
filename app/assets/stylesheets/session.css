@@ -123,17 +123,17 @@
   }
 }
 
-.first-image .second-image {
+.login-left-image-inner .first-image .second-image {
   animation-name: cf3FadeInOut;
   animation-timing-function: ease-in-out;
   animation-iteration-count: infinite;
-  animation-duration: 10s;
+  animation-duration: 6s;
   animation-direction: alternate;
   z-index: 3;
 }
 
 .first-image {
-  animation-delay: 2s;
+  animation-delay: 0s;
 }
 .second-image {
   animation-delay: 4s;
