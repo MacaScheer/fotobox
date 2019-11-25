@@ -6,7 +6,7 @@ import {
 import { RECEIVE_LIKE, REMOVE_LIKE } from "../actions/likes_actions";
 import merge from "lodash/merge";
 
-const postsReducer = (oldState = { posts: [] }, action) => {
+const postsReducer = (oldState = {}, action) => {
   let newState = {};
   let newObj = {};
   Object.freeze(oldState);
@@ -25,7 +25,6 @@ const postsReducer = (oldState = { posts: [] }, action) => {
       // );
       // let p = oldState.posts.concat
       newState = merge({}, oldState, action.posts);
-      // debugger;
       return newState;
     case REMOVE_POST:
       newState = merge({}, oldState);
