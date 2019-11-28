@@ -109,7 +109,8 @@ class PostShow extends React.Component {
       body,
       likers,
       authorPhotoUrl,
-      user_id
+      user_id,
+      title
     } = this.props.post;
     return (
       <div>
@@ -158,6 +159,7 @@ class PostShow extends React.Component {
               <div className="likes-div">
                 <div className="show-buttons">
                   <LikesContainer post={this.props.post} likers={likers} />
+                  <i className="post-title-show">{title}</i>
                 </div>
                 <div className="show-likecount">
                   {likers.length === 1

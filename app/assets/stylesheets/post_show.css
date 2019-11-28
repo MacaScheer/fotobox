@@ -60,6 +60,16 @@
   font-family: "Roboto", sans-serif;
   font-weight: bolder;
 }
+.post-title-show {
+  padding: 8px;
+  font-size: 14px;
+  /* height: 40px; */
+  font-weight: bolder;
+  text-decoration: none;
+  /* justify-content: space-between; */
+  align-items: flex-end;
+  margin-left: 10px;
+}
 
 .post-bio {
   margin-bottom: 10px;
@@ -73,8 +83,11 @@
 }
 .show-buttons {
   display: flex;
+  flex-direction: row;
+  align-items: baseline;
   /* align-items: center; */
-  margin-left: 20px;
+
+  margin-left: 11.5px;
 }
 .show-likecount {
   margin-left: 23px;
