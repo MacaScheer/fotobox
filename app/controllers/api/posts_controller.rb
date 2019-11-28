@@ -3,9 +3,9 @@ class Api::PostsController < ApplicationController
     before_action :require_signed_in!
 
     def index
-        @posts = Post.with_attached_photo.page(params[:page]).per(5)
+        num = params[:page].to_i * 3
+        @posts = Post.with_attached_photo.order('created_at DESC').last(num)
         render :index
-        # render json:@posts
     end
     
     def show

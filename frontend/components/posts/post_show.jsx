@@ -78,7 +78,7 @@ class PostShow extends React.Component {
         <div
           key={Math.abs(comment.id - comment.user_id / 3)}
           className="post-show-comment"
-        > <Spinner />
+        >
           <Link className="profile-link" to={`/users/${comment.user_id}`}>
             {comment.author}
           </Link>
@@ -187,65 +187,5 @@ class PostShow extends React.Component {
       </div>
     );
   }
-
-  //   if (!this.props.post) {
-  //     return <span>Loading</span>;
-  //   }
-  //   let { post } = this.props;
-
-  //   return (
-  //     <div className="post-show-wrapper">
-  //       <section className="post-show-page">
-  //         <div className="post-show-container">
-  //           <div className="post-box">
-  //             <div className="post-show-image">
-  //               <img className="post-show-image" src={post.photoUrl} />
-  //             </div>
-  //             <div className="post-show-detail-box">
-  //               <div className="post-author">
-  //                 <div className="post-author-links">
-  //                   <Link
-  //                     className="author-link"
-  //                     to={`/users/${this.props.user_id}`}
-  //                   ></Link>
-  //                   <button
-  //                     className="post-author-delete"
-  //                     onClick={this.handleDelete}
-  //                   >
-  //                     Delete Post
-  //                   </button>
-  //                 </div>
-  //               </div>
-  //               <div className="post-show-comments"></div>
-  //               <div className="post-show-likes">
-  //                 <div className="likes-div">
-  //                   <div className="show-buttons">
-  //                     <div className="like-button-div">
-  //                       <div className="like-button">
-  //                         <div className="like-button-liked">
-  //                           <span>♥</span>
-  //                         </div>
-  //                       </div>
-  //                     </div>
-  //                   </div>
-  //                   <div className="show-like-count">{post.likers.length}</div>
-  //                 </div>
-  //                 <div className="show-comment-container">
-  //                   <form className="show-comment-form">
-  //                     <textarea
-  //                       className="show-textarea"
-  //                       placeholder="Add a Comment:"
-  //                     ></textarea>
-  //                     <button className="submit-comment-button">Post</button>
-  //                   </form>
-  //                 </div>
-  //               </div>
-  //             </div>
-  //           </div>
-  //         </div>
-  //       </section>
-  //     </div>
-  //   );
-  // }
 }
 export default withRouter(PostShow);

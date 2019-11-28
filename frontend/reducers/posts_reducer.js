@@ -9,21 +9,13 @@ import merge from "lodash/merge";
 const postsReducer = (oldState = {}, action) => {
   let newState = {};
   let newObj = {};
+  // const posts = {};
   Object.freeze(oldState);
   switch (action.type) {
     case RECEIVE_POST:
       newState = merge({}, oldState, { [action.post.id]: action.post });
       return newState;
     case RECEIVE_POSTS:
-      // const posts = Object.values(action.posts);
-      // return Object.assign(
-      //   {},
-      //   oldState,
-      //   action.posts.map(post => {
-      //     oldState.posts[post._id] = post;
-      //   }, {})
-      // );
-      // let p = oldState.posts.concat
       newState = merge({}, oldState, action.posts);
       return newState;
     case REMOVE_POST:
