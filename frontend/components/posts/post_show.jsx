@@ -10,9 +10,11 @@ class PostShow extends React.Component {
     this.handleDelete = this.handleDelete.bind(this);
     this.renderErrors = this.renderErrors.bind(this);
     this.handleComment = this.handleComment.bind(this);
+    this.deleteComment = this.props.deleteComment.bind(this);
     this.state = {
       body: ""
     };
+    debugger;
   }
   // componentWillMount() {
   //   if (this.props.match.params.postId) {
@@ -65,6 +67,16 @@ class PostShow extends React.Component {
     }
   }
   render() {
+    const {
+      photoUrl,
+      author,
+      body,
+      likers,
+      authorPhotoUrl,
+      user_id,
+      title,
+      comments
+    } = this.props.post;
     if (!this.props.post) {
       return (
         <h2>
@@ -73,7 +85,8 @@ class PostShow extends React.Component {
       );
     }
 
-    let postComments = Object.values(this.props.post.comments).map(comment => {
+    let postComments = Object.values(comments).map(comment => {
+      debugger;
       return (
         <div
           key={Math.abs(comment.id - comment.user_id / 3)}
@@ -83,7 +96,7 @@ class PostShow extends React.Component {
             {comment.author}
           </Link>
           <span className="comment-body">&nbsp;{comment.body}</span>
-          {comment.user_id === this.props.user_id ? (
+          {comment.user_id === user_id ? (
             <button
               className="delete-comment-button"
               onClick={() =>
@@ -103,15 +116,6 @@ class PostShow extends React.Component {
         </div>
       );
     });
-    const {
-      photoUrl,
-      author,
-      body,
-      likers,
-      authorPhotoUrl,
-      user_id,
-      title
-    } = this.props.post;
     return (
       <div>
         {this.renderErrors()}

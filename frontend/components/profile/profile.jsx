@@ -25,9 +25,9 @@ class Profile extends React.Component {
   //   // }
   // }
 
-  componentWillUnmount() {
-    window.removeEventListener("scroll", this.myScrollFunc);
-  }
+  // componentWillUnmount() {
+  //   window.removeEventListener("scroll", this.myScrollFunc);
+  // }
 
   handleNewPostForm(e) {
     e.preventDefault();

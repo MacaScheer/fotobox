@@ -14,10 +14,12 @@ const receiveComment = comment => {
   };
 };
 
-const receivePostComments = comments => ({
-  type: RECEIVE_POST_COMMENTS,
-  comments
-});
+const receivePostComments = comments => {
+  return {
+    type: RECEIVE_POST_COMMENTS,
+    comments
+  };
+};
 
 export const removeComment = comment => ({
   type: REMOVE_COMMENT,

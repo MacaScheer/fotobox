@@ -142,18 +142,6 @@ class SessionForm extends React.Component {
               <div>
                 {instruc}
                 <Link to={path}>{altTitle}</Link>
-                {/* <a href={path}>{altTitle}</a> */}
-                {/* <div className="footer-links">
-       <span>
-       <ul class="icons alt">
-             <a href="https://www.linkedin.com/in/macscheer/" className="icon brands fa-linkedin"><span
-           className="label">LinkedIn</span></a>
-             <a href="https://macascheer.github.io" className="icon fas fa-network-wired"><span
-               className="label">Portfolio</span></a>
-             <a href="https://github.com/MacaScheer" className="icon brands fa-github"><span className="label">GitHub</span></a>
-           </ul>
-         </span> 
-       </div> */}
               </div>
             </div>
           </div>

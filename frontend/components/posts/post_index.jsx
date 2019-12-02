@@ -1,5 +1,5 @@
 import React from "react";
-// import PostIndexItem from "./post_index_item";
+import PostIndexItem from "./post_index_item";
 import PostIndexItemContainer from "./post_index_item_container";
 import Spinner from "../loading/Spinner";
 import { Waypoint } from "react-waypoint";
@@ -37,7 +37,13 @@ class PostIndex extends React.Component {
               {posts.map((post, i) => {
                 return (
                   <div key={i}>
-                    <PostIndexItemContainer key={post.id} post={post} />
+                    <PostIndexItem
+                      key={post.id}
+                      post={post}
+                      openModal={this.props.openModal}
+                      deleteComment={this.props.deleteComment}
+                    />
+                    {/* <PostIndexItemContainer key={post.id} post={post} /> */}
                   </div>
                 );
               })}
