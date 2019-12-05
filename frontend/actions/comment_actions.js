@@ -45,12 +45,14 @@ export const createComment = comment => dispatch => {
   );
 };
 
-export const fetchPostComments = post_id => dispatch =>
-  CommentAPI.fetchPostComments(post_id).then(comments => {
-    return dispatch(receivePostComments(comments));
-  });
+export const fetchPostComments = post_id => dispatch => {
+  return CommentAPI.fetchPostComments(post_id).then(comments =>
+    dispatch(receivePostComments(comments))
+  );
+};
 
-export const deleteComment = id => dispatch =>
-  CommentAPI.deleteComment(id).then(comment => {
+export const deleteComment = comment => dispatch => {
+  return CommentAPI.deleteComment(comment).then(comment => {
     return dispatch(removeComment(comment));
   });
+};

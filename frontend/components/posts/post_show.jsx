@@ -11,19 +11,27 @@ class PostShow extends React.Component {
     this.renderErrors = this.renderErrors.bind(this);
     this.handleComment = this.handleComment.bind(this);
     this.deleteComment = this.props.deleteComment.bind(this);
+    this.fetchPost = this.props.fetchPost.bind(this);
+    this.clearErrors = this.props.clearErrors.bind(this);
     this.state = {
       body: ""
     };
-    debugger;
   }
   // componentWillMount() {
   //   if (this.props.match.params.postId) {
   //     this.props.fetchPost(this.props.match.params.postId);
   //   }
   // }
+  // componentDidUpdate(prevProps) {
+  //   debugger;
+  //   if (this.props !== prevProps) {
+  //     this.props.fetchPostComments(this.props.postId);
+  //   }
+  // }
 
   componentDidMount() {
     this.props.fetchPost(this.props.postId);
+    this.props.fetchPostComments(this.props.postId);
   }
   update(field) {
     return e => {
@@ -48,12 +56,14 @@ class PostShow extends React.Component {
 
   handleComment(e) {
     e.preventDefault();
-    const comment = { body: this.state.body, post_id: this.props.post.id };
+    const comment = { body: this.state.body, post_id: this.props.postId };
     this.props.createComment(comment);
     this.props.fetchPost(this.props.post.id).then(() => {
       this.props.clearErrors();
     });
-    this.setState({ body: "" });
+    this.props.fetchPostComments(this.props.postId).then(() => {
+      this.setState({ body: "" });
+    });
   }
   renderErrors() {
     if (this.props.errors && this.props.errors.length > 0) {
@@ -86,7 +96,6 @@ class PostShow extends React.Component {
     }
 
     let postComments = Object.values(comments).map(comment => {
-      debugger;
       return (
         <div
           key={Math.abs(comment.id - comment.user_id / 3)}
@@ -102,9 +111,11 @@ class PostShow extends React.Component {
               onClick={() =>
                 this.props
                   .deleteComment(comment.id)
-                  .then(() => {
-                    this.props.fetchPost(this.props.post.id);
-                  })
+                  // .then(() => {
+                  // debugger;
+                  // this.props.fetchPost(this.props.post.id);
+                  // this.props.fetchPostComments(this.props.post.id);
+                  // })
                   .then(() => this.props.clearErrors())
               }
             >
