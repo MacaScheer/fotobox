@@ -33,6 +33,7 @@ class Profile extends React.Component {
     e.preventDefault();
     let path = `/newpost`;
     this.props.history.push(path);
+    // this.props.history.location = `newpost`;
   }
 
   handleEditUser(e) {

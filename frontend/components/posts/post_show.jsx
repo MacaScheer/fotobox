@@ -22,12 +22,6 @@ class PostShow extends React.Component {
   //     this.props.fetchPost(this.props.match.params.postId);
   //   }
   // }
-  // componentDidUpdate(prevProps) {
-  //   debugger;
-  //   if (this.props !== prevProps) {
-  //     this.props.fetchPostComments(this.props.postId);
-  //   }
-  // }
 
   componentDidMount() {
     this.props.fetchPost(this.props.postId);
@@ -43,14 +37,14 @@ class PostShow extends React.Component {
     window.confirm(
       "Are you sure you want to delete this post from your box?"
     ) &&
-      this.props.deletePost(this.props.post.id).then(res => {
-        return this.props.closeModal();
+      this.props.deletePost(this.props.post.id).then(() => {
+        this.props.closeModal();
       });
     // .then(() => {
-    //   this.props.fetchProfilePosts(this.props.currentUser.id);
+    //   this.props.history.replace(`users/my-profile`);
     // });
     // .then(() => {
-    //   this.props.history.push(`/my-profile`);
+    // this.props.fetchProfilePosts(this.props.currentUser.id);
     // });
   }
 
@@ -77,6 +71,15 @@ class PostShow extends React.Component {
     }
   }
   render() {
+    if (!this.props.post) {
+      return (
+        <div>
+          <Spinner />
+        </div>
+      );
+    }
+    const comments = this.props.comments;
+    const { userId } = this.props;
     const {
       photoUrl,
       author,
@@ -84,17 +87,8 @@ class PostShow extends React.Component {
       likers,
       authorPhotoUrl,
       user_id,
-      title,
-      comments
+      title
     } = this.props.post;
-    if (!this.props.post) {
-      return (
-        <h2>
-          <Spinner />
-        </h2>
-      );
-    }
-
     let postComments = Object.values(comments).map(comment => {
       return (
         <div
@@ -105,17 +99,12 @@ class PostShow extends React.Component {
             {comment.author}
           </Link>
           <span className="comment-body">&nbsp;{comment.body}</span>
-          {comment.user_id === user_id ? (
+          {comment.user_id === userId ? (
             <button
               className="delete-comment-button"
               onClick={() =>
                 this.props
                   .deleteComment(comment.id)
-                  // .then(() => {
-                  // debugger;
-                  // this.props.fetchPost(this.props.post.id);
-                  // this.props.fetchPostComments(this.props.post.id);
-                  // })
                   .then(() => this.props.clearErrors())
               }
             >
