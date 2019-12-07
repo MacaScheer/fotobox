@@ -25,14 +25,15 @@ class Profile extends React.Component {
   //   // }
   // }
 
-  componentWillUnmount() {
-    window.removeEventListener("scroll", this.myScrollFunc);
-  }
+  // componentWillUnmount() {
+  //   window.removeEventListener("scroll", this.myScrollFunc);
+  // }
 
   handleNewPostForm(e) {
     e.preventDefault();
     let path = `/newpost`;
     this.props.history.push(path);
+    // this.props.history.location = `newpost`;
   }
 
   handleEditUser(e) {

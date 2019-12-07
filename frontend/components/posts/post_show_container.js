@@ -26,6 +26,7 @@ const mapStateToProps = (state, ownProps) => {
   let errors = state.errors.comment;
   let post = state.entities.posts[postId];
   let currentUser = state.entities.users[state.session.id];
+  let comments = state.entities.comments;
   // state.entities.posts[ownProps.match.params.postId]
   // if (post) {
   //     post = Object.assign({}, post, { author: state.users[post.user_id] });
@@ -37,7 +38,8 @@ const mapStateToProps = (state, ownProps) => {
     userId,
     post,
     errors,
-    currentUser
+    currentUser,
+    comments
   };
 };
 

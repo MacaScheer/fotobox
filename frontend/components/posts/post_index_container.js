@@ -7,7 +7,11 @@ import { connect } from "react-redux";
 import { logout } from "../../actions/session_actions";
 import { createLike, deleteLike } from "../../actions/likes_actions";
 import { closeModal, openModal } from "../../actions/modal_actions";
-
+import {
+  createComment,
+  deleteComment,
+  fetchPostComments
+} from "../../actions/comment_actions";
 const mapStateToProps = state => {
   return {
     posts: Object.values(state.entities.posts),
@@ -18,6 +22,9 @@ const mapStateToProps = state => {
 const mapDispatchToProps = dispatch => {
   return {
     // fetchUser: id => dispatch(fetchUser(id)),
+    fetchPostComments: postId => dispatch(fetchPostComments(postId)),
+    createComment: () => dispatch(createComment),
+    deleteComment: commentId => dispatch(deleteComment(commentId)),
     fetchPost: id => dispatch(fetchPost(id)),
     fetchPosts: page => dispatch(fetchPosts(page)),
     logout: () => dispatch(logout()),

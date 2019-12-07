@@ -14,10 +14,12 @@ const receiveComment = comment => {
   };
 };
 
-const receivePostComments = comments => ({
-  type: RECEIVE_POST_COMMENTS,
-  comments
-});
+const receivePostComments = comments => {
+  return {
+    type: RECEIVE_POST_COMMENTS,
+    comments
+  };
+};
 
 export const removeComment = comment => ({
   type: REMOVE_COMMENT,
@@ -43,12 +45,14 @@ export const createComment = comment => dispatch => {
   );
 };
 
-export const fetchPostComments = post_id => dispatch =>
-  CommentAPI.fetchPostComments(post_id).then(comments => {
-    return dispatch(receivePostComments(comments));
-  });
+export const fetchPostComments = post_id => dispatch => {
+  return CommentAPI.fetchPostComments(post_id).then(comments =>
+    dispatch(receivePostComments(comments))
+  );
+};
 
-export const deleteComment = id => dispatch =>
-  CommentAPI.deleteComment(id).then(comment => {
+export const deleteComment = comment => dispatch => {
+  return CommentAPI.deleteComment(comment).then(comment => {
     return dispatch(removeComment(comment));
   });
+};

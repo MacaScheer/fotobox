@@ -10,6 +10,9 @@ class PostShow extends React.Component {
     this.handleDelete = this.handleDelete.bind(this);
     this.renderErrors = this.renderErrors.bind(this);
     this.handleComment = this.handleComment.bind(this);
+    this.deleteComment = this.props.deleteComment.bind(this);
+    this.fetchPost = this.props.fetchPost.bind(this);
+    this.clearErrors = this.props.clearErrors.bind(this);
     this.state = {
       body: ""
     };
@@ -22,6 +25,7 @@ class PostShow extends React.Component {
 
   componentDidMount() {
     this.props.fetchPost(this.props.postId);
+    this.props.fetchPostComments(this.props.postId);
   }
   update(field) {
     return e => {
@@ -33,25 +37,27 @@ class PostShow extends React.Component {
     window.confirm(
       "Are you sure you want to delete this post from your box?"
     ) &&
-      this.props.deletePost(this.props.post.id).then(res => {
-        return this.props.closeModal();
+      this.props.deletePost(this.props.post.id).then(() => {
+        this.props.closeModal();
       });
     // .then(() => {
-    //   this.props.fetchProfilePosts(this.props.currentUser.id);
+    //   this.props.history.replace(`users/my-profile`);
     // });
     // .then(() => {
-    //   this.props.history.push(`/my-profile`);
+    // this.props.fetchProfilePosts(this.props.currentUser.id);
     // });
   }
 
   handleComment(e) {
     e.preventDefault();
-    const comment = { body: this.state.body, post_id: this.props.post.id };
+    const comment = { body: this.state.body, post_id: this.props.postId };
     this.props.createComment(comment);
     this.props.fetchPost(this.props.post.id).then(() => {
       this.props.clearErrors();
     });
-    this.setState({ body: "" });
+    this.props.fetchPostComments(this.props.postId).then(() => {
+      this.setState({ body: "" });
+    });
   }
   renderErrors() {
     if (this.props.errors && this.props.errors.length > 0) {
@@ -67,13 +73,23 @@ class PostShow extends React.Component {
   render() {
     if (!this.props.post) {
       return (
-        <h2>
+        <div>
           <Spinner />
-        </h2>
+        </div>
       );
     }
-
-    let postComments = Object.values(this.props.post.comments).map(comment => {
+    const comments = this.props.comments;
+    const { userId } = this.props;
+    const {
+      photoUrl,
+      author,
+      body,
+      likers,
+      authorPhotoUrl,
+      user_id,
+      title
+    } = this.props.post;
+    let postComments = Object.values(comments).map(comment => {
       return (
         <div
           key={Math.abs(comment.id - comment.user_id / 3)}
@@ -83,15 +99,12 @@ class PostShow extends React.Component {
             {comment.author}
           </Link>
           <span className="comment-body">&nbsp;{comment.body}</span>
-          {comment.user_id === this.props.user_id ? (
+          {comment.user_id === userId ? (
             <button
               className="delete-comment-button"
               onClick={() =>
                 this.props
                   .deleteComment(comment.id)
-                  .then(() => {
-                    this.props.fetchPost(this.props.post.id);
-                  })
                   .then(() => this.props.clearErrors())
               }
             >
@@ -103,15 +116,6 @@ class PostShow extends React.Component {
         </div>
       );
     });
-    const {
-      photoUrl,
-      author,
-      body,
-      likers,
-      authorPhotoUrl,
-      user_id,
-      title
-    } = this.props.post;
     return (
       <div>
         {this.renderErrors()}

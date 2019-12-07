@@ -41,15 +41,15 @@ class PostIndexItem extends React.Component {
           <Link className="feed-profile-link" to={`/users/${comment.user_id}`}>
             {comment.author}
           </Link>
-          <span className="comment-bo">&nbsp;{comment.body}</span>
+          <span className="comment-body">&nbsp;{comment.body}</span>
         </div>
       );
     });
+    const numComments = commentPosts.length;
     let limitPosts = [];
     while (limitPosts.length < 3) {
       limitPosts.push(commentPosts.shift());
     }
-
     return (
       <li className="feed-image-box">
         <div className="feed-image-header">
@@ -73,9 +73,7 @@ class PostIndexItem extends React.Component {
                   : `${post.likers.length} likes`}
               </div>
               <div className="comments">
-                {commentPosts === 1
-                  ? `1 comment`
-                  : `${commentPosts.length} comments`}
+                {numComments === 1 ? `1 comment` : `${numComments} comments`}
               </div>
             </div>
             <div className="feed-image-bottom-bio"></div>
