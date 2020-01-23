@@ -7,6 +7,7 @@ import { fetchUser } from "../../actions/user_actions";
 import { createFollow, deleteFollow } from "../../actions/followings_actions";
 import { openModal, closeModal } from "../../actions/modal_actions";
 
+
 const mapStateToProps = (state, ownProps) => {
   let profileId = ownProps.match.params.userId;
   let profileUser = state.entities.users[state.session.id];
@@ -14,9 +15,7 @@ const mapStateToProps = (state, ownProps) => {
   let userPosts = null;
   let profile_picture = profileUser.photo_url;
   if (profileUser) {
-    userPosts = Object.values(state.entities.posts).filter(
-      post => post.user_id === profileUser.id
-    );
+    userPosts = Object.values(state.entities.posts);
   }
   return {
     profile_picture: profile_picture,
@@ -28,8 +27,8 @@ const mapStateToProps = (state, ownProps) => {
 };
 const mapDispatchToProps = dispatch => {
   return {
-    // fetchPosts: () => dispatch(fetchPosts()),
-    fetchProfilePosts: userId => dispatch(fetchProfilePosts(userId)),
+    fetchPosts: () => dispatch(fetchPosts()),
+    fetchProfilePosts: (page, userId) => dispatch(fetchProfilePosts(page, userId)),
     logout: () => dispatch(logout()),
     fetchUser: user_id => dispatch(fetchUser(user_id)),
     createFollow: user_id => dispatch(createFollow(user_id)),

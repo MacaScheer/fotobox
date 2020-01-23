@@ -21,13 +21,15 @@ class PostIndex extends React.Component {
     this.getPosts();
     this.props.closeModal();
   }
+  // getPostComments() {
+  //   this.props.fetchPostComments();
+  // }
 
   render() {
     if (!this.props) {
       return <Spinner />;
     }
     const { posts } = this.props;
-
     return (
       <div>
         <section className="feed-container">
@@ -41,7 +43,9 @@ class PostIndex extends React.Component {
                       key={post.id}
                       post={post}
                       openModal={this.props.openModal}
+                      createComment={this.props.createComment}
                       deleteComment={this.props.deleteComment}
+                      fetchPost={this.props.fetchPost}
                     />
                     {/* <PostIndexItemContainer key={post.id} post={post} /> */}
                   </div>

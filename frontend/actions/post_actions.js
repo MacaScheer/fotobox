@@ -39,8 +39,8 @@ export const createPost = post => dispatch => {
   return ApiPost.createPost(post).then(post => dispatch(receivePost(post)));
 };
 
-export const fetchProfilePosts = userId => dispatch => {
-  return ApiPost.fetchProfilePosts(userId).then(posts =>
+export const fetchProfilePosts = (page, userId) => dispatch => {
+  return ApiPost.fetchProfilePosts(page, userId).then(posts =>
     dispatch(receivePosts(posts))
   );
 };

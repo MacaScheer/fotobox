@@ -1,39 +1,50 @@
 import React from "react";
 import NavBarContainer from "../nav/nav_bar_container";
+var debounce = require('debounce');
+
 
 class Profile extends React.Component {
   constructor(props) {
     super(props);
 
-    this.userPosts = this.props.userPosts;
     this.currentUser = this.props.currentUser;
     this.logout = this.props.logout;
     this.handleNewPostForm = this.handleNewPostForm.bind(this);
     this.handleEditUser = this.handleEditUser.bind(this);
+    this.state = {
+      page: 1
+    }
+    this.getPosts = this.getPosts.bind(this)
+  }
+  getPosts() {
+    this.props.fetchProfilePosts(this.state.page, this.props.currentUser.id);
+    this.setState = { page: (this.state.page += 1) }
   }
 
   componentDidMount() {
-    this.props.fetchProfilePosts(this.props.currentUser.id);
+    this.getPosts()
+    this.infiniteScroller();
+    // this.props.fetchProfilePosts(this.props.currentUser.id);
     this.props.fetchUser(this.props.currentUser.id);
     window.addEventListener("scroll", this.myScrollFunc);
     this.props.closeModal();
   }
 
-  // componentDidUpdate(prevProps, nextProps) {
-  //   // if (prevProps.location.pathname !== this.props.location.pathname) {
-  //   //   this.props.closeModal();
-  //   // }
-  // }
-
-  // componentWillUnmount() {
-  //   window.removeEventListener("scroll", this.myScrollFunc);
-  // }
+  infiniteScroller() {
+        window.onscroll = debounce(() => {
+            if (
+                window.innerHeight + document.documentElement.scrollTop ===
+                document.documentElement.offsetHeight
+            ) {
+               this.getPosts()
+            }
+        }, 50)
+    }
 
   handleNewPostForm(e) {
     e.preventDefault();
     let path = `/newpost`;
     this.props.history.push(path);
-    // this.props.history.location = `newpost`;
   }
 
   handleEditUser(e) {
@@ -52,7 +63,7 @@ class Profile extends React.Component {
       followerIds,
       followingIds
     } = this.props.profileUser;
-    let userPhotos = this.props.userPosts.reverse().map(post => {
+    let userPhotos = this.props.userPosts.map(post => {
       return (
         <li key={post.id}>
           <div className="image-container">
@@ -115,7 +126,9 @@ class Profile extends React.Component {
               </div>
             </div>
             <div className="profile-photo-index-container">
-              <ul className="profile-photo-index">{userPhotos}</ul>
+              <ul className="profile-photo-index">
+                {userPhotos}
+              </ul>
             </div>
           </div>
           <div className="profile-right"></div>
