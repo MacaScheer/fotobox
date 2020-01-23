@@ -15,7 +15,9 @@ const mapStateToProps = (state, ownProps) => {
   let userPosts = null;
   let profile_picture = profileUser.photo_url;
   if (profileUser) {
-    userPosts = Object.values(state.entities.posts);
+    userPosts = Object.values(state.entities.posts).filter(
+      post => post.user_id === profileUser.id
+    );
   }
   return {
     profile_picture: profile_picture,

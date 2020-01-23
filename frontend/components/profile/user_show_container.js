@@ -33,7 +33,7 @@ const mapStateToProps = (state, ownProps) => {
 
 const mapDispatchToProps = dispatch => ({
   logout: () => dispatch(logout()),
-  fetchProfilePosts: id => dispatch(fetchProfilePosts(id)),
+  fetchProfilePosts: (page, id) => dispatch(fetchProfilePosts(page, id)),
   fetchUser: userId => dispatch(fetchUser(userId)),
   deleteUser: id => dispatch(deleteUser(id)),
   createFollow: follow => dispatch(createFollow(follow)),

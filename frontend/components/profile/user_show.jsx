@@ -2,6 +2,7 @@ import React from "react";
 import NavBarContainer from "../nav/nav_bar_container";
 import { withRouter } from "react-router-dom";
 import { Link } from "react-router-dom";
+var debounce = require('debounce');
 
 class UserShow extends React.Component {
   constructor(props) {
@@ -14,16 +15,40 @@ class UserShow extends React.Component {
     this.handleFollow = this.handleFollow.bind(this);
     this.handleUnfollow = this.handleUnfollow.bind(this);
     // this.handleDeleteUser = this.handleDeleteUser.bind(this);
+    this.getPosts = this.getPosts.bind(this)
+    this.state = {
+      page: 1
+    }
   }
 
+  getPosts() {
+    this.props.fetchProfilePosts(this.state.page, this.props.match.params.userId);
+    this.setState = { page: (this.state.page += 1) }
+  }
   componentDidMount() {
-    this.props.fetchProfilePosts(this.props.match.params.userId);
+    // this.props.fetchProfilePosts(this.props.match.params.userId);
+    this.getPosts()
     this.props.fetchUser(this.props.match.params.userId);
     this.props.closeModal();
+    this.infiniteScroller()
   }
+
+
+  infiniteScroller() {
+        window.onscroll = debounce(() => {
+            if (
+                window.innerHeight + document.documentElement.scrollTop ===
+                document.documentElement.offsetHeight
+            ) {
+               this.getPosts()
+            }
+        }, 50)
+    }
+
   componentDidUpdate(prevProps) {
     if (prevProps.location.pathname !== this.props.location.pathname) {
-      this.props.fetchProfilePosts(this.props.match.params.userId);
+      // this.props.fetchProfilePosts(this.props.match.params.userId);
+      this.getPosts();
       this.props.fetchUser(this.props.match.params.userId);
       this.props.closeModal();
     }
@@ -73,7 +98,7 @@ class UserShow extends React.Component {
       followerIds,
       followingIds
     } = this.props.profileUser;
-    let userPhotos = this.props.userPosts.reverse().map(post => {
+    let userPhotos = this.props.userPosts.map(post => {
       return (
         <li key={post.id}>
           <div className="image-container">
