@@ -23,6 +23,7 @@ class Profile extends React.Component {
 
   componentDidMount() {
     this.getPosts()
+    this.props.fetchNumPosts(this.props.currentUser.id);
     this.infiniteScroller();
     // this.props.fetchProfilePosts(this.props.currentUser.id);
     this.props.fetchUser(this.props.currentUser.id);
@@ -119,7 +120,7 @@ class Profile extends React.Component {
                   </div>
                 </div>
                 <div className="profile-top-down">
-                  <span>{this.props.userPosts.length} posts</span>
+                  <span>{this.props.numPosts} posts</span>
                   <span className="">{followerIds.length} Followers</span>
                   <span className="">{followingIds.length} Following</span>
                 </div>

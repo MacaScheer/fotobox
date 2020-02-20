@@ -26,10 +26,8 @@ class UserShow extends React.Component {
     this.setState = { page: (this.state.page += 1) }
   }
   componentDidMount() {
-    // this.props.fetchProfilePosts(this.props.match.params.userId);
     let id = this.props.match.params.userId
     this.props.fetchNumPosts(id)
-    // debugger
     this.getPosts()
     this.props.fetchUser(id);
     this.props.closeModal();
@@ -50,7 +48,6 @@ class UserShow extends React.Component {
 
   componentDidUpdate(prevProps) {
     if (prevProps.location.pathname !== this.props.location.pathname) {
-      // this.props.fetchProfilePosts(this.props.match.params.userId);
       this.getPosts();
       this.props.fetchUser(this.props.match.params.userId);
       this.props.closeModal();
