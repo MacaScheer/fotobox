@@ -14,6 +14,7 @@ import {
 } from "../../actions/comment_actions";
 const mapStateToProps = state => {
   return {
+    comments: Object.values(state.entities.comments),
     posts: Object.values(state.entities.posts),
     currentUser: state.entities.users[state.session.id]
   };
@@ -23,7 +24,7 @@ const mapDispatchToProps = dispatch => {
   return {
     // fetchUser: id => dispatch(fetchUser(id)),
     fetchPostComments: postId => dispatch(fetchPostComments(postId)),
-    createComment: () => dispatch(createComment),
+    createComment: comment => dispatch(createComment(comment)),
     deleteComment: commentId => dispatch(deleteComment(commentId)),
     fetchPost: id => dispatch(fetchPost(id)),
     fetchPosts: page => dispatch(fetchPosts(page)),

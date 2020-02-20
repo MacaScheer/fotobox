@@ -36,8 +36,5 @@ const mapDispatchToProps = dispatch => {
 };
 
 export default withRouter(
-  connect(
-    mapStateToProps,
-    mapDispatchToProps
-  )(PostIndexItem)
+  connect(mapStateToProps, mapDispatchToProps)(PostIndexItem)
 );

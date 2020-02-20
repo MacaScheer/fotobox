@@ -1,6 +1,7 @@
 import { RECEIVE_CURRENT_USER, LOGOUT_USER } from "../actions/session_actions";
 import { RECEIVE_USER, RECEIVE_ALL_USERS } from "../actions/user_actions";
 import { RECEIVE_FOLLOW, REMOVE_FOLLOW } from "../actions/followings_actions";
+import { RECEIVE_NUM } from "../actions/post_actions";
 import merge from "lodash/merge";
 
 const usersReducer = (state = {}, action) => {
@@ -38,7 +39,9 @@ const usersReducer = (state = {}, action) => {
         followingId !== action.follow.followed_user_id;
       });
       return newState;
-
+    case RECEIVE_NUM:
+      newState[action.num[1]]["numUserPosts"] = action.num[0];
+      return newState
     default:
       return state;
   }

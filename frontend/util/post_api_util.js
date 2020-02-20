@@ -28,9 +28,17 @@ export const deletePost = id => {
   });
 };
 
-export const fetchProfilePosts = id => {
+export const fetchProfilePosts = (page, id) => {
   return $.ajax({
     method: "GET",
-    url: `api/profile/posts/${id}`
+    url: `api/profile/posts/${id}`,
+    data: {page}
   });
 };
+
+export const fetchNumPosts = (id) => {
+  return $.ajax({
+    method: "GET",
+    url: `api/profile/num_posts/${id}`
+  })
+}
