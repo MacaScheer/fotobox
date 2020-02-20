@@ -151,7 +151,7 @@ class PostShow extends React.Component {
                     >
                       {author}
                     </Link>
-                    &nbsp;{body}
+                    {body}
                   </div>
                 ) : (
                   <div></div>
