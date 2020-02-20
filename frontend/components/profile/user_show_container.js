@@ -9,8 +9,7 @@ import { openModal, closeModal } from "../../actions/modal_actions";
 const mapStateToProps = (state, ownProps) => {
   const profileId = ownProps.match.params.userId;
   const profileUser = state.entities.users[profileId];
-  // let numPosts = profileUser["numberOfUserPosts"];
-  debugger
+  let numUserPosts = profileUser["numUserPosts"]
   let userPosts = null;
   let followerIds = null;
   let followStatus = false;
@@ -24,7 +23,7 @@ const mapStateToProps = (state, ownProps) => {
   }
 
   return {
-    // numPosts,
+    numUserPosts,
     currentUser,
     userPosts,
     profileUser,
