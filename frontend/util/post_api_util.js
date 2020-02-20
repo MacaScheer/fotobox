@@ -37,9 +37,8 @@ export const fetchProfilePosts = (page, id) => {
 };
 
 export const fetchNumPosts = (id) => {
-  debugger
   return $.ajax({
     method: "GET",
-    url: `api/profile/posts/num_posts/${id}`
+    url: `api/profile/num_posts/${id}`
   })
 }

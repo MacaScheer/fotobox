@@ -21,9 +21,8 @@ class Api::PostsController < ApplicationController
     end
 
     def num_posts
-      debugger
       @posts_num = Post.where(user_id: params[:id]).count()
-      render json: @posts_num
+      render json:  [@posts_num, params[:id]]
     end
 
     def new

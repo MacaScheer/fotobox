@@ -29,6 +29,7 @@ class UserShow extends React.Component {
     // this.props.fetchProfilePosts(this.props.match.params.userId);
     let id = this.props.match.params.userId
     this.props.fetchNumPosts(id)
+    // debugger
     this.getPosts()
     this.props.fetchUser(id);
     this.props.closeModal();

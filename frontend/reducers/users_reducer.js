@@ -40,9 +40,7 @@ const usersReducer = (state = {}, action) => {
       });
       return newState;
     case RECEIVE_NUM:
-      let numPosts = action.num;
-      debugger
-      newState[numPosts] = numPosts;
+      newState[action.num[1]]["numUserPosts"] = action.num[0];
       return newState
     default:
       return state;
