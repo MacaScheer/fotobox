@@ -27,8 +27,10 @@ class UserShow extends React.Component {
   }
   componentDidMount() {
     // this.props.fetchProfilePosts(this.props.match.params.userId);
+    let id = this.props.match.params.userId
+    this.props.fetchNumPosts(id)
     this.getPosts()
-    this.props.fetchUser(this.props.match.params.userId);
+    this.props.fetchUser(id);
     this.props.closeModal();
     this.infiniteScroller()
   }

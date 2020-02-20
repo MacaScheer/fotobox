@@ -15,10 +15,15 @@ class Api::PostsController < ApplicationController
     end
 
     def profile_posts
-      num = params[:page].to_i * 6
+      num = params[:page].to_i * 9
         @posts = Post.where(user_id: params[:id]).order('created_at DESC').last(num)
-        # debugger
         render :index
+    end
+
+    def num_posts
+      debugger
+      @posts_num = Post.where(user_id: params[:id]).count()
+      render json: @posts_num
     end
 
     def new

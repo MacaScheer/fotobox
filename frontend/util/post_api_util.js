@@ -35,3 +35,11 @@ export const fetchProfilePosts = (page, id) => {
     data: {page}
   });
 };
+
+export const fetchNumPosts = (id) => {
+  debugger
+  return $.ajax({
+    method: "GET",
+    url: `api/profile/posts/num_posts/${id}`
+  })
+}

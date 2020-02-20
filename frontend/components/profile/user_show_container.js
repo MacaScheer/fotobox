@@ -1,6 +1,6 @@
 import { connect } from "react-redux";
 import { fetchUser, deleteUser } from "../../actions/user_actions";
-import { fetchProfilePosts } from "../../actions/post_actions";
+import { fetchProfilePosts, fetchNumPosts } from "../../actions/post_actions";
 import { logout } from "../../actions/session_actions";
 import { createFollow, deleteFollow } from "../../actions/followings_actions";
 import UserShow from "./user_show";
@@ -9,7 +9,7 @@ import { openModal, closeModal } from "../../actions/modal_actions";
 const mapStateToProps = (state, ownProps) => {
   const profileId = ownProps.match.params.userId;
   const profileUser = state.entities.users[profileId];
-
+  let numPosts = state.entities.users[numPosts];
   let userPosts = null;
   let followerIds = null;
   let followStatus = false;
@@ -23,6 +23,7 @@ const mapStateToProps = (state, ownProps) => {
   }
 
   return {
+    numPosts,
     currentUser,
     userPosts,
     profileUser,
@@ -33,6 +34,7 @@ const mapStateToProps = (state, ownProps) => {
 
 const mapDispatchToProps = dispatch => ({
   logout: () => dispatch(logout()),
+  fetchNumPosts:(id) => dispatch(fetchNumPosts(id)),
   fetchProfilePosts: (page, id) => dispatch(fetchProfilePosts(page, id)),
   fetchUser: userId => dispatch(fetchUser(userId)),
   deleteUser: id => dispatch(deleteUser(id)),
