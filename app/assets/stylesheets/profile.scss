@@ -107,6 +107,7 @@
                     }
                     .image-overlay-text{
                         display: none;
+                        color:whitesmoke;
                         .comment{
                             padding: 10px;
                         }
@@ -120,6 +121,9 @@
                         left:95px;
                         position:absolute;
 
+                    }
+                    .user-page-photos{
+                        opacity: 50%;
                     }
                 }
             }
