@@ -96,6 +96,7 @@
                     text-align: -webkit-match-parent;
                 }
                 .image-container {
+                    
                     position: relative;
                     .user-page-photos {
                         object-fit: cover;
@@ -104,12 +105,29 @@
                         height: 250px;
                         margin: 20px;
                     }
+                    .image-overlay-text{
+                        display: none;
+                        .comment{
+                            padding: 10px;
+                        }
+                    }
+                }
+                
+                .image-container:hover{
+                    .image-overlay-text{
+                        display: block;
+                        bottom:127px;
+                        left:95px;
+                        position:absolute;
+
+                    }
                 }
             }
         }
     
     
     }
+
 
 
 
