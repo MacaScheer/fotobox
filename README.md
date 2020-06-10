@@ -42,11 +42,6 @@
 - Image Feed
 - User Profile
 
-## Implementation:
-
-New account creation, login, and guest login
-Passwords are secured using BCrypt to generate a passord_digest. A user session_token is stored in the database to keep track of each user session. When a user successfully logs in, a session token is generated, stored in the database, and stored on the client-side as a browser cookie.
-
 
 
 
@@ -85,11 +80,9 @@ Post Actions
 </div>
  --> -->
 
-### Authentication
-
-
 ![session](https://fotobox-seeds.s3-us-west-1.amazonaws.com/image_assets/fotobox_profile_client.png)
 
+### Authentication
 Implements Authentication with BCrypt & JavaScript Web Token
 
 ```js
@@ -116,7 +109,7 @@ module.exports = passport => {
 
 ### AWS
 
-Setting up aws and multer configuration for aws file storage.
+Setting up aws configuration for aws file storage.
 
 ```js
 const aws = require("aws-sdk");
@@ -173,7 +166,7 @@ var upload = multer({
 
 Fotobox is a minimal viable product that tackles three challenges in application development, software engineering, and user experience. 
 
-Built with Ruby on Rails backend, a PostgreSQL database, AWS S3 buckets for image storage, and a React / Redux frontend.
+Built with a Ruby on Rails backend, a PostgreSQL database, AWS S3 buckets for image storage, and a React / Redux frontend.
 
 <!-- ### MongoDB Models
 
