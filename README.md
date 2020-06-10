@@ -28,19 +28,20 @@ Passwords are secured using BCrypt to generate a passord_digest. A user session_
 <p align="center">
   <img width="460" height="100" className="Production-ReadMe" src="https://fotobox-seeds.s3-us-west-1.amazonaws.com/image_assets/configureStore.png">
 </p>
+<div className="grid-readme" display="flex" >
+<img object-fit="contain" width="auto" height="auto" src="https://fotobox-seeds.s3-us-west-1.amazonaws.com/image_assets/protected_routes.png">
 
-<img align="center" width="460" height="300" src="https://fotobox-seeds.s3-us-west-1.amazonaws.com/image_assets/protected_routes.png">
+<img object-fit="contain" width="auto" height="auto" src="https://fotobox-seeds.s3-us-west-1.amazonaws.com/image_assets/App.png">
 
-<img align="center" width="460" height="300" src="https://fotobox-seeds.s3-us-west-1.amazonaws.com/image_assets/App.png">
+<img object-fit="contain" width="auto" height="auto" src="https://fotobox-seeds.s3-us-west-1.amazonaws.com/image_assets/schema_portion.png">
 
-<img align="center" width="460" height="300" src="https://fotobox-seeds.s3-us-west-1.amazonaws.com/image_assets/schema_portion.png">
+<img object-fit="contain" width="auto" height="auto" src="https://fotobox-seeds.s3-us-west-1.amazonaws.com/image_assets/creatPost.png">
 
-<img align="center" width="460" height="300" src="https://fotobox-seeds.s3-us-west-1.amazonaws.com/image_assets/creatPost.png">
+<img object-fit="contain" width="auto" height="auto" src="https://fotobox-seeds.s3-us-west-1.amazonaws.com/image_assets/post_actions.png">
 
-<img align="center" width="460" height="300" src="https://fotobox-seeds.s3-us-west-1.amazonaws.com/image_assets/post_actions.png">
+<img object-fit="contain" width="auto" height="auto" src="https://fotobox-seeds.s3-us-west-1.amazonaws.com/image_assets/postIndex.png">
 
-<img align="center" width="460" height="300" src="https://fotobox-seeds.s3-us-west-1.amazonaws.com/image_assets/postIndex.png">
+<img object-fit="contain" width="auto" height="auto" src="https://fotobox-seeds.s3-us-west-1.amazonaws.com/image_assets/post_actions.png">
 
-<img align="center" width="460" height="300" src="https://fotobox-seeds.s3-us-west-1.amazonaws.com/image_assets/post_actions.png">
-
-<img align="center" width="460" height="300" src="https://fotobox-seeds.s3-us-west-1.amazonaws.com/image_assets/usersReducer.png">
+<img object-fit="contain" width="auto" height="auto" src="https://fotobox-seeds.s3-us-west-1.amazonaws.com/image_assets/usersReducer.png">
+</div>
