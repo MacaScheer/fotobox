@@ -15,6 +15,7 @@ class Profile extends React.Component {
       page: 1
     }
     this.getPosts = this.getPosts.bind(this)
+    this.infiniteScroller = this.infiniteScroller.bind(this)
   }
   getPosts() {
     this.props.fetchProfilePosts(this.state.page, this.props.currentUser.id);
@@ -24,15 +25,18 @@ class Profile extends React.Component {
   componentDidMount() {
     this.getPosts()
     this.props.fetchNumPosts(this.props.currentUser.id);
-    this.infiniteScroller();
+    // this.infiniteScroller();
     // this.props.fetchProfilePosts(this.props.currentUser.id);
     this.props.fetchUser(this.props.currentUser.id);
-    window.addEventListener("scroll", this.myScrollFunc);
+    // window.addEventListener("scroll", this.myScrollFunc);
+    window.addEventListener("scroll", this.infiniteScroller);
+
     this.props.closeModal();
   }
 
   infiniteScroller() {
-        window.onscroll = debounce(() => {
+    // debugger
+    window.onscroll = debounce(() => {
             if (
                 window.innerHeight + document.documentElement.scrollTop ===
                 document.documentElement.offsetHeight
@@ -78,6 +82,7 @@ class Profile extends React.Component {
                     &#x1f4ac;
                   </i>
                   {post.commentIds ? post.commentIds.length : 0}
+                  {/* {this.infiniteScroller()} */}
                 </p>
               </div>
             </div>

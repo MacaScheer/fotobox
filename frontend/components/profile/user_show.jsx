@@ -14,6 +14,7 @@ class UserShow extends React.Component {
     this.handleEditUser = this.handleEditUser.bind(this);
     this.handleFollow = this.handleFollow.bind(this);
     this.handleUnfollow = this.handleUnfollow.bind(this);
+    this.infiniteScroller = this.infiniteScroller.bind(this)
     // this.handleDeleteUser = this.handleDeleteUser.bind(this);
     this.getPosts = this.getPosts.bind(this)
     this.state = {
@@ -54,7 +55,8 @@ class UserShow extends React.Component {
     }
   }
   componentWillUnmount() {
-    window.removeEventListener("scroll", this.myScrollFunc);
+    // window.removeEventListener("scroll", this.myScrollFunc);
+    window.removeEventListener("scroll", this.infiniteScroller)
   }
 
   handleFollow(e) {
