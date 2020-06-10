@@ -25,6 +25,27 @@ Implementation:
 New account creation, login, and guest login
 Passwords are secured using BCrypt to generate a passord_digest. A user session_token is stored in the database to keep track of each user session. When a user successfully logs in, a session token is generated, stored in the database, and stored on the client-side as a browser cookie.
 
+<div className="grid-readme1" display="flex" >
+<p align="center">
+</p>
+<img object-fit="contain" width="auto" height="auto" align="center" src="https://fotobox-seeds.s3-us-west-1.amazonaws.com/image_assets/signupcontainer.png">
+<img object-fit="contain" width="auto" height="auto" align="center" src="https://fotobox-seeds.s3-us-west-1.amazonaws.com/image_assets/userActions.png">
+<img object-fit="contain" width="auto" height="auto" align="center" src="https://fotobox-seeds.s3-us-west-1.amazonaws.com/image_assets/userAjax.png">
+<img object-fit="contain" width="auto" height="auto" align="center" src="https://fotobox-seeds.s3-us-west-1.amazonaws.com/image_assets/usersController.png">
+<img object-fit="contain" width="auto" height="auto" align="center" src="https://fotobox-seeds.s3-us-west-1.amazonaws.com/image_assets/userModel_associations.png">
+<img object-fit="contain" width="auto" height="auto" align="center" src="https://fotobox-seeds.s3-us-west-1.amazonaws.com/image_assets/userModel_functions.png">
+<p align="center">
+Users Reducer
+</p>
+<img object-fit="contain" width="auto" height="auto" align="center" src="https://fotobox-seeds.s3-us-west-1.amazonaws.com/image_assets/usersReducer.png">
+</div>
+
+
+
+
+
+
+
 <p align="center">
   <img object-fit="contain" width="auto" height="auto" align="center" src="https://fotobox-seeds.s3-us-west-1.amazonaws.com/image_assets/configureStore.png">
 </p>
@@ -53,8 +74,4 @@ Post Index
 Post Actions
 </p>
 <img object-fit="contain" width="auto" height="auto" align="center" src="https://fotobox-seeds.s3-us-west-1.amazonaws.com/image_assets/post_actions.png">
-<p align="center">
-Users Reducer
-</p>
-<img object-fit="contain" width="auto" height="auto" align="center" src="https://fotobox-seeds.s3-us-west-1.amazonaws.com/image_assets/usersReducer.png">
 </div>
