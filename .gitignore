@@ -11,7 +11,7 @@ slice_of_state.json.jbuilder
 # Ignore uploaded files in development
 /storage/*
 !/storage/.keep
-
+/readme_images
 /node_modules
 /yarn-error.log
 

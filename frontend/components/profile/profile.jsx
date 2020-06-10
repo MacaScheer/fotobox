@@ -35,7 +35,6 @@ class Profile extends React.Component {
   }
 
   infiniteScroller() {
-    // debugger
     window.onscroll = debounce(() => {
             if (
                 window.innerHeight + document.documentElement.scrollTop ===
@@ -82,7 +81,6 @@ class Profile extends React.Component {
                     &#x1f4ac;
                   </i>
                   {post.commentIds ? post.commentIds.length : 0}
-                  {/* {this.infiniteScroller()} */}
                 </p>
               </div>
             </div>

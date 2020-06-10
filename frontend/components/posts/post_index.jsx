@@ -1,6 +1,5 @@
 import React from "react";
 import PostIndexItem from "./post_index_item";
-import PostIndexItemContainer from "./post_index_item_container";
 import Spinner from "../loading/Spinner";
 import { Waypoint } from "react-waypoint";
 import { withRouter } from "react-router";
@@ -21,9 +20,6 @@ class PostIndex extends React.Component {
     this.getPosts();
     this.props.closeModal();
   }
-  // getPostComments() {
-  //   this.props.fetchPostComments();
-  // }
 
   render() {
     if (!this.props) {
@@ -47,7 +43,6 @@ class PostIndex extends React.Component {
                       deleteComment={this.props.deleteComment}
                       fetchPost={this.props.fetchPost}
                     />
-                    {/* <PostIndexItemContainer key={post.id} post={post} /> */}
                   </div>
                 );
               })}
