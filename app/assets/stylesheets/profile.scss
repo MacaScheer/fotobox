@@ -107,9 +107,14 @@
                     }
                     .image-overlay-text{
                         display: none;
-                        color:whitesmoke;
+                        color: white;
                         .comment{
+                            color:whitesmoke;
+
                             padding: 10px;
+                        }
+                        .overlay-heart{
+                            color:whitesmoke;
                         }
                     }
                 }
@@ -123,7 +128,9 @@
 
                     }
                     .user-page-photos{
-                        opacity: 50%;
+                        // opacity: 50%;
+                        // color: darken(rgb(58, 58, 58), 80%);
+                        filter:brightness(50%)
                     }
                 }
             }
