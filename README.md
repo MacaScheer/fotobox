@@ -7,7 +7,7 @@ Fotobox is a photo-sharing social network inspired by Instagram. Fotobox users c
 The application has a Ruby on Rails backend, a PostgreSQL database, and React with a Redux framework on the frontend.
 
 <p align="center">
-  <img width="460" height="300" src="https://fotobox-seeds.s3-us-west-1.amazonaws.com/image_assets/fotobox_profile_client.png">
+  <img width="auto" height="auto" object-fit="contain" src="https://fotobox-seeds.s3-us-west-1.amazonaws.com/image_assets/fotobox_profile_client.png">
 </p>
 
 Features:
@@ -25,37 +25,36 @@ Implementation:
 New account creation, login, and guest login
 Passwords are secured using BCrypt to generate a passord_digest. A user session_token is stored in the database to keep track of each user session. When a user successfully logs in, a session token is generated, stored in the database, and stored on the client-side as a browser cookie.
 
-Configure Store with Preloaded State
 <p align="center">
-  <img object-fit="contain" width="auto" height="auto" align-self="center" src="https://fotobox-seeds.s3-us-west-1.amazonaws.com/image_assets/configureStore.png">
+  <img object-fit="contain" width="auto" height="auto" align="center" src="https://fotobox-seeds.s3-us-west-1.amazonaws.com/image_assets/configureStore.png">
 </p>
 <div className="grid-readme" display="flex" >
-
+<p align="center">
 Auth Routes and Protected Routes
-
-<img object-fit="contain" width="auto" height="auto" align-self="center" src="https://fotobox-seeds.s3-us-west-1.amazonaws.com/image_assets/protected_routes.png">
-
+</p>
+<img object-fit="contain" width="auto" height="auto" align="center" src="https://fotobox-seeds.s3-us-west-1.amazonaws.com/image_assets/protected_routes.png">
+<p align="center">
 Front End Routes
-
-<img object-fit="contain" width="auto" height="auto" align-self="center" src="https://fotobox-seeds.s3-us-west-1.amazonaws.com/image_assets/App.png">
-
+</p>
+<img object-fit="contain" width="auto" height="auto" align="center" src="https://fotobox-seeds.s3-us-west-1.amazonaws.com/image_assets/App.png">
+<p align="center">
 Backend Schema (portion)
-
-<img object-fit="contain" width="auto" height="auto" align-self="center" src="https://fotobox-seeds.s3-us-west-1.amazonaws.com/image_assets/schema_portion.png">
-
+</p>
+<img object-fit="contain" width="auto" height="auto" align="center" src="https://fotobox-seeds.s3-us-west-1.amazonaws.com/image_assets/schema_portion.png">
+<p align="center">
 Create Post
-
-<img object-fit="contain" width="auto" height="auto" align-self="center" src="https://fotobox-seeds.s3-us-west-1.amazonaws.com/image_assets/creatPost.png">
-
+</p>
+<img object-fit="contain" width="auto" height="auto" align="center" src="https://fotobox-seeds.s3-us-west-1.amazonaws.com/image_assets/creatPost.png">
+<p align="center">
 Post Index
-
-<img object-fit="contain" width="auto" height="auto" align-self="center" src="https://fotobox-seeds.s3-us-west-1.amazonaws.com/image_assets/postIndex.png">
-
+</p>
+<img object-fit="contain" width="auto" height="auto" align="center" src="https://fotobox-seeds.s3-us-west-1.amazonaws.com/image_assets/postIndex.png">
+<p align="center">
 Post Actions
-
-<img object-fit="contain" width="auto" height="auto" align-self="center" src="https://fotobox-seeds.s3-us-west-1.amazonaws.com/image_assets/post_actions.png">
-
+</p>
+<img object-fit="contain" width="auto" height="auto" align="center" src="https://fotobox-seeds.s3-us-west-1.amazonaws.com/image_assets/post_actions.png">
+<p align="center">
 Users Reducer
-
-<img object-fit="contain" width="auto" height="auto" align-self="center" src="https://fotobox-seeds.s3-us-west-1.amazonaws.com/image_assets/usersReducer.png">
+</p>
+<img object-fit="contain" width="auto" height="auto" align="center" src="https://fotobox-seeds.s3-us-west-1.amazonaws.com/image_assets/usersReducer.png">
 </div>
