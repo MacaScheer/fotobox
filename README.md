@@ -14,54 +14,46 @@
 </div>
 
 [Live Site][1]
-# Fotobox 
 
-https://foto-box.herokuapp.com
-
-Fotobox is a photo-sharing social network inspired by Instagram. Fotobox users can post and share photographs uploaded directly from their local files. Users can follow other users to see their posts, updated in their "feed". Users can "like" and comment on other user's posts.
-
-The application has a Ruby on Rails backend, a PostgreSQL database, and React with a Redux framework on the frontend.
 
 <p align="center">
   <img width="auto" height="auto" object-fit="contain" src="https://fotobox-seeds.s3-us-west-1.amazonaws.com/image_assets/fotobox_profile_client.png">
 </p>
 
-Features:
+## Table of Contents
 
-* New Account Creation, Login, and Demo Login
-* User Profile
-* Image Feed
-* Create Post, Delete Post
-* Create Comment, Delete Comment
-* Like Post
-* Follow Other Users
+---
 
-Implementation:
+- [Features](#features)
+- [Background](#background)
+- [API](#express)
+- [Setup](#setup)
+
+## Features
+
+- Login / Registration Authentication
+- AWS Storage
+- React Redux Store
+- Post CRUD
+- Create and Delete Comments
+- Follow/Unfollow Users
+- Like/Unlike Posts
+- Number of Followers, Likes, Comments on Posts
+- Image Feed
+- User Profile
+
+## Implementation:
 
 New account creation, login, and guest login
 Passwords are secured using BCrypt to generate a passord_digest. A user session_token is stored in the database to keep track of each user session. When a user successfully logs in, a session token is generated, stored in the database, and stored on the client-side as a browser cookie.
+
+
+
+
+
+
+
 <!-- 
-<div className="grid-readme1" display="flex" >
-<p align="center">
-</p>
-<img object-fit="contain" width="auto" height="auto" align="center" src="https://fotobox-seeds.s3-us-west-1.amazonaws.com/image_assets/signupcontainer.png">
-<img object-fit="contain" width="auto" height="auto" align="center" src="https://fotobox-seeds.s3-us-west-1.amazonaws.com/image_assets/userActions.png">
-<img object-fit="contain" width="auto" height="auto" align="center" src="https://fotobox-seeds.s3-us-west-1.amazonaws.com/image_assets/userAjax.png">
-<img object-fit="contain" width="auto" height="auto" align="center" src="https://fotobox-seeds.s3-us-west-1.amazonaws.com/image_assets/usersController.png">
-<img object-fit="contain" width="auto" height="auto" align="center" src="https://fotobox-seeds.s3-us-west-1.amazonaws.com/image_assets/userModel_associations.png">
-<img object-fit="contain" width="auto" height="auto" align="center" src="https://fotobox-seeds.s3-us-west-1.amazonaws.com/image_assets/userModel_functions.png">
-<p align="center">
-Users Reducer
-</p>
-<img object-fit="contain" width="auto" height="auto" align="center" src="https://fotobox-seeds.s3-us-west-1.amazonaws.com/image_assets/usersReducer.png">
-</div>
-
-
-
-
-
-
-
 <p align="center">
   <img object-fit="contain" width="auto" height="auto" align="center" src="https://fotobox-seeds.s3-us-west-1.amazonaws.com/image_assets/configureStore.png">
 </p>
@@ -91,46 +83,7 @@ Post Actions
 </p>
 <img object-fit="contain" width="auto" height="auto" align="center" src="https://fotobox-seeds.s3-us-west-1.amazonaws.com/image_assets/post_actions.png">
 </div>
- -->
-
-
-
-<h1 align="center">EchoHive</h1>
-<div align="center">Discover and enjoy the greatest selection of sound samples from the most diverse audio engineers.</div>
-
-<div align="center">
-  <!-- Stability -->
-<img src="https://img.shields.io/badge/stability-experimental-orange.svg?style=flat-square"
-      alt="API stability" />
-  <!-- NPM version -->
-  <img src="https://img.shields.io/badge/node-%3E%3D%206.0.0-brightgreen"
-      alt="NPM version" />
-  <!-- Build Status -->
- <img src="https://img.shields.io/badge/build-passing-brightgreen"
-      alt="Build Status" />
-</div>
-
-[Live Site][1]
-
-## Table of Contents
-
----
-
-- [Features](#features)
-- [Background](#background)
-- [API](#express)
-- [Setup](#setup)
-
-## Features
-
-- Login / Registration Authentication
-- AWS Storage
-- React Redux Store
-- Post CRUD
-- Create and Delete Comments
-- Follow/Unfollow Users
-- Like/Unlike Posts
-- Number of Followers, Likes, Comments on Posts
+ --> -->
 
 ### Authentication
 
@@ -218,11 +171,11 @@ var upload = multer({
 
 ### Technologies and Technical Challenges
 
-EchoHive is a minimal viable product that tackles three challenges in application development, software engineering, and user experience. 
+Fotobox is a minimal viable product that tackles three challenges in application development, software engineering, and user experience. 
 
-Primarily built with MERN (MongoDB, Express, React, Node)
+Built with Ruby on Rails backend, a PostgreSQL database, AWS S3 buckets for image storage, and a React / Redux frontend.
 
-### MongoDB Models
+<!-- ### MongoDB Models
 
 Users
 
@@ -369,6 +322,6 @@ Running local dev
 ```sh
 $ npm install && npm install --prefix frontend
 $ npm run dev 
-```
+``` -->
 
 [1]: https://foto-box.herokuapp.com
