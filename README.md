@@ -80,8 +80,8 @@ Post Actions
 </div>
  --> -->
 
-![session](https://fotobox-seeds.s3-us-west-1.amazonaws.com/image_assets/fotobox_profile_client.png)
-
+<!-- ![session](https://fotobox-seeds.s3-us-west-1.amazonaws.com/image_assets/fotobox_profile_client.png) -->
+<!-- 
 ### Authentication
 Implements Authentication with BCrypt & JavaScript Web Token
 
@@ -158,7 +158,7 @@ var upload = multer({
 });
 ```
 
----
+--- -->
 
 ## Background
 
