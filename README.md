@@ -25,37 +25,37 @@ Implementation:
 New account creation, login, and guest login
 Passwords are secured using BCrypt to generate a passord_digest. A user session_token is stored in the database to keep track of each user session. When a user successfully logs in, a session token is generated, stored in the database, and stored on the client-side as a browser cookie.
 
-<p align="center">
 Configure Store with Preloaded State
-  <img object-fit="contain" width="auto" height="auto" src="https://fotobox-seeds.s3-us-west-1.amazonaws.com/image_assets/configureStore.png">
+<p align="center">
+  <img object-fit="contain" width="auto" height="auto" align-self="center" src="https://fotobox-seeds.s3-us-west-1.amazonaws.com/image_assets/configureStore.png">
 </p>
 <div className="grid-readme" display="flex" >
 
 Auth Routes and Protected Routes
 
-<img object-fit="contain" width="auto" height="auto" src="https://fotobox-seeds.s3-us-west-1.amazonaws.com/image_assets/protected_routes.png">
+<img object-fit="contain" width="auto" height="auto" align-self="center" src="https://fotobox-seeds.s3-us-west-1.amazonaws.com/image_assets/protected_routes.png">
 
 Front End Routes
 
-<img object-fit="contain" width="auto" height="auto" src="https://fotobox-seeds.s3-us-west-1.amazonaws.com/image_assets/App.png">
+<img object-fit="contain" width="auto" height="auto" align-self="center" src="https://fotobox-seeds.s3-us-west-1.amazonaws.com/image_assets/App.png">
 
 Backend Schema (portion)
 
-<img object-fit="contain" width="auto" height="auto" src="https://fotobox-seeds.s3-us-west-1.amazonaws.com/image_assets/schema_portion.png">
+<img object-fit="contain" width="auto" height="auto" align-self="center" src="https://fotobox-seeds.s3-us-west-1.amazonaws.com/image_assets/schema_portion.png">
 
 Create Post
 
-<img object-fit="contain" width="auto" height="auto" src="https://fotobox-seeds.s3-us-west-1.amazonaws.com/image_assets/creatPost.png">
+<img object-fit="contain" width="auto" height="auto" align-self="center" src="https://fotobox-seeds.s3-us-west-1.amazonaws.com/image_assets/creatPost.png">
 
 Post Index
 
-<img object-fit="contain" width="auto" height="auto" src="https://fotobox-seeds.s3-us-west-1.amazonaws.com/image_assets/postIndex.png">
+<img object-fit="contain" width="auto" height="auto" align-self="center" src="https://fotobox-seeds.s3-us-west-1.amazonaws.com/image_assets/postIndex.png">
 
 Post Actions
 
-<img object-fit="contain" width="auto" height="auto" src="https://fotobox-seeds.s3-us-west-1.amazonaws.com/image_assets/post_actions.png">
+<img object-fit="contain" width="auto" height="auto" align-self="center" src="https://fotobox-seeds.s3-us-west-1.amazonaws.com/image_assets/post_actions.png">
 
 Users Reducer
 
-<img object-fit="contain" width="auto" height="auto" src="https://fotobox-seeds.s3-us-west-1.amazonaws.com/image_assets/usersReducer.png">
+<img object-fit="contain" width="auto" height="auto" align-self="center" src="https://fotobox-seeds.s3-us-west-1.amazonaws.com/image_assets/usersReducer.png">
 </div>
