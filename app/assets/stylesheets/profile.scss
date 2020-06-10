@@ -96,6 +96,7 @@
                     text-align: -webkit-match-parent;
                 }
                 .image-container {
+                    
                     position: relative;
                     .user-page-photos {
                         object-fit: cover;
@@ -104,12 +105,40 @@
                         height: 250px;
                         margin: 20px;
                     }
+                    .image-overlay-text{
+                        display: none;
+                        color: white;
+                        .comment{
+                            color:whitesmoke;
+
+                            padding: 10px;
+                        }
+                        .overlay-heart{
+                            color:whitesmoke;
+                        }
+                    }
+                }
+                
+                .image-container:hover{
+                    .image-overlay-text{
+                        display: block;
+                        bottom:127px;
+                        left:95px;
+                        position:absolute;
+
+                    }
+                    .user-page-photos{
+                        // opacity: 50%;
+                        // color: darken(rgb(58, 58, 58), 80%);
+                        filter:brightness(50%)
+                    }
                 }
             }
         }
     
     
     }
+
 
 
 
