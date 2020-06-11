@@ -67,7 +67,7 @@ Fotobox is a minimal viable product that tackles three challenges in application
 + frontend - React
 
 
-#### User Account Authentification
+### User Account Authentification
 
 Passwords are secured using the `BCrypt` gem to generate a *password digest*. 
 A user's login session is tracked by a generated *session token* stored in the database and on the client-side as a browser cookie.
@@ -282,7 +282,7 @@ Rails.application.routes.draw do
 end
 ```
 
-### Rails Models
+### Active Record Models
 ```ruby
 class User < ApplicationRecord
     validates :username, :session_token, :password_digest, presence: true
