@@ -162,7 +162,101 @@ handleFile(e) {
       this.props.history.push("/users/my-profile");
     });
   }
+
 ```
+## Posts Controller
+```ruby
+class Api::PostsController < ApplicationController
+    
+    before_action :require_signed_in!
+
+    def index
+        num = params[:page].to_i * 3
+        @posts = Post.with_attached_photo.order('created_at DESC').last(num)
+        render :index
+    end
+    
+    def show
+        @post = Post.find(params[:id])
+        render :show
+
+    end
+
+    def profile_posts
+      num = params[:page].to_i * 9
+        @posts = Post.where(user_id: params[:id]).order('created_at DESC').last(num)
+        render :index
+    end
+
+    def num_posts
+      @posts_num = Post.where(user_id: params[:id]).count()
+      render json:  [@posts_num, params[:id]]
+    end
+
+    def new
+        @post = Post.new
+    end
+
+    def create
+        @post = Post.new(post_params)
+        if @post.save
+            render :show
+        else
+            render json: @post.errors.full_messages, status: :unprocessable_entity
+        end
+    end
+
+    def edit
+        @post = Post.find(params[:id]) 
+    end
+```
+## Users Reducer
+```js
+const usersReducer = (state = {}, action) => {
+  let newState = merge({}, state);
+  Object.freeze(state);
+  switch (action.type) {
+    case RECEIVE_CURRENT_USER:
+      return merge({}, state, {
+        [action.currentUser.id]: action.currentUser
+      });
+    case RECEIVE_ALL_USERS:
+      return merge({}, state, action.users);
+    case RECEIVE_USER:
+      return merge({}, state, { [action.user.id]: action.user });
+    case LOGOUT_USER:
+      delete newState[action.currentUser];
+      return newState;
+    case RECEIVE_FOLLOW:
+      newState[action.follow.followed_user_id].followerIds.push(
+        action.follow.user_id
+      );
+      newState[action.follow.user_id].followingIds.push(
+        action.follow.followed_user_id
+      );
+      return newState;
+    case REMOVE_FOLLOW:
+      newState[action.follow.followed_user_id].followerIds = newState[
+        action.follow.followed_user_id
+      ].followerIds.filter(followerId => {
+        followerId !== action.follow.user_id;
+      });
+      newState[action.follow.user_id].followingIds = newState[
+        action.follow.user_id
+      ].followingIds.filter(followingId => {
+        followingId !== action.follow.followed_user_id;
+      });
+      return newState;
+    case RECEIVE_NUM:
+      newState[action.num[1]]["numUserPosts"] = action.num[0];
+      return newState
+    default:
+      return state;
+  }
+};
+export default usersReducer;
+```
+
 ## API
 ### Rails Routes
 ```ruby
