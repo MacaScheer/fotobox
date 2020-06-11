@@ -472,6 +472,18 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 ```
 
+### Thunk Middleware
+```js
+import { createStore, applyMiddleware } from "redux";
+import thunk from "redux-thunk";
+import rootReducer from "../reducers/root_reducer";
+
+const configureStore = (preloadedState = {}) =>
+  createStore(rootReducer, preloadedState, applyMiddleware(thunk));
+
+export default configureStore;
+```
+
 ### Protected and Auth Routes
 ```js
 import React from 'react'
@@ -508,6 +520,6 @@ Running local dev
 ```sh
 $ npm install && npm install --prefix frontend
 $ npm run dev 
-``` -->
+```
 
 [1]: https://foto-box.herokuapp.com
