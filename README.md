@@ -164,7 +164,7 @@ handleFile(e) {
   }
 
 ```
-## Posts Controller
+### Posts Controller
 ```ruby
 class Api::PostsController < ApplicationController
     
@@ -210,7 +210,7 @@ class Api::PostsController < ApplicationController
         @post = Post.find(params[:id]) 
     end
 ```
-## Users Reducer
+### Users Reducer
 ```js
 const usersReducer = (state = {}, action) => {
   let newState = merge({}, state);
@@ -282,7 +282,7 @@ Rails.application.routes.draw do
 end
 ```
 
-## Rails Models
+### Rails Models
 ```ruby
 class User < ApplicationRecord
     validates :username, :session_token, :password_digest, presence: true
@@ -323,7 +323,6 @@ class User < ApplicationRecord
     source: :follower,
     dependent: :destroy
 end
-
 
 class Following < ApplicationRecord
 validates :user_id, uniqueness: {scope: :followed_user_id}
@@ -473,7 +472,7 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 ```
 
-## Protected and Auth Routes
+### Protected and Auth Routes
 ```js
 import React from 'react'
 import { connect } from 'react-redux'
