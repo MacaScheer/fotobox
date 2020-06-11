@@ -48,11 +48,11 @@ Fotobox is a minimal viable product that tackles three challenges in application
 ## Technology
 
 ### Backend
-+ Postgresql
++ PostgreSQL
 + Rails 5
 + Active Records
 + BCrypt
-+ jbuilder
++ JBuilder
 + AWS S3
 
 ### Frontend
