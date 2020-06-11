@@ -13,9 +13,4 @@ class Post < ApplicationRecord
 
     has_many :comments,
     dependent: :destroy
- 
-    # def self.find_user_posts(user_id)
-    #     posts = Post.where(user_id: user_id)
-    #     posts
-    # end
 end
