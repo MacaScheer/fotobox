@@ -100,40 +100,6 @@ def self.find_by_credentials(email, password)
 ```
 
 
-<!-- 
-<p align="center">
-  <img object-fit="contain" width="auto" height="auto" align="center" src="https://fotobox-seeds.s3-us-west-1.amazonaws.com/image_assets/configureStore.png">
-</p>
-<div className="grid-readme" display="flex" >
-<p align="center">
-Auth Routes and Protected Routes
-</p>
-<img object-fit="contain" width="auto" height="auto" align="center" src="https://fotobox-seeds.s3-us-west-1.amazonaws.com/image_assets/protected_routes.png">
-<p align="center">
-Front End Routes
-</p>
-<img object-fit="contain" width="auto" height="auto" align="center" src="https://fotobox-seeds.s3-us-west-1.amazonaws.com/image_assets/App.png">
-<p align="center">
-Backend Schema (portion)
-</p>
-<img object-fit="contain" width="auto" height="auto" align="center" src="https://fotobox-seeds.s3-us-west-1.amazonaws.com/image_assets/schema_portion.png">
-<p align="center">
-Create Post
-</p>
-<img object-fit="contain" width="auto" height="auto" align="center" src="https://fotobox-seeds.s3-us-west-1.amazonaws.com/image_assets/creatPost.png">
-<p align="center">
-Post Index
-</p>
-<img object-fit="contain" width="auto" height="auto" align="center" src="https://fotobox-seeds.s3-us-west-1.amazonaws.com/image_assets/postIndex.png">
-<p align="center">
-Post Actions
-</p>
-<img object-fit="contain" width="auto" height="auto" align="center" src="https://fotobox-seeds.s3-us-west-1.amazonaws.com/image_assets/post_actions.png">
-</div>
- --> -->
-
-<!-- ![session](https://fotobox-seeds.s3-us-west-1.amazonaws.com/image_assets/fotobox_profile_client.png) -->
-<!-- 
 ### Authentication
 Implements Authentication with BCrypt & JavaScript Web Token
 

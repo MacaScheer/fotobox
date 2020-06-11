@@ -44,7 +44,7 @@
   border: 1px solid lightgrey;
   margin-bottom: 35px;
   border-radius: 3px;
-  filter: drop-shadow(8px 21px 12px rgba(0, 0, 0, 0.2));
+  filter: drop-shadow(9px 11px 18px rgba(0, 0, 0, 0.2));
 }
 .feed-image-box:hover {
   cursor: pointer;

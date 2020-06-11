@@ -106,7 +106,7 @@
 }
 .delete-comment-button:hover {
   cursor: pointer;
-   width: 20px;
+   width: 15px;
   height: 15px;
   margin-left: 5px;
   padding-left: 5px;
@@ -116,21 +116,20 @@
   color: white;
   box-sizing: border-box;
   background-color: #c94141;
-  border-radius: 4px;
   outline: none;
-  border: 1px solid #fafafa;
 }
 .delete-comment-button {
+  border-radius: 4px;
+  border: 1px solid #fafafa;
   width: 20px;
   height: 15px;
   margin-left: 5px;
-  padding-left: 5px;
+  padding-left: 4px;
   text-overflow: ellipsis;
   font-size: 10px;
   font-weight: 700;
-  color: rgb(82, 82, 82);
+  color: rgb(173, 173, 173);
   border-radius: 4px;
-  color: grey;
   border: none;
   background: none;
   outline: none; 
@@ -193,6 +192,7 @@
   border-radius: 4px;
   outline: none;
   border: 1px solid #fafafa;
+  padding-top:6px;
 }
 .submit-comment-button-index:hover {
   cursor: pointer;
