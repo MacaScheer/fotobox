@@ -23,10 +23,9 @@
 ## Table of Contents
 
 ---
-
 - [Features](#features)
 - [Technology](#technology)
-- [API](#express)
+- [API](#Rails API Routes)
 - [Setup](#setup)
 
 ## Features
@@ -42,15 +41,13 @@
 - Image Feed
 - User Profile
 
-
-### Technologies and Technical Challenges
+### Technical Challenges
 
 Fotobox is a minimal viable product that tackles three challenges in application development, software engineering, and user experience. 
 
 ## Technology
 
 ### Backend
-
 + Postgresql
 + Rails 5
 + Active Records
@@ -59,14 +56,12 @@ Fotobox is a minimal viable product that tackles three challenges in application
 + AWS S3
 
 ### Frontend
-
 + Nodejs
 + React
 + Redux
 + jQuery
 
 ### Docker Services
-
 + db - Postgres
 + web - Rails
 + frontend - React
@@ -78,9 +73,14 @@ Passwords are secured using the `BCrypt` gem to generate a *password digest*.
 A user's login session is tracked by a generated *session token* stored in the database and on the client-side as a browser cookie.
 
 ```ruby
-def self.find_by_credentials(email, password)
-        user = User.find_by(email: email)
-        user && user.is_password?(password) ? user : nil
+    def self.find_by_credentials(username, password)
+        user = User.find_by(username: username) || User.find_by(email: username)
+        return nil unless user && user.is_password?(password)
+        user
+    end
+
+    def is_password?(password)
+        BCrypt::Password.new(self.password_digest).is_password?(password)
     end
 
     def password=(password)
@@ -88,22 +88,16 @@ def self.find_by_credentials(email, password)
         self.password_digest = BCrypt::Password.create(password)
     end
 
-    def is_password?(password)
-        BCrypt::Password.new(self.password_digest).is_password?(password)
-    end
-
     def reset_session_token!
-        self.session_token = new_session_token
+        self.session_token = SecureRandom.urlsafe_base64(16)
         self.save!
         self.session_token
     end
-```
 
+    def ensure_session_token
+        self.session_token ||= SecureRandom.urlsafe_base64(16)
+    end
 
-### Authentication
-Implements Authentication with BCrypt & JavaScript Web Token
-
-```ruby
 <main id="root"></main>
 
 <% if logged_in? %>
@@ -114,29 +108,6 @@ Implements Authentication with BCrypt & JavaScript Web Token
     ).html_safe %>
     </script>
 <% end %>
-```
-
-```js
-// config
-
-
-const JwtStrategy = require("passport-jwt").Strategy;
-const ExtractJwt = require("passport-jwt").ExtractJwt;
-const mongoose = require("mongoose");
-const User = mongoose.model("users");
-const keys = require("./keys");
-
-const options = {};
-options.jwtFromRequest = ExtractJwt.fromAuthHeaderAsBearerToken();
-options.secretOrKey = keys.secretOrKey;
-
-module.exports = passport => {
-  passport.use(
-    new JwtStrategy(options, (jwt_payload, done) => {
-      done();
-    })
-  );
-};
 ```
 
 ### AWS
@@ -193,7 +164,7 @@ handleFile(e) {
   }
 ```
 
-### Rails Routes
+### Rails API Routes
 ```ruby
 Rails.application.routes.draw do
   root to: "static_pages#root"
@@ -257,32 +228,6 @@ class User < ApplicationRecord
     through: :passive_follows, 
     source: :follower,
     dependent: :destroy
-
-    def self.find_by_credentials(username, password)
-        user = User.find_by(username: username) || User.find_by(email: username)
-        return nil unless user && user.is_password?(password)
-        user
-    end
-
-    def is_password?(password)
-        BCrypt::Password.new(self.password_digest).is_password?(password)
-    end
-
-    def password=(password)
-        @password = password
-        self.password_digest = BCrypt::Password.create(password)
-    end
-
-    def reset_session_token!
-        self.session_token = SecureRandom.urlsafe_base64(16)
-        self.save!
-        self.session_token
-    end
-
-    def ensure_session_token
-        self.session_token ||= SecureRandom.urlsafe_base64(16)
-    end
- 
 end
 
 
@@ -381,13 +326,6 @@ ActiveRecord::Schema.define(version: 2019_10_11_041620) do
 
 end
 ```
-<!-- ### Express -->
-
-<!-- API Routes
-
-+ `/api/users/` - Register / Login users
-+ `/api/tracks/` - Tracks CRUD
-+ `/api/comments/` - User Comments CRUD -->
 
 ### Post Views jBuilder
 ```ruby
@@ -412,9 +350,64 @@ end
 ### React Store
 
 Frontend React-Redux store layout.
-
 ```js
+import React from "react";
+import ReactDOM from "react-dom";
+import configureStore from "./store/store.js";
+import Root from "./components/root";
+import Modal from "react-modal";
 
+document.addEventListener("DOMContentLoaded", () => {
+  let store;
+  if (window.currentUser) {
+    const { currentUser } = window;
+    const { id } = currentUser;
+    const preloadedState = {
+      entities: {
+        users: { [id]: currentUser }
+      },
+      session: { id }
+    };
+    store = configureStore(preloadedState);
+    delete window.currentUser;
+  } else {
+    store = configureStore();
+  }
+  const root = document.getElementById("root");
+  Modal.setAppElement(root);
+  ReactDOM.render(<Root store={store} />, root);
+});
+```
+
+## Protected and Auth Routes
+```js
+import React from 'react'
+import { connect } from 'react-redux'
+import { Redirect, Route, withRouter } from 'react-router-dom';
+const Auth = ({ component: Component, path, loggedIn, exact }) => (
+    <Route path={path} exact={exact} render={(props) => (
+        !loggedIn ? (
+            <Component {...props} />
+        ) : (
+                <Redirect to="/" />
+            )
+    )} />
+);
+const Protected = ({ component: Component, path, loggedIn, exact }) => (
+    <Route path={path} exact={exact} render={(props) => (
+        loggedIn ? (
+            <Component {...props} />
+        ) : (
+                <Redirect to="/login" />
+            )
+    )} />
+);
+const mapStateToProps = state => {
+    return { loggedIn: Boolean(state.session.id) };
+};
+
+export const ProtectedRoute = withRouter(connect(mapStateToProps)(Protected));
+export const AuthRoute = withRouter(connect(mapStateToProps)(Auth));
 ```
 
 Running local dev
