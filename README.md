@@ -25,7 +25,7 @@
 ---
 - [Features](#features)
 - [Technology](#technology)
-- [API](#Rails API Routes)
+- [API](#API)
 - [Setup](#setup)
 
 ## Features
@@ -163,8 +163,8 @@ handleFile(e) {
     });
   }
 ```
-
-### Rails API Routes
+## API
+### Rails Routes
 ```ruby
 Rails.application.routes.draw do
   root to: "static_pages#root"
