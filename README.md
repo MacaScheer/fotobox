@@ -62,7 +62,7 @@ Fotobox is a minimal viable product that tackles three challenges in application
 + jQuery
 
 ### Docker Services
-+ db - Postgres
++ db - PostgreSQL
 + web - Rails
 + frontend - React
 
