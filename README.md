@@ -25,7 +25,7 @@
 ---
 
 - [Features](#features)
-- [Background](#background)
+- [Technology](#technology)
 - [API](#express)
 - [Setup](#setup)
 
@@ -43,9 +43,61 @@
 - User Profile
 
 
+### Technologies and Technical Challenges
+
+Fotobox is a minimal viable product that tackles three challenges in application development, software engineering, and user experience. 
+
+## Technology
+
+### Backend
+
++ Postgresql
++ Rails 5
++ Active Records
++ BCrypt
++ jbuilder
++ AWS S3
+
+### Frontend
+
++ Nodejs
++ React
++ Redux
++ jQuery
+
+### Docker Services
+
++ db - Postgres
++ web - Rails
++ frontend - React
 
 
+#### User Account Authentification
 
+Passwords are secured using the `BCrypt` gem to generate a *password digest*. 
+A user's login session is tracked by a generated *session token* stored in the database and on the client-side as a browser cookie.
+
+```ruby
+def self.find_by_credentials(email, password)
+        user = User.find_by(email: email)
+        user && user.is_password?(password) ? user : nil
+    end
+
+    def password=(password)
+        @password = password
+        self.password_digest = BCrypt::Password.create(password)
+    end
+
+    def is_password?(password)
+        BCrypt::Password.new(self.password_digest).is_password?(password)
+    end
+
+    def reset_session_token!
+        self.session_token = new_session_token
+        self.save!
+        self.session_token
+    end
+```
 
 
 <!-- 
@@ -159,14 +211,6 @@ var upload = multer({
 ```
 
 --- -->
-
-## Background
-
-### Technologies and Technical Challenges
-
-Fotobox is a minimal viable product that tackles three challenges in application development, software engineering, and user experience. 
-
-Built with a Ruby on Rails backend, a PostgreSQL database, AWS S3 buckets for image storage, and a React / Redux frontend.
 
 <!-- ### MongoDB Models
 
