@@ -2,6 +2,7 @@ import React from "react";
 import NavBarContainer from "../nav/nav_bar_container";
 import { withRouter } from "react-router-dom";
 import { Link } from "react-router-dom";
+// import { Waypoint } from "react-waypoint";
 var debounce = require('debounce');
 
 class UserShow extends React.Component {
@@ -32,7 +33,9 @@ class UserShow extends React.Component {
     this.getPosts()
     this.props.fetchUser(id);
     this.props.closeModal();
-    this.infiniteScroller()
+    // this.infiniteScroller()
+    window.addEventListener("scroll", this.infiniteScroller);
+
   }
 
 
@@ -202,6 +205,7 @@ class UserShow extends React.Component {
           </div>
           <div className="profile-right"></div>
         </div>
+        {/* <Waypoint onEnter={getPosts} /> */}
       </div>
     );
   }

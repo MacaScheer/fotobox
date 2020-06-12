@@ -1,5 +1,6 @@
 import React from "react";
 import NavBarContainer from "../nav/nav_bar_container";
+// import { Waypoint } from "react-waypoint";
 var debounce = require('debounce');
 
 
@@ -30,8 +31,10 @@ class Profile extends React.Component {
     this.props.fetchUser(this.props.currentUser.id);
     // window.addEventListener("scroll", this.myScrollFunc);
     window.addEventListener("scroll", this.infiniteScroller);
-
     this.props.closeModal();
+  }
+  componentWillUnmount() {
+    window.removeEventListener("scroll", this.infiniteScroller)
   }
 
   infiniteScroller() {
@@ -137,6 +140,7 @@ class Profile extends React.Component {
           </div>
           <div className="profile-right"></div>
         </div>
+        {/* <Waypoint onEnter={this.getPost}/> */}
       </div>
     );
   }
