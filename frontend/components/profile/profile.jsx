@@ -1,6 +1,7 @@
 import React from "react";
 import NavBarContainer from "../nav/nav_bar_container";
 // import { Waypoint } from "react-waypoint";
+import ProfileIndexItem from "./profile_index_item";
 var debounce = require('debounce');
 
 
@@ -72,23 +73,7 @@ class Profile extends React.Component {
     } = this.props.profileUser;
     let userPhotos = this.props.userPosts.map(post => {
       return (
-        <li key={post.id}>
-          <div className="image-container">
-            <div onClick={() => this.props.openModal({ postId: post.id })}>
-              <img className="user-page-photos" src={post.photoUrl} />
-              <div className="image-overlay">
-                <p className="image-overlay-text">
-                  <span className="overlay-heart">&#9829;</span>
-                  {post.likers ? post.likers.length : 0}
-                  <i className="comment" aria-hidden="true">
-                    &#x1f4ac;
-                  </i>
-                  {post.commentIds ? post.commentIds.length : 0}
-                </p>
-              </div>
-            </div>
-          </div>
-        </li>
+        <ProfileIndexItem post={post} key={post.photoUrl} openModal={this.props.openModal} />
       );
     });
     return (
