@@ -1,8 +1,8 @@
 import React from "react";
 import ProfileIndexItem from "./profile_index_item";
 // import useInfiniteScroll from "./useInfiniteScroll";
-import ProfileList from "./profile_list";
-var debounce = require('debounce');
+// import ProfileList from "./profile_list";
+// var debounce = require('debounce');
 
 
 class Profile extends React.Component {
