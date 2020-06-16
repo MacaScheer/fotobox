@@ -1,8 +1,6 @@
 import React from "react";
 import ProfileIndexItem from "./profile_index_item";
 // import useInfiniteScroll from "./useInfiniteScroll";
-// import ProfileList from "./profile_list";
-// var debounce = require('debounce');
 
 
 class Profile extends React.Component {
@@ -55,7 +53,7 @@ class Profile extends React.Component {
   }
 
   render() {
-    if (!this.props.profileUser) {
+    if (!this.props.userPosts) {
       return <h2 className="loading-bar">Loading...</h2>;
     }
     const {
@@ -108,7 +106,6 @@ class Profile extends React.Component {
                 </div>
               </div>
             </div>
-            {/* <ProfileList props={this.props} getPosts={this.getPosts} /> */}
             <div className="profile-photo-index-container">
               <ul className="profile-photo-index">
                 {userPhotos}
@@ -118,7 +115,6 @@ class Profile extends React.Component {
           </div>
           <div className="profile-right"></div>
         </div>
-        {/* <Waypoint onEnter={this.getPost}/> */}
       </div>
     );
   }
