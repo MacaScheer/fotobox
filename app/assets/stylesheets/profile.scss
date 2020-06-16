@@ -111,8 +111,8 @@
                     text-align: -webkit-match-parent;
                 }
                 .image-container {
-                    // display:flex;
-                    // position: relative;
+                    display:flex;
+                    position: relative;
                     .user-page-photos {
                         object-fit: cover;
                         z-index: 1;
