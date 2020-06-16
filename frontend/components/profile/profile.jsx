@@ -1,7 +1,8 @@
 import React from "react";
-import NavBarContainer from "../nav/nav_bar_container";
-// import { Waypoint } from "react-waypoint";
-var debounce = require('debounce');
+import ProfileIndexItem from "./profile_index_item";
+// import useInfiniteScroll from "./useInfiniteScroll";
+// import ProfileList from "./profile_list";
+// var debounce = require('debounce');
 
 
 class Profile extends React.Component {
@@ -13,10 +14,11 @@ class Profile extends React.Component {
     this.handleNewPostForm = this.handleNewPostForm.bind(this);
     this.handleEditUser = this.handleEditUser.bind(this);
     this.state = {
-      page: 1
+      page: 2
     }
     this.getPosts = this.getPosts.bind(this)
-    this.infiniteScroller = this.infiniteScroller.bind(this)
+    this.scroller = this.scroller.bind(this)
+
   }
   getPosts() {
     this.props.fetchProfilePosts(this.state.page, this.props.currentUser.id);
@@ -26,26 +28,18 @@ class Profile extends React.Component {
   componentDidMount() {
     this.getPosts()
     this.props.fetchNumPosts(this.props.currentUser.id);
-    // this.infiniteScroller();
-    // this.props.fetchProfilePosts(this.props.currentUser.id);
     this.props.fetchUser(this.props.currentUser.id);
-    // window.addEventListener("scroll", this.myScrollFunc);
-    window.addEventListener("scroll", this.infiniteScroller);
+    document.addEventListener('scroll', this.scroller)
     this.props.closeModal();
   }
   componentWillUnmount() {
-    window.removeEventListener("scroll", this.infiniteScroller)
+    document.removeEventListener('scroll', this.scroller)
   }
-
-  infiniteScroller() {
-    window.onscroll = debounce(() => {
-            if (
-                window.innerHeight + document.documentElement.scrollTop ===
-                document.documentElement.offsetHeight
-            ) {
-               this.getPosts()
-            }
-        }, 50)
+  
+  scroller() {
+    if ((window.innerHeight + window.scrollY) >= document.body.offsetHeight) {
+      this.getPosts()
+    }
     }
 
   handleNewPostForm(e) {
@@ -62,38 +56,20 @@ class Profile extends React.Component {
 
   render() {
     if (!this.props.profileUser) {
-      return <h2>Loading...</h2>;
+      return <h2 className="loading-bar">Loading...</h2>;
     }
     const {
       username,
-      photoUrl,
       followerIds,
       followingIds
     } = this.props.profileUser;
     let userPhotos = this.props.userPosts.map(post => {
       return (
-        <li key={post.id}>
-          <div className="image-container">
-            <div onClick={() => this.props.openModal({ postId: post.id })}>
-              <img className="user-page-photos" src={post.photoUrl} />
-              <div className="image-overlay">
-                <p className="image-overlay-text">
-                  <span className="overlay-heart">&#9829;</span>
-                  {post.likers ? post.likers.length : 0}
-                  <i className="comment" aria-hidden="true">
-                    &#x1f4ac;
-                  </i>
-                  {post.commentIds ? post.commentIds.length : 0}
-                </p>
-              </div>
-            </div>
-          </div>
-        </li>
+        <ProfileIndexItem post={post} key={post.photoUrl} openModal={this.props.openModal} />
       );
     });
     return (
-      <div>
-        <NavBarContainer />
+      <div >
         <div className="profile-wrap">
           <div className="profile-left"></div>
           <div className="profile-container">
@@ -132,10 +108,12 @@ class Profile extends React.Component {
                 </div>
               </div>
             </div>
+            {/* <ProfileList props={this.props} getPosts={this.getPosts} /> */}
             <div className="profile-photo-index-container">
               <ul className="profile-photo-index">
                 {userPhotos}
               </ul>
+              {/* {isFetching && 'Fetching more images...'} */}
             </div>
           </div>
           <div className="profile-right"></div>

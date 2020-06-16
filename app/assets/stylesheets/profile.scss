@@ -1,7 +1,21 @@
+@media all 
+ and (min-device-width: 768px){
+
+ }
+
+//  @media all
+//  and (min-device-width: ){
+
+//  }
+//  @media all
+//  and (min-device-width: ){
+
+//  }
 .profile-wrap {
     display: flex;
     justify-content: center;
     align-items: center;
+    height:100%;
 
     .profile-left {
         width: 10%;
@@ -11,6 +25,7 @@
     }
 
     .profile-container {
+        height:100%;
         margin-top: 100px;
         flex-direction: column;
         background-color: #fafafa;
@@ -96,11 +111,12 @@
                     text-align: -webkit-match-parent;
                 }
                 .image-container {
-                    
-                    position: relative;
+                    // display:flex;
+                    // position: relative;
                     .user-page-photos {
                         object-fit: cover;
                         z-index: 1;
+                        // width:30%;
                         width: 250px;
                         height: 250px;
                         margin: 20px;
