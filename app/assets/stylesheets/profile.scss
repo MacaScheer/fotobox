@@ -1,3 +1,16 @@
+@media all 
+ and (min-device-width: 768px){
+
+ }
+
+//  @media all
+//  and (min-device-width: ){
+
+//  }
+//  @media all
+//  and (min-device-width: ){
+
+//  }
 .profile-wrap {
     display: flex;
     justify-content: center;
@@ -98,11 +111,12 @@
                     text-align: -webkit-match-parent;
                 }
                 .image-container {
-                    
-                    position: relative;
+                    // display:flex;
+                    // position: relative;
                     .user-page-photos {
                         object-fit: cover;
                         z-index: 1;
+                        // width:30%;
                         width: 250px;
                         height: 250px;
                         margin: 20px;

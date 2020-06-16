@@ -17,7 +17,7 @@ class Profile extends React.Component {
     this.handleNewPostForm = this.handleNewPostForm.bind(this);
     this.handleEditUser = this.handleEditUser.bind(this);
     this.state = {
-      page: 1
+      page: 2
     }
     this.getPosts = this.getPosts.bind(this)
     this.scroller = this.scroller.bind(this)
@@ -36,26 +36,40 @@ class Profile extends React.Component {
     // document.addEventListener('scroll', this.scroller)
     // scroll.addEventListener("scroll", this.scroller);
     // this.scroller();
-    window.addEventListener('scroll', this.scroller)
+    document.addEventListener('scroll', this.scroller)
     this.props.closeModal();
   }
   componentWillUnmount() {
     // const scroll = document.getElementsByClassName('profile-photo-index')[0]
     // scroll.removeEventListener('scroll', this.scroller)
-    window.removeEventListener('scroll', this.scroller)
+    document.removeEventListener('scroll', this.scroller)
   }
   
   scroller() {
-    debugger
     // console.log("infiniteSCroller!")
     // window.onscroll = debounce(() => {
+      let innerHeight = window.innerHeight;
+      let { scrollHeight } = document.documentElement;
+      let { offsetHeight } = document.documentElement;
+      let { scrollTop } = document.documentElement;
+      // debugger
+    console.log("SCROLL!", innerHeight + scrollTop, offsetHeight)
       // if (
       //   window.innerHeight + document.documentElement.scrollTop ===
       //   document.documentElement.offsetHeight
+      //  || window.scrollY > 90
       // ) {
-        this.getPosts()
+      //   this.getPosts()
       // }
         // },10)
+    // window.onscroll = function (ev) {
+      console.log("Scrolling")
+    if ((window.innerHeight + window.scrollY) >= document.body.offsetHeight) {
+      console.log("inside if logic")
+        // you're at the bottom of the page
+      this.getPosts()
+    }
+// };
     }
 
   handleNewPostForm(e) {
@@ -72,7 +86,7 @@ class Profile extends React.Component {
 
   render() {
     if (!this.props.profileUser) {
-      return <h2>Loading...</h2>;
+      return <h2 className="loading-bar">Loading...</h2>;
     }
     const {
       username,
@@ -86,7 +100,7 @@ class Profile extends React.Component {
     });
     return (
       <div >
-        <NavBarContainer />
+        {/* <NavBarContainer /> */}
         <div className="profile-wrap">
           <div className="profile-left"></div>
           <div className="profile-container">
@@ -125,11 +139,12 @@ class Profile extends React.Component {
                 </div>
               </div>
             </div>
+            {/* <ProfileList props={this.props} getPosts={this.getPosts} /> */}
             <div className="profile-photo-index-container">
               <ul className="profile-photo-index">
                 {userPhotos}
               </ul>
-              {isFetching && 'Fetching more images...'}
+              {/* {isFetching && 'Fetching more images...'} */}
             </div>
           </div>
           <div className="profile-right"></div>
