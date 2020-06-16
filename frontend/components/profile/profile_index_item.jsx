@@ -2,7 +2,6 @@ import React from "react";
 import { withRouter } from "react-router";
 import { Link } from "react-router-dom";
 export default function ProfileIndexItem({ post, openModal }) {
-  debugger
     const { id, likers, commentIds, photoUrl } = post;
     return (
         <li key={id}>

@@ -2,6 +2,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    height:100%;
 
     .profile-left {
         width: 10%;
@@ -11,6 +12,7 @@
     }
 
     .profile-container {
+        height:100%;
         margin-top: 100px;
         flex-direction: column;
         background-color: #fafafa;

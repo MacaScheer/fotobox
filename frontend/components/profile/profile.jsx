@@ -1,7 +1,10 @@
 import React from "react";
+import { findDOMNode } from 'react-dom';
 import NavBarContainer from "../nav/nav_bar_container";
 // import { Waypoint } from "react-waypoint";
 import ProfileIndexItem from "./profile_index_item";
+// import useInfiniteScroll from "./useInfiniteScroll";
+import ProfileList from "./profile_list";
 var debounce = require('debounce');
 
 
@@ -17,7 +20,8 @@ class Profile extends React.Component {
       page: 1
     }
     this.getPosts = this.getPosts.bind(this)
-    this.infiniteScroller = this.infiniteScroller.bind(this)
+    this.scroller = this.scroller.bind(this)
+
   }
   getPosts() {
     this.props.fetchProfilePosts(this.state.page, this.props.currentUser.id);
@@ -27,26 +31,31 @@ class Profile extends React.Component {
   componentDidMount() {
     this.getPosts()
     this.props.fetchNumPosts(this.props.currentUser.id);
-    // this.infiniteScroller();
-    // this.props.fetchProfilePosts(this.props.currentUser.id);
     this.props.fetchUser(this.props.currentUser.id);
-    // window.addEventListener("scroll", this.myScrollFunc);
-    window.addEventListener("scroll", this.infiniteScroller);
+    // const scroll = document.getElementsByClassName('profile-photo-index')[0]
+    // document.addEventListener('scroll', this.scroller)
+    // scroll.addEventListener("scroll", this.scroller);
+    // this.scroller();
+    window.addEventListener('scroll', this.scroller)
     this.props.closeModal();
   }
   componentWillUnmount() {
-    window.removeEventListener("scroll", this.infiniteScroller)
+    // const scroll = document.getElementsByClassName('profile-photo-index')[0]
+    // scroll.removeEventListener('scroll', this.scroller)
+    window.removeEventListener('scroll', this.scroller)
   }
-
-  infiniteScroller() {
-    window.onscroll = debounce(() => {
-            if (
-                window.innerHeight + document.documentElement.scrollTop ===
-                document.documentElement.offsetHeight
-            ) {
-               this.getPosts()
-            }
-        }, 50)
+  
+  scroller() {
+    debugger
+    // console.log("infiniteSCroller!")
+    // window.onscroll = debounce(() => {
+      // if (
+      //   window.innerHeight + document.documentElement.scrollTop ===
+      //   document.documentElement.offsetHeight
+      // ) {
+        this.getPosts()
+      // }
+        // },10)
     }
 
   handleNewPostForm(e) {
@@ -67,7 +76,6 @@ class Profile extends React.Component {
     }
     const {
       username,
-      photoUrl,
       followerIds,
       followingIds
     } = this.props.profileUser;
@@ -77,7 +85,7 @@ class Profile extends React.Component {
       );
     });
     return (
-      <div>
+      <div >
         <NavBarContainer />
         <div className="profile-wrap">
           <div className="profile-left"></div>
@@ -121,6 +129,7 @@ class Profile extends React.Component {
               <ul className="profile-photo-index">
                 {userPhotos}
               </ul>
+              {isFetching && 'Fetching more images...'}
             </div>
           </div>
           <div className="profile-right"></div>
