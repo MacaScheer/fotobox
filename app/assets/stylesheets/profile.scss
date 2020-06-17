@@ -1,31 +1,68 @@
+@media only screen and (max-width: 600px){
+
+}
+@media only screen and (min-width: 600px){
+
+}
+@media only screen and (min-width: 768px){
+
+}
+@media only screen and (min-width: 992px){
+
+}
+// @media only screen and (min-width:1200px){
+//     .profile-wrap{
+
+//         .profile-container{
+//             .profile-top{
+//                 .profile-top-right{
+//                     .profile-top-up{
+
+//                         h1{
+//                             margin-right:140px
+//                         }
+//                         .profile-top-buttons{
+//                             margin-left:100px;
+//                         }
+//                         justify-content: space-around;
+//                     }
+//                 }
+//             }
+//             width:83vw;
+//             .image-container{
+//                 .user-page-photos{
+//                     width:18vw;
+//                     height:18vw;
+//                 }
+//             }
+//         }
+//     }
+// }
+
 .profile-wrap {
     display: flex;
     justify-content: center;
     align-items: center;
     height:100%;
-
     .profile-left {
         width: 10%;
     }
     .profile-right {
-    width: 10%;
+        width: 10%;
     }
-
     .profile-container {
         height:100%;
         margin-top: 100px;
         flex-direction: column;
         background-color: #fafafa;
         font-family: 'Roboto', sans-serif;
-        width: 950px;
-        
+        width: 950px;   
         .profile-top {
             display: flex;
             min-width: 850px;
             justify-content: space-between;
             align-items: center;
             margin-bottom: 50px;
-        
                 .profile-display-pic {
                     object-fit: cover;
                     border: 1px solid #dbdbdb;
@@ -34,14 +71,11 @@
                     width: 155px;
                     height: 155px;
                 }
-
             .profile-top-right {
                 width: 700px;
-                
                 .profile-top-up {
                     display: flex;
                     justify-content: space-around;
-                    
                     h1 {
                         display: block;
                         font-size: 2em;
@@ -51,7 +85,6 @@
                         margin-inline-end: 0px;
                         font-weight: bold;
                     }
-
                     .profile-button {
                             background-color: transparent;
                             border: 1px solid #dbdbdb;
@@ -72,7 +105,6 @@
                     justify-content: space-around;
                 }
             }
-        
         }
         .profile-photo-index-container {
             display: flex;
@@ -108,7 +140,6 @@
                         color: white;
                         .comment{
                             color:whitesmoke;
-
                             padding: 10px;
                         }
                         .overlay-heart{
