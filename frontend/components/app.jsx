@@ -14,10 +14,9 @@ import Modal from "./modal";
 import { Switch } from "react-router-dom";
 const App = () => {
   return (
-    <div className="page">
+    <div className="container">
       <Modal />
       <ProtectedRoute path="/" component={NavBarContainer} />
-      <header className="headerBar"></header>
       <Switch>
         <AuthRoute path="/login" component={LoginFormContainer} />
         <AuthRoute path="/signup" component={SignupFormContainer} />
