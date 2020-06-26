@@ -74,8 +74,6 @@ class SessionForm extends React.Component {
 
     return (
       <div className="page">
-        <header className="headerBar"></header>
-
         <div className="login-page-container">
           <div className="login-page-left">
             <AnimationComponent />
@@ -83,13 +81,10 @@ class SessionForm extends React.Component {
           <div className="login-page-right">
             <ul className="login-errors">{this.errors()}</ul>
             <div className="login-form-container">
-              <form onSubmit={this.handleSubmit} className="login-form-box">
                 <h1 className="fotobox-logo">fotobox</h1>
-                <div className="login-form">
+                <form onSubmit={this.handleSubmit} className="login-form-box">
                   <span className="greeting">{headerGreet}</span>
-                  <br />
                   <label>{emailInput}</label>
-                  <br />
                   <label>
                     <input
                       type="text"
@@ -99,7 +94,6 @@ class SessionForm extends React.Component {
                       value={this.state.username}
                     />
                   </label>
-                  <br />
                   <label>
                     <input
                       type="password"
@@ -109,30 +103,23 @@ class SessionForm extends React.Component {
                       value={this.state.password}
                     />
                   </label>
-                  <br />
                   <input
                     className="session-submit login"
                     type="submit"
                     value={this.props.formType}
                   />
-                  <br />
-                  &nbsp;Or&nbsp;
-                  <br />
+                  <p>or</p>
                   <button
                     className="session-submit demo"
                     onClick={this.demo_user_handler}
                   >
                     Demo Login
                   </button>
-                </div>
-              </form>
+                </form>
             </div>
-
             <div className="login-signup-link">
-              <div>
                 {instruc}
                 <Link to={path}>{altTitle}</Link>
-              </div>
             </div>
           </div>
         </div>

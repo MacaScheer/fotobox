@@ -14,15 +14,24 @@
  *= require_self
  */
 @import url(https://fonts.googleapis.com/css?family=Lobster|Roboto|Satisfy|Source+Sans+Pro|Yellowtail&display=swap);
-.page {
-  margin-top: 30px;
+
+.container{
+  display: flex;
 }
+.page {
+  width:100%;
+  display:flex;
+  justify-content: center;
+  align-items:center;
+}
+
 .logout-button {
   bottom: 20px;
 }
 .fotobox-logo {
   font-family: "Satisfy", cursive;
-  font-weight: 80;
+  font-weight: 90;
+  font-size:3rem;
   margin-bottom: 20px;
 }
 
