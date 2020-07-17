@@ -67,7 +67,6 @@ class Profile extends React.Component {
       );
     });
     return (
-      <div >
         <div className="profile-wrap">
           <div className="profile-left"></div>
           <div className="profile-container">
@@ -115,7 +114,6 @@ class Profile extends React.Component {
           </div>
           <div className="profile-right"></div>
         </div>
-      </div>
     );
   }
 }

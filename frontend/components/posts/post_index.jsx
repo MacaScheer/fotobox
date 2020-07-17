@@ -34,7 +34,7 @@ class PostIndex extends React.Component {
             <ul className="feed-images">
               {posts.map((post, i) => {
                 return (
-                  <div key={i}>
+                  // <div key={i}>
                     <PostIndexItem
                       key={post.id}
                       post={post}
@@ -43,7 +43,7 @@ class PostIndex extends React.Component {
                       deleteComment={this.props.deleteComment}
                       fetchPost={this.props.fetchPost}
                     />
-                  </div>
+                  // </div>
                 );
               })}
               <Waypoint onEnter={this.getPosts} />
