@@ -133,6 +133,8 @@ a.feed-profile-link {
 
 .feed-comment-form {
   display: flex;
+  flex-direction: row;
+  justify-content: start;
   align-items: center;
   height: 45px;
   margin-bottom: 8px;

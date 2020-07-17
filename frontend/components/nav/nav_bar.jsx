@@ -15,7 +15,7 @@ class NavBar extends React.Component {
 
   render() {
     return (
-      <div className="page">
+      // <div className="page">
         <section className="nav-bar-container">
           <div className="nav-left">
             <Link className="nav-icon" to={"/"}>
@@ -48,7 +48,7 @@ class NavBar extends React.Component {
             </div>
           </div>
         </section>
-      </div>
+      // </div>
     );
   }
 }

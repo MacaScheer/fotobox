@@ -219,6 +219,7 @@
   border-radius: 4px;
   outline: none;
   border: 1px solid #fafafa;
+  padding:9px;
 }
 .show-textarea {
   margin-left: 40px;
