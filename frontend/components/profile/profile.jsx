@@ -99,9 +99,9 @@ class Profile extends React.Component {
                   </div>
                 </div>
                 <div className="profile-top-down">
-                  <span>{this.props.numPosts} posts</span>
-                  <span className="">{followerIds.length} Followers</span>
-                  <span className="">{followingIds.length} Following</span>
+                  <span className="num">{this.props.numPosts} posts</span>
+                  <span className="num">{followerIds.length} Followers</span>
+                  <span className="num">{followingIds.length} Following</span>
                 </div>
               </div>
             </div>

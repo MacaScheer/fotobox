@@ -1,15 +1,4 @@
-@media only screen and (max-width: 600px){
 
-}
-@media only screen and (min-width: 600px){
-
-}
-@media only screen and (min-width: 768px){
-
-}
-@media only screen and (min-width: 992px){
-
-}
 // @media only screen and (min-width:1200px){
 //     .profile-wrap{
 
@@ -58,18 +47,18 @@
         font-family: 'Roboto', sans-serif;
         width: 950px;   
         .profile-top {
-            display: flex;
-            min-width: 850px;
-            justify-content: space-between;
-            align-items: center;
-            margin-bottom: 50px;
+                display: flex;
+                min-width: 36vw;
+                margin-top: 2vw;
+                justify-content: space-evenly;
+                margin-bottom: 1vw;
                 .profile-display-pic {
                     object-fit: cover;
                     border: 1px solid #dbdbdb;
                     background-color: darkgrey;
                     border-radius: 90px;
-                    width: 155px;
-                    height: 155px;
+                    width: 7vw;
+                    height: 7vw;
                 }
             .profile-top-right {
                 width: 700px;
@@ -103,6 +92,14 @@
                 .profile-top-down {
                     display: flex;
                     justify-content: space-around;
+
+                    .num{
+                         background-color: transparent;
+                            border-bottom: 1px solid #dbdbdb;
+                            color: #262626;
+                            min-width:fit-content;
+                            outline: none;
+                    }
                 }
             }
         }
@@ -110,20 +107,24 @@
             display: flex;
             flex-wrap: wrap;
             align-items: center;
-            min-width: 900px;
-            padding-left: 20px;
-        
+            align-content: center;
+            justify-content: center;
+            
             .profile-photo-index {
-                display: flex;
-                flex-wrap: wrap;
-                justify-content: flex-start;
-                align-items: center;
-                list-style: none;
-                padding-left: 0;
+                // display: flex;
+                // flex-wrap: wrap;
+                // justify-content: flex-start;
+                // align-items: center;
+                // list-style: none;
+                // padding-left: 0;
+                display:grid;
+                grid-template-columns:1fr 1fr 1fr 1fr;
+                grid-template-rows: 1fr 1fr 1fr 1fr;
 
                 li {
                     display: list-items;
                     text-align: -webkit-match-parent;
+                    list-style-type: none;
                 }
                 .image-container {
                     display:flex;
@@ -163,4 +164,35 @@
             }
         }
     }
+}
+
+
+/* max-width => “If [device width] is less than or equal to 600px, then do {…}” */
+/* min-width =>  “If [device width] is greater than or equal to 600px, then do {…}” */
+
+@media (max-width: 1130px){
+        .profile-photo-index  {
+            display:grid;
+            grid-template-columns:1fr 1fr 1fr !important;
+            grid-template-rows: 1fr 1fr 1fr !important; 
+        }
+}
+
+@media (max-width: 700px){
+        .profile-photo-index  {
+            display:grid;
+            grid-template-columns:1fr 1fr !important;
+            grid-template-rows: 1fr 1fr !important; 
+        }
+}
+
+@media (max-width: 450px){
+        .profile-photo-index  {
+            display: flex;
+                flex-wrap: wrap;
+                justify-content: flex-start;
+                align-items: center;
+                list-style: none;
+                padding-left: 0; 
+        }
 }

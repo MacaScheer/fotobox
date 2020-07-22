@@ -46,15 +46,18 @@
   flex-direction: column;
   justify-content: center;
   align-content: center;
-  width: 30vw;
+  width: 35vw;
   background-color: white;
 }
 
 .feed-image-header-wrap {
-  height: 40px;
+  /* height: 40px; */
+  height:3.3vw;
   display: flex;
   align-items: center;
+  border-bottom: 1px solid lightgrey;
 }
+
 .feed-image {
   object-fit: cover;
   width: 100%;
@@ -76,8 +79,10 @@
 
 
 .feed-image {
-  width: 500px;
-  height: 500px;
+  width:35vw;
+  height:37vw;
+  /* width: 500px; */
+  /* height: 500px; */
 }
 
 .feed-image:hover {
@@ -118,21 +123,7 @@
   cursor: pointer;
 }
 
-.feed-image-header {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-content: center;
-  width: 500px;
-  background-color: white;
-}
 
-.feed-image-header-wrap {
-  height: 40px;
-  display: flex;
-  align-items: center;
-  border-bottom: 1px solid lightgrey;
-}
 
 .feed-image-header-wrap a {
   display: flex;
