@@ -1,19 +1,19 @@
 .new-post-form {
   display: flex;
-  margin-left: 230px;
-  width: 450px;
-  height: 450px;
-  justify-content: space-between;
+  // margin-left: 230px;
+  // width: 450px;
+  // height: 450px;
+  justify-content: space-evenly;
   align-content: center;
 
   .upload-form-div {
-    margin-top: 100px;
-    width: 600px;
+    // margin-top: 100px;
+    // width: 600px;
 
     .preview-div {
-      width: 400px;
-      height: 300px;
-      border: 1px solid lightgrey;
+      // width: 400px;
+      // height: 300px;
+      // border: 1px solid lightgrey;
       border-radius: 5px;
       //   padding: 35px;
       //   padding-left:50px;
@@ -21,33 +21,33 @@
         align-content:center;
 
       .preview-outline {
-        justify-content: space-around;
-        align-content: center;
-        height: 300px;
-        width: 400px;
-        // margin: 25px;
-        border-radius: 5px;
-        // background-color: rgba(218,218,218,0.495);
-        font-size: 120px;
-          box-shadow: 8px 21px 12px rgba(0, 0, 0, 0.2);
+        display:flex;
+        justify-content: center;
+         align-content: center;
+    padding: 1vw;
+    height: 21vw;
+    width: 28vw;
+    border: 1px solid lightgray;
+    border-radius: 5px;
+    box-shadow: 8px 21px 12px rgba(82, 82, 82, 0.2);
 
         .scanner-icon {
           object-fit: contain;
           justify-content: space-around;
-          margin-left: 70px;
-          margin-top:30px;
+          // margin-left: 70px;
+          // margin-top:30px;
           width: 60%;
-          height: auto;
+          // height: auto;
           // padding:2px;
         }
       }
     }
   }
   .post-form-right {
-    margin-left:20px;
-    margin-top: 100px;
-    height: 300px;
-    width: 300px;
+    // margin-left:20px;
+    // margin-top: 100px;
+    // height: 300px;
+    width: 28vw;
     display: flex;
     justify-content: space-around;
     flex-direction: column;
@@ -61,7 +61,7 @@
       // align-items: baseline;
       background-color: forestgreen;
       border-radius: 15px 15px 10px 10px;
-      width: 300px;
+      // width: 300px;
       // height:60px;
     }
     .post-right-mid {
@@ -69,24 +69,23 @@
       justify-content: space-around;
       flex-direction: column;
       align-items: center;
-      width: 300px;
+      // width: 300px;
       font-weight: bolder;
 
       .title-input-field {
-        height: 30px;
-        max-height: 75px;
-        max-width: 250px;
-        width: 250px;
-        margin: 5px;
-         text-align: left;
-  background-color: #fafafa;
-  padding-left: 5px;
-  text-overflow: ellipsis;
-  font-size: 14px;
-  // margin: 3px;
-  border-radius: 3px;
-  border: 1px solid #efefef;
-  box-sizing: border-box;
+     height: 2vw;
+    max-height: 6vw;
+    max-width: 14vw;
+    width: 14vw;
+    /* margin: 5px; */
+    text-align: left;
+    background-color: #fafafa;
+    /* padding-left: 5px; */
+    text-overflow: ellipsis;
+    // font-size: 14px;
+    border-radius: 3px;
+    border: 1px solid #c7c7c7;
+    box-sizing: border-box;
       }
       .photo-input-field{
         // background-color: forestgreen;
@@ -135,20 +134,19 @@
       //   cursor:pointer;
       // }
       .location-input-field{
-          height: 30px;
-        max-height: 75px;
-        max-width: 250px;
-        width: 250px;
-        margin: 5px;
-         text-align: left;
-  background-color: #fafafa;
-  padding-left: 5px;
-  text-overflow: ellipsis;
-  font-size: 14px;
-  // margin: 3px;
-  border-radius: 3px;
-  border: 1px solid #efefef;
-  box-sizing: border-box;
+    height: 2vw;
+    max-height: 6vw;
+    max-width: 14vw;
+    width: 14vw;
+    /* margin: 5px; */
+    text-align: left;
+    background-color: #fafafa;
+    /* padding-left: 5px; */
+    text-overflow: ellipsis;
+    font-size: 14px;
+    border-radius: 3px;
+    border: 1px solid #c7c7c7;
+    box-sizing: border-box;
       }
       
     }
@@ -165,15 +163,13 @@
       color: white;
 
       .post-button-cancel {
-        background-color: forestgreen;
+       background-color: forestgreen;
         color: white;
         font-size: 12px;
         font-weight: 600;
-        margin-right: 10px;
-        padding: 5px 5px;
         border-radius: 5px;
-        width: 90px;
-        height: 30px;
+        width: 7vw;
+        height: 2vw;
         align-content: center;
         outline: none;
         font-weight: bolder;
@@ -186,11 +182,11 @@
         // color: white;
         font-size: 12px;
         font-weight: 600;
-        margin-right: 10px;
-        padding: 5px 5px;
+        // margin-right: 10px;
+        // padding: 5px 5px;
         border-radius: 5px;
-        width: 90px;
-        height: 30px;
+        width: 7vw;
+        height: 2vw;
         align-content: center;
         outline: none;
       }
