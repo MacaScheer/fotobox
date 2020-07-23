@@ -30,7 +30,7 @@ class NavBar extends React.Component {
           <div className="nav-right">
             <Link className="nav-icon" to={`/users/my-profile`}>
               <img
-                className="profile-display-pic"
+                className="profile-display-pic-nav"
                 src={this.props.userProfilePic}
               />
             </Link>
