@@ -67,39 +67,34 @@ class CreatePost extends React.Component {
   render() {
     return (
       <form className="new-post-form" onSubmit={this.handleSubmit}>
-        <div className="upload-form-div">
-          <div className="preview-div">
+        
+         
             <div className="preview-outline">
               <img className="scanner-icon" src={this.state.photoUrl} />
             </div>
-          </div>
-        </div>
-        <div className="post-form-right">
-          {/* <ul className="login-errors">{this.errors()}</ul> */}
-          <div className="post-right-top">
-            {/* <h2 className="post-form-user">{this.props.currentUser.username}</h2> */}
-          </div>
-          <div className="post-right-mid">
-            <label className="upload-photo">
-              <div>
+          
+        <div className="post-right-mid">
+          
+            {/* <label className="upload-photo"> */}
                 <input
                   className="photo-input-field"
                   id="file-selector"
                   type="file"
                   onChange={this.handleFile}
                 />
-              </div>
-            </label>
-            <label className="upload-content">
+          {/* </label> */}
+          
+            {/* <label className="upload-content"> */}
               <input
                 className="title-input-field"
                 onChange={this.handleUpdate("title")}
                 type="text"
-                placeholder="Give your post a title or caption"
+                placeholder="Add a title"
                 value={this.state.title}
-              ></input>
-            </label>
-            <label className="location-label">
+              />
+          {/* </label> */}
+          
+            {/* <label className="location-label"> */}
               <input
                 className="location-input-field"
                 onChange={this.handleUpdate("location")}
@@ -107,10 +102,13 @@ class CreatePost extends React.Component {
                 placeholder="Add a location"
                 value={this.state.location}
               />
-            </label>
+          {/* </label> */}
+          
           </div>
-          <div className="post-right-bottom">
-            <div className="post-form-buttons">
+          {/* <div className="post-right-bottom"> */}
+            
+          <div className="post-form-buttons">
+              
               <button
                 className="post-button-cancel"
                 onClick={this.handleCancel}
@@ -120,11 +118,12 @@ class CreatePost extends React.Component {
               <input
                 className="post-button-upload"
                 type="submit"
-                value="Upload Post"
+                value="Upload"
               />
-            </div>
-          </div>
+            
         </div>
+          {/* </div> */}
+  
       </form>
     );
   }
