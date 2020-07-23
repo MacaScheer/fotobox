@@ -48,7 +48,6 @@ class SearchBar extends React.Component {
         <div className="outer-results">
           {this.state.matches.length ? (
             <div className="search-results-container">
-              <div id="arrow"></div>
               <ul className="search-results-list">
                 {this.state.matches.map(user => {
                   return (

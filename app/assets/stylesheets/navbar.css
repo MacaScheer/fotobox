@@ -177,7 +177,7 @@ height: 5vh;
   justify-content: center;
   flex-direction: column;
   align-items: center;
-  /* position: absolute; */
+  position: absolute;
 }
 
 .outer-results-wrap {

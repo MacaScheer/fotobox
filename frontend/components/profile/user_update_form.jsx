@@ -72,7 +72,6 @@ class UserUpdateForm extends React.Component {
         </div>
       </div>
     );
-debugger
     return (
       <div className="post-form-container">
         <NavBarContainer />
@@ -86,7 +85,7 @@ debugger
               </div>
               <div className="update-right-mid">
                 <div className="update-profile-pic">
-                  <label className="upload-photo" htmlFor="file-selector">
+                  {/* <label className="upload-photo" htmlFor="file-selector"> */}
                     <div className="update-profile-text">
                     update profile picture:
                     </div>
@@ -100,9 +99,9 @@ debugger
                       type="file"
                       onChange={this.handleFile}
                     /> */}
-                  </label>
+                  {/* </label> */}
                 </div>
-                <label className="update-email">
+                {/* <label className="update-email"> */}
                   <div className="update-profile-text">update email:</div>
                   <input
                     type="text"
@@ -111,8 +110,8 @@ debugger
                     placeholder={this.state.email}
                     onChange={this.update("email")}
                   />
-                </label>
-                <label className="update-username">
+                {/* </label> */}
+                {/* <label className="update-username"> */}
                   <div className="update-profile-text">update username:</div>
                   <input
                     type="text"
@@ -121,8 +120,8 @@ debugger
                     // placeholder="Write a caption..."
                     onChange={this.update("username")}
                   />
-                </label>
-                <label className="update-bio">
+                {/* </label> */}
+                {/* <label className="update-bio">  */}
                   <div className="update-profile-text">update bio:</div>
                   <textarea
                     type="text"
@@ -131,9 +130,9 @@ debugger
                     placeholder={this.state.bio}
                     onChange={this.update("bio")}
                   ></textarea>
-                </label>
+                {/* </label> */}
               </div>
-              <div className="update-right-bottom">
+              {/* <div className="update-right-bottom"> */}
                 <div className="post-form-buttons">
                   <button
                     className="post-button-cancel update-cancel"
@@ -154,7 +153,7 @@ debugger
                   </button>
                 </div>
               </div>
-            </div>
+            {/* </div> */}
           </form>
         </div>
     );
