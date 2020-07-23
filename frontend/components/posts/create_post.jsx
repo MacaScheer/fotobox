@@ -74,17 +74,12 @@ class CreatePost extends React.Component {
             </div>
           
         <div className="post-right-mid">
-          
-            {/* <label className="upload-photo"> */}
                 <input
                   className="photo-input-field"
                   id="file-selector"
                   type="file"
                   onChange={this.handleFile}
                 />
-          {/* </label> */}
-          
-            {/* <label className="upload-content"> */}
               <input
                 className="title-input-field"
                 onChange={this.handleUpdate("title")}
@@ -92,9 +87,6 @@ class CreatePost extends React.Component {
                 placeholder="Add a title"
                 value={this.state.title}
               />
-          {/* </label> */}
-          
-            {/* <label className="location-label"> */}
               <input
                 className="location-input-field"
                 onChange={this.handleUpdate("location")}
@@ -102,11 +94,7 @@ class CreatePost extends React.Component {
                 placeholder="Add a location"
                 value={this.state.location}
               />
-          {/* </label> */}
-          
           </div>
-          {/* <div className="post-right-bottom"> */}
-            
           <div className="post-form-buttons">
               
               <button
@@ -122,7 +110,6 @@ class CreatePost extends React.Component {
               />
             
         </div>
-          {/* </div> */}
   
       </form>
     );
