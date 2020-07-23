@@ -1,24 +1,27 @@
 .new-post-form {
-  display: flex;
-  flex-direction:column;
-  justify-content: space-around;
-  align-content: center;
-   border: 1px solid lightgray;
+      display: flex;
+    max-height: min-content;
+    height: fit-content;
+    flex-direction: column;
+    justify-content: space-around;
+    align-content: center;
+    align-self: center;
+    border: 1px solid lightgray;
     border-radius: 5px;
     box-shadow: 8px 21px 12px rgba(82, 82, 82, 0.2);
+  
+    // box-shadow: 
 }
 
   
 .preview-outline {
-    display:flex;
+    display: flex;
     justify-content: center;
     align-content: center;
+    align-self: center;
     padding: 1vw;
     height: 21vw;
     width: 28vw;
-    // border: 1px solid lightgray;
-    // border-radius: 5px;
-    // box-shadow: 8px 21px 12px rgba(82, 82, 82, 0.2);
   }
 
 .scanner-icon {
@@ -50,18 +53,130 @@ width: 60%;
   box-sizing: border-box;
   margin:4px;
 }
-.photo-input-field{
-  padding: 5px;
-  border-radius: 5px;
-  display: flex;
-  justify-content: center;
-  align-content: center;
-  outline: none;
+
+//stylized input
+.inputfile-5 + label {
+    color: #d3394c;
 }
 
-.photo-input-field:hover{
-  cursor:pointer;
+.inputfile-5:focus + label,
+.inputfile-5.has-focus + label,
+.inputfile-5 + label:hover {
+    color: #722040;
 }
+
+.inputfile-5 + label figure {
+    width: 100px;
+    height: 135px;
+    background-color: #d3394c;
+    display: block;
+    position: relative;
+    padding: 30px;
+    margin: 0 auto 10px;
+}
+
+.inputfile-5:focus + label figure,
+.inputfile-5.has-focus + label figure,
+.inputfile-5 + label:hover figure {
+    background-color: #722040;
+}
+
+.inputfile-5 + label figure::before,
+.inputfile-5 + label figure::after {
+    width: 0;
+    height: 0;
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+}
+
+.inputfile-5 + label figure::before {
+    border-top: 20px solid #dfc8ca;
+    border-left: 20px solid transparent;
+}
+
+.inputfile-5 + label figure::after {
+    border-bottom: 20px solid #722040;
+    border-right: 20px solid transparent;
+}
+
+.inputfile-5:focus + label figure::after,
+.inputfile-5.has-focus + label figure::after,
+.inputfile-5 + label:hover figure::after {
+    border-bottom-color: #d3394c;
+}
+
+.inputfile-5 + label svg {
+    width: 100%;
+    height: 100%;
+    fill: #f1e5e6;
+}
+.inputfile {
+    width: 0.1px;
+    height: 0.1px;
+    opacity: 0;
+    overflow: hidden;
+    position: absolute;
+    z-index: -1;
+}
+
+.inputfile + label {
+    max-width: 80%;
+    font-size: 1.25rem;
+    font-weight: 700;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    cursor: pointer;
+    display: inline-block;
+    overflow: hidden;
+    padding: 0.625rem 1.25rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.no-js .inputfile + label {
+    display: none;
+}
+
+.inputfile:focus + label,
+.inputfile.has-focus + label {
+    outline: 1px dotted #000;
+    outline: -webkit-focus-ring-color auto 5px;
+}
+
+.inputfile + label * {
+    /* pointer-events: none; */
+    /* in case of FastClick lib use */
+}
+
+.inputfile + label svg {
+    width: 1em;
+    height: 1em;
+    vertical-align: middle;
+    fill: currentColor;
+    margin-top: -0.25em;
+    /* 4px */
+    margin-right: 0.25em;
+    /* 4px */
+}
+//
+// .photo-input-field{
+//   padding: 5px;
+//   border-radius: 5px;
+//   display: flex;
+//   justify-content: center;
+//   align-content: center;
+//   outline: none;
+// }
+
+// .photo-input-field:hover{
+//   cursor:pointer;
+// }
+
+//
 .location-input-field{
   text-align: center;
   background-color: #fafafa;
@@ -72,7 +187,11 @@ width: 60%;
 }
       
     
-
+.post-form-buttons{
+  display:flex;
+  justify-content: center;
+  align-content: center;
+}
 .post-button-cancel {
   background-color: forestgreen;
   width: 100%;
