@@ -3,6 +3,9 @@
   flex-direction:column;
   justify-content: space-around;
   align-content: center;
+   border: 1px solid lightgray;
+    border-radius: 5px;
+    box-shadow: 8px 21px 12px rgba(82, 82, 82, 0.2);
 }
 
   
@@ -13,9 +16,9 @@
     padding: 1vw;
     height: 21vw;
     width: 28vw;
-    border: 1px solid lightgray;
-    border-radius: 5px;
-    box-shadow: 8px 21px 12px rgba(82, 82, 82, 0.2);
+    // border: 1px solid lightgray;
+    // border-radius: 5px;
+    // box-shadow: 8px 21px 12px rgba(82, 82, 82, 0.2);
   }
 
 .scanner-icon {
@@ -24,13 +27,19 @@ justify-content: space-around;
 width: 60%;
 }
 
-
+.post-mid{
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  align-content: center;
+}
 .post-right-mid {
   display: flex;
   justify-content: space-around;
   flex-direction: column;
   align-items: center;
   font-weight: bolder;
+  
 }
 .title-input-field {
   text-align: center;

@@ -72,45 +72,46 @@ class CreatePost extends React.Component {
             <div className="preview-outline">
               <img className="scanner-icon" src={this.state.photoUrl} />
             </div>
-          
-        <div className="post-right-mid">
+        <div className="post-mid">
+     
+          <div className="post-right-mid">
+                  <input
+                    className="photo-input-field"
+                    id="file-selector"
+                    type="file"
+                    onChange={this.handleFile}
+                  />
                 <input
-                  className="photo-input-field"
-                  id="file-selector"
-                  type="file"
-                  onChange={this.handleFile}
+                  className="title-input-field"
+                  onChange={this.handleUpdate("title")}
+                  type="text"
+                  placeholder="Add a title"
+                  value={this.state.title}
                 />
-              <input
-                className="title-input-field"
-                onChange={this.handleUpdate("title")}
-                type="text"
-                placeholder="Add a title"
-                value={this.state.title}
-              />
-              <input
-                className="location-input-field"
-                onChange={this.handleUpdate("location")}
-                type="text"
-                placeholder="Add a location"
-                value={this.state.location}
-              />
+                <input
+                  className="location-input-field"
+                  onChange={this.handleUpdate("location")}
+                  type="text"
+                  placeholder="Add a location"
+                  value={this.state.location}
+                />
+            </div>
+            <div className="post-form-buttons">
+                
+                <button
+                  className="post-button-cancel"
+                  onClick={this.handleCancel}
+                >
+                  Cancel
+                </button>
+                <input
+                  className="post-button-upload"
+                  type="submit"
+                  value="Upload"
+                />  
           </div>
-          <div className="post-form-buttons">
-              
-              <button
-                className="post-button-cancel"
-                onClick={this.handleCancel}
-              >
-                Cancel
-              </button>
-              <input
-                className="post-button-upload"
-                type="submit"
-                value="Upload"
-              />
-            
-        </div>
-  
+          
+     </div> 
       </form>
     );
   }
