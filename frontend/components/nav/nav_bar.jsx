@@ -15,7 +15,7 @@ class NavBar extends React.Component {
 
   render() {
     return (
-      <div className="page">
+      // <div className="page">
         <section className="nav-bar-container">
           <div className="nav-left">
             <Link className="nav-icon" to={"/"}>
@@ -30,7 +30,7 @@ class NavBar extends React.Component {
           <div className="nav-right">
             <Link className="nav-icon" to={`/users/my-profile`}>
               <img
-                className="profile-display-pic"
+                className="profile-display-pic-nav"
                 src={this.props.userProfilePic}
               />
             </Link>
@@ -48,7 +48,7 @@ class NavBar extends React.Component {
             </div>
           </div>
         </section>
-      </div>
+      // </div>
     );
   }
 }

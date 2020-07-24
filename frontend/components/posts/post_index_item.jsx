@@ -19,6 +19,10 @@ class PostIndexItem extends React.Component {
       this.setState({ [field]: e.target.value });
     };
   }
+  // componentDidMount() {
+  //   debugger
+  //   this.props.fetchPostComments(this.props.postId)
+  // }
 
   handleComment(e) {
     e.preventDefault();
@@ -40,7 +44,7 @@ class PostIndexItem extends React.Component {
       return (
         <div key={comment.id} className="post-show-comment">
           <Link className="feed-profile-link" to={`/users/${comment.user_id}`}>
-            {comment.author}
+            {comment.author}:
           </Link>
           <span className="comment-body">&nbsp;{comment.body}</span>
         </div>
@@ -60,7 +64,7 @@ class PostIndexItem extends React.Component {
               {post.author}
             </Link>
           </div>
-          <div onClick={() => this.props.openModal({ postId: post.id })}>
+          <div onClick={() => this.props.openModal({ postId: post.id })} className="feed-image-content">
             <img className="feed-image" src={post.photoUrl} />
             <div className="title-span">{post.title}</div>
           </div>
@@ -82,13 +86,13 @@ class PostIndexItem extends React.Component {
             <div className="feed-image-comment-input">
               <form className="feed-comment-form">
                 <input
-                  className="feed-textarea"
+                  className="feed-textarea-feed"
                   value={this.state.body}
                   onChange={this.update("body")}
                   placeholder="Add a comment..."
                 ></input>
                 <button
-                  className="submit-comment-button-index"
+                  className="session-submit-post-index"
                   onClick={this.handleComment}
                 >
                   Post

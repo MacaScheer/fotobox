@@ -27,23 +27,25 @@ class PostIndex extends React.Component {
     }
     const { posts } = this.props;
     return (
-      <div className="outer-index-div">
+      <div className="page">
+
         <section className="feed-container">
           <div className="feed-left"></div>
           <div className="feed-mid">
             <ul className="feed-images">
               {posts.map((post, i) => {
                 return (
-                  <div key={i}>
+                  // <div key={i}>
                     <PostIndexItem
                       key={post.id}
                       post={post}
                       openModal={this.props.openModal}
                       createComment={this.props.createComment}
                       deleteComment={this.props.deleteComment}
-                      fetchPost={this.props.fetchPost}
+                    fetchPost={this.props.fetchPost}
+                    fetchPostComments={this.props.fetchPostComments}
                     />
-                  </div>
+                  // </div>
                 );
               })}
               <Waypoint onEnter={this.getPosts} />

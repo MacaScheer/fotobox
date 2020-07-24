@@ -8,6 +8,7 @@ class PostShow extends React.Component {
   constructor(props) {
     super(props);
     this.handleDelete = this.handleDelete.bind(this);
+    // this.handleDeleteComment = this.handleDeleteComment.bind(this)
     this.renderErrors = this.renderErrors.bind(this);
     this.handleComment = this.handleComment.bind(this);
     this.deleteComment = this.props.deleteComment.bind(this);
@@ -47,7 +48,12 @@ class PostShow extends React.Component {
     // this.props.fetchProfilePosts(this.props.currentUser.id);
     // });
   }
-
+  // handleDeleteComment(commentId) {
+  //   debugger
+  //   this.props.deleteComment(commentId)
+  //                 .then(() => this.props.clearErrors())              
+  //   this.props.fetchPostComments(this.props.postId)
+  // }
   handleComment(e) {
     e.preventDefault();
     const comment = { body: this.state.body, post_id: this.props.postId };
@@ -95,17 +101,22 @@ class PostShow extends React.Component {
           key={Math.abs(comment.id - comment.user_id / 3)}
           className="post-show-comment"
         >
-          <Link className="profile-link" to={`/users/${comment.user_id}`}>
-            {comment.author}
+          <Link className="profile-link-post-show" to={`/users/${comment.user_id}`}>
+            {comment.author}:
           </Link>
           <span className="comment-body">&nbsp;{comment.body}</span>
           {comment.user_id === userId ? (
             <button
               className="delete-comment-button"
               onClick={() =>
+                // this.handleDeleteComment(comment.id)
                 this.props
                   .deleteComment(comment.id)
                   .then(() => this.props.clearErrors())
+                  // .then(() => {
+                  //   debugger
+                  //   this.props.fetchPostComments(this.props.postId)
+                  // })
               }
             >
               X

@@ -67,9 +67,7 @@ class Profile extends React.Component {
       );
     });
     return (
-      <div >
         <div className="profile-wrap">
-          <div className="profile-left"></div>
           <div className="profile-container">
             <div className="profile-top">
               <div className="profile-display-pic">
@@ -100,9 +98,9 @@ class Profile extends React.Component {
                   </div>
                 </div>
                 <div className="profile-top-down">
-                  <span>{this.props.numPosts} posts</span>
-                  <span className="">{followerIds.length} Followers</span>
-                  <span className="">{followingIds.length} Following</span>
+                  <span className="num">{this.props.numPosts} posts</span>
+                  <span className="num">{followerIds.length} Followers</span>
+                  <span className="num">{followingIds.length} Following</span>
                 </div>
               </div>
             </div>
@@ -115,7 +113,6 @@ class Profile extends React.Component {
           </div>
           <div className="profile-right"></div>
         </div>
-      </div>
     );
   }
 }
