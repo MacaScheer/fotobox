@@ -5,7 +5,6 @@ import { updateUser } from "../../actions/user_actions";
 const mapStateToProps = state => {
   let currentUser = state.entities.users[state.session.id];
   let userId = currentUser.id;
-  debugger
   return {
     currentUser,
     userId

@@ -70,7 +70,6 @@ class UserUpdateForm extends React.Component {
           <img className="post-pic-preview" src={this.state.profilePic} />
       </div>
     );
-    debugger
     return (
       <div className="post-form-container">
           {/* <div className="scanner-icon-edit"></div> */}
