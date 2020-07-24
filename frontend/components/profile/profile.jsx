@@ -68,7 +68,6 @@ class Profile extends React.Component {
     });
     return (
         <div className="profile-wrap">
-          <div className="profile-left"></div>
           <div className="profile-container">
             <div className="profile-top">
               <div className="profile-display-pic">

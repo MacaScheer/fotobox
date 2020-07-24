@@ -242,3 +242,9 @@ height: 5vh;
 
   }
 } */
+
+@media (max-width:400px){
+  .user-search-lrg{
+    width:85%;
+  }
+}

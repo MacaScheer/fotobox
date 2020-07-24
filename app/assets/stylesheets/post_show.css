@@ -401,6 +401,19 @@ padding: 0vw 3vw 1vw 1vw;
       height:5vh;
     }
     .post-title-show{
+     font-size: 2.5vh;
+      padding: 0 3vw 2vw 2vw;
+    }
+    .profile-link-post-show{
       font-size:2vh;
+    }
+    .post-show-comment{
+      display: flex;
+    flex-direction: row;
+    justify-content: start;
+    margin: 0 2vh 0 2vh;
+    /* border: 1px solid gray; */
+    align-content: center;
+    align-items: center;
     }
 }
