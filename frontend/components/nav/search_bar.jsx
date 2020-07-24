@@ -36,15 +36,23 @@ class SearchBar extends React.Component {
     };
   }
   render() {
+    let searchPlaceholder = window.innerWidth > 800 ? "Search Other Boxes" : "Search"
     return (
       <div className="user-search-results">
         <input
-          className="user-search"
+          className="user-search-lrg"
+          type="text"
+          placeholder={searchPlaceholder}
+          onChange={this.update()}
+          value={this.state.searchField}
+        />
+          {/* <input
+          className="user-search-sml"
           type="text"
           placeholder="Search Other Boxes"
           onChange={this.update()}
           value={this.state.searchField}
-        />
+        /> */}
         <div className="outer-results">
           {this.state.matches.length ? (
             <div className="search-results-container">
