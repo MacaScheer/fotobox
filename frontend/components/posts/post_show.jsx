@@ -95,8 +95,8 @@ class PostShow extends React.Component {
           key={Math.abs(comment.id - comment.user_id / 3)}
           className="post-show-comment"
         >
-          <Link className="profile-link" to={`/users/${comment.user_id}`}>
-            {comment.author}
+          <Link className="profile-link-post-show" to={`/users/${comment.user_id}`}>
+            {comment.author}:
           </Link>
           <span className="comment-body">&nbsp;{comment.body}</span>
           {comment.user_id === userId ? (
