@@ -61,14 +61,14 @@
   font-weight: bolder;
 }
 .post-title-show {
-padding: 0vw 1vw 1vw;
+/* padding: 0vw 1vw 1vw; */
     font-size: 1.5vh;
     /* height: 40px; */
     font-weight: bolder;
     text-decoration: none;
     /* justify-content: space-between; */
     align-items: flex-end;
-    margin-left: 1vh;
+    /* margin-left: 1vh; */
 }
 
 .post-bio {
@@ -203,6 +203,7 @@ margin-left: 1vw;
 }
 .submit-comment-button {
   width: 20%;
+  min-width:fit-content;
     height: 3vh;
     text-overflow: ellipsis;
     font-size: 14px;
@@ -263,7 +264,7 @@ margin-left: 1vw;
 } */
 
 .show-comment-form {
-  margin-left: 20px;
+  margin-left: .5vh;
 }
 
 
