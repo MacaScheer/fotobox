@@ -28,6 +28,7 @@ class PostIndex extends React.Component {
     const { posts } = this.props;
     return (
       <div className="page">
+
         <section className="feed-container">
           <div className="feed-left"></div>
           <div className="feed-mid">
