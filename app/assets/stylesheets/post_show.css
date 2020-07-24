@@ -394,8 +394,8 @@ padding: 0vw 3vw 1vw 1vw;
       display:none;
     }
     .show-textarea{
-      width:43vh;
-      height:4vh;
+      width: 78vw;
+    height: 4vh;
     }
     .submit-comment-button{
       width:35%;

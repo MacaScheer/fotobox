@@ -3,6 +3,8 @@ import {
   RECEIVE_POST,
   REMOVE_POST
 } from "../actions/post_actions";
+
+import { REMOVE_COMMENT } from "../actions/comment_actions";
 import { RECEIVE_LIKE, REMOVE_LIKE } from "../actions/likes_actions";
 import merge from "lodash/merge";
 
@@ -34,6 +36,11 @@ const postsReducer = (oldState = {}, action) => {
       temp.likers = filtered_likers;
       newState = merge({}, oldState, { [action.like.post_id]: temp });
       return newState;
+    case REMOVE_COMMENT:
+      newState = merge({}, oldState);
+      let comments = newState[action.comment.comment.post_id].comments;
+      newState[action.comment.comment.post_id].comments = comments.filter(com => com.id !== action.comment.comment.id)
+      return newState
     default:
       return oldState;
   }

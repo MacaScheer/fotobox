@@ -19,6 +19,10 @@ class PostIndexItem extends React.Component {
       this.setState({ [field]: e.target.value });
     };
   }
+  // componentDidMount() {
+  //   debugger
+  //   this.props.fetchPostComments(this.props.postId)
+  // }
 
   handleComment(e) {
     e.preventDefault();

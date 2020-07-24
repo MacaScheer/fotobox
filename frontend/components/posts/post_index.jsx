@@ -41,7 +41,8 @@ class PostIndex extends React.Component {
                       openModal={this.props.openModal}
                       createComment={this.props.createComment}
                       deleteComment={this.props.deleteComment}
-                      fetchPost={this.props.fetchPost}
+                    fetchPost={this.props.fetchPost}
+                    fetchPostComments={this.props.fetchPostComments}
                     />
                   // </div>
                 );

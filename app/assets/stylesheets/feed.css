@@ -158,7 +158,7 @@
     font-size: 1.5vw;
 }
 .feed-profile-link {
-     font-size: 1.5vw;
+     font-size: 1.5vh;
     margin-left: 1vw;
     margin-right: 1vw;
 }
@@ -215,6 +215,12 @@ width: 20%;
   flex-direction: row;
   /* padding-right: 10px; */
   padding-left: 8px;
+
+  /* display: flex; */
+    /* flex-direction: row; */
+    /* padding-right: 10px; */
+    /* padding-left: 8px; */
+    align-items: center;
 }
 
 .feed-comment-form {
