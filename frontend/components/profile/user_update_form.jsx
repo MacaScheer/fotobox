@@ -10,7 +10,7 @@ class UserUpdateForm extends React.Component {
       bio: currentUser.bio,
       username: currentUser.username,
       email: currentUser.email,
-      profilePic: currentUser.profile_picture,
+      profilePic: currentUser.photo_url,
       photoFile: null
     };
 
@@ -27,6 +27,7 @@ class UserUpdateForm extends React.Component {
       this.setState({
         profilePic: reader.result,
         photoFile: file
+        // photoUrl:reader
       });
     if (file) {
       reader.readAsDataURL(file);
@@ -66,18 +67,14 @@ class UserUpdateForm extends React.Component {
     
     let postPreview = (
       <div className="preview-div update-preview">
-        <div className="update-left-top">Profile Picture</div>
-        <div className="profile-pic-main">
-          <img className="post-pic-preview" src={this.state.photoFile} />
-        </div>
+          <img className="post-pic-preview" src={this.state.profilePic} />
       </div>
     );
+    debugger
     return (
       <div className="post-form-container">
-        <NavBarContainer />
-          {/* <ul className="login-errors">{this.errors()}</ul> */}
-          <div className="scanner-icon">{postPreview}</div>
-
+          {/* <div className="scanner-icon-edit"></div> */}
+          {postPreview}
           <form className="post-form" onSubmit={this.handleSubmit}>
             <div className="update-form-right">
               <div className="update-right-top">
