@@ -3,6 +3,7 @@
   display: flex;
   justify-content: center;
   align-content: center;
+  margin-top: 5vh;
 }
 .feed-left {
   width: 20%;
@@ -89,12 +90,7 @@
   cursor: pointer;
 }
 
-.feed-container {
-  display: flex;
-  justify-content: center;
-  align-content: center;
-  margin-top: 125px;
-}
+
 
 .feed-left,
 .feed-right {
