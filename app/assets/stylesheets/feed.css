@@ -52,7 +52,7 @@
 
 .feed-image-header-wrap {
   /* height: 40px; */
-  height:3.3vw;
+  height:5.3vh;
   display: flex;
   align-items: center;
   border-bottom: 1px solid lightgrey;
@@ -65,8 +65,8 @@
   height: 800px;
 }
 .feed-profile-pic {
-  width: 30px;
-  height: 30px;
+  width: 4vh;
+  height: 4vh;
   padding-left: 5px;
   padding-right: 7px;
   border-radius: 50%;
@@ -144,9 +144,9 @@
 }
 
 .feed-image-bottom {
-  margin-left: 5px;
+  margin-left: 1vw;
   font-family: "Roboto", sans-serif;
-  max-height: 210px;
+  /* max-height: 210px; */
   display: flex;
   flex-direction: column;
   justify-content: space-around;
@@ -155,13 +155,14 @@
 
 .profile-link,
 .feed-profile-link {
-  text-decoration: none;
-  color: black;
-  font-family: "Roboto", sans-serif;
-  font-weight: bolder;
+    text-decoration: none;
+    color: black;
+    font-family: "Roboto", sans-serif;
+    font-weight: bolder;
+    font-size: 2vw;
 }
 .feed-profile-link {
-     font-size: 15px;
+     font-size: 1vh;
     margin-left: 1vw;
     margin-right: 3px;
 }
@@ -200,16 +201,17 @@ width: 20%;
   align-items: center;
 }
 .like-icon {
-  height: 2px;
+  height: 1.5vw;
 }
 .comments{
-  font-size: 15px;
+      font-size: 1.3vw;
+      padding-left: 0.5vw;
 }
 
 .likes {
-  font-size: 15px;
-  padding-right: 10px;
-  padding-left: 6px;
+     font-size: 1.3vw;
+    padding-right: 0.5vw;
+    padding-left: 0.5vw;
 }
 .feed-image-bottom-likes,
 .feed-image-bottom-bio {
@@ -220,18 +222,22 @@ width: 20%;
 }
 
 .feed-comment-form {
-      display: flex;
+    display: flex;
     flex-direction: row;
     justify-content: center;
     align-items: center;
     align-content: center;
     align-self: center;
+    /* margin-left: 2vw; */
     /* height: 45px; */
     /* margin-bottom: 8px; */
     align-self: center;
 }
+.feed-image-content{
+
+}
 .comment-body{
-  font-size: 14px;
+  font-size: 1.5vh;
     font-weight: lighter;
 }
 .feed-bio {
@@ -239,9 +245,52 @@ width: 20%;
 }
 
 @media (max-width: 800px){
-  .feed-image-box{
-    /* width:85vw; */
-    align-items:center;
-  }
-  
+      .feed-image-box{
+        width:90vw;
+      /* height:80vw; */
+    }
+    .feed-image-header{
+      width:100%;
+    }
+    .feed-image{
+          width: 90vw;
+    height: 95vw;
+    }
+    .title-span{
+      font-size:3vw;
+    }
+    .comments{
+      font-size:2.5vw;
+    }
+    .likes{
+      font-size:2.5vw;
+    }
+    .comment-body{
+      font-size: 2vw;
+    }
+        .like-button-liked {
+  color: crimson;
+  font-size: 2.3vw;
+  margin-bottom:0.2vh;
+}
+.feed-profile-link{
+  font-size: 2vh;
+    margin-left: 1vw;
+    margin-right: 1vw;
+}
+}
+
+@media (max-width: 400px){
+    .feed-image-box{
+      width:90vw;
+      height:auto;
+    }
+    .feed-image-header{
+      width:100%;
+    }
+    .feed-image{
+          width: 90vw;
+    height: 95vw;
+    }
+    
 }

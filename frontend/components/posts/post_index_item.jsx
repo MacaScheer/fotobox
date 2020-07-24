@@ -60,7 +60,7 @@ class PostIndexItem extends React.Component {
               {post.author}
             </Link>
           </div>
-          <div onClick={() => this.props.openModal({ postId: post.id })}>
+          <div onClick={() => this.props.openModal({ postId: post.id })} className="feed-image-content">
             <img className="feed-image" src={post.photoUrl} />
             <div className="title-span">{post.title}</div>
           </div>

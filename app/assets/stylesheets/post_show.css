@@ -75,11 +75,12 @@
   margin-bottom: 10px;
 }
 .title-span {
-  margin-left: 20px;
-  margin-bottom: 3px;
-  font-weight: 700;
-  font-family: "Roboto", sans-serif;
-  font-style: italic;
+  font-size:1vw;
+margin-left: 1vw;
+    margin-bottom: 1vh;
+    font-weight: 700;
+    font-family: "Roboto", sans-serif;
+    font-style: italic;
 }
 .show-buttons {
   display: flex;
@@ -259,15 +260,17 @@
 
 
 .like-button {
-  padding-left: 8px;
-  padding-right: 5px;
-  color: black;
-  font-size: 14px;
-  font-weight: bold;
-  transform: scale(1.2, 1);
+padding-left: 0.5vw;
+    padding-right: 0.5vw;
+    color: black;
+    font-size: 2vw;
+    font-weight: bold;
+    transform: scale(1.2, 1);
 }
 .like-button-liked {
   color: crimson;
+  font-size: 2.3vw;
+  margin-bottom:0.2vh;
 }
 
 .like-button:hover {
@@ -287,4 +290,54 @@
 
 .profile-photo-index:hover {
   cursor: pointer;
+}
+
+
+@media (max-width: 800px){
+      .feed-image-box{
+        width:90vw;
+      /* height:80vw; */
+    }
+    .feed-image-header{
+      width:100%;
+    }
+    .feed-image{
+          width: 90vw;
+    height: 95vw;
+    }
+    .title-span{
+      font-size:3vw;
+    }
+    .comments{
+      font-size:2.5vw;
+    }
+    .likes{
+      font-size:2.5vw;
+    }
+    .like-button-liked {
+  color: crimson;
+  font-size: 2.3vw;
+  margin-bottom:0.2vh;
+}
+.feed-profile-link{
+  font-size: 2vh;
+    margin-left: 1vw;
+    margin-right: 1vw;
+}
+  
+}
+
+@media (max-width: 400px){
+    .feed-image-box{
+      width:90vw;
+      height:auto;
+    }
+    .feed-image-header{
+      width:100%;
+    }
+    .feed-image{
+          width: 90vw;
+    height: 95vw;
+    }
+    
 }
