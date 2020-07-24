@@ -281,8 +281,16 @@ width: 20%;
 }
 
 @media (max-width: 400px){
-  .feed-profile-link .profile-link{
-  font-size: 2.5h;
+  .feed-container{
+    margin-top:2vh;
+  }
+  .feed-profile-link{
+  font-size: 2.5vh;
+    margin-left: 1vw;
+    margin-right: 1vw;
+} 
+  .profile-link{
+  font-size: 2.5vh;
     margin-left: 1vw;
     margin-right: 1vw;
 }

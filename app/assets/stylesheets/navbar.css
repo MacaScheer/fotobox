@@ -132,6 +132,7 @@ height: 5vh;
     align-content: center;
     align-items: center;
     align-self: center;
+    /* width:100%; */
 }
 .search-result-image {
   width: 30px;
@@ -140,7 +141,10 @@ height: 5vh;
   display: flex;
   border-radius: 50%;
 }
-
+.outer-results{
+  display: flex;
+    justify-content: center;
+}
 .search-results-list {
   background: #fff;
   border: solid 1px #e6e6e6;

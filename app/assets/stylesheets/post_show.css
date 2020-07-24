@@ -388,6 +388,7 @@ padding: 0vw 3vw 1vw 1vw;
     }
      .title-span{
       font-size:3vh;
+      margin-left:3vw;
     }
     .post-show-image{
       display:none;
