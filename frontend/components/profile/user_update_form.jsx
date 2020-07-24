@@ -83,7 +83,7 @@ class UserUpdateForm extends React.Component {
                 <div className="update-profile-pic">
                   {/* <label className="upload-photo" htmlFor="file-selector"> */}
                     <div className="update-profile-text">
-                    update profile picture:
+                    update profile picture
                     </div>
                       <div className="box">
 					              <input type="file" name="file-5[]" id="file-5" className="inputfile inputfile-4" onChange={this.handleFile} data-multiple-caption="{count} files selected" multiple />
@@ -98,7 +98,7 @@ class UserUpdateForm extends React.Component {
                   {/* </label> */}
                 </div>
                 {/* <label className="update-email"> */}
-                  <div className="update-profile-text">update email:</div>
+                  <div className="update-profile-text">update email</div>
                   <input
                     type="text"
                     className="update-text-input int"
@@ -108,7 +108,7 @@ class UserUpdateForm extends React.Component {
                   />
                 {/* </label> */}
                 {/* <label className="update-username"> */}
-                  <div className="update-profile-text">update username:</div>
+                  <div className="update-profile-text">update username</div>
                   <input
                     type="text"
                     className="update-text-input int"
@@ -118,7 +118,7 @@ class UserUpdateForm extends React.Component {
                   />
                 {/* </label> */}
                 {/* <label className="update-bio">  */}
-                  <div className="update-profile-text">update bio:</div>
+                  <div className="update-profile-text">update bio</div>
                   <textarea
                     type="text"
                     className="update-bio-text int"

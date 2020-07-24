@@ -111,7 +111,7 @@ box-shadow: 8px 21px 12px rgba(82, 82, 82, 0.2);
 
 .update-right-top,
 .update-left-top {
-  border-bottom: 1px solid grey;
+  /* border-bottom: 1px solid grey; */
   display: flex;
   justify-content: space-around;
   /* flex-direction: column; */
@@ -119,7 +119,7 @@ box-shadow: 8px 21px 12px rgba(82, 82, 82, 0.2);
   height: 10%;
   width: 100%;
   color: white;
-  background-color: rgb(114, 113, 113);
+  background-color: rgb(89,89,89);
   border-radius: 4px 4px 0px 0px;
 }
 /* .scanner-icon-edit{

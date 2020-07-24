@@ -82,13 +82,13 @@ class PostIndexItem extends React.Component {
             <div className="feed-image-comment-input">
               <form className="feed-comment-form">
                 <input
-                  className="feed-textarea"
+                  className="feed-textarea-feed"
                   value={this.state.body}
                   onChange={this.update("body")}
                   placeholder="Add a comment..."
                 ></input>
                 <button
-                  className="submit-comment-button-index"
+                  className="session-submit-post-index"
                   onClick={this.handleComment}
                 >
                   Post
