@@ -159,12 +159,12 @@
     color: black;
     font-family: "Roboto", sans-serif;
     font-weight: bolder;
-    font-size: 2vw;
+    font-size: 1.5vw;
 }
 .feed-profile-link {
-     font-size: 1vh;
+     font-size: 1.5vw;
     margin-left: 1vw;
-    margin-right: 3px;
+    margin-right: 1vw;
 }
 
 a.feed-profile-link {
@@ -266,7 +266,7 @@ width: 20%;
       font-size:2.5vw;
     }
     .comment-body{
-      font-size: 2vw;
+      font-size: 2vh;
     }
         .like-button-liked {
   color: crimson;
@@ -281,6 +281,14 @@ width: 20%;
 }
 
 @media (max-width: 400px){
+  .feed-profile-link .profile-link{
+  font-size: 2.5h;
+    margin-left: 1vw;
+    margin-right: 1vw;
+}
+ .title-span{
+      font-size:3vh;
+    }
     .feed-image-box{
       width:90vw;
       height:auto;
@@ -292,5 +300,18 @@ width: 20%;
           width: 90vw;
     height: 95vw;
     }
-    
+        .like-button-liked{
+      font-size:2.3vh;
+    }
+    .like-button-unliked{
+      font-size:2.3vh;
+    }
+    .likes{
+          font-size: 2vh;
+    margin-left: 1vw;
+    }
+    .comments{
+      font-size:2vh;
+      margin-left:1vh;
+    }
 }

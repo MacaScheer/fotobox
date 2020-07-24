@@ -269,7 +269,7 @@ padding-left: 0.5vw;
 }
 .like-button-liked {
   color: crimson;
-  font-size: 2.3vw;
+  font-size: 1.5vw;
   margin-bottom:0.2vh;
 }
 
@@ -328,6 +328,11 @@ padding-left: 0.5vw;
 }
 
 @media (max-width: 400px){
+  .profile-link.feed-profile-link{
+  font-size: 2.5vh;
+    margin-left: 1vw;
+    margin-right: 1vw;
+}
     .feed-image-box{
       width:90vw;
       height:auto;
@@ -339,5 +344,21 @@ padding-left: 0.5vw;
           width: 90vw;
     height: 95vw;
     }
-    
+    .like-button-liked{
+      font-size:2.3vh;
+    }
+    .like-button-unliked{
+      font-size:2.3vh;
+    }
+      .likes{
+          font-size: 2vh;
+    margin-left: 1vw;
+    }
+    .comments{
+      font-size:2vh;
+      margin-left:1vh;
+    }
+     .title-span{
+      font-size:3vh;
+    }
 }

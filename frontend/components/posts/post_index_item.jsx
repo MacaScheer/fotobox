@@ -40,7 +40,7 @@ class PostIndexItem extends React.Component {
       return (
         <div key={comment.id} className="post-show-comment">
           <Link className="feed-profile-link" to={`/users/${comment.user_id}`}>
-            {comment.author}
+            {comment.author}:
           </Link>
           <span className="comment-body">&nbsp;{comment.body}</span>
         </div>
