@@ -349,6 +349,10 @@ padding-left: 0.5vw;
   .comment-body{
     font-size:1em;
   }
+  .post-title-show{
+padding: 0vw 3vw 1vw 1vw;
+
+  }
 }
 
 @media (max-width: 400px){
@@ -384,5 +388,19 @@ padding-left: 0.5vw;
     }
      .title-span{
       font-size:3vh;
+    }
+    .post-show-image{
+      display:none;
+    }
+    .show-textarea{
+      width:43vh;
+      height:4vh;
+    }
+    .submit-comment-button{
+      width:35%;
+      height:5vh;
+    }
+    .post-title-show{
+      font-size:2vh;
     }
 }
