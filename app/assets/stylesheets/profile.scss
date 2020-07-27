@@ -4,6 +4,7 @@
     justify-content: center;
     align-items: center;
     height:100%;
+    // width:100%;
     .profile-left {
         width: 10%;
     }
@@ -12,17 +13,21 @@
     }
     .profile-container {
         height:100%;
-        margin-top: 100px;
+        display: flex;
+        // margin-top: 100px;
+        margin-top:8vh;
         flex-direction: column;
         background-color: #fafafa;
         font-family: 'Roboto', sans-serif;
-        width: 950px;   
+        // width: 950px;
+        width:100%;   
         .profile-top {
             display: flex;
-            min-width: 850px;
+            // min-width: 850px;
             justify-content: space-between;
             align-items: center;
-            margin-bottom: 50px;
+            // margin-bottom: 50px;
+            margin-bottom:3vh;
                 .profile-display-pic {
                     object-fit: cover;
                     border: 1px solid #dbdbdb;
@@ -32,10 +37,11 @@
                     height: 155px;
                 }
             .profile-top-right {
-                width: 700px;
+                // width: 700px;
+                width:100%;
                 .profile-top-up {
                     display: flex;
-                    justify-content: space-around;
+                    justify-content: space-evenly;
                     h1 {
                         display: block;
                         font-size: 2em;
@@ -62,7 +68,7 @@
                 }
                 .profile-top-down {
                     display: flex;
-                    justify-content: space-around;
+                    justify-content: space-evenly;
                 }
             }
         }
@@ -70,16 +76,17 @@
             display: flex;
             flex-wrap: wrap;
             align-items: center;
-            min-width: 900px;
-            padding-left: 20px;
+            // min-width: 900px;
+            // padding-left: 20px;
+            
         
             .profile-photo-index {
-                display: flex;
-                flex-wrap: wrap;
-                justify-content: flex-start;
-                align-items: center;
-                list-style: none;
-                padding-left: 0;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    list-style: none;
+    padding-left: 0;
 
                 li {
                     display: list-items;

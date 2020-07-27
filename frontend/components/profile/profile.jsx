@@ -111,7 +111,6 @@ class Profile extends React.Component {
               {/* {isFetching && 'Fetching more images...'} */}
             </div>
           </div>
-          <div className="profile-right"></div>
         </div>
     );
   }
