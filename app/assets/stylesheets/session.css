@@ -6,6 +6,9 @@
   }
 
 .session-submit {
+  -webkit-appearance: none;
+-moz-appearance: none;
+appearance: none;
   width: 100%;
   height: 40px;
   text-overflow: ellipsis;
