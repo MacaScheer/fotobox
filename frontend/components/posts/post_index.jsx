@@ -8,13 +8,23 @@ class PostIndex extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      page: 1
+      page: 0
     };
     this.getPosts = this.getPosts.bind(this);
+    // this.incrementStart = this.incrementStart.bind(this)
   }
   getPosts() {
-    this.props.fetchPosts(this.state.page);
-    this.setState = { page: (this.state.page += 1) };
+    // this.props.fetchPosts(this.state.page);
+    this.props.fetchPosts(this.state.page).then(() => this.incrementStart())
+    // this.setState = { page: (this.state.page += 1) };
+    // let nextEnd = this.state.en + 4;
+    // let nextStart = this.state.start + 4;
+  }
+
+  incrementStart() {
+    let nextKeyIdx = this.props.posts.length - 1;
+    let nextKey = this.props.posts[nextKeyIdx].id + 1
+    this.setState({ page: nextKey})
   }
   componentDidMount() {
     this.getPosts();

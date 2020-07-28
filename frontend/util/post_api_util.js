@@ -1,4 +1,12 @@
-export const fetchPosts = page => {
+// export const fetchPosts = page => {
+//   return $.ajax({
+//     url: "api/posts",
+//     method: "GET",
+//     data: { page }
+//   });
+// };
+
+export const fetchPosts = (page) => {
   return $.ajax({
     url: "api/posts",
     method: "GET",

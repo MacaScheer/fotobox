@@ -29,7 +29,11 @@ const receiveNumPosts = num => ({
   num
 })
 
-export const fetchPosts = page => dispatch => {
+// export const fetchPosts = page => dispatch => {
+//   return ApiPost.fetchPosts(page).then(posts => dispatch(receivePosts(posts)));
+// };
+
+export const fetchPosts = (page) => dispatch => {
   return ApiPost.fetchPosts(page).then(posts => dispatch(receivePosts(posts)));
 };
 

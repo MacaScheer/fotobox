@@ -23,9 +23,10 @@
         width:100%;   
         .profile-top {
              display: flex;
-    justify-content: center;
-    align-items: center;
-    margin-bottom: 3vh;
+            justify-content: center;
+            align-items: center;
+            margin-bottom: 3vh;
+
                 .profile-display-pic {
                     object-fit: cover;
                     border: 1px solid #dbdbdb;
@@ -80,12 +81,12 @@
             
         
             .profile-photo-index {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    align-items: center;
-    list-style: none;
-    padding-left: 0;
+                display: flex;
+                flex-wrap: wrap;
+                justify-content: center;
+                align-items: center;
+                list-style: none;
+                padding-left: 0;
 
                 li {
                     display: list-items;

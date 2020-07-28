@@ -3,8 +3,18 @@ class Api::PostsController < ApplicationController
     before_action :require_signed_in!
 
     def index
-        num = params[:page].to_i * 3
-        @posts = Post.with_attached_photo.order('created_at DESC').last(num)
+        #num = params[:page].to_i * 3
+        firstKey = params[:page].to_i
+        # secondKey = firstKey + 4
+        @batch = [];
+        if firstKey != 0
+          @posts = Post.with_attached_photo.find_in_batches(start:firstKey, batch_size: 4).each do |post|
+              @batch.push(post)
+          end
+          debugger
+        else
+          @posts = Post.with_attached_photo.order('created_at DESC').last(4)
+        end
         render :index
     end
     
