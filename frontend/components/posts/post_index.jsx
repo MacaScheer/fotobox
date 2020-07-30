@@ -13,6 +13,8 @@ class PostIndex extends React.Component {
     this.getPosts = this.getPosts.bind(this);
   }
   getPosts() {
+    // TO BE OPTIMIZED BY CONSTANT SIZE BATCH FETCHING
+
     this.props.fetchPosts(this.state.page);
     this.setState = { page: (this.state.page += 1) };
   }

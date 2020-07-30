@@ -19,6 +19,8 @@ class Profile extends React.Component {
 
   }
   getPosts() {
+    // TO BE OPTIMIZED BY CONSTANT SIZE BATCH FETCHING
+
     this.props.fetchProfilePosts(this.state.page, this.props.currentUser.id);
     this.setState = { page: (this.state.page += 1) }
   }

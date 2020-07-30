@@ -3,6 +3,7 @@ import NavBarContainer from "../nav/nav_bar_container";
 import { withRouter } from "react-router-dom";
 import { Link } from "react-router-dom";
 // import { Waypoint } from "react-waypoint";
+import ProfileIndexItem from "./profile_index_item";
 var debounce = require('debounce');
 
 class UserShow extends React.Component {
@@ -15,7 +16,7 @@ class UserShow extends React.Component {
     this.handleEditUser = this.handleEditUser.bind(this);
     this.handleFollow = this.handleFollow.bind(this);
     this.handleUnfollow = this.handleUnfollow.bind(this);
-    this.infiniteScroller = this.infiniteScroller.bind(this)
+    this.scroller = this.scroller.bind(this)
     // this.handleDeleteUser = this.handleDeleteUser.bind(this);
     this.getPosts = this.getPosts.bind(this)
     this.state = {
@@ -24,30 +25,27 @@ class UserShow extends React.Component {
   }
 
   getPosts() {
+    // TO BE OPTIMIZED BY CONSTANT SIZE BATCH FETCHING
     this.props.fetchProfilePosts(this.state.page, this.props.match.params.userId);
     this.setState = { page: (this.state.page += 1) }
   }
   componentDidMount() {
     let id = this.props.match.params.userId
-    this.props.fetchNumPosts(id)
     this.getPosts()
     this.props.fetchUser(id);
+    // debugger
+    this.props.fetchNumPosts(id)
     this.props.closeModal();
     // this.infiniteScroller()
-    window.addEventListener("scroll", this.infiniteScroller);
+    window.addEventListener("scroll", this.scroller);
 
   }
 
 
-  infiniteScroller() {
-        window.onscroll = debounce(() => {
-            if (
-                window.innerHeight + document.documentElement.scrollTop ===
-                document.documentElement.offsetHeight
-            ) {
-               this.getPosts()
-            }
-        }, 50)
+  scroller() {
+        if ((window.innerHeight + window.scrollY) >= document.body.offsetHeight) {
+      this.getPosts()
+    }
     }
 
   componentDidUpdate(prevProps) {
@@ -59,7 +57,7 @@ class UserShow extends React.Component {
   }
   componentWillUnmount() {
     // window.removeEventListener("scroll", this.myScrollFunc);
-    window.removeEventListener("scroll", this.infiniteScroller)
+    window.removeEventListener("scroll", this.scroller)
   }
 
   handleFollow(e) {
@@ -105,34 +103,32 @@ class UserShow extends React.Component {
     } = this.props.profileUser;
     let userPhotos = this.props.userPosts.map(post => {
       return (
-        <li key={post.id}>
-          <div className="image-container">
-            <div
-              onClick={() => {
-                return this.props.openModal({ postId: post.id });
-              }}
-            >
-              <img className="user-page-photos" src={post.photoUrl} />
-              <div className="image-overlay">
-                <p className="image-overlay-text">
-                  <span className="overlay-heart">&#9829;</span>
-                  {post.likers ? post.likers.length : 0}
-                  <i className="comment" aria-hidden="true">
-                    &#x1f4ac;
-                  </i>
-                  {post.commentIds ? post.commentIds.length : 0}
-                </p>
-              </div>
-            </div>
-          </div>
-        </li>
+        <ProfileIndexItem post={post} key={post.photoUrl} openModal={this.props.openModal} />
+        // <li key={post.id}>
+        //   <div className="image-container">
+        //     <div
+        //       onClick={() => {
+        //         return this.props.openModal({ postId: post.id });
+        //       }}
+        //     >
+        //       <img className="user-page-photos" src={post.photoUrl} />
+        //       <div className="image-overlay">
+        //         <p className="image-overlay-text">
+        //           <span className="overlay-heart">&#9829;</span>
+        //           {post.likers ? post.likers.length : 0}
+        //           <i className="comment" aria-hidden="true">
+        //             &#x1f4ac;
+        //           </i>
+        //           {post.commentIds ? post.commentIds.length : 0}
+        //         </p>
+        //       </div>
+        //     </div>
+        //   </div>
+        // </li>
       );
     });
     return (
-      <div>
-        <NavBarContainer />
         <div className="profile-wrap">
-          <div className="profile-left"></div>
           <div className="profile-container">
             <div className="profile-top">
               <div className="profile-display-pic">
@@ -181,8 +177,9 @@ class UserShow extends React.Component {
                     </div>
                   )}
                 </div>
-                <div className="profile-top-down">
-                  <span>{this.props.numUserPosts} Posts</span>
+              <div className="profile-top-down">{this.props.numUserPosts ? (
+                <span>{this.props.numUserPosts} Posts</span>
+                ) : <span></span>}
                   <span className="">{followerIds.length} Followers</span>
                   <span className="">{followingIds.length} Following</span>
                 </div>
@@ -203,10 +200,7 @@ class UserShow extends React.Component {
               <ul className="profile-photo-index">{userPhotos}</ul>
             </div>
           </div>
-          <div className="profile-right"></div>
         </div>
-        {/* <Waypoint onEnter={getPosts} /> */}
-      </div>
     );
   }
 }

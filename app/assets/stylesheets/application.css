@@ -17,7 +17,7 @@
 
 .container{
   display: flex;
-  /* justify-content: center; */
+  justify-content: center;
 
 }
 .page {
@@ -60,4 +60,9 @@ h1 {
   margin-block-end: 0.67em;
   margin-inline-start: 0px;
   margin-inline-end: 0px;
+}
+@media (max-width:800px){
+  .container{
+    justify-content: space-between !important;
+  }
 }
