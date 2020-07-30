@@ -129,8 +129,6 @@ class UserShow extends React.Component {
       );
     });
     return (
-      <div>
-        <NavBarContainer />
         <div className="profile-wrap">
           <div className="profile-left"></div>
           <div className="profile-container">
@@ -205,8 +203,6 @@ class UserShow extends React.Component {
           </div>
           <div className="profile-right"></div>
         </div>
-        {/* <Waypoint onEnter={getPosts} /> */}
-      </div>
     );
   }
 }
