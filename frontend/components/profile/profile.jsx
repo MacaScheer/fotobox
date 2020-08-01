@@ -55,7 +55,8 @@ class Profile extends React.Component {
   }
 
   render() {
-    if (!this.props.userPosts) {
+    debugger
+    if (!this.props.userPosts.length === 0) {
       return <h2 className="loading-bar">Loading...</h2>;
     }
     const {

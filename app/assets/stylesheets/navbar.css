@@ -215,7 +215,7 @@ height: 5vh;
     align-items: center;
     text-align: center;
     font-family: "Roboto", sans-serif;
-    font-size: 9px;
+    font-size: 1vh;
     border-radius: 3px;
     background-color: #fafafa;
     outline: none;
@@ -246,9 +246,27 @@ height: 5vh;
 
   }
 } */
+/* @media (max-width:800px){
+} */
 
 @media (max-width:400px){
+  .nav-bar-container{
+    margin:1vh;
+    height:11vh;
+  }
+  .nav-link-logo{
+    font-size:9vh;
+  }
+  .user-search-results{
+    width:35vh;
+  }
+  .lightmeter{
+    width:10vh;
+    height:10vh;
+  }
   .user-search-lrg{
-    width:85%;
+    width:100%;
+    font-size:4vh;
+    height:5vh;
   }
 }

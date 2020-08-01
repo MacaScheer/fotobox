@@ -20,7 +20,6 @@ class PostIndexItem extends React.Component {
     };
   }
   // componentDidMount() {
-  //   debugger
   //   this.props.fetchPostComments(this.props.postId)
   // }
 
