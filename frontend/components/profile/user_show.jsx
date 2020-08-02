@@ -90,7 +90,7 @@ class UserShow extends React.Component {
   // }
 
   render() {
-    if (!this.props.profileUser) {
+    if (this.props.profileUser === undefined) {
       return <h2>Loading...</h2>;
     }
     const {
