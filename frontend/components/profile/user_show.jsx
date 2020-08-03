@@ -2,7 +2,6 @@ import React from "react";
 import NavBarContainer from "../nav/nav_bar_container";
 import { withRouter } from "react-router-dom";
 import { Link } from "react-router-dom";
-// import { Waypoint } from "react-waypoint";
 import Spinner from "../loading/Spinner";
 
 import ProfileIndexItem from "./profile_index_item";

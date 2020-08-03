@@ -1,7 +1,6 @@
 import React from "react";
 import PostIndexItem from "./post_index_item";
 import Spinner from "../loading/Spinner";
-// import { Waypoint } from "react-waypoint";
 import { withRouter } from "react-router";
 
 class PostIndex extends React.Component {
@@ -63,7 +62,6 @@ class PostIndex extends React.Component {
                   // </div>
                 );
               })}
-              {/* <Waypoint onEnter={this.getPosts} /> */}
             </ul>
           </div>
           <div className="feed-right"></div>

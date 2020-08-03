@@ -355,7 +355,7 @@ padding: 0vw 3vw 1vw 1vw;
   }
 }
 
-@media (max-width: 400px){
+@media (max-width: 414px){
   .profile-link.feed-profile-link{
   font-size: 2.5vh;
     margin-left: 1vw;
@@ -393,10 +393,10 @@ padding: 0vw 3vw 1vw 1vw;
     .post-show-image{
       display:none;
     }
-    .show-textarea{
-      width: 78vw;
+ .show-textarea {
+    width: 70vw;
     height: 4vh;
-    }
+}
     .submit-comment-button{
       width:35%;
       height:5vh;
@@ -417,4 +417,11 @@ padding: 0vw 3vw 1vw 1vw;
     align-content: center;
     align-items: center;
     }
+}
+
+@media(max-width:375px){
+  .show-textarea {
+    width: 78vw;
+    height: 4vh;
+}
 }
