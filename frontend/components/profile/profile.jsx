@@ -1,6 +1,8 @@
 import React from "react";
 import ProfileIndexItem from "./profile_index_item";
 // import useInfiniteScroll from "./useInfiniteScroll";
+import Spinner from "../loading/Spinner";
+
 
 
 class Profile extends React.Component {
@@ -57,7 +59,9 @@ class Profile extends React.Component {
   render() {
     
     if (this.props.userPosts.length === 0) {
-      return <h2 className="loading-bar">Loading...</h2>;
+      return <div className="page">
+        <Spinner />
+      </div>
     }
     const {
       username,

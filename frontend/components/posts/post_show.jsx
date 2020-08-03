@@ -78,7 +78,7 @@ class PostShow extends React.Component {
   render() {
     if (!this.props.post) {
       return (
-        <div>
+        <div className="post-box">
           <Spinner />
         </div>
       );

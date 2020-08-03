@@ -3,8 +3,9 @@ import NavBarContainer from "../nav/nav_bar_container";
 import { withRouter } from "react-router-dom";
 import { Link } from "react-router-dom";
 // import { Waypoint } from "react-waypoint";
+import Spinner from "../loading/Spinner";
+
 import ProfileIndexItem from "./profile_index_item";
-var debounce = require('debounce');
 
 class UserShow extends React.Component {
   constructor(props) {
@@ -91,7 +92,9 @@ class UserShow extends React.Component {
 
   render() {
     if (this.props.profileUser === undefined) {
-      return <h2>Loading...</h2>;
+      return <div className="page">
+        <Spinner />
+      </div>
     }
     const {
       username,
