@@ -6,15 +6,18 @@ class Api::PostsController < ApplicationController
         #num = params[:page].to_i * 3
         firstKey = params[:page].to_i
         # secondKey = firstKey + 4
-        @batch = [];
+        @posts = [];
+
         if firstKey != 0
-          @posts = Post.with_attached_photo.find_in_batches(start:firstKey, batch_size: 4).each do |post|
-              @batch.push(post)
-          end
-          debugger
+          # @posts = Post.with_attached_photo.find_in_batches(start:firstKey, batch_size: 4).map 
+          # Post.with_attached_photo.order('created_at DESC').find_in_batches(start:firstKey, batch_size: 4).each do |post|
+          #     @posts.push(*post)
+          # end
+          
         else
           @posts = Post.with_attached_photo.order('created_at DESC').last(4)
         end
+        debugger
         render :index
     end
     

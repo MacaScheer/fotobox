@@ -11,6 +11,7 @@ class PostIndex extends React.Component {
     };
     this.getPosts = this.getPosts.bind(this);
     // this.incrementStart = this.incrementStart.bind(this)
+    this.scroller = this.scroller.bind(this)
   }
   getPosts() {
     // this.props.fetchPosts(this.state.page);
@@ -35,9 +36,9 @@ class PostIndex extends React.Component {
   }
 
     scroller() {
-    if ((window.innerHeight + window.scrollY) >= document.body.offsetHeight) {
-      this.getPosts()
-    }
+      if ((window.innerHeight + window.scrollY) >= document.body.offsetHeight) {
+          this.getPosts()
+      }
     }
 
   render() {
