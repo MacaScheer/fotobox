@@ -11,8 +11,7 @@ import { openModal, closeModal } from "../../actions/modal_actions";
 const mapStateToProps = (state, ownProps) => {
   let profileId = ownProps.match.params.userId;
   let profileUser = state.entities.users[state.session.id];
-  let currentUser = state.entities.users[state.session.id];
-  let numPosts = currentUser["numUserPosts"]
+  let numPosts = profileUser["numUserPosts"]
   let userPosts = null;
   let profile_picture = profileUser.photo_url;
   if (profileUser) {
@@ -26,7 +25,7 @@ const mapStateToProps = (state, ownProps) => {
     userPosts: userPosts,
     profileId: profileId,
     profileUser: profileUser,
-    currentUser: currentUser
+    currentUser: profileUser
   };
 };
 const mapDispatchToProps = dispatch => {

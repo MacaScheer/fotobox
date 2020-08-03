@@ -1,7 +1,6 @@
 import React from "react";
 import PostIndexItem from "./post_index_item";
 import Spinner from "../loading/Spinner";
-import { Waypoint } from "react-waypoint";
 import { withRouter } from "react-router";
 
 class PostIndex extends React.Component {
@@ -28,12 +27,24 @@ class PostIndex extends React.Component {
   }
   componentDidMount() {
     this.getPosts();
+     document.addEventListener('scroll', this.scroller)
     this.props.closeModal();
   }
+    componentWillUnmount() {
+    document.removeEventListener('scroll', this.scroller)
+  }
+
+    scroller() {
+    if ((window.innerHeight + window.scrollY) >= document.body.offsetHeight) {
+      this.getPosts()
+    }
+    }
 
   render() {
-    if (!this.props) {
-      return <Spinner />;
+    if (!this.props.posts) {
+      return <div className="page">
+        <Spinner />
+      </div>
     }
     const { posts } = this.props;
     return (
@@ -58,7 +69,6 @@ class PostIndex extends React.Component {
                   // </div>
                 );
               })}
-              <Waypoint onEnter={this.getPosts} />
             </ul>
           </div>
           <div className="feed-right"></div>

@@ -49,7 +49,6 @@ class PostShow extends React.Component {
     // });
   }
   // handleDeleteComment(commentId) {
-  //   debugger
   //   this.props.deleteComment(commentId)
   //                 .then(() => this.props.clearErrors())              
   //   this.props.fetchPostComments(this.props.postId)
@@ -79,7 +78,7 @@ class PostShow extends React.Component {
   render() {
     if (!this.props.post) {
       return (
-        <div>
+        <div className="post-box">
           <Spinner />
         </div>
       );
@@ -114,7 +113,6 @@ class PostShow extends React.Component {
                   .deleteComment(comment.id)
                   .then(() => this.props.clearErrors())
                   // .then(() => {
-                  //   debugger
                   //   this.props.fetchPostComments(this.props.postId)
                   // })
               }

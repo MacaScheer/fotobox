@@ -1,6 +1,8 @@
 import React from "react";
 import ProfileIndexItem from "./profile_index_item";
 // import useInfiniteScroll from "./useInfiniteScroll";
+import Spinner from "../loading/Spinner";
+
 
 
 class Profile extends React.Component {
@@ -19,6 +21,8 @@ class Profile extends React.Component {
 
   }
   getPosts() {
+    // TO BE OPTIMIZED BY CONSTANT SIZE BATCH FETCHING
+
     this.props.fetchProfilePosts(this.state.page, this.props.currentUser.id);
     this.setState = { page: (this.state.page += 1) }
   }
@@ -53,8 +57,11 @@ class Profile extends React.Component {
   }
 
   render() {
-    if (!this.props.userPosts) {
-      return <h2 className="loading-bar">Loading...</h2>;
+    
+    if (this.props.userPosts.length === 0) {
+      return <div className="page">
+        <Spinner />
+      </div>
     }
     const {
       username,
