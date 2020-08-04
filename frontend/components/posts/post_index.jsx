@@ -10,23 +10,14 @@ class PostIndex extends React.Component {
       page: 0
     };
     this.getPosts = this.getPosts.bind(this);
-    // this.incrementStart = this.incrementStart.bind(this)
     this.scroller = this.scroller.bind(this)
   }
   getPosts() {
-    // this.props.fetchPosts(this.state.page);
     this.props.fetchPosts(this.state.page).then(() => this.incrementStart())
-    // this.setState = { page: (this.state.page += 1) };
-    // let nextEnd = this.state.en + 4;
-    // let nextStart = this.state.start + 4;
   }
 
   incrementStart() {
-    // let nextKeyIdx = this.props.posts.length - 1;
-    // let nextKey = this.props.posts[nextKeyIdx].id + 1
-    // let nextDate = this.props.posts[nextKeyIdx].created_at
-    let num = this.state.page + 5
-    debugger
+    let num = this.state.page + 4
     this.setState({ page: num})
   }
   componentDidMount() {
