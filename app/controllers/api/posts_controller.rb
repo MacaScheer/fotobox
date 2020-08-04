@@ -6,14 +6,23 @@ class Api::PostsController < ApplicationController
         #num = params[:page].to_i * 3
         firstKey = params[:page].to_i
         # secondKey = firstKey + 4
+        debugger
         @posts = [];
-
+      # pcount = 0
         if firstKey != 0
+          # Post.all(:limit => 5, :offset => firstKey)
+          # Post.find_each(:batch_size => 5, :start => firstKey) do |post|
+            # debugger
+                  # @posts.push(post)
+                  # pcount += 1
+          # end
+      
           # @posts = Post.with_attached_photo.find_in_batches(start:firstKey, batch_size: 4).map 
           # Post.with_attached_photo.order('created_at DESC').find_in_batches(start:firstKey, batch_size: 4).each do |post|
           #     @posts.push(*post)
           # end
-          
+
+          Post.all(:group => "date(created_at)", :order => "created_at", :limit => 5)
         else
           @posts = Post.with_attached_photo.order('created_at DESC').last(4)
         end
