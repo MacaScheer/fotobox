@@ -312,8 +312,9 @@ height: 5vh;
 
 @media (max-width:400px){
   .nav-bar-container{
-    margin:1vh;
+    /* margin:1vh; */
     height:11vh;
+    max-height:12vh;
   }
   .nav-link-logo{
     font-size:9vh;

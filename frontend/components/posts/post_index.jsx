@@ -22,11 +22,12 @@ class PostIndex extends React.Component {
   }
 
   incrementStart() {
-    let nextKeyIdx = this.props.posts.length - 1;
+    // let nextKeyIdx = this.props.posts.length - 1;
     // let nextKey = this.props.posts[nextKeyIdx].id + 1
-    let nextDate = this.props.posts[nextKeyIdx].created_at
+    // let nextDate = this.props.posts[nextKeyIdx].created_at
+    let num = this.state.page + 5
     debugger
-    this.setState({ page: nextDate})
+    this.setState({ page: num})
   }
   componentDidMount() {
     this.getPosts();
