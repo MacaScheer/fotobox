@@ -17,23 +17,23 @@ class PostIndex extends React.Component {
   }
 
   incrementStart() {
-    let num = this.state.page + 4
+    let num = this.state.page + 6
     this.setState({ page: num})
   }
   componentDidMount() {
     this.getPosts();
-     document.addEventListener('scroll', this.scroller)
+    document.addEventListener('scroll', this.scroller)
     this.props.closeModal();
   }
-    componentWillUnmount() {
+  componentWillUnmount() {
     document.removeEventListener('scroll', this.scroller)
   }
 
-    scroller() {
-      if ((window.innerHeight + window.scrollY) >= document.body.offsetHeight) {
-          this.getPosts()
-      }
+  scroller() {
+    if ((window.innerHeight + window.scrollY) >= document.body.offsetHeight) {
+      this.getPosts();
     }
+  }
 
   render() {
     if (!this.props.posts) {
@@ -44,7 +44,6 @@ class PostIndex extends React.Component {
     const { posts } = this.props;
     return (
       <div className="page">
-
         <section className="feed-container">
           <div className="feed-left"></div>
           <div className="feed-mid">

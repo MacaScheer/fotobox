@@ -21,8 +21,8 @@
     display: flex;
     justify-content: space-evenly;
     width: 100%;
-    height: 7vh;
-    max-height:10vh;
+    height: 5em;
+    /* max-height: 10vh; */
     position: fixed;
     top: 0;
     left: 0;
@@ -56,30 +56,32 @@
   align-content: center;
 } */
 .lightmeter {
-    width: 6vh;
-    height: 6vh;
+    width: 4em;
+    height: 4em;
     object-fit: scale-down;
     margin: 1vw;
 }
 .post-form-icon {
-    margin-left: 3vw;
-    width: 6vh;
-    height: 6vh;
-    margin-bottom: 1vh;
+    margin-left: 1em;
+    margin-right: 1em;
+    width: 4em;
+    height: 4em;
+    margin-bottom: .5em;
 }
 .profile-display-pic-nav {
-  width: 6vh;
-  height: 6vh;
-  object-fit: cover;
-  border: 1px solid #dbdbdb;
-  background-color: darkgrey;
-  border-radius: 90px;
+    width: 4em;
+    height: 4em;
+    margin-right: 1em;
+    object-fit: cover;
+    border: 1px solid #dbdbdb;
+    background-color: darkgrey;
+    border-radius: 90px;
 }
 .nav-link-logo {
     position: relative;
     justify-content: center;
     font-family: "Satisfy", cursive;
-    font-size: 4vh;
+    font-size: 3em;
 }
 
 
@@ -89,7 +91,7 @@
     justify-content: center;
     align-content: center;
     align-items: center;
-    margin-left: 1vw;
+    /* margin-left: 1vw; */
 }
 
 
@@ -122,17 +124,18 @@
   padding-left: 18px;
 } */
 .nav-sign-out-icon {
-height: 5vh;
-    width: 5vh;
-    margin-left: 3vw;
-    margin-right: 3vw;
+    height: 4em;
+    width: 4em;
+    margin-left: 1em;
+    margin-right: 1em;
 }
 .user-search-results{
-  justify-content: center;
+    justify-content: center;
     align-content: center;
     align-items: center;
     align-self: center;
-    /* width:100%; */
+    display: flex;
+    width: 100%;
 }
 .search-result-image {
   width: 30px;
@@ -207,15 +210,15 @@ height: 5vh;
 }
 
 .user-search-lrg {
-     /* margin-top: 2vh; */
+    /* margin-top: 2vh; */
     width: 40%;
-    min-width: 12vw;
-    height: 3vh;
-    /* display: flex; */
+    min-width: 20em;
+    height: 3em;
+    display: flex;
     align-items: center;
     text-align: center;
     font-family: "Roboto", sans-serif;
-    font-size: 1vh;
+    /* font-size: 1em; */
     border-radius: 3px;
     background-color: #fafafa;
     outline: none;
@@ -327,6 +330,7 @@ height: 5vh;
     height:10vh;
   }
   .user-search-lrg{
+    display:none;
     width:100%;
     font-size:4vh;
     height:5vh;
