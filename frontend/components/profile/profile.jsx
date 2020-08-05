@@ -20,6 +20,15 @@ class Profile extends React.Component {
     this.scroller = this.scroller.bind(this)
 
   }
+
+  getPosts() {
+    this.props.fetchProfilePosts(this.state.page, this.props.currentUser.id).then(() => this.incrementStart())
+  }
+
+  incrementStart() {
+    let num = this.state.page + 8
+    this.setState({ page: num })
+  }
   getPosts() {
     // TO BE OPTIMIZED BY CONSTANT SIZE BATCH FETCHING
 
