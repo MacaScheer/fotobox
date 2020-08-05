@@ -30,9 +30,15 @@ class PostIndex extends React.Component {
   }
 
   scroller() {
-    if ((window.innerHeight + window.scrollY) >= document.body.offsetHeight) {
+    let scrollable = document.getElementsByClassName("page")[0].offsetHeight;
+    console.log("innerheight:", window.innerHeight, " scrollY:", window.scrollY, " scrollableOffsetHeight: ", scrollable)
+    // debugger
+    if ((window.innerHeight + window.scrollY) >= scrollable) {
       this.getPosts();
     }
+    // if ((window.innerHeight + window.scrollY) >= document.body.offsetHeight) {
+    //   this.getPosts();
+    // }
   }
 
   render() {
