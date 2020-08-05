@@ -17,7 +17,7 @@ class PostIndex extends React.Component {
   }
 
   incrementStart() {
-    let num = this.state.page + 6
+    let num = this.state.page + 8
     this.setState({ page: num})
   }
   componentDidMount() {
@@ -32,6 +32,7 @@ class PostIndex extends React.Component {
   scroller() {
     if ((window.innerHeight + window.scrollY) >= document.body.offsetHeight) {
       this.getPosts();
+      debugger
     }
   }
 

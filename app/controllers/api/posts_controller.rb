@@ -4,7 +4,7 @@ class Api::PostsController < ApplicationController
 
     def index
         firstKey = params[:page]
-        @posts = Post.with_attached_photo.all.order('created_at ASC').limit(6).offset(firstKey)
+        @posts = Post.with_attached_photo.all.order('created_at ASC').limit(4).offset(firstKey)
         render :index
     end
     
