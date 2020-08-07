@@ -3,7 +3,7 @@
   display: flex;
   justify-content: center;
   align-content: center;
-  margin-top: 5vh;
+  margin-top: 30em;
 }
 .feed-left {
   width: 20%;
@@ -284,7 +284,7 @@ width: 20%;
 
 @media (max-width: 400px){
   .feed-container{
-    margin-top:2vh;
+    margin-top:40em;
   }
   .feed-profile-link{
   font-size: 2.5vh;

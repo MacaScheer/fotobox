@@ -3,7 +3,8 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    height:100%;
+    // height:100%;
+    height:100vh;
     // width:100%;
     .profile-left {
         width: 10%;
@@ -12,15 +13,14 @@
         width: 10%;
     }
     .profile-container {
-        height:100%;
-        display: flex;
-        // margin-top: 100px;
-        margin-top:8vh;
-        flex-direction: column;
-        background-color: #fafafa;
-        font-family: 'Roboto', sans-serif;
-        // width: 950px;
-        width:100%;   
+        height: 100%;
+    display: flex;
+    margin-top: 11vh;
+    flex-direction: column;
+    background-color: #fafafa;
+    font-family: 'Roboto', sans-serif;
+    width: 80%;
+    max-width:1450px;
         .profile-top {
              display: flex;
             justify-content: center;
