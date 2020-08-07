@@ -19,7 +19,7 @@
     flex-direction: column;
     background-color: #fafafa;
     font-family: 'Roboto', sans-serif;
-    width: 80%;
+    // width: 80%;
     max-width:1450px;
         .profile-top {
              display: flex;
@@ -142,7 +142,7 @@
 
 @media (max-width:400px){
     .profile-container{
-        margin-top:14vh !important;
+        margin-top:27vh !important;
     }
     .profile-display-pic-nav{
             width: 9vh !important;
