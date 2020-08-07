@@ -50,3 +50,10 @@ export const fetchNumPosts = (id) => {
     url: `api/profile/num_posts/${id}`
   })
 }
+
+export const fetchTotalPosts = () => {
+  return $.ajax({
+    method: "GET",
+    url: "api/posts"
+  })
+}

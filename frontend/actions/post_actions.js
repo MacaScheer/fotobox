@@ -4,14 +4,15 @@ import { RECEIVE_CURRENT_USER } from "./session_actions";
 export const RECEIVE_POSTS = "RECEIVE_POSTS";
 export const RECEIVE_POST = "RECEIVE_POST";
 export const REMOVE_POST = "REMOVE_POST";
-export const RECEIVE_NUM = "RECEIVE_NUM"
-
+export const RECEIVE_NUM = "RECEIVE_NUM";
+export const RECEIVE_TOTAL = "RECEIVE_TOTAL";
 const receivePosts = posts => {
   return {
     type: RECEIVE_POSTS,
     posts
   };
 };
+
 const receivePost = post => {
   return {
     type: RECEIVE_POST,
@@ -29,9 +30,16 @@ const receiveNumPosts = num => ({
   num
 })
 
+const receiveTotalPosts = num => ({
+  type: RECEIVE_TOTAL,
+  num
+})
+
 // export const fetchPosts = page => dispatch => {
 //   return ApiPost.fetchPosts(page).then(posts => dispatch(receivePosts(posts)));
 // };
+
+
 
 export const fetchPosts = (page) => dispatch => {
   return ApiPost.fetchPosts(page).then(posts => dispatch(receivePosts(posts)));
@@ -56,6 +64,11 @@ export const fetchProfilePosts = (page, userId) => dispatch => {
     dispatch(receivePosts(posts))
   );
 };
+
+export const fetchTotalPosts = () => dispatch => {
+  return ApiPost.fetchTotalPosts().then(num =>
+    dispatch(receiveTotalPosts(num)))
+}
 
 export const fetchNumPosts = (id) => dispatch => {
   return ApiPost.fetchNumPosts(id).then(num => 
