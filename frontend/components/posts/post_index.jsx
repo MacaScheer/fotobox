@@ -31,7 +31,6 @@ class PostIndex extends React.Component {
   }
 
   scroller() {
-    debugger
     if ((window.innerHeight + window.scrollY) >= document.body.offsetHeight) {
       if (this.state.page < this.props.numTotal) { 
         this.getPosts();

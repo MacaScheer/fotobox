@@ -19,7 +19,6 @@ class Api::PostsController < ApplicationController
       #   @posts = Post.where(user_id: params[:id]).order('created_at DESC').last(num)
       firstKey = params[:page]
       if firstKey == "0"
-        debugger
         @posts = Post.where(user_id: params[:id]).order('created_at DESC').limit(15)
       else
         @posts = Post.where(user_id: params[:id]).order('created_at DESC').limit(8).offset(firstKey)

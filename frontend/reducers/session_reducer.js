@@ -13,7 +13,6 @@ const sessionReducer = (oldState = defaultState, action) => {
     Object.freeze(oldState);
     switch (action.type) {
         case RECEIVE_TOTAL:
-            debugger
             let newState = merge({}, oldState, { "total_posts": action.num })
             return newState
         case RECEIVE_CURRENT_USER:
