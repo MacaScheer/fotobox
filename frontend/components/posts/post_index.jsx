@@ -17,11 +17,12 @@ class PostIndex extends React.Component {
   }
 
   incrementStart() {
-    let num = this.state.page + 8
+    let num = this.state.page + 4
     this.setState({ page: num})
   }
   componentDidMount() {
     this.getPosts();
+    this.props.fetchTotalPosts()
     document.addEventListener('scroll', this.scroller)
     this.props.closeModal();
   }
@@ -30,9 +31,11 @@ class PostIndex extends React.Component {
   }
 
   scroller() {
-
+    debugger
     if ((window.innerHeight + window.scrollY) >= document.body.offsetHeight) {
-      this.getPosts();
+      if (this.state.page < this.props.numTotal) { 
+        this.getPosts();
+      }
     }
   }
 

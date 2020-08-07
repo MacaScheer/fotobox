@@ -54,6 +54,6 @@ export const fetchNumPosts = (id) => {
 export const fetchTotalPosts = () => {
   return $.ajax({
     method: "GET",
-    url: "api/posts"
+    url: "api/total"
   })
 }
