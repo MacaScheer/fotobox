@@ -283,6 +283,10 @@ width: 20%;
 }
 
 @media (max-width: 400px){
+ 
+  .feed-images{
+    margin-top:320em;
+  }
   .feed-container{
     margin-top:40em;
   }
@@ -303,6 +307,7 @@ width: 20%;
     .feed-image-box{
       width:90vw;
       height:auto;
+      margin-bottom:9px;
     }
     .feed-image-header{
       width:100%;
