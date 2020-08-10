@@ -1,4 +1,10 @@
-
+.empty-posts{
+    display:flex;
+    justify-content:center;
+    .no-user-posts{
+        font-weight:bolder
+    }
+}
 .profile-wrap {
     display: flex;
     justify-content: center;
@@ -6,6 +12,7 @@
     // height:100%;
     height:100vh;
     // width:100%;
+    margin:auto;
     .profile-left {
         width: 10%;
     }
@@ -26,6 +33,7 @@
             justify-content: center;
             align-items: center;
             margin-bottom: 3vh;
+            width:100%;
 
                 .profile-display-pic {
                     object-fit: cover;
@@ -46,7 +54,7 @@
                         font-size: 2em;
                         margin-block-start: 0.67em;
                         margin-block-end: 0.67em;
-                        margin-inline-start: 0px;
+                        margin-inline-start: 40px;//0px;
                         margin-inline-end: 0px;
                         font-weight: bold;
                     }

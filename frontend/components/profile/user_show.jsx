@@ -113,29 +113,14 @@ class UserShow extends React.Component {
     let userPhotos = this.props.userPosts.map(post => {
       return (
         <ProfileIndexItem post={post} key={post.photoUrl} openModal={this.props.openModal} />
-        // <li key={post.id}>
-        //   <div className="image-container">
-        //     <div
-        //       onClick={() => {
-        //         return this.props.openModal({ postId: post.id });
-        //       }}
-        //     >
-        //       <img className="user-page-photos" src={post.photoUrl} />
-        //       <div className="image-overlay">
-        //         <p className="image-overlay-text">
-        //           <span className="overlay-heart">&#9829;</span>
-        //           {post.likers ? post.likers.length : 0}
-        //           <i className="comment" aria-hidden="true">
-        //             &#x1f4ac;
-        //           </i>
-        //           {post.commentIds ? post.commentIds.length : 0}
-        //         </p>
-        //       </div>
-        //     </div>
-        //   </div>
-        // </li>
       );
-    });
+    })
+
+    let photoGrid = userPhotos.length === 0 ? (<div className="empty-posts"><h1 className="no-user-posts">No Posts Yet!</h1></div>) :
+       (<div className="profile-photo-index-container">
+            <ul className="profile-photo-index">{userPhotos}</ul>
+        </div>)
+    
     return (
         <div className="profile-wrap">
           <div className="profile-container">
@@ -205,9 +190,7 @@ class UserShow extends React.Component {
                 )}
               </div>
             </div>
-            <div className="profile-photo-index-container">
-              <ul className="profile-photo-index">{userPhotos}</ul>
-            </div>
+            {photoGrid}
           </div>
         </div>
     );

@@ -8,6 +8,9 @@
 
 .new-post-form {
       display: flex;
+      width:80%;
+      max-width:77em;
+      height:65%;
     max-height: min-content;
     height: fit-content;
     flex-direction: column;
@@ -28,14 +31,15 @@
     align-content: center;
     align-self: center;
     padding: 1vw;
-    height: 21vw;
-    width: 28vw;
+    height: 100%;
+    width: 100%;
   }
 
 .scanner-icon {
 object-fit: contain;
 justify-content: space-around;
 width: 60%;
+max-width:40em;
 }
 
 .post-mid{
@@ -60,8 +64,8 @@ width: 60%;
   border: 1px solid #c7c7c7;
   box-sizing: border-box;
   margin:4px;
-      width: 22vh;
-    height: 3vh;
+      width: 75%;
+    height: 20%;
 }
 
 //stylized input
@@ -132,8 +136,8 @@ width: 60%;
 }
 
 .inputfile + label {
-    max-width: 80%;
-    font-size: 1.25rem;
+    width: 80%;
+    font-size: 2.25rem;
     font-weight: 700;
     text-overflow: ellipsis;
     white-space: nowrap;
@@ -194,16 +198,19 @@ width: 60%;
   border-radius: 3px;
   border: 1px solid #c7c7c7;
   box-sizing: border-box;
-      width: 22vh;
-    height: 3vh;
+      width: 75%;
+    // height: 3vh;
 }
       
     
 .post-form-buttons{
-  display:flex;
-  justify-content: center;
-  align-content: center;
-  margin-top:1vh;
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    margin-top: 1em;
+    margin-bottom: 0.25em;
+    margin-left: 0.25em;
+    margin-right: 0.25em;
 }
 .post-button-cancel {
   -webkit-appearance: none;
@@ -211,7 +218,7 @@ width: 60%;
 appearance: none;
   background-color: forestgreen;
   width: 100%;
-  height: 40px;
+  height: 100%;
   text-overflow: ellipsis;
   font-size: 14px;
   font-weight: 700;
@@ -229,7 +236,7 @@ appearance: none;
 -moz-appearance: none;
 appearance: none;
   width: 100%;
-  height: 40px;
+  height: 3em;
   text-overflow: ellipsis;
   font-size: 14px;
   font-weight: 700;
