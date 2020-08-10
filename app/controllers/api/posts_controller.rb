@@ -3,8 +3,8 @@ class Api::PostsController < ApplicationController
     before_action :require_signed_in!
 
     def index
-        num = params[:page].to_i * 3
-        @posts = Post.with_attached_photo.order('created_at DESC').last(num)
+        firstKey = params[:page]
+        @posts = Post.with_attached_photo.all.order('created_at ASC').limit(4).offset(firstKey)
         render :index
     end
     
@@ -15,14 +15,23 @@ class Api::PostsController < ApplicationController
     end
 
     def profile_posts
-      num = params[:page].to_i * 9
-        @posts = Post.where(user_id: params[:id]).order('created_at DESC').last(num)
+      firstKey = params[:page]
+      if firstKey == "0"
+        @posts = Post.where(user_id: params[:id]).order('created_at DESC').limit(15)
+      else
+        @posts = Post.where(user_id: params[:id]).order('created_at DESC').limit(8).offset(firstKey)
+      end
         render :index
     end
 
     def num_posts
       @posts_num = Post.where(user_id: params[:id]).count()
       render json:  [@posts_num, params[:id]]
+    end
+
+    def fetch_total
+      @num = Post.count()
+      render json: @num
     end
 
     def new

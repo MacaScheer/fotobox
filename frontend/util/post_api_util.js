@@ -1,4 +1,12 @@
-export const fetchPosts = page => {
+// export const fetchPosts = page => {
+//   return $.ajax({
+//     url: "api/posts",
+//     method: "GET",
+//     data: { page }
+//   });
+// };
+
+export const fetchPosts = (page) => {
   return $.ajax({
     url: "api/posts",
     method: "GET",
@@ -40,5 +48,12 @@ export const fetchNumPosts = (id) => {
   return $.ajax({
     method: "GET",
     url: `api/profile/num_posts/${id}`
+  })
+}
+
+export const fetchTotalPosts = () => {
+  return $.ajax({
+    method: "GET",
+    url: "api/total"
   })
 }

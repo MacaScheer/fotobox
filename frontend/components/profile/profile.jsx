@@ -14,17 +14,23 @@ class Profile extends React.Component {
     this.handleNewPostForm = this.handleNewPostForm.bind(this);
     this.handleEditUser = this.handleEditUser.bind(this);
     this.state = {
-      page: 2
+      page: 0
     }
     this.getPosts = this.getPosts.bind(this)
     this.scroller = this.scroller.bind(this)
 
   }
-  getPosts() {
-    // TO BE OPTIMIZED BY CONSTANT SIZE BATCH FETCHING
 
-    this.props.fetchProfilePosts(this.state.page, this.props.currentUser.id);
-    this.setState = { page: (this.state.page += 1) }
+  getPosts() {
+    this.props.fetchProfilePosts(this.state.page, this.props.currentUser.id).then(() => this.incrementStart())
+  }
+
+  incrementStart() {
+    // console.log("firstkey: ", this.state.page, " numPosts: ", this.props.numPosts)
+    // if (this.state.page < this.props.numPosts) { 
+      let num = this.state.page === 0 ? 15 : this.state.page + 8
+      this.setState({ page: num })
+    // }
   }
 
   componentDidMount() {
@@ -40,7 +46,9 @@ class Profile extends React.Component {
   
   scroller() {
     if ((window.innerHeight + window.scrollY) >= document.body.offsetHeight) {
-      this.getPosts()
+      if (this.state.page < this.props.numPosts || this.props.numPosts === undefined) {
+        this.getPosts()
+      }
     }
     }
 
@@ -73,6 +81,10 @@ class Profile extends React.Component {
         <ProfileIndexItem post={post} key={post.photoUrl} openModal={this.props.openModal} />
       );
     });
+        let photoGrid = userPhotos.length === 0 ? (<div className="empty-posts"><h1 className="no-user-posts">No Posts Yet!</h1></div>) :
+       (<div className="profile-photo-index-container">
+            <ul className="profile-photo-index">{userPhotos}</ul>
+        </div>)
     return (
         <div className="profile-wrap">
           <div className="profile-container">
@@ -111,12 +123,7 @@ class Profile extends React.Component {
                 </div>
               </div>
             </div>
-            <div className="profile-photo-index-container">
-              <ul className="profile-photo-index">
-                {userPhotos}
-              </ul>
-              {/* {isFetching && 'Fetching more images...'} */}
-            </div>
+           {photoGrid}
           </div>
         </div>
     );
