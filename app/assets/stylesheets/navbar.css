@@ -312,8 +312,10 @@
 }
 }
 */
+/* @media (max-width:414px){
 
-@media (max-width:400px){
+} */
+@media (max-width:414px){
   .nav-bar-container{
     height:3.25em;
   }

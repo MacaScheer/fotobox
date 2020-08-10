@@ -81,6 +81,10 @@ class Profile extends React.Component {
         <ProfileIndexItem post={post} key={post.photoUrl} openModal={this.props.openModal} />
       );
     });
+        let photoGrid = userPhotos.length === 0 ? (<div className="empty-posts"><h1 className="no-user-posts">No Posts Yet!</h1></div>) :
+       (<div className="profile-photo-index-container">
+            <ul className="profile-photo-index">{userPhotos}</ul>
+        </div>)
     return (
         <div className="profile-wrap">
           <div className="profile-container">
@@ -119,12 +123,7 @@ class Profile extends React.Component {
                 </div>
               </div>
             </div>
-            <div className="profile-photo-index-container">
-              <ul className="profile-photo-index">
-                {userPhotos}
-              </ul>
-              {/* {isFetching && 'Fetching more images...'} */}
-            </div>
+           {photoGrid}
           </div>
         </div>
     );
