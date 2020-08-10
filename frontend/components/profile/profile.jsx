@@ -22,23 +22,16 @@ class Profile extends React.Component {
   }
 
   getPosts() {
-    // console.log("GET POSTS .. state.page", this.state.page, " numPosts: ", this.props.numPosts)
     this.props.fetchProfilePosts(this.state.page, this.props.currentUser.id).then(() => this.incrementStart())
   }
 
   incrementStart() {
     // console.log("firstkey: ", this.state.page, " numPosts: ", this.props.numPosts)
     // if (this.state.page < this.props.numPosts) { 
-      let num = this.state.page === 0 ? this.state.page + 15 : this.state.page + 8
+      let num = this.state.page === 0 ? 15 : this.state.page + 8
       this.setState({ page: num })
     // }
   }
-  // getPosts() {
-  //   // TO BE OPTIMIZED BY CONSTANT SIZE BATCH FETCHING
-
-  //   this.props.fetchProfilePosts(this.state.page, this.props.currentUser.id);
-  //   this.setState = { page: (this.state.page += 1) }
-  // }
 
   componentDidMount() {
     this.getPosts()

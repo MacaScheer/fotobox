@@ -15,8 +15,6 @@ class Api::PostsController < ApplicationController
     end
 
     def profile_posts
-      # num = params[:page].to_i * 9
-      #   @posts = Post.where(user_id: params[:id]).order('created_at DESC').last(num)
       firstKey = params[:page]
       if firstKey == "0"
         @posts = Post.where(user_id: params[:id]).order('created_at DESC').limit(15)

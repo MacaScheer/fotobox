@@ -133,6 +133,10 @@
 
 
 @media (max-width:800px){
+    
+    .profile-wrap .profile-container{
+        margin-top:13em;
+    }
     .profile-photo-index{
 
         display:grid !important;
@@ -141,6 +145,9 @@
 }
 
 @media (max-width:400px){
+    .user-page-photos{
+        margin:0px;
+    }
     .profile-container{
         margin-top:27vh !important;
     }

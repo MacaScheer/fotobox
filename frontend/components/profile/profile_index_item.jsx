@@ -5,8 +5,7 @@ export default function ProfileIndexItem({ post, openModal }) {
     const { id, likers, commentIds, photoUrl } = post;
     return (
         <li key={id}>
-          <div className="image-container">
-            <div onClick={() => openModal({ postId: id })}>
+          <div className="image-container" onClick={() => openModal({ postId: id })}>
               <img className="user-page-photos" src={photoUrl} />
               <div className="image-overlay">
                 <p className="image-overlay-text">
@@ -18,7 +17,6 @@ export default function ProfileIndexItem({ post, openModal }) {
                   {commentIds ? commentIds.length : 0}
                 </p>
               </div>
-            </div>
           </div>
         </li>
       );
