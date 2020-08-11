@@ -17,9 +17,9 @@ class Api::PostsController < ApplicationController
     def profile_posts
       firstKey = params[:page]
       if firstKey == "0"
-        @posts = Post.where(user_id: params[:id]).order('created_at DESC').limit(15)
+        @posts = Post.where(user_id: params[:id]).order('created_at ASC').limit(15)
       else
-        @posts = Post.where(user_id: params[:id]).order('created_at DESC').limit(8).offset(firstKey)
+        @posts = Post.where(user_id: params[:id]).order('created_at ASC').limit(8).offset(firstKey)
       end
         render :index
     end

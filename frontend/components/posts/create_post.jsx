@@ -1,5 +1,6 @@
 import React from "react";
 import { withRouter } from "react-router";
+import ProgressBar from "./progress_bar";
 
 class CreatePost extends React.Component {
   constructor(props) {
@@ -11,7 +12,8 @@ class CreatePost extends React.Component {
       location: "",
       photoFile: false,
       photoUrl:
-        "https://fotobox-seeds.s3-us-west-1.amazonaws.com/image_assets/lightbox_favicon.svg"
+        "https://fotobox-seeds.s3-us-west-1.amazonaws.com/image_assets/lightbox_favicon.svg",
+      percentComplete:0
     };
     this.handleFile = this.handleFile.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
@@ -40,15 +42,23 @@ class CreatePost extends React.Component {
       formData.append("post[location]", this.state.location);
       formData.append("post[user_id]", this.props.currentUser.id);
     }
+    const options = {
+      onUploadProgress: (progressEvent) => {
+        const { loaded, total } = progressEvent;
+        let percent = Math.floor((loaded * 100) / total)
+        console.log(`${loaded}kb of ${total}kb | ${percent}`)
+      }
+    }
     $.ajax({
       url: "/api/posts",
       method: "POST",
       data: formData,
       contentType: false,
-      processData: false
+      processData: false,
+      options: options
     }).then(() => {
       this.props.history.push("/users/my-profile");
-    });
+    })
   }
   handleCancel(e) {
     e.preventDefault();
@@ -84,6 +94,7 @@ class CreatePost extends React.Component {
                       type="file"
                       onChange={this.handleFile}
                     /> */}
+              <ProgressBar percent={percent}/>
                   <input
                     className="title-input-field"
                     onChange={this.handleUpdate("title")}
