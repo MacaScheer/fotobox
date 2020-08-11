@@ -42,6 +42,7 @@ class CreatePost extends React.Component {
       formData.append("post[location]", this.state.location);
       formData.append("post[user_id]", this.props.currentUser.id);
     }
+    // BELOW
     const options = {
       onUploadProgress: (progressEvent) => {
         const { loaded, total } = progressEvent;
@@ -49,14 +50,16 @@ class CreatePost extends React.Component {
         console.log(`${loaded}kb of ${total}kb | ${percent}`)
       }
     }
+    // ABOVE
     $.ajax({
       url: "/api/posts",
       method: "POST",
       data: formData,
       contentType: false,
       processData: false,
-      options: options
+      options: options //
     }).then(() => {
+      // console.log
       this.props.history.push("/users/my-profile");
     })
   }
@@ -94,7 +97,7 @@ class CreatePost extends React.Component {
                       type="file"
                       onChange={this.handleFile}
                     /> */}
-              <ProgressBar percent={percent}/>
+              {/* <ProgressBar /> */}
                   <input
                     className="title-input-field"
                     onChange={this.handleUpdate("title")}

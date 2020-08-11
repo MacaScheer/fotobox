@@ -39,7 +39,6 @@ class Profile extends React.Component {
     this.props.fetchUser(this.props.currentUser.id);
     document.addEventListener('scroll', this.scroller)
     this.props.closeModal();
-    debugger
   }
   componentWillUnmount() {
     document.removeEventListener('scroll', this.scroller)
