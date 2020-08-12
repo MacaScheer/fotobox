@@ -14,11 +14,12 @@ class Profile extends React.Component {
     this.handleNewPostForm = this.handleNewPostForm.bind(this);
     this.handleEditUser = this.handleEditUser.bind(this);
     this.state = {
-      page: 0
+      page: 0,
+      numPosts:0
     }
     this.getPosts = this.getPosts.bind(this)
     this.scroller = this.scroller.bind(this)
-
+    this.incrementStart = this.incrementStart.bind(this);
   }
 
   getPosts() {
@@ -28,6 +29,7 @@ class Profile extends React.Component {
   incrementStart() {
     // console.log("firstkey: ", this.state.page, " numPosts: ", this.props.numPosts)
     // if (this.state.page < this.props.numPosts) { 
+    console.log("page: ", this.state.page, " numPosts: ", this.props.numPosts)
       let num = this.state.page === 0 ? 15 : this.state.page + 8
       this.setState({ page: num })
     // }
@@ -45,6 +47,7 @@ class Profile extends React.Component {
   }
   
   scroller() {
+    console.log("scroll")
     if ((window.innerHeight + window.scrollY) >= document.body.offsetHeight) {
       if (this.state.page < this.props.numPosts || this.props.numPosts === undefined) {
         this.getPosts()
@@ -72,15 +75,16 @@ class Profile extends React.Component {
       </div>
     }
     const {
-      username,
-      followerIds,
-      followingIds
-    } = this.props.profileUser;
+          username,
+          followerIds,
+          followingIds
+                  } = this.props.profileUser;
     let userPhotos = this.props.userPosts.map(post => {
       return (
         <ProfileIndexItem post={post} key={post.photoUrl} openModal={this.props.openModal} />
       );
     });
+
         let photoGrid = userPhotos.length === 0 ? (<div className="empty-posts"><h1 className="no-user-posts">No Posts Yet!</h1></div>) :
        (<div className="profile-photo-index-container">
             <ul className="profile-photo-index">{userPhotos}</ul>
@@ -123,7 +127,10 @@ class Profile extends React.Component {
                 </div>
               </div>
             </div>
-           {photoGrid}
+          {photoGrid}
+          {/* {userPhotos.length === this.props.numUserPosts ?
+            (<div className="no-more-posts">no more posts!</div>) :
+            (<div>...</div>)} */}
           </div>
         </div>
     );

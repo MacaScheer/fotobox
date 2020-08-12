@@ -51,15 +51,56 @@ class CreatePost extends React.Component {
       }
     }
     // ABOVE
+
+// $.ajax({
+//     async: true,
+//     contentType: file.type,
+//     data: file,
+//     dataType: 'xml',
+//     processData: false,
+//     success: function(xml){
+//         // Do stuff with the returned xml
+//     },
+//     type: 'post',
+//     url: '/fileuploader/' + file.name,
+//     xhr: function(){
+//         // get the native XmlHttpRequest object
+//         var xhr = $.ajaxSettings.xhr() ;
+//         // set the onprogress event handler
+//         xhr.upload.onprogress = function(evt){ console.log('progress', evt.loaded/evt.total*100) } ;
+//         // set the onload event handler
+//         xhr.upload.onload = function(){ console.log('DONE!') } ;
+//         // return the customized object
+//         return xhr ;
+//     }
+// });
+
+
     $.ajax({
+       xhr: function() {
+            var xhr = $.ajaxSettings.xhr();
+            xhr.onprogress = function e() {
+                // For downloads
+                if (e.lengthComputable) {
+                    console.log((e.loaded / e.total *100)+"%");
+                }
+            };
+            xhr.upload.onprogress = function (e) {
+                // For uploads
+                if (e.lengthComputable) {
+                    console.log((e.loaded / e.total *100)+"%");
+                }
+            };
+            return xhr;
+          },
       url: "/api/posts",
       method: "POST",
       data: formData,
       contentType: false,
       processData: false,
-      options: options //
-    }).then(() => {
-      // console.log
+      options //
+    }).then((res) => {
+      console.log(res)
       this.props.history.push("/users/my-profile");
     })
   }

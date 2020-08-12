@@ -50,9 +50,12 @@ class UserShow extends React.Component {
 
 
   scroller() {
-        if ((window.innerHeight + window.scrollY) >= document.body.offsetHeight) {
-      this.getPosts()
-    }
+    if ((window.innerHeight + window.scrollY) >= document.body.offsetHeight) {
+        if (this.state.page < this.props.numUserPosts || this.props.numUserPosts === undefined) {
+          console.log(`page:${page}, numUserPosts:${this.props.numUserPosts}`)
+          this.getPosts()
+        }
+      }
     }
 
   componentDidUpdate(prevProps) {
