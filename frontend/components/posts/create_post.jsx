@@ -42,16 +42,51 @@ class CreatePost extends React.Component {
       formData.append("post[location]", this.state.location);
       formData.append("post[user_id]", this.props.currentUser.id);
     }
-    // BELOW
-    const options = {
-      onUploadProgress: (progressEvent) => {
-        const { loaded, total } = progressEvent;
-        let percent = Math.floor((loaded * 100) / total)
-        console.log(`${loaded}kb of ${total}kb | ${percent}`)
-      }
-    }
-    // ABOVE
+    // $.ajax({
+  //      xhr: function() {
+  //           var xhr = $.ajaxSettings.xhr();
+  //           xhr.onprogress = function e() {
+  //               // For downloads
+  //               if (e.lengthComputable) {
+  //                   console.log((e.loaded / e.total *100)+"%");
+  //               }
+  //           };
+  //           xhr.upload.onprogress = function (e) {
+  //               // For uploads
+  //               if (e.lengthComputable) {
+  //                   console.log((e.loaded / e.total *100)+"%");
+  //               }
+  //           };
+  //           return xhr;
+  //         },
+  //     url: "/api/posts",
+  //     method: "POST",
+  //     data: formData,
+  //     contentType: false,
+  //     processData: false,
+  //   }).then(() => {
+  //     this.props.history.push("/users/my-profile");
+  //   })
+  // }
+    $.ajax({
+      url: "/api/posts",
+      method: "POST",
+      data: formData,
+      contentType: false,
+      processData: false
+    }).then(() => {
+      this.props.history.push("/users/my-profile");
+    });
+  }
 
+    // const options = {
+    //   onUploadProgress: (progressEvent) => {
+    //     const { loaded, total } = progressEvent;
+    //     let percent = Math.floor((loaded * 100) / total)
+    //     console.log(`${loaded}kb of ${total}kb | ${percent}`)
+    //   }
+    // }
+    // 
 // $.ajax({
 //     async: true,
 //     contentType: file.type,
@@ -74,36 +109,7 @@ class CreatePost extends React.Component {
 //         return xhr ;
 //     }
 // });
-
-
-    $.ajax({
-       xhr: function() {
-            var xhr = $.ajaxSettings.xhr();
-            xhr.onprogress = function e() {
-                // For downloads
-                if (e.lengthComputable) {
-                    console.log((e.loaded / e.total *100)+"%");
-                }
-            };
-            xhr.upload.onprogress = function (e) {
-                // For uploads
-                if (e.lengthComputable) {
-                    console.log((e.loaded / e.total *100)+"%");
-                }
-            };
-            return xhr;
-          },
-      url: "/api/posts",
-      method: "POST",
-      data: formData,
-      contentType: false,
-      processData: false,
-      options //
-    }).then((res) => {
-      console.log(res)
-      this.props.history.push("/users/my-profile");
-    })
-  }
+  //   
   handleCancel(e) {
     e.preventDefault();
     this.props.history.push(`/users/${this.props.currentUser.id}`);
