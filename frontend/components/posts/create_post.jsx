@@ -1,5 +1,6 @@
 import React from "react";
 import { withRouter } from "react-router";
+import ProgressBar from "./progress_bar";
 
 class CreatePost extends React.Component {
   constructor(props) {
@@ -11,7 +12,8 @@ class CreatePost extends React.Component {
       location: "",
       photoFile: false,
       photoUrl:
-        "https://fotobox-seeds.s3-us-west-1.amazonaws.com/image_assets/lightbox_favicon.svg"
+        "https://fotobox-seeds.s3-us-west-1.amazonaws.com/image_assets/lightbox_favicon.svg",
+      percentComplete:0
     };
     this.handleFile = this.handleFile.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
@@ -40,6 +42,32 @@ class CreatePost extends React.Component {
       formData.append("post[location]", this.state.location);
       formData.append("post[user_id]", this.props.currentUser.id);
     }
+    // $.ajax({
+  //      xhr: function() {
+  //           var xhr = $.ajaxSettings.xhr();
+  //           xhr.onprogress = function e() {
+  //               // For downloads
+  //               if (e.lengthComputable) {
+  //                   console.log((e.loaded / e.total *100)+"%");
+  //               }
+  //           };
+  //           xhr.upload.onprogress = function (e) {
+  //               // For uploads
+  //               if (e.lengthComputable) {
+  //                   console.log((e.loaded / e.total *100)+"%");
+  //               }
+  //           };
+  //           return xhr;
+  //         },
+  //     url: "/api/posts",
+  //     method: "POST",
+  //     data: formData,
+  //     contentType: false,
+  //     processData: false,
+  //   }).then(() => {
+  //     this.props.history.push("/users/my-profile");
+  //   })
+  // }
     $.ajax({
       url: "/api/posts",
       method: "POST",
@@ -50,6 +78,38 @@ class CreatePost extends React.Component {
       this.props.history.push("/users/my-profile");
     });
   }
+
+    // const options = {
+    //   onUploadProgress: (progressEvent) => {
+    //     const { loaded, total } = progressEvent;
+    //     let percent = Math.floor((loaded * 100) / total)
+    //     console.log(`${loaded}kb of ${total}kb | ${percent}`)
+    //   }
+    // }
+    // 
+// $.ajax({
+//     async: true,
+//     contentType: file.type,
+//     data: file,
+//     dataType: 'xml',
+//     processData: false,
+//     success: function(xml){
+//         // Do stuff with the returned xml
+//     },
+//     type: 'post',
+//     url: '/fileuploader/' + file.name,
+//     xhr: function(){
+//         // get the native XmlHttpRequest object
+//         var xhr = $.ajaxSettings.xhr() ;
+//         // set the onprogress event handler
+//         xhr.upload.onprogress = function(evt){ console.log('progress', evt.loaded/evt.total*100) } ;
+//         // set the onload event handler
+//         xhr.upload.onload = function(){ console.log('DONE!') } ;
+//         // return the customized object
+//         return xhr ;
+//     }
+// });
+  //   
   handleCancel(e) {
     e.preventDefault();
     this.props.history.push(`/users/${this.props.currentUser.id}`);
@@ -84,6 +144,7 @@ class CreatePost extends React.Component {
                       type="file"
                       onChange={this.handleFile}
                     /> */}
+              {/* <ProgressBar /> */}
                   <input
                     className="title-input-field"
                     onChange={this.handleUpdate("title")}

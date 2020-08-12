@@ -40,6 +40,7 @@ object-fit: contain;
 justify-content: space-around;
 width: 60%;
 max-width:40em;
+height:100%;
 }
 
 .post-mid{
@@ -251,3 +252,6 @@ appearance: none;
   cursor:pointer;
 }
 
+.box:hover{
+  cursor: pointer;
+}

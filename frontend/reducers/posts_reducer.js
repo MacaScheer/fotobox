@@ -1,7 +1,7 @@
 import {
   RECEIVE_POSTS,
   RECEIVE_POST,
-  REMOVE_POST
+  REMOVE_POST,
 } from "../actions/post_actions";
 
 import { REMOVE_COMMENT } from "../actions/comment_actions";

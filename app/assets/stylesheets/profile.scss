@@ -10,9 +10,9 @@
     justify-content: center;
     align-items: center;
     // height:100%;
-    height:100vh;
+    // height:100vh;
     // width:100%;
-    margin:auto;
+    // margin:auto;
     .profile-left {
         width: 10%;
     }
@@ -153,11 +153,14 @@
 }
 
 @media (max-width:400px){
+    .profile-wrap{
+    margin:auto;
+    }
     .user-page-photos{
         margin:0px;
     }
     .profile-container{
-        margin-top:14em !important;
+        margin-top:6em !important;
     }
  
    
