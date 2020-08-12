@@ -15,7 +15,7 @@ class Profile extends React.Component {
     this.handleEditUser = this.handleEditUser.bind(this);
     this.state = {
       page: 0,
-      numPosts:0
+      // numPosts:0
     }
     this.getPosts = this.getPosts.bind(this)
     this.scroller = this.scroller.bind(this)
@@ -29,7 +29,7 @@ class Profile extends React.Component {
   incrementStart() {
     // console.log("firstkey: ", this.state.page, " numPosts: ", this.props.numPosts)
     // if (this.state.page < this.props.numPosts) { 
-    console.log("page: ", this.state.page, " numPosts: ", this.props.numPosts)
+    // console.log("page: ", this.state.page, " numPosts: ", this.props.numPosts)
       let num = this.state.page === 0 ? 15 : this.state.page + 8
       this.setState({ page: num })
     // }
@@ -47,7 +47,6 @@ class Profile extends React.Component {
   }
   
   scroller() {
-    console.log("scroll")
     if ((window.innerHeight + window.scrollY) >= document.body.offsetHeight) {
       if (this.state.page < this.props.numPosts || this.props.numPosts === undefined) {
         this.getPosts()
