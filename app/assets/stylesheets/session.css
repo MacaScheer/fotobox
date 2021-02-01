@@ -1,0 +1,192 @@
+/* min-width =>  “If [device width] is greater than or equal to 600px, then do {…}” */
+/* @media all and (min-width: 1200px){ */
+  form{
+    display:flex;
+    flex-direction:column;
+  }
+
+.session-submit {
+  -webkit-appearance: none;
+-moz-appearance: none;
+appearance: none;
+  width: 100%;
+  height: 40px;
+  text-overflow: ellipsis;
+  font-size: 14px;
+  font-weight: 700;
+  color: white;
+  margin: 0.5rem 0;
+  box-sizing: border-box;
+  background-color: #3897f0;
+  border-radius: 4px;
+  outline: none;
+  border: 1px solid #fafafa;
+}
+.session-submit:hover {
+  cursor: pointer;
+}
+
+.greeting {
+  flex-wrap: wrap;
+}
+
+.login-page-container {
+  display: flex;
+  justify-content: space-between;
+
+}
+.login-page-right {
+  display: flex;
+  color: #262626;
+  justify-content: center;
+  font-family: "Helvetica Neue";
+  margin-left: 2rem;
+  align-items: center;
+  flex-direction: column;
+}
+.login-page-left {
+  margin-right:2rem;
+}
+
+.login-left-image-container {
+  position: relative;
+}
+
+.login-left-image {
+  width: 470px;
+  height: 620px;
+}
+
+.login-form-container {
+  display: flex;
+  justify-content: center;
+  border: 1px solid #e6e6e6;
+  border-radius: 2px;
+  text-align: center;
+  flex-direction:column;
+  padding:2rem;
+  width:100%;
+}
+.login-input {
+  text-align: left;
+  width: 100%;
+  height: 40px;
+  background-color: #fafafa;
+  padding-left: 5px;
+  text-overflow: ellipsis;
+  font-size: 14px;
+  margin: 0.5rem 0;
+  border-radius: 3px;
+  border: 1px solid #efefef;
+  box-sizing: border-box;
+}
+.login-signup-link {
+  border: 1px solid #e6e6e6;
+  font-size: 14px;
+  width: 100%;
+  border-radius: 2px;
+  font-family: "Helvetica Neue";
+  padding:2rem;
+  text-align:center;
+}
+
+/* @keyframes cf3FadeInOut {
+  0% {
+    opacity: 1;
+  }
+  45% {
+    opacity: 1;
+  }
+  55% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 0;
+  }
+} */
+
+/* #cf3 img.top {
+  animation-name: cf3FadeInOut;
+  animation-timing-function: ease-in-out;
+  animation-iteration-count: infinite;
+  animation-duration: 10s;
+  animation-direction: alternate;
+} */
+
+/* @keyframes fadeInOut {
+  /* 0% {
+    opacity: 1;
+  } */
+/* 20% {
+    opacity: 1;
+  } */
+/* 40% {
+    opacity: 0;
+  } */
+/* 80% {
+    opacity: 0;
+  } */
+/* 100% {
+    opacity: 0;
+  } */
+/* } */
+
+.login-left-image-inner {
+  /* animation-name: fadeInOut;
+  animation-timing-function: ease-in-out;
+  animation-iteration-count: infinite;
+  animation-duration: 4s;
+  animation-direction: alternate; */
+  /* animation-name: cf3FadeInOut;
+  animation-timing-function: ease-in-out;
+  animation-iteration-count: infinite;
+  animation-duration: 6s;
+  animation-direction: alternate; */
+
+  z-index: 3;
+  position: absolute;
+  right: 62px;
+  width: 255px;
+  top: 96px;
+  height: 437px;
+}
+
+/* .first-image {
+  animation-delay: 0s;
+}
+.second-image {
+  animation-delay: 2s;
+}
+.third-image {
+  animation-delay: 4s;
+}
+.fourth-image {
+  animation-delay: 6s;
+} */
+.icon:hover {
+  background-color: rgb(238, 238, 238);
+  cursor: pointer;
+}
+.profile-button:hover {
+  background-color: rgb(238, 238, 238);
+  cursor: pointer;
+}
+
+/* max-width => “If [device width] is less than or equal to 600px, then do {…}” */
+/* min-width =>  “If [device width] is greater than or equal to 600px, then do {…}” */
+
+@media (max-width: 800px){
+  .login-page-right, 
+  .login-page-left{
+    margin-right:0;
+    margin-left:0;
+  }
+
+ .login-left-image-inner{
+   display:none;
+ }
+ .login-left-image {
+    display:none;
+  }
+
+}

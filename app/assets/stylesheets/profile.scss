@@ -1,0 +1,167 @@
+.empty-posts{
+    display:flex;
+    justify-content:center;
+    .no-user-posts{
+        font-weight:bolder
+    }
+}
+.profile-wrap {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    // height:100%;
+    // height:100vh;
+    // width:100%;
+    // margin:auto;
+    .profile-left {
+        width: 10%;
+    }
+    .profile-right {
+        width: 10%;
+    }
+    .profile-container {
+        height: 100%;
+    display: flex;
+    margin-top: 12em;
+    flex-direction: column;
+    background-color: #fafafa;
+    font-family: 'Roboto', sans-serif;
+    // width: 80%;
+    max-width:1450px;
+        .profile-top {
+             display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-bottom: 3vh;
+            width:100%;
+
+                .profile-display-pic {
+                    object-fit: cover;
+                    border: 1px solid #dbdbdb;
+                    background-color: darkgrey;
+                    border-radius: 90px;
+                    width: 11vh;
+                    height: 11vh;
+                }
+            .profile-top-right {
+                width:60%;
+                min-width:34vw;
+                .profile-top-up {
+                    display: flex;
+                    justify-content: space-evenly;
+                    h1 {
+                        display: block;
+                        font-size: 2em;
+                        margin-block-start: 0.67em;
+                        margin-block-end: 0.67em;
+                        margin-inline-start: 40px;//0px;
+                        margin-inline-end: 0px;
+                        font-weight: bold;
+                    }
+                    .profile-button {
+                            background-color: transparent;
+                            border: 1px solid #dbdbdb;
+                            color: #262626;
+                            font-size: 12px;
+                            font-weight: 600;
+                            margin-right: 10px;
+                            padding: 5px 5px;
+                            border-radius: 5px;
+                            width: 80px;
+                            height: 30px;
+                            align-content: center;
+                            outline: none;
+                    }
+                }
+                .profile-top-down {
+                    display: flex;
+                    justify-content: space-evenly;
+                }
+            }
+        }
+        .profile-photo-index-container {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            // min-width: 900px;
+            // padding-left: 20px;
+            
+        
+            .profile-photo-index {
+                display: flex;
+                flex-wrap: wrap;
+                justify-content: flex-start;
+                align-items: center;
+                list-style: none;
+                padding-left: 0;
+
+                li {
+                    display: list-items;
+                    text-align: -webkit-match-parent;
+                }
+                .image-container {
+                    display:flex;
+                    position: relative;
+                    .user-page-photos {
+                        object-fit: cover;
+                        z-index: 1;
+                        width: 15em;
+                        height: 15em;
+                        margin: 20px;
+                    }
+                    .image-overlay-text{
+                        display: none;
+                        color: white;
+                        .comment{
+                            color:whitesmoke;
+                            padding: 10px;
+                        }
+                        .overlay-heart{
+                            color:whitesmoke;
+                        }
+                    }
+                }
+                
+                .image-container:hover{
+                    .image-overlay-text{
+                        display: block;
+                        bottom:127px;
+                        left:95px;
+                        position:absolute;
+
+                    }
+                    .user-page-photos{
+                        filter:brightness(50%)
+                    }
+                }
+            }
+        }
+    }
+}
+
+
+@media (max-width:800px){
+    
+    .profile-wrap .profile-container{
+        margin-top:13em;
+    }
+    .profile-photo-index{
+
+        display:grid !important;
+        grid-template-columns: 1fr 1fr 1fr !important;
+    }
+}
+
+@media (max-width:400px){
+    .profile-wrap{
+    margin:auto;
+    }
+    .user-page-photos{
+        margin:0px;
+    }
+    .profile-container{
+        margin-top:6em !important;
+    }
+ 
+   
+}

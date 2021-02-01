@@ -1,0 +1,43 @@
+{
+  "name": "foto-box",
+  "private": true,
+  "dependencies": {
+    "@babel/core": "^7.10.2",
+    "@babel/preset-env": "^7.10.2",
+    "@babel/preset-react": "^7.10.1",
+    "babel-loader": "^8.1.0",
+    "debounce": "^1.2.0",
+    "react": "^16.13.1",
+    "react-dom": "^16.13.1",
+    "react-is": "^16.13.1",
+    "react-modal": "^3.11.2",
+    "react-redux": "^7.2.0",
+    "react-router-dom": "^5.2.0",
+    "react-spinners-kit": "^1.9.1",
+    "redux": "^4.0.5",
+    "redux-logger": "^3.0.6",
+    "redux-thunk": "^2.3.0",
+    "styled-components": "^5.1.1",
+    "webpack": "^4.43.0",
+    "webpack-cli": "^3.3.11"
+  },
+  "description": "This README would normally document whatever steps are necessary to get the application up and running.",
+  "version": "1.0.0",
+  "main": "index.js",
+  "engines": {
+    "node": "10.13.0",
+    "npm": "6.4.1"
+  },
+  "devDependencies": {
+    "redux-logger": "^3.0.6"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "webpack": "webpack --watch --mode=development",
+    "start": "webpack --mode=production",
+    "postinstall": "webpack --mode=production"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}

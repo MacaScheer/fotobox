@@ -1,0 +1,358 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, or any plugin's
+ * vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
+ * files in this directory. Styles in this file should be added after the last require_* statement.
+ * It is generally better to create a new file per style scope.
+ *
+ *= require_tree .
+ *= require_self
+ */
+
+/* Navbar  */
+
+.nav-bar-container {
+    background-color: white;
+    display: flex;
+    justify-content: space-evenly;
+    /* width: 100%; */
+    height: 5em;
+    /* max-height: 10vh; */
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    border-bottom: 1px solid lightgrey;
+    /* min-width: 80vw; */
+    z-index: 100;
+}
+
+.nav-right {
+  /* width: 25%; */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.nav-left {
+  /* width: 25%; */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+/* .nav-middle {
+  width: 50%;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+} */
+/* .fotobox-icon {
+  font-size: 32px;
+  align-content: center;
+} */
+.lightmeter {
+    width: 4em;
+    height: 4em;
+    object-fit: scale-down;
+    margin: 1vw;
+}
+.post-form-icon {
+    margin-left: 1em;
+    margin-right: 1em;
+    width: 4em;
+    height: 4em;
+    margin-bottom: .5em;
+}
+.profile-display-pic-nav {
+    width: 4em;
+    height: 4em;
+    margin-right: 1em;
+    object-fit: cover;
+    border: 1px solid #dbdbdb;
+    background-color: darkgrey;
+    border-radius: 90px;
+}
+.nav-link-logo {
+    position: relative;
+    justify-content: center;
+    font-family: "Satisfy", cursive;
+    font-size: 3em;
+}
+
+
+.nav-icon {
+    display: flex;
+    color: black;
+    justify-content: center;
+    align-content: center;
+    align-items: center;
+    /* margin-left: 1vw; */
+}
+
+
+
+.search-with-results-wrap {
+  display: flex;
+  position: fixed;
+  flex-direction: column;
+  align-items: center;
+}
+
+.search-result-image {
+  width: 30px;
+  height: 30px;
+  margin: 1px;
+  display: flex;
+  border-radius: 50%;
+}
+
+.nav-sign-out:hover {
+  cursor: pointer;
+}
+
+/* .nav-sign-out {
+  height: 30px;
+  width: auto;
+  margin-left: 30px;
+  font-weight: bolder;
+  padding-bottom: 19px;
+  padding-left: 18px;
+} */
+.nav-sign-out-icon {
+    height: 4em;
+    width: 4em;
+    margin-left: 1em;
+    margin-right: 1em;
+}
+.user-search-results{
+    justify-content: center;
+    align-content: center;
+    align-items: center;
+    align-self: center;
+    display: flex;
+    width: 100%;
+}
+.search-result-image {
+  width: 30px;
+  height: 30px;
+  margin: 1px;
+  display: flex;
+  border-radius: 50%;
+}
+.outer-results{
+  display: flex;
+    justify-content: center;
+}
+.search-results-list {
+  background: #fff;
+  border: solid 1px #e6e6e6;
+  /* -webkit-box-shadow: 0 0 5px rgba(0, 0, 0, 0.0975); */
+ border-radius: 5px;
+    box-shadow: 8px 21px 12px rgba(82, 82, 82, 0.2);
+  /* right: -12px; */
+  z-index: 10;
+  list-style: none;
+  padding-left: 0;
+  width: 100%;
+  /* margin-top: 20px; */
+  max-height: 30vh;
+  overflow-y: scroll;
+  overflow-x: hidden;
+}
+
+.search-results-container {
+  display: flex;
+  /* top: 45px; */
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  position: absolute;
+  min-width:fit-content;
+}
+
+.outer-results-wrap {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+}
+
+.search-result-user {
+  width: 100%;
+  display: flex;
+  padding-left: 10px;
+  min-height: fit-content;
+  z-index: 10;
+  align-items: center;
+  border-bottom: 1px solid rgb(233, 232, 232);
+}
+
+.search-result-li:hover {
+  background-color: #fafafa;
+}
+
+.search-result-user,
+.search-result-user:visited {
+  text-decoration: none;
+  color: black;
+}
+
+.search-result-username {
+  font-family: "Roboto", sans-serif;
+  padding-left: 10px;
+  font-weight: bold;
+}
+
+.user-search-lrg {
+    /* margin-top: 2vh; */
+    width: 40%;
+    min-width: 17em;
+    height: 3em;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    font-family: "Roboto", sans-serif;
+    /* font-size: 1em; */
+    border-radius: 3px;
+    background-color: #fafafa;
+    outline: none;
+}
+/* .user-search-sml{
+  display:none;
+    width: 40%;
+    min-width: 12vw;
+    height: 3vh;
+    /* display: flex; 
+    align-items: center;
+    text-align: center;
+    font-family: "Roboto", sans-serif;
+    font-size: 9px;
+    border-radius: 3px;
+    background-color: #fafafa;
+    outline: none;
+}
+
+@media (max-width: 800px){
+  .user-search-lrg{
+     width:0%; 
+    display:none !important;
+  }
+  .user-search-sml{
+    width:40% !important;
+    display:inline-block !important;
+
+  }
+} */
+/* @media (max-width:800px){
+} */
+
+
+/*
+@media (max-width: 375px){
+  .nav-bar-container {
+    margin: 1vh !important;
+    height: 7vh !important;
+}
+.nav-left {
+    width: 20%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+  .nav-link-logo {
+    font-size: 4vh;
+}
+.lightmeter {
+    width: 5vh;
+    height: 5vh;
+    margin:0vw;
+}
+.nav-right {
+    width: 30%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.user-search-lrg {
+    
+    font-size: 3vh;
+    height: 4vh;
+    
+}
+.profile-display-pic-nav {
+    width: 7vh !important;
+    height: 7vh !important;
+    margin-bottom: 1vw;
+    margin-right: 1vw;
+}
+.post-form-icon {
+    width: 6vh !important;
+    height: 6vh !important;
+    margin: 1vw;
+}
+.user-search-results {
+    width: 11vh;
+}
+.nav-sign-out-icon {
+    width: 6vh !important;
+    height: 6vh !important;
+        margin-left: 1vw;
+    margin-top: 1vw;
+    margin-right: 0vw;
+}
+.nav-icon{
+  margin:0vw;
+}
+}
+*/
+/* @media (max-width:414px){
+
+} */
+@media (max-width:414px){
+  .nav-bar-container{
+    height:3.5em;
+  }
+ 
+  .nav-link-logo{
+    font-size:3em;
+  }
+  
+  .lightmeter{
+    width:3em;
+    height:3em;
+    margin:0em;
+  }
+  .user-search-lrg{
+    display:none;
+    width:100%;
+    font-size:4vh;
+    height:5vh;
+  }
+   .nav-sign-out-icon{
+        width: 3em !important;
+    height: 3em !important;
+    margin-left: 0em;
+    margin-right:.5em;
+    }
+       .profile-display-pic-nav{
+         width: 3em !important;
+    height: 3em !important;
+    margin-right: 0em;
+    margin-left: 0em;
+
+    }
+    .post-form-icon{
+            width: 3em !important;
+    height: 3em !important;
+    margin-right:.5em;
+    margin-bottom:.5em;
+    }
+
+}

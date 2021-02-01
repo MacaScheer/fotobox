@@ -1,0 +1,21 @@
+default: &default
+  adapter: postgresql
+  encoding: unicode
+  # Here we make sure we can pass the connection URL for the database
+  url: <%= ENV['DATABASE_URL'] %>
+  pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
+
+development:
+  <<: *default
+  database: fotobox_development
+
+test:
+  <<: *default
+  database: fotobox_test
+
+production:
+  <<: *default
+  adapter: postgresql
+  host: db
+  username: postgres
+  password:

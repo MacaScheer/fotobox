@@ -1,0 +1,215 @@
+.update-profile-text {
+  /* font-size: 16px; */
+  /* padding-bottom: 5px; */
+  font-family: Roboto;
+}
+.post-form-container {
+display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+    width: 100%;
+}
+.post-form{
+  display: flex;
+    flex-direction: column;
+    align-content: center;
+    justify-content: center;
+}
+
+.post-form-buttons{
+  display:flex;
+  justify-content: center;
+  align-content: center;
+  margin-top:1vh;
+  margin-bottom:1vh;
+}
+.post-button-cancel {
+  background-color: forestgreen;
+  width: 100%;
+  height: 40px;
+  text-overflow: ellipsis;
+  font-size: 14px;
+  font-weight: 700;
+  color: white;
+  box-sizing: border-box;
+  border-radius: 4px;
+  outline: none;
+  border: 1px solid #fafafa;
+}
+.post-button-cancel:hover{
+  cursor:pointer;
+}
+.post-button-upload {
+  width: 100%;
+  height: 40px;
+  text-overflow: ellipsis;
+  font-size: 14px;
+  font-weight: 700;
+  color: white;
+  box-sizing: border-box;
+  background-color: #3897f0;
+  border-radius: 4px;
+  outline: none;
+  border: 1px solid #fafafa;
+}
+.post-button-upload:hover{
+  cursor:pointer;
+}
+
+/* 
+.post-button-upload {
+  width: 80px;
+  height: 25px;
+  text-overflow: ellipsis;
+  font-size: 14px;
+  font-weight: 700;
+  color: white;
+  margin: 3px;
+  box-sizing: border-box;
+  margin-bottom: 7px;
+  background-color: #3897f0;
+  border-radius: 4px;
+  outline: none;
+  border: 1px solid #fafafa;
+}
+.post-button-cancel {
+  width: 80px;
+  height: 25px;
+  text-overflow: ellipsis;
+  font-size: 14px;
+  font-weight: 700;
+  color: white;
+  margin: 3px;
+  box-sizing: border-box;
+  margin-bottom: 7px;
+  background-color: #3897f0;
+  border-radius: 4px;
+  outline: none;
+  border: 1px solid #fafafa;
+} */
+.profile-pic-main {
+  height: 50%;
+
+  object-fit: cover;
+}
+.update-form-right {
+    height: 45vh;
+    width: 30vw;
+    min-width:fit-content;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    /* align-items: center; */
+    align-content: center;
+    align-self: center;
+    border: 1px solid lightgray;
+    border-radius: 4px;
+box-shadow: 8px 21px 12px rgba(82, 82, 82, 0.2);
+  
+}
+
+.update-right-top,
+.update-left-top {
+  /* border-bottom: 1px solid grey; */
+  display: flex;
+  justify-content: space-around;
+  /* flex-direction: column; */
+  align-items: center;
+  height: 10%;
+  width: 100%;
+  color: white;
+  background-color: rgb(89,89,89);
+  border-radius: 4px 4px 0px 0px;
+}
+/* .scanner-icon-edit{
+  justify-content: space-around;
+    width: 30vh;
+    height: 30vh;
+    border: 1px solid gray;
+    border-radius: 180vw;
+    margin: 3vw;
+} */
+.update-preview{
+  justify-content: space-around;
+
+}
+.post-pic-preview{
+  object-fit:cover;
+    width: 30vh;
+    height: 30vh;
+    border: 1px solid gray;
+    border-radius: 180vw;
+    margin: 3vw;
+}
+.update-right-mid {
+  height: 80%;
+  display: flex;
+  width: 100%;
+  justify-content: space-around;
+  flex-direction: column;
+  align-items: center;
+  /* padding-left: 10px; */
+}
+
+.update-right-bottom {
+  height: 10%;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.update-bio-text {
+  height: 75px;
+  max-height: 100px;
+  max-width: 250px;
+  width: 250px;
+  text-align: left;
+  width: 250px;
+  height: 40px;
+  background-color: #fafafa;
+  /* padding-left: 5px; */
+  text-overflow: ellipsis;
+  font-size: 14px;
+  /* margin: 3px; */
+  border-radius: 3px;
+border: 1px solid lightgray;
+  box-sizing: border-box;
+  /* margin: 25px; */
+}
+
+.int {
+  /* margin-left: 20px; */
+}
+
+.update-text-input {
+  /* width: 175px; */
+  /* height: 15px;   */
+  text-align: left;
+  width: 250px;
+  height: 40px;
+  background-color: #fafafa;
+  padding-left: 5px;
+  text-overflow: ellipsis;
+  font-size: 14px;
+  margin: 3px;
+  border-radius: 3px;
+  border: 1px solid lightgray;
+  box-sizing: border-box;
+}
+
+/* .update-submit { */
+  /* width: 100px; */
+  /* margin-left: 40px; */
+/* } */
+/* .profile-pic-header {
+    margin-bottom: 10px;
+    left: 100px;
+    height: 10%;
+} */
+
+/* .update-preview {
+  height: 450px;
+} */
+/* //////// */
